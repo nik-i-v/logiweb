@@ -1,0 +1,12 @@
+ru\tsystems\logiweb\server\entities\DriverShift$Status.class
+ru\tsystems\logiweb\server\entities\Order.class
+ru\tsystems\logiweb\server\entities\DriverShift.class
+ru\tsystems\logiweb\server\DriversDAOImpl.class
+ru\tsystems\logiweb\server\entities\Fura$Status.class
+ru\tsystems\logiweb\server\entities\Fura$Capacity.class
+ru\tsystems\logiweb\server\entities\OrderStatus$Status.class
+ru\tsystems\logiweb\server\entities\OrderInfo.class
+ru\tsystems\logiweb\server\entities\OrderInfo$Status.class
+ru\tsystems\logiweb\server\entities\Drivers.class
+ru\tsystems\logiweb\server\entities\OrderStatus.class
+ru\tsystems\logiweb\server\entities\Fura.class
