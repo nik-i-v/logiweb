@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ui:war exploded">
+    <output-path>$PROJECT_DIR$/ui/target/ui</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ui" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="service" />
+          </element>
+          <element id="archive" name="server-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="server" />
+          </element>
+          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="ui/web/Web" />
+    </root>
+  </artifact>
+</component>

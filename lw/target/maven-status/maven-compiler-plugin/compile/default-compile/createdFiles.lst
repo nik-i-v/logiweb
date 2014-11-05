@@ -1,0 +1,13 @@
+ru\tsystems\javaschool\logiweb\lw\service\FuraSeviceBean.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\DriverShift$Status.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\OrderStatus.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\Fura.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\OrderInfo.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\Fura$Status.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\DriverShift.class
+ru\tsystems\javaschool\logiweb\lw\service\FuraService.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\Order.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\OrderStatus$Status.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\Fura$Capacity.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\Drivers.class
+ru\tsystems\javaschool\logiweb\lw\server\entities\OrderInfo$Status.class
