@@ -68,11 +68,24 @@ public class OrderServiceBean implements OrderService {
         isFuraOccupied(furaNumber);
         isFuraSuitable(furaIntCapacity(getFuraCapacity(furaNumber)), weightGoodsInOrder(orderNumber));
         isDriverCountSuitable(getDriverCount(furaNumber), driverId.size());
-        areDriversNotShift(driverId);
-        changeDriverStatus(orderNumber, driverId);
+        checkDriverStatus(driverId, DriverShift.Status.notShift);
+        changeDriverStatus(orderNumber, driverId, DriverShift.Status.shift);
         changeFuraStatus(furaNumber);
         addFuraToOrder(orderNumber, furaNumber);
         changeOrderStatus(orderNumber, OrderStatus.Status.shipped);
+    }
+
+    @Override
+    public void closeOrder(Integer orderNumber) {
+        logger.info("Close order number + " + orderNumber);
+        isOrderExists(orderNumber);
+        checkOrderStatus(getOrderStatus(orderNumber), OrderStatus.Status.made.toString());
+        List<Integer> driversInOrder = getDriversInOrder(orderNumber);
+        checkDriverStatus(driversInOrder, DriverShift.Status.atWeel);
+        changeOrderStatus(orderNumber, OrderStatus.Status.closed);
+        changeDriverStatus(null, driversInOrder, DriverShift.Status.notShift);
+        deleteFuraFromOrder(orderNumber);
+
     }
 
     private void isFuraOccupied(String furaNumber) {
@@ -151,22 +164,35 @@ public class OrderServiceBean implements OrderService {
         throw new IllegalArgumentException("Fura should have " + driverCount + " drivers.");
     }
 
-    private void areDriversNotShift(List<Integer> drivers) {
+    private List<Integer> getDriversInOrder(Integer orderNumber) {
+        Query query = entityManager.createQuery("SELECT ds.driverId FROM DriverShift ds WHERE  ds.orderId = :orderNumber");
+        query.setParameter("orderNumber", orderNumber);
+        return query.getResultList();
+    }
+
+    private void checkDriverStatus(List<Integer> drivers, DriverShift.Status status) {
         Query query = entityManager.createQuery("SELECT COUNT(ds.status)FROM DriverShift ds WHERE ds.status= :status AND ds.driverId IN :driver");
         query.setParameter("driver", drivers);
-        query.setParameter("status", DriverShift.Status.notShift);
-        String freeDriversCount = query.getSingleResult().toString();
-        if (freeDriversCount.equals(null) || Integer.parseInt(freeDriversCount) != drivers.size()) {
-            throw new IllegalArgumentException("Some drivers are already in shift or are not exists");
+        query.setParameter("status", status);
+        String driversCount = query.getSingleResult().toString();
+        if (status.equals(DriverShift.Status.notShift)) {
+            if (driversCount.equals(null) || Integer.parseInt(driversCount) != drivers.size()) {
+                throw new IllegalArgumentException("Some drivers are already in shift or are not exists");
+            } else if (status.equals(DriverShift.Status.atWeel)) {
+                if (driversCount.equals(null)) {
+                    throw new IllegalArgumentException("This order still has the driver behind the wheel");
+                }
+            }
+
         }
     }
 
-    private void changeDriverStatus(Integer orderNumber, List<Integer> driverId) {
+    private void changeDriverStatus(Integer orderNumber, List<Integer> driverId, DriverShift.Status status) {
         Query addOrderNumberToDriver = entityManager.createQuery("UPDATE DriverShift ds SET ds.orderId = :number, " +
                 "ds.status = :status WHERE ds.driverId IN :drivers");
         addOrderNumberToDriver.setParameter("number", orderNumber);
         addOrderNumberToDriver.setParameter("drivers", driverId);
-        addOrderNumberToDriver.setParameter("status", DriverShift.Status.shift);
+        addOrderNumberToDriver.setParameter("status", status);
         addOrderNumberToDriver.executeUpdate();
     }
 
@@ -177,13 +203,21 @@ public class OrderServiceBean implements OrderService {
         updateFuraStatus.executeUpdate();
     }
 
-    private void addFuraToOrder(Integer orderNumber, String furaNumber){
+    private void addFuraToOrder(Integer orderNumber, String furaNumber) {
         Query getFuraId = entityManager.createQuery("SELECT f.furasId FROM Fura f WHERE f.furaNumber = :fura");
         getFuraId.setParameter("fura", furaNumber);
         Query addDriversToOrder = entityManager.createQuery("UPDATE Order o SET  o.furaId = :fura WHERE o.id = :number");
         addDriversToOrder.setParameter("number", orderNumber);
         addDriversToOrder.setParameter("fura", getFuraId.getSingleResult());
         addDriversToOrder.executeUpdate();
+    }
+
+    private void deleteFuraFromOrder(Integer orderNumber){
+        Query query = entityManager.createQuery("UPDATE Order o SET o.furaId = :nulls " +
+                "WHERE o.id = :Ids");
+        query.setParameter("nulls", null);
+        query.setParameter("Ids", orderNumber);
+        query.executeUpdate();
     }
 
 }

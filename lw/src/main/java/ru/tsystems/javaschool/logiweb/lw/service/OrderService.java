@@ -19,4 +19,6 @@ public interface OrderService {
     void changeOrderStatus(Integer orderNumber, OrderStatus.Status status);
 
     void addFuraAndDrivers(Integer orderNumber, List<Integer> driverId, String furaNumber, EntityManager entityManager) throws SQLException, IllegalArgumentException;
+
+    void closeOrder(Integer number);
 }
