@@ -2,8 +2,7 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
-import ru.tsystems.javaschool.logiweb.lw.service.UserService;
-import ru.tsystems.javaschool.logiweb.lw.service.UserServiceBean;
+import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
 import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
