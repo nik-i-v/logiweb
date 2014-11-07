@@ -1,6 +1,8 @@
 package ru.tsystems.javaschool.logiweb.lw.server.entities;
 
-import com.sun.istack.internal.NotNull;
+
+import javax.validation.constraints.NotNull;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

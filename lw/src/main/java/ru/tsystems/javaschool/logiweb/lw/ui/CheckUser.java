@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Model
-@WebServlet("/CheckUser")
+@WebServlet( urlPatterns = "/CheckUser")
 public class CheckUser extends Dispatcher {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
     @EJB
-    private UserService userService;
+    public UserService userService;
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException, FileNotFoundException {
@@ -34,9 +34,11 @@ public class CheckUser extends Dispatcher {
             if (u.getName().equals(login) && u.getPassword().equals(password)) {
                 if (u.getStatus().equals(Users.Status.Administrator)) {
                     logger.info("Administrator " + login + " logged in.");
+                    req.getSession().setAttribute("isLogged", "true");
                     this.forward("/successLoginAdmin.jsp", req, res);
                 } else {
                     logger.info("Driver " + login + " logged in.");
+                    req.getSession().setAttribute("isLogged", "true");
                     this.forward("/successLoginDriver.jsp", req, res);
                 }
             } else {
@@ -44,5 +46,6 @@ public class CheckUser extends Dispatcher {
             }
         }
     }
+
 }
 
