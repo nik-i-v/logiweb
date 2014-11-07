@@ -26,8 +26,8 @@
       <file leaf-file-name="CheckUser.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.90710384" vertical-offset="301" max-vertical-offset="969">
-              <caret line="47" column="5" selection-start-line="28" selection-start-column="6" selection-end-line="47" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.19489981" vertical-offset="301" max-vertical-offset="969">
+              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -827,12 +827,12 @@
       <workItem from="1415198411422" duration="5159000" />
       <workItem from="1415204230376" duration="11260000" />
       <workItem from="1415267306668" duration="4916000" />
-      <workItem from="1415309036288" duration="14637000" />
+      <workItem from="1415309036288" duration="14998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87859000" />
+    <option name="totallyTimeSpent" value="88220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -1315,8 +1315,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90710384" vertical-offset="301" max-vertical-offset="969">
-          <caret line="47" column="5" selection-start-line="28" selection-start-column="6" selection-end-line="47" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.19489981" vertical-offset="301" max-vertical-offset="969">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

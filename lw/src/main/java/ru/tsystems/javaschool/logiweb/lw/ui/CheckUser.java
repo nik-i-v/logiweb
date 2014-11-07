@@ -22,7 +22,7 @@ public class CheckUser extends Dispatcher {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
     @EJB
-    public UserService userService;
+    private UserService userService;
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException, FileNotFoundException {
