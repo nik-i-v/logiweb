@@ -8,13 +8,15 @@ import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
 public class OrderServiceForDriversBean implements OrderServiceForDrivers {
 
-    @Inject
+    @PersistenceContext(unitName = "logiweb", type = PersistenceContextType.EXTENDED)
     private EntityManager entityManager;
 
     @Inject
@@ -28,10 +30,13 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     }
 
     @Override
-    public Boolean hasOrder(String login) {
-        Query hasOrder = entityManager.createQuery("SELECT COUNT(ds.orderId) FROM DriverShift ds WHERE ds.drivers.license = :license");
+    public Integer hasOrder(String login) {
+        Query hasOrder = entityManager.createQuery("SELECT ds.orderId FROM DriverShift ds WHERE ds.drivers.license = :license");
         hasOrder.setParameter("license", login);
-        return !(Integer.parseInt(hasOrder.getSingleResult().toString()) == 0);
+        if (hasOrder.getSingleResult().equals(null)){
+            return -1;
+        }
+        return Integer.parseInt(hasOrder.getSingleResult().toString());
 
     }
 

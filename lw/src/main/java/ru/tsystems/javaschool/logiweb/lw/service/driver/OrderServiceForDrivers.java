@@ -9,7 +9,7 @@ import java.util.List;
 public interface OrderServiceForDrivers {
     List<Order> getOrderInfoForDrivers(String login);
 
-    Boolean hasOrder(String login);
+    Integer hasOrder(String login);
 
     void changeGoodsStatusForDrivers(Integer orderNumber, String name);
 }
