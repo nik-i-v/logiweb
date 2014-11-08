@@ -5,21 +5,25 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 import java.util.List;
 
+@Named
 @Stateless
 public class OrderServiceForDriversBean implements OrderServiceForDrivers {
 
-    @PersistenceContext(unitName = "logiweb", type = PersistenceContextType.EXTENDED)
+    @Inject
     private EntityManager entityManager;
 
-    @Inject
+    @EJB
     private OrderService orderService;
 
     @Override

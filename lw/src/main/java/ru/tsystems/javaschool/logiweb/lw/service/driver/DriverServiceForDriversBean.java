@@ -3,18 +3,20 @@ package ru.tsystems.javaschool.logiweb.lw.service.driver;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderServiceBean;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.*;
 
+@Named
 @Stateless
 public class DriverServiceForDriversBean implements DriverServiceForDrivers {
 
-    @Inject
+    @EJB
     private OrderServiceForDrivers orderServiceForDrivers;
 
-
-    @PersistenceContext(unitName = "logiweb", type = PersistenceContextType.EXTENDED)
+    @Inject
     private EntityManager entityManager;
 
     @Override

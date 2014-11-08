@@ -6,6 +6,8 @@ ru\tsystems\javaschool\logiweb\lw\service\admin\DriverServiceBean.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\FuraService.class
 ru\tsystems\javaschool\logiweb\lw\ui\Dispatcher.class
 ru\tsystems\javaschool\logiweb\lw\server\entities\Fura$Status.class
+ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDriversBean.class
+ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDrivers.class
 ru\tsystems\javaschool\logiweb\lw\server\entities\Order.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\UserService.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\OrderServiceBean.class

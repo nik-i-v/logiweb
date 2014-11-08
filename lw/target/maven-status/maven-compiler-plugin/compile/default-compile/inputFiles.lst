@@ -10,6 +10,7 @@ C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\service\admi
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\service\admin\FuraService.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\LoginFilter.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\server\entities\Fura.java
+C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDriversBean.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\CheckAdminAction.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\server\entities\OrderInfo.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\service\admin\OrderService.java
@@ -17,5 +18,6 @@ C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\server\entit
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\server\entities\DriverShift.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\service\driver\OrderServiceForDriversBean.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\CheckUser.java
+C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDrivers.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\service\driver\OrderServiceForDrivers.java
 C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\server\entities\OrderStatus.java
