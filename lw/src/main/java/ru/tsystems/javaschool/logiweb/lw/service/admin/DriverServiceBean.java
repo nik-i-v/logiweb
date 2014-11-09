@@ -27,10 +27,7 @@ public class DriverServiceBean implements DriverService{
     @Override
     public void addDriver(String surname, String name, String patronymic, Long licenseId) throws SQLException {
         logger.info("Add new driver with license: " + licenseId);
-        List<Long> ids = checkIfDriverIdIsUnique();
-        if (ids.contains(licenseId)) {
-            throw new IllegalArgumentException("Driver with this license is already exists.");
-        }
+        checkIfDriverIdIsUnique(licenseId);
         Drivers driver = new Drivers();
         DriverShift driverShift = new DriverShift();
         driver.setSurname(surname);
@@ -41,7 +38,11 @@ public class DriverServiceBean implements DriverService{
         entityManager.persist(driver);
         entityManager.persist(driverShift);
     }
-    private List<Long> checkIfDriverIdIsUnique() throws SQLException {
-        return entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
+
+    private void checkIfDriverIdIsUnique(Long licenseId) throws SQLException {
+       List<Long> ids =  entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
+        if (ids.contains(licenseId)) {
+            throw new IllegalArgumentException("Driver with this license is already exists.");
+        }
     }
 }

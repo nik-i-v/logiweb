@@ -1,24 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<head>
-    <title><ui:insert name="title">Facelets Tutorial</ui:insert></title>
-</head>
-
-<body>
-
-<div id="header">
-    <ui:insert name="header">
-        <ui:include src="/WEB-INF/templates/shapka.png"/>
-    </ui:insert>
-</div>
-
-<div id="content">
-    <ui:insert name="content">
-    </ui:insert>
-</div>
-
-
-</body>
+<h:head>
+    <title>hibernate4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <h:outputStylesheet name="/WEB-INF/css/screen.css" />
+</h:head>
+<h:body>
+    <div id="header">
+        <div class="dualbrand">
+            <img src="/WEB-INF/graphics/shapka.png" alt=""/>
+        </div>
+        <div id="content">
+            <ui:insert name="content">
+                [Template content will be inserted here]
+            </ui:insert>
+        </div>
+    </div>
+</h:body>
 </html>
+
