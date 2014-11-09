@@ -5,6 +5,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
 import javax.annotation.ManagedBean;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
@@ -20,52 +21,35 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
-@ManagedBean
-@SessionScoped
-//@WebServlet( urlPatterns = "/CheckUser")
-public class CheckUser extends Dispatcher {
+@Model
+public class CheckUser {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
-    @ManagedProperty(value = "#{login}")
-    private String login;
+    private Users user;
 
-
-    @ManagedProperty(value = "#{password}")
-    private String password;
+    @Produces
+    @Named
+    public Users getUser(){
+        return user;
+    }
 
     @EJB
     private UserService userService;
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-
-//    public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException, FileNotFoundException {
-//        res.setContentType("text/html");
-//        String login = req.getParameter("login");
-//        String password = req.getParameter("password");
     public void checkUser(){
         List<Users> users = userService.getUsers();
         for (Users u : users) {
-            if (u.getName().equals(login) && u.getPassword().equals(password)) {
-                if (u.getStatus().equals(Users.Status.Administrator)) {
-                    logger.info("Administrator " + login + " logged in.");
-//                    req.getSession().setAttribute("isLogged", "true");
-//                    this.forward("/successLoginAdmin.jsp", req, res);
-                } else {
-                    logger.info("Driver " + login + " logged in.");
-//                    req.getSession().setAttribute("isLogged", "true");
-//                    this.forward("/successLoginDriver.jsp", req, res);
-                }
+            if (u.getName().equals(user.getName()) && u.getPassword().equals(user.getPassword())) {
+
             } else {
 //                this.forward("/errorLogin.jsp", req, res);
             }
         }
+    }
+
+    @PostConstruct
+    public void initNewUser(){
+        user = new Users();
     }
 
 }

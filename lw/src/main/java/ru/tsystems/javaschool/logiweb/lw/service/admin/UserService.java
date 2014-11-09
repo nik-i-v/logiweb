@@ -11,4 +11,5 @@ public interface UserService {
     List<Users> getUsers();
 
     void addUser(String name, String password, Users.Status status);
+
 }

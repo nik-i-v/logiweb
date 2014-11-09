@@ -10,13 +10,12 @@
         <h:form id="reg">
             <h:panelGrid columns="3" columnClasses="titleCell">
                 <h:outputLabel for="id" value="Login:"/>
-                <h:inputText id="id" value="#{login}" />
+                <h:inputText id="id" value="#{user.name}" />
                 <h:message for="id" errorClass="invalid"/>
 
                 <h:outputLabel for="name" value="Password:"/>
-                <h:inputText id="name" value="#{password}" />
+                <h:inputSecret id="name" value="#{user.password}" />
                 <h:message for="name" errorClass="invalid"/>
-
             </h:panelGrid>
 
             <p>
@@ -27,6 +26,5 @@
                 </h:panelGrid>
             </p>
         </h:form>
-
     </ui:define>
 </ui:composition>
