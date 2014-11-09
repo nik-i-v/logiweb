@@ -5,99 +5,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-    <display-name>Archetype Created Web Application</display-name>
     <servlet>
-        <servlet-name>CheckUser</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.CheckUser</servlet-class>
+        <display-name>FacesServlet</display-name>
+        <servlet-name>FacesServlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CheckUser</servlet-name>
-        <url-pattern>/CheckUser</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>CheckAdminAction</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.CheckAdminAction</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CheckAdminAction</servlet-name>
-        <url-pattern>/ui/CheckAdminAction</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>CheckDriverAction</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.CheckDriverAction</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CheckDriverAction</servlet-name>
-        <url-pattern>/ui/CheckDriverAction</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ChangeGoodsStatus</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.ChangeGoodsStatus</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ChangeGoodsStatus</servlet-name>
-        <url-pattern>/ui/ChangeGoodsStatus</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ChangeDriverStatus</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.ChangeDriverStatus</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ChangeDriverStatus</servlet-name>
-        <url-pattern>/ui/ChangeDriverStatus</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>AddFuraAndDriversToOrder</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.AddFuraAndDriversToOrder</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name> AddFuraAndDriversToOrder</servlet-name>
-        <url-pattern>/ui/AddFuraAndDriversToOrder</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>CloseOrder</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.CloseOrder</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CloseOrder</servlet-name>
-        <url-pattern>/ui/CloseOrder</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>AddGoods</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.AddGoods</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddGoods</servlet-name>
-        <url-pattern>/ui/AddGoods</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>AddDriver</servlet-name>
-        <servlet-class>ru.tsystems.logiweb.ui.servlet.AddDriver</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddDriver</servlet-name>
-        <url-pattern>/ui/AddDriver</url-pattern>
+        <servlet-name>FacesServlet</servlet-name>
+        <url-pattern>/*.jsf</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-    <servlet-name>AddFura</servlet-name>
-    <servlet-class>ru.tsystems.logiweb.ui.servlet.AddFura</servlet-class>
-</servlet>
-    <servlet-mapping>
-        <servlet-name>AddFura</servlet-name>
-        <url-pattern>/ui/AddFura</url-pattern>
-    </servlet-mapping>
-    <filter>
-        <filter-name>SystemAccessFilter</filter-name>
-        <filter-class>ru.tsystems.logiweb.ui.servlet.LoginFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>SystemAccessFilter</filter-name>
-        <url-pattern>/ui/*</url-pattern>
-    </filter-mapping>
-    <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
-    </welcome-file-list>
-
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/faces-config.xml</param-value>
+    </context-param>
 </web-app>
-        
