@@ -4,7 +4,7 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:h="http://java.sun.com/jsf/html"
-                template="/WEB-INF/templates/header.xhtml">
+                template="/WEB-INF/templates/main.xhtml">
     <ui:define name="content">
 
         <h:form id="reg">
@@ -17,18 +17,11 @@
                 <h:inputSecret id="name" value="#{user.password}" />
                 <h:message for="name" errorClass="invalid"/>
 
-                <h:outputLabel value="Status:"/>
-                <h:selectOneMenu value="#{user.status}">
-                    <f:selectItem itemValue="Administrator" itemLabel="Administrator" />
-                    <f:selectItem itemValue="Driver" itemLabel="Driver" />
-                </h:selectOneMenu>
-                <!--<h:inputSecret id="status" value="" />-->
-                <!--<h:message for="status" errorClass="invalid"/>-->
             </h:panelGrid>
 
             <p>
                 <h:panelGrid columns="2">
-                    <h:commandButton id="register" action="#{checkUser.checkUser}" value="Log in" styleClass="register"/>
+                    <h:commandButton id="but" action="#{checkUser.checkUser}" value="Log in"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
                 </h:panelGrid>

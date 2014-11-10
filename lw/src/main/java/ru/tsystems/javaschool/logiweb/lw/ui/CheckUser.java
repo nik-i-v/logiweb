@@ -4,20 +4,11 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
-import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
-import javax.faces.bean.ManagedProperty;
 import javax.inject.Named;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
@@ -40,7 +31,7 @@ public class CheckUser implements Serializable {
 
     public String checkUser() {
         List<Users> users = userService.getUsers();
-        if (isExists(users, user)){
+        if (isAdmin(users, user)){
             return "success";
         } else {
             return "fail";
@@ -52,10 +43,10 @@ public class CheckUser implements Serializable {
         user = new Users();
     }
 
-    private boolean isExists(List<Users> users, Users user){
+    private boolean isAdmin(List<Users> users, Users user){
         for (Users u: users){
             if (u.getName().equals(user.getName()) && u.getPassword().equals(user.getPassword()) &&
-                    u.getStatus().equals(user.getStatus())){
+                    u.getStatus().equals(Users.Status.Administrator)){
                 return true;
             }
         }
