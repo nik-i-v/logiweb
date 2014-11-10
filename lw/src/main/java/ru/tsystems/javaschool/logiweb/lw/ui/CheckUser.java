@@ -40,7 +40,7 @@ public class CheckUser implements Serializable {
 
     public String checkUser() {
         List<Users> users = userService.getUsers();
-        if (users.contains(user)) {
+        if (isExists(users, user)){
             return "success";
         } else {
             return "fail";
@@ -51,6 +51,18 @@ public class CheckUser implements Serializable {
     public void initNewUser() {
         user = new Users();
     }
+
+    private boolean isExists(List<Users> users, Users user){
+        for (Users u: users){
+            if (u.getName().equals(user.getName()) && u.getPassword().equals(user.getPassword()) &&
+                    u.getStatus().equals(user.getStatus())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
 }
 
