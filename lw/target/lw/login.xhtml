@@ -16,6 +16,14 @@
                 <h:outputLabel for="name" value="Password:"/>
                 <h:inputSecret id="name" value="#{user.password}" />
                 <h:message for="name" errorClass="invalid"/>
+
+                <h:outputLabel value="Status:"/>
+                <h:selectOneMenu value="#{user.status}">
+                    <f:selectItem itemValue="Administrator" itemLabel="Administrator" />
+                    <f:selectItem itemValue="Driver" itemLabel="Driver" />
+                </h:selectOneMenu>
+                <!--<h:inputSecret id="status" value="" />-->
+                <!--<h:message for="status" errorClass="invalid"/>-->
             </h:panelGrid>
 
             <p>

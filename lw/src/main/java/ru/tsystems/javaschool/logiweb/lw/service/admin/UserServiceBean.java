@@ -19,7 +19,7 @@ public class UserServiceBean implements UserService {
 
     @Override
     public List<Users> getUsers() {
-        return entityManager.createQuery("SELECT u.name, u.password, u.status FROM Users u").getResultList();
+        return entityManager.createQuery("SELECT u FROM Users u").getResultList();
     }
 
     @Override

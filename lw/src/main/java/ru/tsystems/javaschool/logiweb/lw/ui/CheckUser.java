@@ -31,26 +31,24 @@ public class CheckUser implements Serializable {
 
     @Produces
     @Named
-    public Users getUser(){
+    public Users getUser() {
         return user;
     }
 
     @EJB
     private UserService userService;
 
-    public void checkUser(){
+    public String checkUser() {
         List<Users> users = userService.getUsers();
-        for (Users u : users) {
-            if (u.getName().equals(user.getName()) && u.getPassword().equals(user.getPassword()) && u.getStatus().equals(Users.Status.Administrator)) {
-
-            } else {
-//                this.forward("/errorLogin.jsp", req, res);
-            }
+        if (users.contains(user)) {
+            return "success";
+        } else {
+            return "fail";
         }
     }
 
     @PostConstruct
-    public void initNewUser(){
+    public void initNewUser() {
         user = new Users();
     }
 

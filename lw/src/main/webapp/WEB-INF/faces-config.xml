@@ -22,6 +22,20 @@
         http://java.sun.com/xml/ns/javaee
         http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
+
+    <navigation-rule>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/successLogin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>fail</from-outcome>
+            <to-view-id>/errorLogin.xhtml</to-view-id>
+        </navigation-case>
+
+    </navigation-rule>
+
    <!-- This descriptor activates the JSF 2.0 Servlet -->
 
    <!-- Write your navigation rules here. You are encouraged to use CDI for 
