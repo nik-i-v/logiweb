@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Model
+@Named
 public class CheckUser implements Serializable {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
@@ -48,10 +49,10 @@ public class CheckUser implements Serializable {
         }
     }
 
-//    @PostConstruct
-//    public void initNewUser(){
-//        user = new Users();
-//    }
+    @PostConstruct
+    public void initNewUser(){
+        user = new Users();
+    }
 
 }
 
