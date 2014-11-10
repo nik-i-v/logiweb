@@ -41,7 +41,7 @@ body{
     height: 82px;
     padding-left: 40px;
     /*background: url(images/buttons.png) left top no-repeat;*/
-    padding: 0px 0px 0px 300px;
+    padding: 0px 0px 0px 500px;
 }
 
 #buttons a {
@@ -56,6 +56,14 @@ body{
     padding-top: 32px;
     height: 50px;
 
+}
+
+#logout {
+    text-align:center;
+    height: 30px;
+    padding-left: 40px;
+    /*background: url(images/buttons.png) left top no-repeat;*/
+    padding: 0px 0px 0px 900px;
 }
 
 .but {
@@ -83,7 +91,7 @@ body{
 .circl_all {
     height: 58px;
     vertical-align:top;
-    padding: 27px 0px 0px 113px;
+    padding: 27px 0px 0px 113px;}
     /*background: url(images/circl_all.png) 113px 27px no-repeat; }*/
 
 .circl {
@@ -103,7 +111,7 @@ body{
     color: #000000;
 }
 
-.razd_h { height: 30px;
+.razd_h { height: 30px;}
     /*background: url(images/razd_h.gif) 15px repeat-x;}*/
 
 .home_box {

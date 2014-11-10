@@ -17,7 +17,7 @@ html,
 
 body{
     font: 18px Arial, Helvetica, sans-serif;
-    color: rgba(254, 237, 35, 0.89);
+    /*color: rgba(254, 237, 35, 0.89);*/
     background-image: url(../../resources/images/bg.jpg) ;
     overflow-y:hidden;
     text-align: center;
@@ -28,7 +28,7 @@ body{
 input[type=text],
 input[type=password],
 input[type=number] {
-    color: #e9e03e;
+    color: #000000;
     /*background: #68add8;*/
     /*background: linear-gradient(45deg, #68add8 0%, #8cbede 100%);*/
     width: 250px;

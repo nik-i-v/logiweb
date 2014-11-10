@@ -15,24 +15,29 @@
                     <div id="main">
                         <!-- header begins -->
                         <div id="header">
+<div id="logout">
+                            <h:form>
+                                <p>
+                                    <h:panelGrid columns="2">
+                                        <h:commandButton id="but" action="#{checkUser.logout}" value="Logout"
+                                                         styleClass="but"/>
+                                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid"
+                                                    warnClass="warning"
+                                                    globalOnly="true"/>
+                                    </h:panelGrid>
+                                </p>
+                            </h:form>
+</div>
+                            <div class="top">
+                                <!--<img src="resources/css/shapka.png" alt=" "/>-->
+                            </div>
                             <div id="buttons">
                                 <a href="drivers.xhtml" class="but" title="">Drivers</a>
                                 <a href="wagons.xhtml" class="but" title="">Wagons</a>
                                 <a href="orders.xhtml" class="but" title="">Orders</a>
-                                <h:form>
-                                    <p>
-                                        <h:panelGrid columns="2">
-                                            <h:commandButton id="but" action="#{checkUser.logout}" value="Logout" styleClass="but"/>
-                                            <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                                        globalOnly="true"/>
-                                        </h:panelGrid>
-                                    </p>
-                                </h:form>
                             </div>
                         </div>
-                        <div class="top">
-                            <!--<img src="resources/css/shapka.png" alt=" "/>-->
-                        </div>
+
 
                         <div id="content">
                             <ui:insert name="content">
