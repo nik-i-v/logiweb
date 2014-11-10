@@ -48,10 +48,10 @@ public class CheckUser implements Serializable {
         }
     }
 
-    @PostConstruct
-    public void initNewUser(){
-        user = new Users();
-    }
+//    @PostConstruct
+//    public void initNewUser(){
+//        user = new Users();
+//    }
 
 }
 
