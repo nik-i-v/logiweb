@@ -5,18 +5,25 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!--<h:outputStylesheet name="" />-->
+    <h:outputStylesheet name="css/screen.css" />
 </h:head>
 <h:body>
-    <div id="header">
+    <div id="container">
+        <div id="buttons">
+            <a href="index.html" class="but but_t"  title="">Drivers</a>
+            <a href="blog.html" class="but" title="">Wagons</a>
+            <a href="gallery.html"  class="but" title="">Orders</a>
+        </div>
+
         <div class="dualbrand">
-            <img src="/WEB-INF/graphics/shapka.png" alt=""/>
+            <img src="resources/images/shapka.png" alt=" " />
         </div>
         <div id="content">
             <ui:insert name="content">
                 [Template content will be inserted here]
             </ui:insert>
         </div>
+
     </div>
 </h:body>
 </html>

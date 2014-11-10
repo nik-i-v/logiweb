@@ -1,0 +1,24 @@
+body{
+    font: 12px Arial, Helvetica, sans-serif;
+    background: url(images/bg.png);
+    line-height: 18px;
+}
+
+#header {
+    width:1000px;
+    height: 142px;
+}
+
+#container {
+    width: 988px;
+    margin: 0px auto;
+    background:url(images/main.jpg) right top no-repeat;}
+
+#buttons{
+    text-align:center;
+    height: 82px;
+    padding-left: 0px;
+    background: url(images/buttons.png) left top no-repeat;
+    padding: 0px 0px 0px 300px;
+}
+
