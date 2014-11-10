@@ -4,7 +4,6 @@ ru\tsystems\javaschool\logiweb\lw\server\entities\DriverShift$Status.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\DriverService.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\DriverServiceBean.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\FuraService.class
-ru\tsystems\javaschool\logiweb\lw\ui\Dispatcher.class
 ru\tsystems\javaschool\logiweb\lw\server\entities\Fura$Status.class
 ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDriversBean.class
 ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDrivers.class
@@ -14,7 +13,7 @@ ru\tsystems\javaschool\logiweb\lw\service\admin\OrderServiceBean.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\FuraSeviceBean.class
 ru\tsystems\javaschool\logiweb\lw\server\entities\OrderStatus.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\OrderService.class
-ru\tsystems\javaschool\logiweb\lw\ui\CheckAdminAction.class
+ru\tsystems\javaschool\logiweb\lw\ui\DriverAction.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\UserServiceBean.class
 ru\tsystems\javaschool\logiweb\lw\server\entities\Fura.class
 ru\tsystems\javaschool\logiweb\lw\server\entities\OrderInfo.class

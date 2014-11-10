@@ -38,6 +38,10 @@ public class CheckUser implements Serializable {
         }
     }
 
+    public void logout(){
+        user = null;
+    }
+
     @PostConstruct
     public void initNewUser() {
         user = new Users();
