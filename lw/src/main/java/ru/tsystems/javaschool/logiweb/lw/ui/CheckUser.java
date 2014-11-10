@@ -18,11 +18,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
 
 @Model
-public class CheckUser {
+public class CheckUser implements Serializable {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
     private Users user;
@@ -39,7 +40,7 @@ public class CheckUser {
     public void checkUser(){
         List<Users> users = userService.getUsers();
         for (Users u : users) {
-            if (u.getName().equals(user.getName()) && u.getPassword().equals(user.getPassword())) {
+            if (u.getName().equals(user.getName()) && u.getPassword().equals(user.getPassword()) && u.getStatus().equals(Users.Status.Administrator)) {
 
             } else {
 //                this.forward("/errorLogin.jsp", req, res);

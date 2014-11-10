@@ -3,6 +3,7 @@ package ru.tsystems.javaschool.logiweb.lw.service.admin;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
@@ -14,7 +15,7 @@ public class FuraSeviceBean implements FuraService {
 
     private static Logger logger = Logger.getLogger(FuraSeviceBean.class.getName());
 
-    @PersistenceContext(unitName = "logiweb", type = PersistenceContextType.EXTENDED)
+    @Inject
     private EntityManager entityManager;
 
     @Override

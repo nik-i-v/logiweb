@@ -8,8 +8,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 @Table(name = "users")
 public class Users {
     @Id
@@ -21,7 +23,6 @@ public class Users {
     private String password;
 
     @Column(name = "status")
-    @NotNull
     private Status status;
 
     public Users() {

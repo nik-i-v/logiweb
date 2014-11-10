@@ -14,13 +14,12 @@ import java.util.List;
 @Stateless
 public class UserServiceBean implements UserService {
 
-
     @Inject
     private EntityManager entityManager;
 
     @Override
     public List<Users> getUsers() {
-        return entityManager.createQuery("SELECT u FROM Users u").getResultList();
+        return entityManager.createQuery("SELECT u.name, u.password, u.status FROM Users u").getResultList();
     }
 
     @Override

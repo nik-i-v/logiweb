@@ -4,6 +4,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
 public class DriverServiceBean implements DriverService{
     private Logger logger = Logger.getLogger(DriverServiceBean.class.getName());
 
-    @PersistenceContext(unitName = "logiweb", type = PersistenceContextType.EXTENDED)
+    @Inject
     private EntityManager entityManager;
 
     @Override
