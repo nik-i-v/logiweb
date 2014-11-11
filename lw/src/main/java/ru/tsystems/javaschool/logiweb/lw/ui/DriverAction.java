@@ -23,7 +23,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
-//@Model
+@Model
 @ManagedBean
 @SessionScoped
 //@Named
@@ -31,7 +31,7 @@ public class DriverAction implements Serializable {
     private static Logger logger = Logger.getLogger(DriverAction.class.getName());
 
     private Drivers driver;
-    private List<Drivers> drivers ;
+    private static List<Drivers> drivers ;
 
     @Produces
     @Named
@@ -39,7 +39,16 @@ public class DriverAction implements Serializable {
         return driver;
     }
 
+    public void setDriver(Drivers driver) {
+        this.driver = driver;
+    }
+
+    public static void setDrivers(List<Drivers> drivers) {
+        DriverAction.drivers = drivers;
+    }
+
     @Produces
+
     @Named
     public List<Drivers> getDrivers(){
         drivers = getAllDrivers();
@@ -50,6 +59,7 @@ public class DriverAction implements Serializable {
 
     @PostConstruct
     public void initNewDriver(){
+        drivers = getAllDrivers();
         driver = new Drivers();
 //        getAllDrivers();
     }

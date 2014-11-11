@@ -10,20 +10,20 @@
             <div class="home_box">
                 <h:form id="addDriver">
                     <h:panelGrid columns="3" columnClasses="titleCell">
-                        <h:outputLabel for="surname" value="Number:"/>
-                        <h:inputText id="surname" value="#{driver.surname}">
-                            <f:validator validatorId="nameValidator" />
+                        <h:outputLabel for="number" value="Number:"/>
+                        <h:inputText id="number" value="#{fura.furaNumber}">
+                            <f:validator validatorId="furaValidator"/>
                         </h:inputText>
+                        <h:message for="number" errorClass="invalid"/>
 
-                        <h:message for="surname" errorClass="invalid"/>
-
-                        <h:outputLabel for="name" value="Driver count"/>
-                        <h:inputText id="name" value="#{driver.name}">
-                            <f:validator validatorId="nameValidator" />
+                        <h:outputLabel for="count" value="Driver count"/>
+                        <h:inputText id="count" value="#{fura.driverCount}" validatorMessage="Not a digit!" >
+                            <f:convertNumber integerOnly="true"/>
                         </h:inputText>
-                        <h:message for="name" errorClass="invalid"/>
+                        <h:message for="count" errorClass="invalid"/>
 
-                        <h:selectOneMenu>
+
+                        <h:selectOneMenu  value="#{fura.capacity}" >
                             <f:selectItem itemValue="small" itemLabel="Small (1000 kg)"/>
                             <f:selectItem itemValue="middle" itemLabel="Middle (5000 kg)"/>
                             <f:selectItem itemValue="large" itemLabel="Large (10000 kg)"/>
@@ -31,7 +31,7 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:commandButton id="but" action="#{driverAction.addDriver}" value="Add" styleClass="but"/>
+                        <h:commandButton id="but" action="#{furaAction.addFura}" value="Add" styleClass="but"/>
                         <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                     globalOnly="true"/>
                     </h:panelGrid>
@@ -39,29 +39,22 @@
                 </h:form>
             </div>
             <div class="home_box">
-                <h:panelGroup rendered="#{empty drivers}">
-                    <em>No registered drivers.</em>
+                <h:panelGroup rendered="#{empty furas}">
+                    <em>No registered furas.</em>
                 </h:panelGroup>
-                <h:dataTable var="driver"  value="#{driverAction.allDrivers}" rendered="#{not empty drivers}" styleClass="simpletablestyle">
+                <h:dataTable var="fura" value="#{furaAction.allFuras}" rendered="#{not empty furas}"
+                             styleClass="simpletablestyle">
                     <h:column>
-                        <f:facet name="header">Surname</f:facet>
-                        <h:outputText value="#{driver.surname}" />
+                        <f:facet name="header">Number</f:facet>
+                        <h:outputText value="#{fura.furaNumber}"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Name</f:facet>
-                        <h:outputText value="#{driver.name}" />
+                        <f:facet name="header">Driver count</f:facet>
+                        <h:outputText value="#{fura.driverCount}"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Patronymic</f:facet>
-                        <h:outputText value="#{driver.patronymic}" />
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">License</f:facet>
-                        <h:outputText value="#{driver.license}" />
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Status</f:facet>
-                        <h:outputText value="#{driver.driverShift.status}" />
+                        <f:facet name="header">Capacity</f:facet>
+                        <h:outputText value="#{fura.capacity}"/>
                     </h:column>
                 </h:dataTable>
             </div>

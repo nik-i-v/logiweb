@@ -27,12 +27,20 @@
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>success</from-outcome>
-            <to-view-id>/admin.xhtml</to-view-id>
+            <to-view-id>/drivers.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>fail</from-outcome>
             <to-view-id>/errorLogin.xhtml</to-view-id>
         </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+
     </navigation-rule>
 
    <!-- This descriptor activates the JSF 2.0 Servlet -->

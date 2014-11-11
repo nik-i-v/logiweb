@@ -38,8 +38,9 @@ public class CheckUser implements Serializable {
         }
     }
 
-    public void logout(){
+    public String logout(){
         user = null;
+        return "logout";
     }
 
     @PostConstruct
