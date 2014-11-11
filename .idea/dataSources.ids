@@ -28,10 +28,9 @@
       <column name="surname" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="patronymic" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="license_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="license_id" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
       <primary-key name="PRIMARY" columns="drivers_id"/>
       <exported-key name="driver_shift_ibfk_1" table="driver_shift" schema="" catalog="driver" columns="driver_shift_id"/>
-      <index name="unique_license_id" unique="true" columns="license_id"/>
     </table>
     <table name="fura" schema="" catalog="driver" type="TABLE">
       <column name="fura_number" sqlType="VARCHAR" precision="7" scale="0" nullable="false" jdbcType="12" def="Jyc="/>

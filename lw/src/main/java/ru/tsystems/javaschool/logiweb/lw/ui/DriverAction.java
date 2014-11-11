@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -35,10 +36,22 @@ public class DriverAction implements Serializable {
     @EJB
     private DriverService driverService;
 
+    @PostConstruct
+    public void initNewDriver(){
+        driver = new Drivers();
+    }
 
     public List<Drivers> getDrivers() {
         return driverService.getAllDrivers();
     }
 
+    public boolean addDriver(){
+        try {
+            driverService.addDriver(driver.getSurname(), driver.getName(), driver.getPatronymic(), driver.getLicense());
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
 
 }

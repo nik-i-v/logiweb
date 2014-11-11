@@ -34,10 +34,8 @@ public class Drivers implements Serializable {
     @Column(name = "patronymic")
     private String patronymic;
 
-    @NotNull
-    @Digits(integer = 11, fraction = 0)
-    @Size(min = 11, max = 11, message = "must have 11 digits")
-    @Column(name = "license_id", length = 11)
+    @Pattern(regexp = "^[0-9]{11}$")
+    @Column(name = "license_id")
     private Long license;
 
     @OneToOne(cascade = CascadeType.ALL)

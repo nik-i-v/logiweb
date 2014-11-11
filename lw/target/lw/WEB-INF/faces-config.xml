@@ -33,7 +33,6 @@
             <from-outcome>fail</from-outcome>
             <to-view-id>/errorLogin.xhtml</to-view-id>
         </navigation-case>
-
     </navigation-rule>
 
    <!-- This descriptor activates the JSF 2.0 Servlet -->
