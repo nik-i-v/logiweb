@@ -14,7 +14,6 @@ import java.io.Serializable;
 @Table(name = "drivers", uniqueConstraints = @UniqueConstraint(columnNames = "drivers_id"))
 public class Drivers implements Serializable {
     @Id
-    @NotNull
     @Column(name = "drivers_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer driversId;
@@ -34,7 +33,8 @@ public class Drivers implements Serializable {
     @Column(name = "patronymic")
     private String patronymic;
 
-    @Pattern(regexp = "^[0-9]{11}$")
+    @Digits(integer = 11, fraction = 0)
+//    @Size(min = 11, max = 11, message = "must have 11 digits")
     @Column(name = "license_id")
     private Long license;
 

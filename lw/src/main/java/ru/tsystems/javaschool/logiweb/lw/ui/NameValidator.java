@@ -12,9 +12,7 @@ import java.util.regex.Pattern;
 @FacesValidator("nameValidator")
 public class NameValidator implements Validator {
 
-    private static final String NAME_PATTERN = "^[_A-Za-z0-9-]+(\\." +
-            "[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*" +
-            "(\\.[A-Za-z]{2,})$";
+    private static final String NAME_PATTERN = "^[A-z]{1}[a-z]*$";
 
     private Pattern pattern;
     private Matcher matcher;

@@ -15,7 +15,6 @@ public class DriverShift implements Serializable {
 
     @Id
     @Column(name = "driver_shift_id")
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer driverId;
 
