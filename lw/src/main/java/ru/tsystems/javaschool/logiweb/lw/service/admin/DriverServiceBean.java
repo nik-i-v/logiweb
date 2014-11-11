@@ -2,6 +2,7 @@ package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Model;
@@ -33,13 +34,18 @@ public class DriverServiceBean implements DriverService{
         checkIfDriverIdIsUnique(licenseId);
         Drivers driver = new Drivers();
         DriverShift driverShift = new DriverShift();
+        Users user = new Users();
         driver.setSurname(surname);
         driver.setName(name);
         driver.setPatronymic(patronymic);
         driver.setLicense(licenseId);
         driverShift.setStatus(DriverShift.Status.notShift);
+        user.setName(licenseId.toString());
+        user.setPassword("pass");
+        user.setStatus(Users.Status.Driver);
         entityManager.persist(driver);
         entityManager.persist(driverShift);
+        entityManager.persist(user);
     }
 
     private void checkIfDriverIdIsUnique(Long licenseId) throws SQLException {
