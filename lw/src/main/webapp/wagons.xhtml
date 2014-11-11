@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/header.xhtml">
+    <ui:define name="content">
+        <div class="all_box">
+            <div class="home_box">
+                <h:form id="addDriver">
+                    <h:panelGrid columns="3" columnClasses="titleCell">
+                        <h:outputLabel for="surname" value="Number:"/>
+                        <h:inputText id="surname" value="#{driver.surname}">
+                            <f:validator validatorId="nameValidator" />
+                        </h:inputText>
+
+                        <h:message for="surname" errorClass="invalid"/>
+
+                        <h:outputLabel for="name" value="Driver count"/>
+                        <h:inputText id="name" value="#{driver.name}">
+                            <f:validator validatorId="nameValidator" />
+                        </h:inputText>
+                        <h:message for="name" errorClass="invalid"/>
+
+                        <h:selectOneMenu>
+                            <f:selectItem itemValue="small" itemLabel="Small (1000 kg)"/>
+                            <f:selectItem itemValue="middle" itemLabel="Middle (5000 kg)"/>
+                            <f:selectItem itemValue="large" itemLabel="Large (10000 kg)"/>
+                        </h:selectOneMenu>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <h:commandButton id="but" action="#{driverAction.addDriver}" value="Add" styleClass="but"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
+                    </h:panelGrid>
+
+                </h:form>
+            </div>
+            <div class="home_box">
+                <h:panelGroup rendered="#{empty drivers}">
+                    <em>No registered drivers.</em>
+                </h:panelGroup>
+                <h:dataTable var="driver"  value="#{driverAction.allDrivers}" rendered="#{not empty drivers}" styleClass="simpletablestyle">
+                    <h:column>
+                        <f:facet name="header">Surname</f:facet>
+                        <h:outputText value="#{driver.surname}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{driver.name}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Patronymic</f:facet>
+                        <h:outputText value="#{driver.patronymic}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">License</f:facet>
+                        <h:outputText value="#{driver.license}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Status</f:facet>
+                        <h:outputText value="#{driver.driverShift.status}" />
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>

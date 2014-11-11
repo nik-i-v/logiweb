@@ -25,7 +25,6 @@ public class DriverServiceBean implements DriverService{
     @Override
     public List<Drivers> getAllDrivers(){
         return entityManager.createQuery("SELECT ds FROM DriverShift ds").getResultList();
-
     }
 
     @Override

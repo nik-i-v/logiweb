@@ -7,8 +7,10 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
+import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
@@ -21,8 +23,10 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
-@Model
-@Named
+//@Model
+@ManagedBean
+@SessionScoped
+//@Named
 public class DriverAction implements Serializable {
     private static Logger logger = Logger.getLogger(DriverAction.class.getName());
 
