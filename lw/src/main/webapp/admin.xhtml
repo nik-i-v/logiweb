@@ -46,9 +46,31 @@
                 </h:form>
             </div>
             <div class="home_box">
-                <h:form id="get">
-                    <h:outputText id="named" value=""></h:outputText>
-                </h:form>
+                <h:panelGroup rendered="#{empty drivers}">
+                    <em>No registered drivers.</em>
+                </h:panelGroup>
+                <h:dataTable var="driver"  value="#{driverAction.allDrivers}" rendered="#{not empty drivers}" styleClass="simpletablestyle">
+                    <h:column>
+                        <f:facet name="header">Surname</f:facet>
+                        <h:outputText value="#{driver.drivers.surname}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{driver.drivers.name}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Patronymic</f:facet>
+                        <h:outputText value="#{driver.drivers.patronymic}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">License</f:facet>
+                        <h:outputText value="#{driver.drivers.license}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Status</f:facet>
+                        <h:outputText value="#{driver.status}" />
+                    </h:column>
+                </h:dataTable>
             </div>
         </div>
 

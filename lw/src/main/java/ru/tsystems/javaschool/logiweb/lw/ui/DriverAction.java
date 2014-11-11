@@ -1,6 +1,7 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
 
+import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
@@ -26,6 +27,7 @@ public class DriverAction implements Serializable {
     private static Logger logger = Logger.getLogger(DriverAction.class.getName());
 
     private Drivers driver;
+    private List<DriverShift> drivers ;
 
     @Produces
     @Named
@@ -33,15 +35,21 @@ public class DriverAction implements Serializable {
         return driver;
     }
 
+    @Produces
+    @Named
+    public List<DriverShift> getDrivers(){
+        return drivers;
+    }
     @EJB
     private DriverService driverService;
 
     @PostConstruct
     public void initNewDriver(){
         driver = new Drivers();
+//        getAllDrivers();
     }
-
-    public List<Drivers> getDrivers() {
+//
+    public List<DriverShift> getAllDrivers() {
         return driverService.getAllDrivers();
     }
 
