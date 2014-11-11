@@ -23,7 +23,7 @@ public class DriverServiceBean implements DriverService{
     private EntityManager entityManager;
 
     @Override
-    public List<DriverShift> getAllDrivers(){
+    public List<Drivers> getAllDrivers(){
         return entityManager.createQuery("SELECT ds FROM DriverShift ds").getResultList();
 
     }

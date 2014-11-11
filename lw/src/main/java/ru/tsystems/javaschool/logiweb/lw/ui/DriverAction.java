@@ -27,7 +27,7 @@ public class DriverAction implements Serializable {
     private static Logger logger = Logger.getLogger(DriverAction.class.getName());
 
     private Drivers driver;
-    private List<DriverShift> drivers ;
+    private List<Drivers> drivers ;
 
     @Produces
     @Named
@@ -37,7 +37,8 @@ public class DriverAction implements Serializable {
 
     @Produces
     @Named
-    public List<DriverShift> getDrivers(){
+    public List<Drivers> getDrivers(){
+        drivers = getAllDrivers();
         return drivers;
     }
     @EJB
@@ -49,7 +50,7 @@ public class DriverAction implements Serializable {
 //        getAllDrivers();
     }
 //
-    public List<DriverShift> getAllDrivers() {
+    public List<Drivers> getAllDrivers() {
         return driverService.getAllDrivers();
     }
 

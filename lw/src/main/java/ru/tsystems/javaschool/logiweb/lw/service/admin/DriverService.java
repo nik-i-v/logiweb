@@ -9,7 +9,7 @@ import java.util.List;
 
 @Local
 public interface DriverService {
-    List<DriverShift> getAllDrivers();
+    List<Drivers> getAllDrivers();
 
     void addDriver(String surname, String name, String patronymic, Long licenseId) throws SQLException;
 }

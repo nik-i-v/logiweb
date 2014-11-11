@@ -52,23 +52,23 @@
                 <h:dataTable var="driver"  value="#{driverAction.allDrivers}" rendered="#{not empty drivers}" styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Surname</f:facet>
-                        <h:outputText value="#{driver.drivers.surname}" />
+                        <h:outputText value="#{driver.surname}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">Name</f:facet>
-                        <h:outputText value="#{driver.drivers.name}" />
+                        <h:outputText value="#{driver.name}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">Patronymic</f:facet>
-                        <h:outputText value="#{driver.drivers.patronymic}" />
+                        <h:outputText value="#{driver.patronymic}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">License</f:facet>
-                        <h:outputText value="#{driver.drivers.license}" />
+                        <h:outputText value="#{driver.license}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">Status</f:facet>
-                        <h:outputText value="#{driver.status}" />
+                        <h:outputText value="#{driver.driverShift.status}" />
                     </h:column>
                 </h:dataTable>
             </div>
