@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/header.xhtml">
+    <ui:define name="content">
+        <div class="all_box">
+            <div class="home_box">
+                <h:form id="orderActivity">
+                    <div id="food-menu" class="menu">
+                        <span class="menu-title">Продуктовое меню</span>
+                        <ul class="menu-items">
+                            <li>
+                                <h:outputLabel for="name" value="Password:"/>
+                                <h:inputSecret id="name" value="#{user.password}"/>
+                                <h:message for="name" errorClass="invalid"/>
+                            </li>
+                            <li><a href="#sausage">Колбаса</a></li>
+                            <li><a href="#cake">Торт</a></li>
+                        </ul>
+                    </div>
+
+                    <script>
+                        var foodMenu = new Menu({
+                            elem: $('#food-menu')
+                        });
+
+                        foodMenu.open();
+                    </script>
+
+                        <!---->
+                        <!--<p>-->
+                        <!--<h:commandButton id="add" action="" value="Create new order"-->
+                        <!--styleClass="but"/>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                        <!--<h:commandButton id="addGoods" action="" value="Add goods to order"-->
+                        <!--styleClass="but"/>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                        <!--<h:commandButton id="doConfirmed" action="" value="Confirme order"-->
+                        <!--styleClass="but"/>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                        <!--<h:commandButton id="addFuraAndDrivers" action="" value="Add fura and drivers to order"-->
+                        <!--styleClass="but"/>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                        <!--<h:commandButton id="closeOrder" action="" value="Add fura and drivers to order"-->
+                        <!--styleClass="but"/>-->
+                        <!--</p>-->
+                    <!--</h:panelGrid>-->
+
+                    <!--<h:panelGrid columns="2">-->
+                    <!--<h:commandButton id="but" action="" value="" styleClass="but"/>-->
+                    <!--<h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"-->
+                    <!--globalOnly="true"/>-->
+                    <!--</h:panelGrid>-->
+
+                </h:form>
+            </div>
+            <div class="home_box">
+                <h:panelGroup rendered="#{empty furas}">
+                    <em>No registered furas.</em>
+                </h:panelGroup>
+                <h:dataTable var="fura" value="#{furaAction.allFuras}" rendered="#{not empty furas}"
+                             styleClass="simpletablestyle">
+                    <h:column>
+                        <f:facet name="header">Number</f:facet>
+                        <h:outputText value="#{fura.furaNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Driver count</f:facet>
+                        <h:outputText value="#{fura.driverCount}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Capacity</f:facet>
+                        <h:outputText value="#{fura.capacity}"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>

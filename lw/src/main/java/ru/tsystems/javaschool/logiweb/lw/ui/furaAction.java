@@ -4,7 +4,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.FuraService;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -15,7 +15,7 @@ import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
 
-@Model
+//@Model
 @ManagedBean
 @SessionScoped
 public class FuraAction implements Serializable {

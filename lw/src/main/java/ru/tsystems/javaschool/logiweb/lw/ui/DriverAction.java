@@ -7,12 +7,13 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,9 +24,10 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
-@Model
-@ManagedBean
-@SessionScoped
+//@Model // =@Named + @RequestScoped
+@ManagedBean(name = "driverAction")
+@ViewScoped
+//@SessionScoped
 //@Named
 public class DriverAction implements Serializable {
     private static Logger logger = Logger.getLogger(DriverAction.class.getName());
@@ -48,7 +50,6 @@ public class DriverAction implements Serializable {
     }
 
     @Produces
-
     @Named
     public List<Drivers> getDrivers(){
         drivers = getAllDrivers();

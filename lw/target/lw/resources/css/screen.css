@@ -408,4 +408,43 @@ h1{
     /*text-decoration:underline;*/
 /*}*/
 
+/*#nav ul li:hover > ul{*/
+    /*display: block;*/
+/*}*/
+
+/*#nav ul li {*/
+    /*display: none;*/
+/*}*/
+
+.sub-menu
+{
+    display: none;
+}
+.main-item:focus ~ .sub-menu,
+.main-item:active ~ .sub-menu,
+.sub-menu:hover
+{
+    display: block;
+}
+
+
+.menu-items {
+    display: none;
+    margin: 0;
+}
+
+.menu-title {
+    font-weight: bold;
+    cursor: pointer;
+    /*background: url(arrow-right.png) left center no-repeat;*/
+    padding-left: 18px;
+}
+
+.menu-open .menu-items {
+    display: block;
+}
+
+.menu-open .menu-title {
+    /*background-image: url(arrow-down.png);*/
+}
 
