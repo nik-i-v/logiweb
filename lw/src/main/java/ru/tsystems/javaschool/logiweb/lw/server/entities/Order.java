@@ -14,13 +14,13 @@ import java.util.List;
 public class Order implements Serializable {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Size(min = 7, max = 7, message = "must have format: 2 letters and 5 digits")
     @Pattern(regexp = "^[A-Z]{2}\\d{5}$")
     @Column(name = "fura_id")
-    private Integer furaId;
+    private String furaId;
 
     @OneToOne(mappedBy = "order")
     private Fura fura;
@@ -32,6 +32,7 @@ public class Order implements Serializable {
 
     public Order() {
     }
+
 
     public Order(Integer id) {
         this.id = id;
@@ -66,7 +67,7 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public void setFuraId(Integer furaId) {
+    public void setFuraId(String furaId) {
         this.furaId = furaId;
     }
 
@@ -74,7 +75,7 @@ public class Order implements Serializable {
         return id;
     }
 
-    public Integer getFuraId() {
+    public String getFuraId() {
         return furaId;
     }
 

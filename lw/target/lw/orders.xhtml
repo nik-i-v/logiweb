@@ -9,6 +9,7 @@
         <div class="all_box">
             <div class="home_box">
                 <h:form id="orderActivity">
+
                     <h:panelGrid id="addOrder" columns="3">
                         <h:commandButton id="add" value="Create order" styleClass="but"
                                          action="#{orderAction.addOrder}"/>
@@ -16,85 +17,12 @@
                                     globalOnly="true"/>
                     </h:panelGrid>
 
-                    <h:panelGrid id="addGoods" columns="3">
-                        <h:outputLabel for="orderNumber" value="Order:"/>
-                        <h:inputText id="orderNumber" value="#{orderAction.orderNumber}"
-                                     validatorMessage="Invalid format">
+                    <div id="but">
+                        <a href="/lw/add_goods.jsf" class="but" title="">Add goods</a>
+                        <a href="/lw/add_drivers_and_fura.jsf" class="but" title="">Add drivers and fura</a>
+                        <a href="/lw/close.jsf" class="but" title="">Close order</a>
+                    </div>
 
-                        </h:inputText>
-                        <h:message for="orderNumber" errorClass="invalid"/>
-
-                        <h:outputLabel for="name" value="Name:"/>
-                        <h:inputText id="name" value="#{orderInfo.name}" validatorMessage="Invalid format">
-                            <f:validator validatorId="nameValidator"/>
-                        </h:inputText>
-                        <h:message for="name" errorClass="invalid"/>
-
-                        <h:outputLabel for="gpsLat" value="GPS Latitude:"/>
-                        <h:inputText id="gpsLat" value="#{orderInfo.gpsLat}" validatorMessage="Invalid format">
-                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
-                        </h:inputText>
-                        <h:message for="gpsLat" errorClass="invalid"/>
-
-                        <h:outputLabel for="gpsLong" value="GPS Longitude:"/>
-                        <h:inputText id="gpsLong" value="#{orderInfo.gpsLong}" validatorMessage="Invalid format">
-                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
-                        </h:inputText>
-                        <h:message for="gpsLong" errorClass="invalid"/>
-
-                        <h:outputLabel for="weight" value="Weight:"/>
-                        <h:inputText id="weight" value="#{orderInfo.weight}" validatorMessage="Invalid format">
-                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
-                        </h:inputText>
-                        <h:message for="weight" errorClass="invalid"/>
-
-
-                        <h:commandButton id="addG" value="Add goods" styleClass="but" action="#{orderAction.addGoods}"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
-
-                        <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                         action="#{orderAction.doConfirmed}"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
-
-                    </h:panelGrid>
-
-                    Add drivers and fura.
-                    <h:panelGrid columns="3" id="addDrivers">
-
-                        <h:outputLabel for="orderNumberG" value="OrderNumber"/>
-                        <h:inputText id="orderNumberG" value="#{orderAction.orderNumber}" validatorMessage="Invalid format">
-                        </h:inputText>
-                        <h:message for="orderNumberG" errorClass="invalid"/>
-
-                        <h:outputLabel for="driverList" value="OrderNumber"/>
-                        <h:inputText id="driverList" value="#{order.id}" validatorMessage="Invalid format">
-                            <f:convertNumber integerOnly="true" maxIntegerDigits="1"/>
-                        </h:inputText>
-                        <h:message for="driverList" errorClass="invalid"/>
-
-                        <h:outputLabel for="furaNumber" value="OrderNumber"/>
-                        <h:inputText id="furaNumber" value="#{order.id}" validatorMessage="Invalid format">
-                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
-                        </h:inputText>
-                        <h:message for="furaNumber" errorClass="invalid"/>
-
-                    </h:panelGrid>
-
-                    Close order.
-                    <h:panelGrid columns="3" id="closeOrder">
-
-                        <h:outputLabel for="orderNumberC" value="OrderNumber"/>
-                        <h:inputText id="orderNumberC" value="#{orderAction.orderNumber}" validatorMessage="Invalid format">
-                        </h:inputText>
-                        <h:message for="orderNumberC" errorClass="invalid"/>
-
-                        <h:commandButton id="closingOrder" value="Close order" styleClass="but"
-                                         action="#{orderAction.closeOrder()}"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
-                    </h:panelGrid>
 
 
                 </h:form>

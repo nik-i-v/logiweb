@@ -1,5 +1,6 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
+import ru.tsystems.javaschool.logiweb.lw.server.dao.OrderDAO;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 
 
@@ -12,11 +13,11 @@ import java.util.logging.Logger;
 
 @Stateless
 public class OrderServiceBean implements OrderService {
-
+OrderDAO orderDAO = new OrderDAO();
     private static Logger logger = Logger.getLogger(OrderServiceBean.class.getName());
 
     @Produces
-    @PersistenceContext(unitName = "logiweb", type = PersistenceContextType.EXTENDED)
+    @PersistenceContext(unitName = "logiweb")
     private static EntityManager entityManager;
 
     @Override
@@ -28,14 +29,14 @@ public class OrderServiceBean implements OrderService {
      * @return order number
      */
     @Override
-    public Integer addOrder() {
+    public void addOrder() {
         logger.info("Add new order");
         Order order = new Order();
         OrderStatus orderStatus = new OrderStatus();
         orderStatus.setStatus(OrderStatus.Status.created);
-        entityManager.persist(order);
-        entityManager.persist(orderStatus);
-        return order.getId();
+        entityManager.flush();
+        orderDAO.add(orderStatus, order);
+//        return order.getId();
     }
 
     @Override

@@ -7,6 +7,7 @@ ru\tsystems\javaschool\logiweb\lw\service\admin\DriverServiceBean.class
 ru\tsystems\javaschool\logiweb\lw\ui\FuraValidator.class
 ru\tsystems\javaschool\logiweb\lw\ui\FuraAction.class
 ru\tsystems\javaschool\logiweb\lw\service\admin\FuraService.class
+ru\tsystems\javaschool\logiweb\lw\server\dao\OrderDAO.class
 ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDriversBean.class
 ru\tsystems\javaschool\logiweb\lw\server\entities\Fura$Status.class
 ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDrivers.class

@@ -12,7 +12,7 @@ import java.util.List;
 public class OrderStatus implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "order_status_id")
     private Integer orderId;
 

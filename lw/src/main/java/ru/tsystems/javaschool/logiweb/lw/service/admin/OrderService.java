@@ -12,7 +12,7 @@ import java.util.List;
 public interface OrderService {
     List<Order> getAllOrders();
 
-    Integer addOrder();
+    void addOrder();
 
     void addGoods(Integer orderNumber, String name, Double gpsLat, Double gpsLong, Double weight);
 

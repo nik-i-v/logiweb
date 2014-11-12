@@ -62,6 +62,7 @@ public class OrderAction {
     }
 
     public void addOrder() {
+//        order = new Order();
         orderService.addOrder();
     }
 
