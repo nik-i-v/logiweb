@@ -52,7 +52,8 @@ public class FuraAction implements Serializable {
 
     //
     public List<Fura> getAllFuras() {
-        return furaService.getAllFura();
+        furas = furaService.getAllFura();
+        return  furas;
     }
 
     public boolean addFura() {

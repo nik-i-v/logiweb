@@ -6,209 +6,102 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 template="/WEB-INF/templates/header.xhtml">
     <ui:define name="content">
-        <style>
-            .nav {
-                margin-bottom: 18px;
-                margin-left: 0;
-                list-style: none;
-            }
-
-            .nav > li > a {
-                display: block;
-            }
-
-            .nav-tabs{
-                *zoom: 1;
-            }
-
-            .nav-tabs:before,
-            .nav-tabs:after {
-                display: table;
-                content: "";
-            }
-
-            .nav-tabs:after {
-                clear: both;
-            }
-
-            .nav-tabs > li {
-                float: left;
-            }
-
-            .nav-tabs > li > a {
-                padding-right: 12px;
-                padding-left: 12px;
-                margin-right: 2px;
-                line-height: 14px;
-            }
-
-            .nav-tabs {
-                border-bottom: 1px solid #ddd;
-            }
-
-            .nav-tabs > li {
-                margin-bottom: -1px;
-            }
-
-            .nav-tabs > li > a {
-                padding-top: 8px;
-                padding-bottom: 8px;
-                line-height: 18px;
-                border: 1px solid transparent;
-                -webkit-border-radius: 4px 4px 0 0;
-                -moz-border-radius: 4px 4px 0 0;
-                border-radius: 4px 4px 0 0;
-            }
-
-            .nav-tabs > li > a:hover {
-                border-color: #eeeeee #eeeeee #dddddd;
-            }
-
-            .nav-tabs > .active > a,
-            .nav-tabs > .active > a:hover {
-                color: #555555;
-                cursor: default;
-                background-color: #ffffff;
-                border: 1px solid #ddd;
-                border-bottom-color: transparent;
-            }
-
-            li {
-                line-height: 18px;
-            }
-
-            .tab-content.active{
-                display: block;
-            }
-
-            .tab-content.hide{
-                display: none;
-            }
-        </style>
-
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
-
-        <script>
-            $(document).ready(function() {
-                $('.nav-tabs > li > a').click(function(event){
-                    event.preventDefault();//stop browser to take action for clicked anchor
-
-                    //get displaying tab content jQuery selector
-                    var active_tab_selector = $('.nav-tabs > li.active > a').attr('href');
-
-                    //find actived navigation and remove 'active' css
-                    var actived_nav = $('.nav-tabs > li.active');
-                    actived_nav.removeClass('active');
-
-                    //add 'active' css into clicked navigation
-                    $(this).parents('li').addClass('active');
-
-                    //hide displaying tab content
-                    $(active_tab_selector).removeClass('active');
-                    $(active_tab_selector).addClass('hide');
-
-                    //show target tab content
-                    var target_tab_selector = $(this).attr('href');
-                    $(target_tab_selector).removeClass('hide');
-                    $(target_tab_selector).addClass('active');
-                });
-            });
-
-        </script>
         <div class="all_box">
             <div class="home_box">
                 <h:form id="orderActivity">
-                    <div>
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="#tab1">Show Tab 1</a>
-                            </li>
-                            <li>
-                                <a href="#tab2">Show Tab 2</a>
-                            </li>
-                            <li>
-                                <a href="#tab3">Show Tab 3</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <section id="tab1" class="tab-content active">
-                        <div>
-                            Content in tab 1
-                        </div>
-                    </section>
-                    <section id="tab2" class="tab-content hide">
-                        <div>
-                            Content in tab 2
-                        </div>
-                    </section>
-                    <section id="tab3" class="tab-content hide">
-                        <div>
-                            Content in tab 3
-                        </div>
-                    </section>
-                    <!--<h:panelGrid columns="2">-->
-                    <!--&lt;!&ndash;<h:commandLink id="a" value="Link 1"   onclick="menu(done)">&ndash;&gt;-->
-                          <!--&lt;!&ndash;&lt;!&ndash;<f:param name="formInd" value="a" />&ndash;&gt;&ndash;&gt;-->
-                    <!--&lt;!&ndash;</h:commandLink>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<h:commandLink id = "done" value="lala" style="display: block"></h:commandLink>&ndash;&gt;-->
-                        <!--<h:commandButton id="btn1" style="display: none"/>-->
-                        <!--<h:commandButton id="btn2" value="click me" onclick="menu('btn1')"/>-->
-                    <!--</h:panelGrid>-->
-                    <!--<div id="food-menu" class="menu">-->
-                        <!--<span class="menu-title">меню</span>-->
-                        <!--<ul class="menu-items">-->
-                            <!--<li>-->
-                                <!--<h:outputLabel for="name" value="Password:"/>-->
-                                <!--<h:inputSecret id="name" value=""/>-->
-                                <!--<h:message for="name" errorClass="invalid"/>-->
-                            <!--</li>-->
-                            <!--<li><a href="#">1</a></li>-->
-                            <!--<li><a href="#">2</a></li>-->
-                        <!--</ul>-->
-                    <!--</div>-->
+                    <h:panelGrid id="addOrder" columns="3">
+                        <h:commandButton id="add" value="Create order" styleClass="but"
+                                         action="#{orderAction.addOrder}"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
+                    </h:panelGrid>
 
-                    <!--<script>-->
-                        <!--var foodMenu = new Menu({-->
-                            <!--elem: $('#food-menu')-->
-                        <!--});-->
+                    <h:panelGrid id="addGoods" columns="3">
+                        <h:outputLabel for="orderNumber" value="Order:"/>
+                        <h:inputText id="orderNumber" value="#{orderAction.orderNumber}"
+                                     validatorMessage="Invalid format">
 
-                        <!--foodMenu.open();-->
-                    <!--</script>-->
+                        </h:inputText>
+                        <h:message for="orderNumber" errorClass="invalid"/>
 
-                        <!---->
-                        <!--<p>-->
-                        <!--<h:commandButton id="add" action="" value="Create new order"-->
-                        <!--styleClass="but"/>-->
-                        <!--</p>-->
-                        <!--<p>-->
-                        <!--<h:commandButton id="addGoods" action="" value="Add goods to order"-->
-                        <!--styleClass="but"/>-->
-                        <!--</p>-->
-                        <!--<p>-->
-                        <!--<h:commandButton id="doConfirmed" action="" value="Confirme order"-->
-                        <!--styleClass="but"/>-->
-                        <!--</p>-->
-                        <!--<p>-->
-                        <!--<h:commandButton id="addFuraAndDrivers" action="" value="Add fura and drivers to order"-->
-                        <!--styleClass="but"/>-->
-                        <!--</p>-->
-                        <!--<p>-->
-                        <!--<h:commandButton id="closeOrder" action="" value="Add fura and drivers to order"-->
-                        <!--styleClass="but"/>-->
-                        <!--</p>-->
-                    <!--</h:panelGrid>-->
+                        <h:outputLabel for="name" value="Name:"/>
+                        <h:inputText id="name" value="#{orderInfo.name}" validatorMessage="Invalid format">
+                            <f:validator validatorId="nameValidator"/>
+                        </h:inputText>
+                        <h:message for="name" errorClass="invalid"/>
 
-                    <!--<h:panelGrid columns="2">-->
-                    <!--<h:commandButton id="but" action="" value="" styleClass="but"/>-->
-                    <!--<h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"-->
-                    <!--globalOnly="true"/>-->
-                    <!--</h:panelGrid>-->
+                        <h:outputLabel for="gpsLat" value="GPS Latitude:"/>
+                        <h:inputText id="gpsLat" value="#{orderInfo.gpsLat}" validatorMessage="Invalid format">
+                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
+                        </h:inputText>
+                        <h:message for="gpsLat" errorClass="invalid"/>
+
+                        <h:outputLabel for="gpsLong" value="GPS Longitude:"/>
+                        <h:inputText id="gpsLong" value="#{orderInfo.gpsLong}" validatorMessage="Invalid format">
+                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
+                        </h:inputText>
+                        <h:message for="gpsLong" errorClass="invalid"/>
+
+                        <h:outputLabel for="weight" value="Weight:"/>
+                        <h:inputText id="weight" value="#{orderInfo.weight}" validatorMessage="Invalid format">
+                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
+                        </h:inputText>
+                        <h:message for="weight" errorClass="invalid"/>
+
+
+                        <h:commandButton id="addG" value="Add goods" styleClass="but" action="#{orderAction.addGoods}"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
+
+                        <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
+                                         action="#{orderAction.doConfirmed}"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
+
+                    </h:panelGrid>
+
+                    Add drivers and fura.
+                    <h:panelGrid columns="3" id="addDrivers">
+
+                        <h:outputLabel for="orderNumberG" value="Order number"/>
+                        <h:inputText id="orderNumberG" value="#{orderAction.orderNumber}" validatorMessage="Invalid format">
+                        </h:inputText>
+                        <h:message for="orderNumberG" errorClass="invalid"/>
+
+                        <h:outputLabel for="driverList" value="Driver license"/>
+                        <h:inputText id="driverList" value="#{order.id}" validatorMessage="Invalid format">
+                            <f:convertNumber integerOnly="true" maxIntegerDigits="1"/>
+                        </h:inputText>
+                        <h:message for="driverList" errorClass="invalid"/>
+
+                        <h:outputLabel for="furaNumber" value="Fura number"/>
+                        <h:inputText id="furaNumber" value="#{order.id}" validatorMessage="Invalid format">
+                            <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
+                        </h:inputText>
+                        <h:message for="furaNumber" errorClass="invalid"/>
+
+                    </h:panelGrid>
+
+                    Close order.
+                    <h:panelGrid columns="3" id="closeOrder">
+
+                        <h:outputLabel for="orderNumberC" value="OrderNumber"/>
+                        <h:inputText id="orderNumberC" value="#{orderAction.orderNumber}" validatorMessage="Invalid format">
+                        </h:inputText>
+                        <h:message for="orderNumberC" errorClass="invalid"/>
+
+                        <h:commandButton id="closingOrder" value="Close order" styleClass="but"
+                                         action="#{orderAction.closeOrder()}"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
+                    </h:panelGrid>
+
 
                 </h:form>
             </div>
             <div class="home_box">
                 <h:panelGroup rendered="#{empty furas}">
-                    <em>No registered furas.</em>
+                    <em>No registered orders.</em>
                 </h:panelGroup>
                 <h:dataTable var="fura" value="#{furaAction.allFuras}" rendered="#{not empty furas} "
                              styleClass="simpletablestyle">

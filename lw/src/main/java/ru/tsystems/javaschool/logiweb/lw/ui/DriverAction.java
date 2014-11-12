@@ -64,6 +64,8 @@ public class DriverAction implements Serializable {
         driver = new Drivers();
 //        getAllDrivers();
     }
+
+
 //
     public List<Drivers> getAllDrivers() {
         return driverService.getAllDrivers();
