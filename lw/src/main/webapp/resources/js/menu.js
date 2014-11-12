@@ -1,28 +1,30 @@
-function Menu(options) {
-    var self = this;
+//function menu(elem) {
+//    var box = document.getElementById(elem);
+//    if (!box) return;
+//    if (box.style.display == "block") box.style.display = "none";
+//    else box.style.display = "block";
+//}
+$(document).ready(function() {
+    $('.nav-tabs > li > a').click(function(event){
+        event.preventDefault();//stop browser to take action for clicked anchor
 
-    var elem = options.elem;
+        //get displaying tab content jQuery selector
+        var active_tab_selector = $('.nav-tabs > li.active > a').attr('href');
 
-    // отмена выделения при клике на меню
-    elem.on('mousedown selectstart', false);
-    elem.on('click', '.menu-title', onTitleClick);
+        //find actived navigation and remove 'active' css
+        var actived_nav = $('.nav-tabs > li.active');
+        actived_nav.removeClass('active');
 
-    // ---------- методы ----------
+        //add 'active' css into clicked navigation
+        $(this).parents('li').addClass('active');
 
-    function onTitleClick() {
-        if (elem.hasClass('menu-open')) {
-            self.close();
-        } else {
-            self.open();
-        }
-    }
+        //hide displaying tab content
+        $(active_tab_selector).removeClass('active');
+        $(active_tab_selector).addClass('hide');
 
-    this.open = function() {
-        elem.addClass('menu-open');
-    };
-
-    this.close = function() {
-        elem.removeClass('menu-open');
-    };
-
-}
+        //show target tab content
+        var target_tab_selector = $(this).attr('href');
+        $(target_tab_selector).removeClass('hide');
+        $(target_tab_selector).addClass('active');
+    });
+});
