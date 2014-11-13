@@ -13,6 +13,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 import javax.servlet.ServletException;
@@ -26,14 +27,14 @@ import java.util.logging.Logger;
 
 //@Model // =@Named + @RequestScoped
 @ManagedBean(name = "driverAction")
-@ViewScoped
+@SessionScoped
 //@SessionScoped
 //@Named
 public class DriverAction implements Serializable {
     private static Logger logger = Logger.getLogger(DriverAction.class.getName());
 
     private Drivers driver;
-    private static List<Drivers> drivers ;
+    private List<DriverShift> drivers ;
 
     @Produces
     @Named
@@ -45,14 +46,13 @@ public class DriverAction implements Serializable {
         this.driver = driver;
     }
 
-    public static void setDrivers(List<Drivers> drivers) {
-        DriverAction.drivers = drivers;
+    public void setDrivers(List<DriverShift> drivers) {
+        this.drivers = drivers;
     }
 
     @Produces
     @Named
-    public List<Drivers> getDrivers(){
-        drivers = getAllDrivers();
+    public List<DriverShift> getDrivers(){
         return drivers;
     }
     @EJB
@@ -67,7 +67,7 @@ public class DriverAction implements Serializable {
 
 
 //
-    public List<Drivers> getAllDrivers() {
+    public List<DriverShift> getAllDrivers() {
         return driverService.getAllDrivers();
     }
 

@@ -50,26 +50,26 @@
                 <h:panelGroup rendered="#{empty drivers}">
                     <em>No registered drivers.</em>
                 </h:panelGroup>
-                <h:dataTable var="driver"  value="#{driverAction.allDrivers}" rendered="#{not empty drivers}" styleClass="simpletablestyle">
+                <h:dataTable var="_driver"  value="#{drivers}" rendered="#{not empty drivers}" styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Surname</f:facet>
-                        <h:outputText value="#{driver.surname}" />
+                        #{_driver.drivers.surname}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Name</f:facet>
-                        <h:outputText value="#{driver.name}" />
+                        #{_driver.drivers.name}"
                     </h:column>
                     <h:column>
                         <f:facet name="header">Patronymic</f:facet>
-                        <h:outputText value="#{driver.patronymic}" />
+                        #{_driver.drivers.patronymic}"
                     </h:column>
                     <h:column>
                         <f:facet name="header">License</f:facet>
-                        <h:outputText value="#{driver.license}" />
+                        #{_driver.drivers.license}"
                     </h:column>
                     <h:column>
                         <f:facet name="header">Status</f:facet>
-                        <h:outputText value="#{driver.driverShift.status}" />
+                        #{_driver.status}
                     </h:column>
                 </h:dataTable>
             </div>

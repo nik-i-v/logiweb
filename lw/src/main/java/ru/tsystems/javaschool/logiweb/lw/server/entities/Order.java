@@ -14,7 +14,7 @@ import java.util.List;
 public class Order implements Serializable {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Size(min = 7, max = 7, message = "must have format: 2 letters and 5 digits")

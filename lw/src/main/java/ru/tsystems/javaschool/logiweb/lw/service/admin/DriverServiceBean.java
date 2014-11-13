@@ -5,11 +5,8 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
@@ -23,7 +20,7 @@ public class DriverServiceBean implements DriverService{
     private EntityManager entityManager;
 
     @Override
-    public List<Drivers> getAllDrivers(){
+    public List<DriverShift> getAllDrivers(){
         return entityManager.createQuery("SELECT ds FROM DriverShift ds").getResultList();
     }
 
