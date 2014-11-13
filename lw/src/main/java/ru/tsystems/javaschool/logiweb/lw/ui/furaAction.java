@@ -22,6 +22,8 @@ public class FuraAction implements Serializable {
     private Fura fura;
     private List<Fura> furas;
 
+    @Produces
+    @Named
     public List<Fura> getFuras() {
         return furas;
     }
@@ -47,14 +49,10 @@ public class FuraAction implements Serializable {
     @PostConstruct
     public void initNewFura() {
         fura = new Fura();
+        furas = furaService.getAllFura();
 //        getAllDrivers();
     }
 
-    //
-    public List<Fura> getAllFuras() {
-        furas = furaService.getAllFura();
-        return  furas;
-    }
 
     public boolean addFura() {
         furaService.addFura(fura.getFuraNumber(), fura.getDriverCount(), fura.getCapacity());

@@ -27,7 +27,7 @@ public class OrderAction {
     private OrderService orderService;
 
     @PostConstruct
-    public void init(){
+    public void initOrders(){
         orders = orderService.getAllOrders();
     }
 

@@ -10,15 +10,15 @@
             <div class="home_box">
                 <h:form id="addDriver">
                     <h:panelGrid columns="3" columnClasses="titleCell">
-                        <h:outputLabel  value=""/>
+
                         <h:outputLabel for="number" value="Number:"/>
-                        <h:inputText id="number" value="#{fura.furaNumber}">
+                        <h:inputText id="number" value="#{fura.furaNumber}" required="true">
                             <f:validator validatorId="furaValidator"/>
                         </h:inputText>
                         <h:message for="number" errorClass="invalid"/>
 
                         <h:outputLabel for="count" value="Driver count"/>
-                        <h:inputText id="count" value="#{fura.driverCount}" validatorMessage="Not a digit!" >
+                        <h:inputText id="count" value="#{fura.driverCount}" validatorMessage="Not a digit!"  required="true">
                             <f:convertNumber integerOnly="true"/>
                         </h:inputText>
                         <h:message for="count" errorClass="invalid"/>
@@ -32,7 +32,7 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:commandButton id="but" action="#{FuraAction.addFura}" value="Add" styleClass="but"/>
+                        <h:commandButton id="but" action="#{furaAction.addFura}" value="Add" styleClass="but"/>
                         <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                     globalOnly="true"/>
                     </h:panelGrid>
@@ -43,7 +43,7 @@
                 <h:panelGroup rendered="#{empty furas}">
                     <em>No registered furas.</em>
                 </h:panelGroup>
-                <h:dataTable var="_fura" value="#{FuraAction.allFuras}" rendered="#{not empty furas}"
+                <h:dataTable var="_fura" value="#{furas}" rendered="#{not empty furas}"
                              styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>

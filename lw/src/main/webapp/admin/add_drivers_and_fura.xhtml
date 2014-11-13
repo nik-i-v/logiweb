@@ -22,7 +22,7 @@
                     <h:message for="driverList" errorClass="invalid"/>
 
                     <h:outputLabel for="furaNumber" value="Fura number"/>
-                    <h:inputText id="furaNumber" value="#{order.id}" validatorMessage="Invalid format">
+                    <h:inputText id="furaNumber" value="#{order.id}" validatorMessage="Invalid format" required="true">
                         <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
                     </h:inputText>
                     <h:message for="furaNumber" errorClass="invalid"/>
@@ -36,22 +36,46 @@
 
             </div>
             <div class="home_box">
-                <h:panelGroup rendered="#{empty furas}">
+                <h:panelGroup rendered="#{empty orders}">
                     <em>No registered orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="fura" value="#{FuraAction.allFuras}" rendered="#{not empty furas} "
+                <h:dataTable var="_order" value="#{orderAction.orders}" rendered="#{not empty orders} "
                              styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
-                        <h:outputText value="#{fura.furaNumber}"/>
+                        <h:outputText value="#{_order.id}"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Driver count</f:facet>
-                        <h:outputText value="#{fura.driverCount}"/>
+                        <f:facet name="header">Status</f:facet>
+                        <h:outputText value="#{_order.orderStatus.status}"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Capacity</f:facet>
-                        <h:outputText value="#{fura.capacity}"/>
+                        <f:facet name="header">Fura</f:facet>
+                        <h:outputText value="#{_order.furaId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Drivers</f:facet>
+                        <h:outputText value="#{_order.driverShift.driverId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name goods</f:facet>
+                        <h:outputText value="#{_order.orderStatus.orderInfo.name}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">GPS: Latitude</f:facet>
+                        <h:outputText value="#{_order.orderStatus.orderInfo.gpsLat}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">GPS: Longitude</f:facet>
+                        <h:outputText value="#{_order.orderStatus.orderInfo.gpsLong}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Goods ststus</f:facet>
+                        <h:outputText value="#{_order.orderStatus.orderInfo.status}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Weight</f:facet>
+                        <h:outputText value="#{_order.orderStatus.orderInfo.weight}"/>
                     </h:column>
                 </h:dataTable>
             </div>
