@@ -26,9 +26,10 @@ public class OrderAction {
     @EJB
     private OrderService orderService;
 
-    @PostConstruct
+//    @PostConstruct
     public void initOrders(){
         orders = orderService.getAllOrders();
+
     }
 
     public Integer getOrderNumber() {
@@ -62,6 +63,7 @@ public class OrderAction {
     @Named
     @Produces
     public List<Order> getOrders() {
+        orders = orderService.getAllOrders();
         return orders;
     }
 

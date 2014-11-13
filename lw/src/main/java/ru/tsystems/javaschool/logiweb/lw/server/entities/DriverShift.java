@@ -31,7 +31,7 @@ public class DriverShift implements Serializable {
     @OneToOne(mappedBy = "driverShift")
     private Drivers drivers;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "order_id", insertable = false, updatable = false)
     private Order order;
 

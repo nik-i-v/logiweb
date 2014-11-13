@@ -32,7 +32,7 @@ public class OrderStatus implements Serializable {
         this.orderInfo = orderInfo;
     }
 
-    @OneToMany(mappedBy = "orderStatus")
+    @OneToMany(mappedBy = "orderStatus", fetch = FetchType.EAGER)
     private List<OrderInfo> orderInfo;
 
     public enum Status {

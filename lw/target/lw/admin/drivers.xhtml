@@ -11,27 +11,27 @@
                 <h:form id="addDriver">
                     <h:panelGrid columns="3" columnClasses="titleCell">
                         <h:outputLabel for="surname" value="Surname:"/>
-                        <h:inputText id="surname" value="#{driver.surname}">
+                        <h:inputText id="surname" value="#{driver.surname}" required="true">
                             <f:validator validatorId="nameValidator" />
                         </h:inputText>
 
                         <h:message for="surname" errorClass="invalid"/>
 
                         <h:outputLabel for="name" value="Name:"/>
-                        <h:inputText id="name" value="#{driver.name}">
+                        <h:inputText id="name" value="#{driver.name}" required="true">
                             <f:validator validatorId="nameValidator" />
                         </h:inputText>
                         <h:message for="name" errorClass="invalid"/>
 
                         <h:outputLabel for="patronymic" value="Patronymic:"/>
-                        <h:inputText id="patronymic" value="#{driver.patronymic}">
+                        <h:inputText id="patronymic" value="#{driver.patronymic}" required="true">
                             <f:validator validatorId="nameValidator" />
                         </h:inputText>
                         <h:message for="patronymic" errorClass="invalid"/>
 
 
                         <h:outputLabel for="licence" value="Licence:"/>
-                        <h:inputText id="licence" value="#{driver.license}" validatorMessage="Invalid format">
+                        <h:inputText id="licence" value="#{driver.license}" validatorMessage="Invalid format" required="true">
                             <f:validateLength minimum="11" maximum="11" />
                             <f:convertNumber integerOnly="true"/>
                         </h:inputText>

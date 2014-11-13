@@ -22,7 +22,7 @@
                     <h:message for="driverList" errorClass="invalid"/>
 
                     <h:outputLabel for="furaNumber" value="Fura number"/>
-                    <h:inputText id="furaNumber" value="#{order.id}" validatorMessage="Invalid format">
+                    <h:inputText id="furaNumber" value="#{order.id}" validatorMessage="Invalid format" required="true">
                         <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
                     </h:inputText>
                     <h:message for="furaNumber" errorClass="invalid"/>

@@ -10,7 +10,7 @@
             <div class="home_box">
                 <h:form id="orderActivity">
 
-                    <h:panelGrid id="addOrder" columns="4">
+                    <h:panelGrid id="addOrder" columns="1">
                         <h:commandButton id="add" value="Create order" styleClass="but"
                                          action="#{orderAction.addOrder}"/>
                         <h:commandButton id = "addG" value="Add goods" styleClass="but"
@@ -27,7 +27,7 @@
                 <h:panelGroup rendered="#{empty orders}">
                     <em>No registered orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="_order" value="#{orderAction.orders}" rendered="#{not empty orders} "
+                <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders} "
                              styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>

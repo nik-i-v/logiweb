@@ -33,7 +33,7 @@
                         <h:inputText id="gpsLong" value="#{orderInfo.gpsLong}" validatorMessage="Invalid format" required="true">
                             <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
                         </h:inputText>
-                        <h:message for="gpsLong" errorClass="invalid"/ >
+                        <h:message for="gpsLong" errorClass="invalid"/>
 
                         <h:outputLabel for="weight" value="Weight:"/>
                         <h:inputText id="weight" value="#{orderInfo.weight}" validatorMessage="Invalid format" required="true">

@@ -24,7 +24,7 @@ public class Order implements Serializable {
 
     @OneToOne(mappedBy = "order")
     private Fura fura;
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<DriverShift> driverShift;
     @OneToOne(mappedBy = "order")
     private OrderStatus orderStatus;

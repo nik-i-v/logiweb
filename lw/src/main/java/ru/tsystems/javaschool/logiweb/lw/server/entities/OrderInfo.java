@@ -44,7 +44,7 @@ public class OrderInfo implements Serializable {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "order_number", insertable = false, updatable = false)
     private OrderStatus orderStatus;
 

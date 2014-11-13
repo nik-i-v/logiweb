@@ -6,6 +6,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.persistence.*;
 import java.sql.SQLException;
 import java.util.List;
@@ -16,9 +17,8 @@ public class OrderServiceBean implements OrderService {
 OrderDAO orderDAO = new OrderDAO();
     private static Logger logger = Logger.getLogger(OrderServiceBean.class.getName());
 
-    @Produces
-    @PersistenceContext(unitName = "logiweb")
-    private static EntityManager entityManager;
+    @Inject
+    private EntityManager entityManager;
 
     @Override
     public List<Order> getAllOrders() {
