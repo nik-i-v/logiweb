@@ -4,6 +4,7 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -20,7 +21,7 @@ import java.util.logging.Logger;
 //@Model
 @Named
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class CheckUser implements Serializable {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 

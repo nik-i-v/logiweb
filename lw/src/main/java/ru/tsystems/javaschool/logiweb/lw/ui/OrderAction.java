@@ -6,18 +6,20 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ManagedBean;
 import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
+import java.io.Serializable;
 import java.util.List;
 
 //@Model
 @ManagedBean(name = "orderAction")
-@ViewScoped
-public class OrderAction {
+@SessionScoped
+public class OrderAction implements Serializable {
     private Order order;
     private List<Order> orders;
     private Integer orderNumber;
@@ -26,12 +28,14 @@ public class OrderAction {
     @EJB
     private OrderService orderService;
 
-//    @PostConstruct
+    @PostConstruct
     public void initOrders(){
         orders = orderService.getAllOrders();
 
     }
 
+    @Produces
+    @Named
     public Integer getOrderNumber() {
         return orderNumber;
     }
@@ -63,7 +67,7 @@ public class OrderAction {
     @Named
     @Produces
     public List<Order> getOrders() {
-        orders = orderService.getAllOrders();
+//        orders = orderService.getAllOrders();
         return orders;
     }
 
