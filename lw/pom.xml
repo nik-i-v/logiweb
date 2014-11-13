@@ -24,7 +24,6 @@
     <properties>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.deltaspike.core>0.6</version.deltaspike.core>
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.7</maven.compiler.target>
         <maven.compiler.source>1.7</maven.compiler.source>
@@ -38,22 +37,6 @@
                 <version>1.0.0.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.deltaspike.core</groupId>
-                <artifactId>deltaspike-core-api</artifactId>
-                <version>${version.deltaspike.core}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.deltaspike.modules</groupId>
-                <artifactId>deltaspike-security-module-api</artifactId>
-                <version>${version.deltaspike.core}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.deltaspike.modules</groupId>
-                <artifactId>deltaspike-security-module-impl</artifactId>
-                <version>${version.deltaspike.core}</version>
             </dependency>
 
         </dependencies>
@@ -105,38 +88,11 @@
             <artifactId>jsf-impl</artifactId>
             <version>2.1.19</version>
         </dependency>
-
-        <!-- Deltaspike API. We use compile scope as we need compile against its API -->
-        <dependency>
-            <groupId>org.apache.deltaspike.core</groupId>
-            <artifactId>deltaspike-core-api</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- Deltaspike Impl. we use runtime scope as we need its implementation
-            dependencies only on runtime -->
-        <dependency>
-            <groupId>org.apache.deltaspike.core</groupId>
-            <artifactId>deltaspike-core-impl</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- Deltaspike Security Module API. We use compile scope as we need
-            to compile against its API -->
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-security-module-api</artifactId>
-            <scope>compile</scope>
+            <version>0.6</version>
         </dependency>
-
-        <!-- Deltaspike Security Impl. we use runtime scope as we need its implementation
-            dependencies only on runtime -->
-        <dependency>
-            <groupId>org.apache.deltaspike.modules</groupId>
-            <artifactId>deltaspike-security-module-impl</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
     </dependencies>
     <build>
 

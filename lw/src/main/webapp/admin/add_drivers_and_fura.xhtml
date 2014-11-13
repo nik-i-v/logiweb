@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/header.xhtml">
+    <ui:define name="content">
+        <div class="all_box">
+            <div class="home_box">
+                <h:panelGrid columns="3" id="addDrivers">
+
+                    <h:outputLabel for="orderNumberG" value="Order number"/>
+                    <h:inputText id="orderNumberG" value="#{orderAction.orderNumber}" validatorMessage="Invalid format">
+                    </h:inputText>
+                    <h:message for="orderNumberG" errorClass="invalid"/>
+
+                    <h:outputLabel for="driverList" value="Driver license"/>
+                    <h:inputText id="driverList" value="#{order.id}" validatorMessage="Invalid format">
+                        <f:convertNumber integerOnly="true" maxIntegerDigits="1"/>
+                    </h:inputText>
+                    <h:message for="driverList" errorClass="invalid"/>
+
+                    <h:outputLabel for="furaNumber" value="Fura number"/>
+                    <h:inputText id="furaNumber" value="#{order.id}" validatorMessage="Invalid format">
+                        <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
+                    </h:inputText>
+                    <h:message for="furaNumber" errorClass="invalid"/>
+
+                    <!--..-->
+                    <h:commandButton id="add" value="Add" styleClass="but"
+                                     action="#{orderAction.addOrder}"/>
+                    <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                globalOnly="true"/>
+                </h:panelGrid>
+
+            </div>
+            <div class="home_box">
+                <h:panelGroup rendered="#{empty furas}">
+                    <em>No registered orders.</em>
+                </h:panelGroup>
+                <h:dataTable var="fura" value="#{furaAction.allFuras}" rendered="#{not empty furas} "
+                             styleClass="simpletablestyle">
+                    <h:column>
+                        <f:facet name="header">Number</f:facet>
+                        <h:outputText value="#{fura.furaNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Driver count</f:facet>
+                        <h:outputText value="#{fura.driverCount}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Capacity</f:facet>
+                        <h:outputText value="#{fura.capacity}"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>

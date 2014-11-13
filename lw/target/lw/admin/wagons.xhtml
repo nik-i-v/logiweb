@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/header.xhtml">
+    <ui:define name="content">
+        <div class="all_box">
+            <div class="home_box">
+                <h:form id="addDriver">
+                    <h:panelGrid columns="3" columnClasses="titleCell">
+                        <h:outputLabel  value=""/>
+                        <h:outputLabel for="number" value="Number:"/>
+                        <h:inputText id="number" value="#{fura.furaNumber}">
+                            <f:validator validatorId="furaValidator"/>
+                        </h:inputText>
+                        <h:message for="number" errorClass="invalid"/>
+
+                        <h:outputLabel for="count" value="Driver count"/>
+                        <h:inputText id="count" value="#{fura.driverCount}" validatorMessage="Not a digit!" >
+                            <f:convertNumber integerOnly="true"/>
+                        </h:inputText>
+                        <h:message for="count" errorClass="invalid"/>
+
+                        <h:outputLabel  value=""/>
+                        <h:selectOneMenu  value="#{fura.capacity}" >
+                            <f:selectItem itemValue="small" itemLabel="Small (1000 kg)"/>
+                            <f:selectItem itemValue="middle" itemLabel="Middle (5000 kg)"/>
+                            <f:selectItem itemValue="large" itemLabel="Large (10000 kg)"/>
+                        </h:selectOneMenu>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <h:commandButton id="but" action="#{furaAction.addFura}" value="Add" styleClass="but"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
+                    </h:panelGrid>
+
+                </h:form>
+            </div>
+            <div class="home_box">
+                <h:panelGroup rendered="#{empty furas}">
+                    <em>No registered furas.</em>
+                </h:panelGroup>
+                <h:dataTable var="fura" value="#{furaAction.allFuras}" rendered="#{not empty furas}"
+                             styleClass="simpletablestyle">
+                    <h:column>
+                        <f:facet name="header">Number</f:facet>
+                        <h:outputText value="#{fura.furaNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Driver count</f:facet>
+                        <h:outputText value="#{fura.driverCount}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Capacity</f:facet>
+                        <h:outputText value="#{fura.capacity}"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>

@@ -8,15 +8,16 @@ import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Stateless
 public class OrderDAO {
 
-    @Inject
+    @PersistenceContext(unitName = "logiweb")
     private EntityManager entityManager;
 
     public void add(OrderStatus orderStatus, Order order){
-        entityManager.persist(orderStatus);
-        entityManager.persist(order);
+        entityManager.merge(orderStatus);
+        entityManager.merge(order);
     }
 }
