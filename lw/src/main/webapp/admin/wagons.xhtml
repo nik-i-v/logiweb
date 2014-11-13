@@ -32,7 +32,7 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:commandButton id="but" action="#{furaAction.addFura}" value="Add" styleClass="but"/>
+                        <h:commandButton id="but" action="#{FuraAction.addFura}" value="Add" styleClass="but"/>
                         <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                     globalOnly="true"/>
                     </h:panelGrid>
@@ -43,19 +43,19 @@
                 <h:panelGroup rendered="#{empty furas}">
                     <em>No registered furas.</em>
                 </h:panelGroup>
-                <h:dataTable var="fura" value="#{furaAction.allFuras}" rendered="#{not empty furas}"
+                <h:dataTable var="_fura" value="#{FuraAction.allFuras}" rendered="#{not empty furas}"
                              styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
-                        <h:outputText value="#{fura.furaNumber}"/>
+                        <h:outputText value="#{_fura.furaNumber}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">Driver count</f:facet>
-                        <h:outputText value="#{fura.driverCount}"/>
+                        <h:outputText value="#{_fura.driverCount}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">Capacity</f:facet>
-                        <h:outputText value="#{fura.capacity}"/>
+                        <h:outputText value="#{_fura.capacity}"/>
                     </h:column>
                 </h:dataTable>
             </div>

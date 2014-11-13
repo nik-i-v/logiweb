@@ -5,6 +5,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ManagedBean;
 import javax.ejb.EJB;
@@ -24,6 +25,11 @@ public class OrderAction {
 
     @EJB
     private OrderService orderService;
+
+    @PostConstruct
+    public void init(){
+        orders = orderService.getAllOrders();
+    }
 
     public Integer getOrderNumber() {
         return orderNumber;
@@ -53,6 +59,8 @@ public class OrderAction {
         this.order = order;
     }
 
+    @Named
+    @Produces
     public List<Order> getOrders() {
         return orders;
     }

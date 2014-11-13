@@ -39,7 +39,7 @@
                 <h:panelGroup rendered="#{empty furas}">
                     <em>No registered orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="fura" value="#{furaAction.allFuras}" rendered="#{not empty furas} "
+                <h:dataTable var="fura" value="#{FuraAction.allFuras}" rendered="#{not empty furas} "
                              styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
