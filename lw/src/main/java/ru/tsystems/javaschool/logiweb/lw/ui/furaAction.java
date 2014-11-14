@@ -51,6 +51,7 @@ public class FuraAction implements Serializable {
 
     public boolean addFura() {
         furaService.addFura(fura.getFuraNumber(), fura.getDriverCount(), fura.getCapacity());
+        furas = furaService.getAllFura();
         return true;
 
     }

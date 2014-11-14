@@ -91,6 +91,21 @@ OrderDAO orderDAO = new OrderDAO();
 
     }
 
+    @Override
+    public List<Integer> getCreatedOrders(){
+        return getOrdersByStatus(OrderStatus.Status.created);
+    }
+
+    @Override
+    public List<Integer> getConfirmedOrders(){
+        return getOrdersByStatus(OrderStatus.Status.confirmed);
+    }
+
+    @Override
+    public List<Integer> getMadeOrders(){
+        return getOrdersByStatus(OrderStatus.Status.made);
+    }
+
     private void isFuraOccupied(String furaNumber) {
         Query query = entityManager.createQuery("SELECT f.status FROM Fura f WHERE f.furaNumber = :number");
         query.setParameter("number", furaNumber);
@@ -186,7 +201,6 @@ OrderDAO orderDAO = new OrderDAO();
                     throw new IllegalArgumentException("This order still has the driver behind the wheel");
                 }
             }
-
         }
     }
 
@@ -222,6 +236,12 @@ OrderDAO orderDAO = new OrderDAO();
         query.setParameter("nulls", null);
         query.setParameter("Ids", orderNumber);
         query.executeUpdate();
+    }
+
+    private List<Integer> getOrdersByStatus(OrderStatus.Status status){
+        Query query = entityManager.createQuery("SELECT o.id FROM Order o WHERE o.orderStatus.status = :status");
+        query.setParameter("status", status);
+        return query.getResultList();
     }
 
 }

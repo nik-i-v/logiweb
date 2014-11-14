@@ -11,10 +11,9 @@
                 <h:form id="orderActivity">
                     <h:panelGrid id="addGoods" columns="3">
                         <h:outputLabel for="orderNumber" value="Order:"/>
-                        <h:inputText id="orderNumber" value="#{orderNumber}"
-                                     validatorMessage="Invalid format">
-
-                        </h:inputText>
+                        <h:selectOneMenu id = "orderNumber" value="#{orderAction.order.id}" >
+                            <f:selectItems value = "#{orderAction.createdOrderNumber}"/>
+                        </h:selectOneMenu>
                         <h:message for="orderNumber" errorClass="invalid"/>
 
                         <h:outputLabel for="name" value="Name:"/>

@@ -24,6 +24,40 @@ public class OrderAction implements Serializable {
     private List<Order> orders;
     private Integer orderNumber;
     private OrderInfo orderInfo;
+    private List<Integer> createdOrderNumber;
+    private List<Integer> confirmedOrderNumber;
+    private List<Integer> madeOrerNumber;
+
+    @Produces
+    @Named
+    public List<Integer> getConfirmedOrderNumber() {
+        return confirmedOrderNumber;
+    }
+
+    public void setConfirmedOrderNumber(List<Integer> confirmedOrderNumber) {
+        this.confirmedOrderNumber = confirmedOrderNumber;
+    }
+
+    @Produces
+    @Named
+    public List<Integer> getMadeOrerNumber() {
+        return madeOrerNumber;
+    }
+
+    public void setMadeOrerNumber(List<Integer> madeOrerNumber) {
+        this.madeOrerNumber = madeOrerNumber;
+    }
+
+    @Produces
+    @Named
+    public List<Integer> getCreatedOrderNumber() {
+        createdOrders();
+        return createdOrderNumber;
+    }
+
+    public void setCreatedOrderNumber(List<Integer> createdOrderNumber) {
+        this.createdOrderNumber = createdOrderNumber;
+    }
 
     @EJB
     private OrderService orderService;
@@ -91,5 +125,9 @@ public class OrderAction implements Serializable {
 
     public void closeOrder(){
         orderService.closeOrder(orderNumber);
+    }
+
+    public void createdOrders(){
+        createdOrderNumber = orderService.getCreatedOrders();
     }
 }

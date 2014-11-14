@@ -21,4 +21,10 @@ public interface OrderService {
     void addFuraAndDrivers(Integer orderNumber, List<Integer> driverId, String furaNumber, EntityManager entityManager) throws SQLException, IllegalArgumentException;
 
     void closeOrder(Integer number);
+
+    List<Integer> getCreatedOrders();
+
+    List<Integer> getConfirmedOrders();
+
+    List<Integer> getMadeOrders();
 }

@@ -23,8 +23,8 @@
                         </h:inputText>
                         <h:message for="count" errorClass="invalid"/>
 
-                        <h:outputLabel  value=""/>
-                        <h:selectOneMenu  value="#{furaAction.fura.capacity}" >
+                        <h:outputLabel for="capacity" value="Order:"/>
+                        <h:selectOneMenu  id = "capacity" value="#{furaAction.fura.capacity}" >
                             <f:selectItem itemValue="small" itemLabel="Small (1000 kg)"/>
                             <f:selectItem itemValue="middle" itemLabel="Middle (5000 kg)"/>
                             <f:selectItem itemValue="large" itemLabel="Large (10000 kg)"/>
