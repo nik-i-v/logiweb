@@ -10,4 +10,6 @@ public interface FuraService {
     List<Fura> getAllFura();
 
     void addFura(String number, Byte driverCount, Fura.Capacity capacity);
+
+    List<String> getFreeFuras();
 }

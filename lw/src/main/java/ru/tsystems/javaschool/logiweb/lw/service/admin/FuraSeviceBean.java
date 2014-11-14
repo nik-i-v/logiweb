@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
+import javax.persistence.Query;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -36,6 +37,13 @@ public class FuraSeviceBean implements FuraService {
         fura.setDriverCount(driverCount);
         fura.setCapacity(capacity);
         entityManager.persist(fura);
+    }
+
+    @Override
+    public List<String> getFreeFuras() {
+        Query query = entityManager.createQuery("SELECT fura.furaNumber FROM Order Fura f WHERE f.status = :status");
+        query.setParameter("status", Fura.Status.no);
+        return query.getResultList();
     }
 
 

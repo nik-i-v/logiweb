@@ -25,6 +25,22 @@ public class FuraAction implements Serializable {
     private FuraService furaService;
     private Fura fura;
     private List<Fura> furas;
+    private List<String> freeFuras;
+
+    public void setFura(Fura fura) {
+        this.fura = fura;
+    }
+
+    @Named
+    @Produces
+    public List<String> getFreeFuras() {
+        allFreeFuras();
+        return freeFuras;
+    }
+
+    public void setFreeFuras(List<String> freeFuras) {
+        this.freeFuras = freeFuras;
+    }
 
     @Produces
     @Named
@@ -55,5 +71,11 @@ public class FuraAction implements Serializable {
         return true;
 
     }
+
+    public void allFreeFuras(){
+        freeFuras = furaService.getFreeFuras();
+    }
+
+
 }
 
