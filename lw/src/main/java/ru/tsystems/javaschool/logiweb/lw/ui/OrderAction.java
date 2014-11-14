@@ -10,8 +10,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ManagedBean;
 import javax.ejb.EJB;
-import javax.enterprise.inject.Model;
-import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
@@ -26,7 +24,7 @@ public class OrderAction implements Serializable {
     private OrderInfo orderInfo;
     private List<Integer> createdOrderNumber;
     private List<Integer> confirmedOrderNumber;
-    private List<Integer> madeOrerNumber;
+    private List<Integer> madeOrderNumber;
 
     @Produces
     @Named
@@ -40,12 +38,12 @@ public class OrderAction implements Serializable {
 
     @Produces
     @Named
-    public List<Integer> getMadeOrerNumber() {
-        return madeOrerNumber;
+    public List<Integer> getMadeOrderNumber() {
+        return madeOrderNumber;
     }
 
-    public void setMadeOrerNumber(List<Integer> madeOrerNumber) {
-        this.madeOrerNumber = madeOrerNumber;
+    public void setMadeOrderNumber(List<Integer> madeOrderNumber) {
+        this.madeOrderNumber = madeOrderNumber;
     }
 
     @Produces
@@ -129,5 +127,13 @@ public class OrderAction implements Serializable {
 
     public void createdOrders(){
         createdOrderNumber = orderService.getCreatedOrders();
+    }
+
+    public void confirmedOrders(){
+        confirmedOrderNumber = orderService.getConfirmedOrders();
+    }
+
+    public void msdeOrders(){
+        madeOrderNumber = orderService.getMadeOrders();
     }
 }

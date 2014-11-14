@@ -10,10 +10,11 @@
             <div class="home_box">
                 <h:panelGrid columns="3" id="addDrivers">
 
-                    <h:outputLabel for="orderNumberG" value="Order number"/>
-                    <h:inputText id="orderNumberG" value="#{orderAction.orderNumber}" validatorMessage="Invalid format">
-                    </h:inputText>
-                    <h:message for="orderNumberG" errorClass="invalid"/>
+                    <h:outputLabel for="orderNumber" value="Order:"/>
+                    <h:selectOneMenu id = "orderNumber" value="#{orderAction.order.id}" >
+                        <f:selectItems value = "#{orderAction.confirmedOrderNumber}"/>
+                    </h:selectOneMenu>
+                    <h:message for="orderNumber" errorClass="invalid"/>
 
                     <h:outputLabel for="driverList" value="Driver license"/>
                     <h:inputText id="driverList" value="#{order.id}" validatorMessage="Invalid format">
