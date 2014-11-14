@@ -41,7 +41,7 @@ public class FuraSeviceBean implements FuraService {
 
     @Override
     public List<String> getFreeFuras() {
-        Query query = entityManager.createQuery("SELECT fura.furaNumber FROM Order Fura f WHERE f.status = :status");
+        Query query = entityManager.createQuery("SELECT f.furaNumber FROM Fura f WHERE f.status = :status");
         query.setParameter("status", Fura.Status.no);
         return query.getResultList();
     }
