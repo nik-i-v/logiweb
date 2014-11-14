@@ -14,6 +14,7 @@
                         <h:selectOneMenu id = "orderNumber" value="#{orderAction.order.id}" >
                             <f:selectItems value = "#{orderAction.createdOrderNumber}"/>
                         </h:selectOneMenu>
+                        <h:message for="orderNumber" errorClass="invalid"/>
 
                         <h:outputLabel for="name" value="Name:"/>
                         <h:inputText id="name" value="#{orderInfo.name}" validatorMessage="Invalid format" required="true">

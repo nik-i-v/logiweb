@@ -32,10 +32,10 @@ public class FuraAction implements Serializable {
         return furas;
     }
 
-//    @Named
-//    public void setFuras(List<Fura> furas) {
-//        this.furas = furas;
-//    }
+    @Named
+    public void setFuras(List<Fura> furas) {
+        this.furas = furas;
+    }
 
     @Produces
     @Named

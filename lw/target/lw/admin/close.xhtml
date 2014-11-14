@@ -10,10 +10,11 @@
             <div class="home_box">
                 <h:panelGrid columns="3" id="closeOrder">
 
-                    <h:outputLabel for="orderNumberC" value="OrderNumber"/>
-                    <h:inputText id="orderNumberC" value="#{orderNumber}" validatorMessage="Invalid format">
-                    </h:inputText>
-                    <h:message for="orderNumberC" errorClass="invalid"/>
+                    <h:outputLabel for="orderNumber" value="Order:"/>
+                    <h:selectOneMenu id = "orderNumber" value="#{orderAction.order.id}" >
+                        <f:selectItems value = "#{orderAction.madeOrderNumber}"/>
+                    </h:selectOneMenu>
+                    <h:message for="orderNumber" errorClass="invalid"/>
 
                     <h:commandButton id="closingOrder" value="Close order" styleClass="but"
                                      action="#{orderAction.closeOrder()}"/>

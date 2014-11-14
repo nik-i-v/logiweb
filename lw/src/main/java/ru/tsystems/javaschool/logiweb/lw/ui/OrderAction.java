@@ -29,6 +29,7 @@ public class OrderAction implements Serializable {
     @Produces
     @Named
     public List<Integer> getConfirmedOrderNumber() {
+        confirmedOrders();
         return confirmedOrderNumber;
     }
 
@@ -39,6 +40,7 @@ public class OrderAction implements Serializable {
     @Produces
     @Named
     public List<Integer> getMadeOrderNumber() {
+        madeOrders();
         return madeOrderNumber;
     }
 
@@ -133,7 +135,7 @@ public class OrderAction implements Serializable {
         confirmedOrderNumber = orderService.getConfirmedOrders();
     }
 
-    public void msdeOrders(){
+    public void madeOrders(){
         madeOrderNumber = orderService.getMadeOrders();
     }
 }

@@ -37,4 +37,6 @@ public class FuraSeviceBean implements FuraService {
         fura.setCapacity(capacity);
         entityManager.persist(fura);
     }
+
+
 }
