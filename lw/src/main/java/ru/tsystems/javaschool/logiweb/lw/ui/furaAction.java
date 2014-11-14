@@ -16,9 +16,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 //@Model
-@ManagedBean
+@ManagedBean(name = "furaAction")
 @SessionScoped
 public class FuraAction implements Serializable {
+
+
+    @EJB
+    private FuraService furaService;
     private Fura fura;
     private List<Fura> furas;
 
@@ -28,9 +32,10 @@ public class FuraAction implements Serializable {
         return furas;
     }
 
-    public void setFuras(List<Fura> furas) {
-        this.furas = furas;
-    }
+//    @Named
+//    public void setFuras(List<Fura> furas) {
+//        this.furas = furas;
+//    }
 
     @Produces
     @Named
@@ -38,21 +43,11 @@ public class FuraAction implements Serializable {
         return fura;
     }
 
-    public void setFura(Fura fura) {
-        this.fura = fura;
-    }
-
-
-    @EJB
-    private FuraService furaService;
-
     @PostConstruct
     public void initNewFura() {
         fura = new Fura();
         furas = furaService.getAllFura();
-//        getAllDrivers();
     }
-
 
     public boolean addFura() {
         furaService.addFura(fura.getFuraNumber(), fura.getDriverCount(), fura.getCapacity());

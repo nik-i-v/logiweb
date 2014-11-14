@@ -12,19 +12,19 @@
                     <h:panelGrid columns="3" columnClasses="titleCell">
 
                         <h:outputLabel for="number" value="Number:"/>
-                        <h:inputText id="number" value="#{fura.furaNumber}" required="true">
+                        <h:inputText id="number" value="#{furaAction.fura.furaNumber}" required="true">
                             <f:validator validatorId="furaValidator"/>
                         </h:inputText>
                         <h:message for="number" errorClass="invalid"/>
 
                         <h:outputLabel for="count" value="Driver count"/>
-                        <h:inputText id="count" value="#{fura.driverCount}" validatorMessage="Not a digit!"  required="true">
+                        <h:inputText id="count" value="#{furaAction.fura.driverCount}" validatorMessage="Not a digit!"  required="true">
                             <f:convertNumber integerOnly="true"/>
                         </h:inputText>
                         <h:message for="count" errorClass="invalid"/>
 
                         <h:outputLabel  value=""/>
-                        <h:selectOneMenu  value="#{fura.capacity}" >
+                        <h:selectOneMenu  value="#{furaAction.fura.capacity}" >
                             <f:selectItem itemValue="small" itemLabel="Small (1000 kg)"/>
                             <f:selectItem itemValue="middle" itemLabel="Middle (5000 kg)"/>
                             <f:selectItem itemValue="large" itemLabel="Large (10000 kg)"/>
