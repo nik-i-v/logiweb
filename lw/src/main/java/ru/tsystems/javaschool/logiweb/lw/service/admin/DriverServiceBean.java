@@ -7,6 +7,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
@@ -42,6 +43,13 @@ public class DriverServiceBean implements DriverService{
         entityManager.persist(driver);
         entityManager.persist(driverShift);
         entityManager.persist(user);
+    }
+
+    @Override
+    public List<Long> getAllFreeDrivers() {
+        Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE d.driverShift.status = :status");
+        query.setParameter("status", DriverShift.Status.notShift);
+        return query.getResultList();
     }
 
     private void checkIfDriverIdIsUnique(Long licenseId) throws SQLException {

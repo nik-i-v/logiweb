@@ -16,11 +16,11 @@
                     </h:selectOneMenu>
                     <h:message for="orderNumber" errorClass="invalid"/>
 
-                    <h:outputLabel for="driverList" value="Driver license"/>
-                    <h:inputText id="driverList" value="#{order.id}" validatorMessage="Invalid format">
-                        <f:convertNumber integerOnly="true" maxIntegerDigits="1"/>
-                    </h:inputText>
-                    <h:message for="driverList" errorClass="invalid"/>
+                    <h:outputLabel for="driverLicense" value="Drivers"/>
+                    <h:selectOneMenu id = "driverLicense" value="#{driverAction.driver.license}" >
+                        <f:selectItems value = "#{driverAction.freeDrivers}"/>
+                    </h:selectOneMenu>
+                    <h:message for="driverLicense" errorClass="invalid"/>
 
                     <h:outputLabel for="furaNumber" value="Wagon:"/>
                     <h:selectOneMenu id = "furaNumber" value="#{furaAction.fura.furaNumber}" >

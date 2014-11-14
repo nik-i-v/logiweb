@@ -12,4 +12,6 @@ public interface DriverService {
     List<DriverShift> getAllDrivers();
 
     void addDriver(String surname, String name, String patronymic, Long licenseId) throws SQLException;
+
+    List<Long> getAllFreeDrivers();
 }

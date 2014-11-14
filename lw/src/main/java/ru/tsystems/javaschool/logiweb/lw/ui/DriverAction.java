@@ -27,6 +27,18 @@ public class DriverAction implements Serializable {
 
     private Drivers driver;
     private List<DriverShift> drivers ;
+    private List<Long> freeDrivers;
+
+    @Produces
+    @Named
+    public List<Long> getFreeDrivers() {
+        freeDrivers = allFreeDrivers();
+        return freeDrivers;
+    }
+
+    public void setFreeDrivers(List<Long> freeDrivers) {
+        this.freeDrivers = freeDrivers;
+    }
 
     @Produces
     @Named
@@ -71,6 +83,10 @@ public class DriverAction implements Serializable {
         } catch (SQLException e) {
             return false;
         }
+    }
+
+    public List<Long> allFreeDrivers(){
+        return driverService.getAllFreeDrivers();
     }
 
 }
