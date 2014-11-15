@@ -41,12 +41,12 @@
                         <h:message for="weight" errorClass="invalid"/>
 
 
-                        <h:commandButton id="addG" value="Add goods" styleClass="but" action="#{orderAction.addGoods}"/>
+                        <h:commandButton id="addG" value="Add goods" styleClass="but" action="#{orderAction.addGoods}" ajax = "true" rendered="true"/>
                         <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                     globalOnly="true"/>
 
                         <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                         action="#{orderAction.doConfirmed}"/>
+                                         action="#{orderAction.doConfirmed}" ajax = "true" rendered="true"/>
                         <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                     globalOnly="true"/>
 

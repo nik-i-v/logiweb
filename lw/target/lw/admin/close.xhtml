@@ -17,7 +17,7 @@
                     <h:message for="orderNumber" errorClass="invalid"/>
 
                     <h:commandButton id="closingOrder" value="Close order" styleClass="but"
-                                     action="#{orderAction.closeOrder()}"/>
+                                     action="#{orderAction.closeOrder()}" ajax = "true" rendered="true"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
                 </h:panelGrid>

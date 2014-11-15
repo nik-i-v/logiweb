@@ -32,7 +32,7 @@
 
                     <!--..-->
                     <h:commandButton id="add" value="Add" styleClass="but"
-                                     action="#{orderAction.addOrder}"/>
+                                     action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
                 </h:panelGrid>

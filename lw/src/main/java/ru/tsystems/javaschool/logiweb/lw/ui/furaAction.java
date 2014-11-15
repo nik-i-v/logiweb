@@ -4,12 +4,17 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.FuraService;
 
+import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.sql.SQLException;
@@ -17,9 +22,11 @@ import java.util.List;
 
 //@Model
 @ManagedBean(name = "furaAction")
-@SessionScoped
+@ViewScoped
 public class FuraAction implements Serializable {
 
+    @Inject
+    private FacesContext facesContext;
 
     @EJB
     private FuraService furaService;
@@ -66,13 +73,23 @@ public class FuraAction implements Serializable {
     }
 
     public boolean addFura() {
-        furaService.addFura(fura.getFuraNumber(), fura.getDriverCount(), fura.getCapacity());
-        furas = furaService.getAllFura();
-        return true;
-
+        try {
+            furaService.addFura(fura.getFuraNumber(), fura.getDriverCount(), fura.getCapacity());
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Fura was added", "Fura addition successful"));
+            furas = furaService.getAllFura();
+            fura.setFuraNumber(null);
+            fura.setDriverCount(null);
+            return true;
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Addition unsuccessful"));
+            return false;
+        }
     }
 
-    public void allFreeFuras(){
+    public void allFreeFuras() {
         freeFuras = furaService.getFreeFuras();
     }
 

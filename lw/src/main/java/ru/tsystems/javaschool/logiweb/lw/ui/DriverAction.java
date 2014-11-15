@@ -8,11 +8,14 @@ import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.sql.SQLException;
@@ -23,6 +26,9 @@ import java.util.logging.Logger;
 @ManagedBean(name = "driverAction")
 @RequestScoped
 public class DriverAction implements Serializable {
+
+    @Inject
+    private FacesContext facesContext;
     private static Logger logger = Logger.getLogger(DriverAction.class.getName());
 
     private Drivers driver;
@@ -78,9 +84,15 @@ public class DriverAction implements Serializable {
     public boolean addDriver(){
         try {
             driverService.addDriver(driver.getSurname(), driver.getName(), driver.getPatronymic(), driver.getLicense());
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Driver was added", "Driver addition successful"));
             drivers = getAllDrivers();
+            driver = null;
             return true;
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Addition unsuccessful"));
             return false;
         }
     }

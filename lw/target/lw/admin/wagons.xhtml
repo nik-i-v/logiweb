@@ -32,7 +32,7 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:commandButton id="but" action="#{furaAction.addFura}" value="Add" styleClass="but"/>
+                        <h:commandButton id="but" action="#{furaAction.addFura}" value="Add" styleClass="but" ajax = "true" rendered="true"/>
                         <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                     globalOnly="true"/>
                     </h:panelGrid>

@@ -8,8 +8,11 @@ import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
@@ -27,6 +30,10 @@ public class OrderAction implements Serializable {
     private List<Integer> madeOrderNumber;
     private List<Integer> driversToOrder;
     private String furaToOrder;
+
+
+    @Inject
+    private FacesContext facesContext;
 
     @Produces
     @Named
@@ -85,7 +92,7 @@ public class OrderAction implements Serializable {
     private OrderService orderService;
 
     @PostConstruct
-    public void initOrders(){
+    public void initOrders() {
         orders = orderService.getAllOrders();
 
     }
@@ -133,36 +140,72 @@ public class OrderAction implements Serializable {
 
     public void addOrder() {
 //        order = new Order();
-        orderService.addOrder();
+        try {
+            orderService.addOrder();
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Order was added", "Order addition successful"));
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Addition unsuccessful"));
+        }
     }
 
     public void addGoods() {
-        orderService.addGoods(orderNumber, orderInfo.getName(), orderInfo.getGpsLat(), orderInfo.getGpsLong(),
-                orderInfo.getWeight());
+        try {
+            orderService.addGoods(orderNumber, orderInfo.getName(), orderInfo.getGpsLat(), orderInfo.getGpsLong(),
+                    orderInfo.getWeight());
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Goods was added", "Goods addition successful"));
+            orderInfo.setName(null);
+            orderInfo.setGpsLat(null);
+            orderInfo.setGpsLong(null);
+            orderInfo.setWeight(null);
+        }catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Addition unsuccessful"));
+        }
     }
 
     public void doConfirmed() {
         orderService.changeOrderStatus(orderNumber, OrderStatus.Status.confirmed);
     }
 
-    public void closeOrder(){
-        orderService.closeOrder(orderNumber);
+    public void closeOrder() {
+        try {
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Order closed", "Order close successful"));
+            orderService.closeOrder(orderNumber);
+        } catch (Exception e){
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Closing unsuccessful"));
+        }
     }
 
-    public void createdOrders(){
+    public void createdOrders() {
         createdOrderNumber = orderService.getCreatedOrders();
     }
 
-    public void confirmedOrders(){
+    public void confirmedOrders() {
         confirmedOrderNumber = orderService.getConfirmedOrders();
     }
 
-    public void madeOrders(){
+    public void madeOrders() {
         madeOrderNumber = orderService.getMadeOrders();
     }
 
-    public void addFuraAndDriversToOrder(){
-        orderService.addFuraAndDrivers(order.getId(),driversToOrder, furaToOrder);
+    public void addFuraAndDriversToOrder() {
+        try {
+            orderService.addFuraAndDrivers(order.getId(), driversToOrder, furaToOrder);
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Fura and drivers was added", "Fura and drivers addition successful"));
+        }catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Addition unsuccessful"));
+        }
     }
 
 }

@@ -6,6 +6,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.persistence.*;
 import java.sql.SQLException;

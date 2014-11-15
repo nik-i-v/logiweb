@@ -12,7 +12,7 @@
 
                     <h:panelGrid id="addOrder" columns="1">
                         <h:commandButton id="add" value="Create order" styleClass="but"
-                                         action="#{orderAction.addOrder}"/>
+                                         action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
                         <h:commandButton id = "addG" value="Add goods" styleClass="but"
                                          action="add_goods"/>
                         <h:commandButton  id = "addDF" value="Add drivers and fura" styleClass="but"
