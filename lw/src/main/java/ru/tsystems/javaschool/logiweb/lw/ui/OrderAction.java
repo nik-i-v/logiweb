@@ -25,7 +25,7 @@ public class OrderAction implements Serializable {
     private Order order;
     private List<Order> orders;
     private Integer orderNumber;
-    private OrderInfo orderInfo;
+//    private OrderInfo orderInfo;
     private List<Integer> createdOrderNumber;
     private List<Integer> confirmedOrderNumber;
     private List<Integer> madeOrderNumber;
@@ -108,15 +108,15 @@ public class OrderAction implements Serializable {
         this.orderNumber = orderNumber;
     }
 
-    @Produces
-    @Named
-    public OrderInfo getOrderInfo() {
-        return orderInfo;
-    }
-
-    public void setOrderInfo(OrderInfo orderInfo) {
-        this.orderInfo = orderInfo;
-    }
+//    @Produces
+//    @Named
+//    public OrderInfo getOrderInfo() {
+//        return orderInfo;
+//    }
+//
+//    public void setOrderInfo(OrderInfo orderInfo) {
+//        this.orderInfo = orderInfo;
+//    }
 
     @Produces
     @Named
@@ -152,22 +152,22 @@ public class OrderAction implements Serializable {
         }
     }
 
-    public void addGoods() {
-        try {
-            orderService.addGoods(orderNumber, orderInfo.getName(), orderInfo.getGpsLat(), orderInfo.getGpsLong(),
-                    orderInfo.getWeight());
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Goods was added", "Goods addition successful"));
-            orderInfo.setName(null);
-            orderInfo.setGpsLat(null);
-            orderInfo.setGpsLong(null);
-            orderInfo.setWeight(null);
-        }catch (Exception e) {
-            String errorMessage = e.getMessage();
-            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                    errorMessage, "Addition unsuccessful"));
-        }
-    }
+//    public void addGoods() {
+//        try {
+//            orderService.addGoods(orderNumber, orderInfo.getName(), orderInfo.getGpsLat(), orderInfo.getGpsLong(),
+//                    orderInfo.getWeight());
+//            facesContext.addMessage(null,
+//                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Goods was added", "Goods addition successful"));
+//            orderInfo.setName(null);
+//            orderInfo.setGpsLat(null);
+//            orderInfo.setGpsLong(null);
+//            orderInfo.setWeight(null);
+//        }catch (Exception e) {
+//            String errorMessage = e.getMessage();
+//            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+//                    errorMessage, "Addition unsuccessful"));
+//        }
+//    }
 
     public void doConfirmed() {
         orderService.changeOrderStatus(orderNumber, OrderStatus.Status.confirmed);
