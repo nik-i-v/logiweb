@@ -14,49 +14,49 @@
                 <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
                     <h:panelGrid id="addGoods" columns="3" columnClasses="titleCell">
                         <h:outputLabel for="orderNumber" value="Order:"/>
-                        <h:selectOneMenu id = "orderNumber" value="#{modifyOrder.orderInfo.orderNumber}" >
-                            <f:selectItems value = "#{orderAction.createdOrderNumber}"/>
+                        <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderInfo.orderNumber}">
+                            <f:selectItems value="#{orderAction.createdOrderNumber}"/>
                         </h:selectOneMenu>
                         <h:message for="orderNumber" errorClass="invalid"/>
 
                         <h:outputLabel for="name" value="Name:"/>
-                        <h:inputText id="name" value="#{modifyOrder.orderInfo.name}" validatorMessage="Invalid format" required="true">
+                        <h:inputText id="name" value="#{modifyOrder.orderInfo.name}" validatorMessage="Invalid format"
+                                     required="true">
                             <f:validator validatorId="nameValidator"/>
                         </h:inputText>
                         <h:message for="name" errorClass="invalid"/>
 
                         <h:outputLabel for="gpsLat" value="GPS Latitude:"/>
-                        <h:inputText id="gpsLat" value="#{modifyOrder.orderInfo.gpsLat}" validatorMessage="Invalid format" required="true">
+                        <h:inputText id="gpsLat" value="#{modifyOrder.orderInfo.gpsLat}"
+                                     validatorMessage="Invalid format" required="true">
                             <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
                         </h:inputText>
                         <h:message for="gpsLat" errorClass="invalid"/>
 
                         <h:outputLabel for="gpsLong" value="GPS Longitude:"/>
-                        <h:inputText id="gpsLong" value="#{modifyOrder.orderInfo.gpsLong}" validatorMessage="Invalid format" required="true">
+                        <h:inputText id="gpsLong" value="#{modifyOrder.orderInfo.gpsLong}"
+                                     validatorMessage="Invalid format" required="true">
                             <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
                         </h:inputText>
                         <h:message for="gpsLong" errorClass="invalid"/>
 
                         <h:outputLabel for="weight" value="Weight:"/>
-                        <h:inputText id="weight" value="#{modifyOrder.orderInfo.weight}" validatorMessage="Invalid format" required="true">
+                        <h:inputText id="weight" value="#{modifyOrder.orderInfo.weight}"
+                                     validatorMessage="Invalid format" required="true">
                             <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
                         </h:inputText>
                         <h:message for="weight" errorClass="invalid"/>
 
-
-                        <h:commandButton id="addG" value="Add goods" styleClass="but" action="#{modifyOrder.addGoods}" ajax = "true" rendered="true"/>
+                        <h:commandButton id="addG" value="Add goods" styleClass="but" action="#{modifyOrder.addGoods}"
+                                         ajax="true" rendered="true"/>
                         <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                     globalOnly="true"/>
-
-                        <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                         action="#{orderAction.doConfirmed}" ajax = "true" rendered="true"/>
-                        <!--<h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"-->
-                                    <!--globalOnly="true"/>-->
+                    </h:panelGrid>
 
                         <div id="buttons_back">
                             <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
                         </div>
-                    </h:panelGrid>
+                    <!--</h:panelGrid>-->
                 </h:form>
 
             </div>

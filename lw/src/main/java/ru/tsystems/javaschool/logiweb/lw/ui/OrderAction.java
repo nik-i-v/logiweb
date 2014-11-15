@@ -24,13 +24,11 @@ import java.util.List;
 public class OrderAction implements Serializable {
     private Order order;
     private List<Order> orders;
-    private Integer orderNumber;
-//    private OrderInfo orderInfo;
     private List<Integer> createdOrderNumber;
-    private List<Integer> confirmedOrderNumber;
     private List<Integer> madeOrderNumber;
     private List<Integer> driversToOrder;
     private String furaToOrder;
+
 
 
     @Inject
@@ -56,16 +54,6 @@ public class OrderAction implements Serializable {
         this.driversToOrder = driversToOrder;
     }
 
-    @Produces
-    @Named
-    public List<Integer> getConfirmedOrderNumber() {
-        confirmedOrders();
-        return confirmedOrderNumber;
-    }
-
-    public void setConfirmedOrderNumber(List<Integer> confirmedOrderNumber) {
-        this.confirmedOrderNumber = confirmedOrderNumber;
-    }
 
     @Produces
     @Named
@@ -98,25 +86,8 @@ public class OrderAction implements Serializable {
 
     }
 
-    @Produces
-    @Named
-    public Integer getOrderNumber() {
-        return orderNumber;
-    }
 
-    public void setOrderNumber(Integer orderNumber) {
-        this.orderNumber = orderNumber;
-    }
 
-//    @Produces
-//    @Named
-//    public OrderInfo getOrderInfo() {
-//        return orderInfo;
-//    }
-//
-//    public void setOrderInfo(OrderInfo orderInfo) {
-//        this.orderInfo = orderInfo;
-//    }
 
     @Produces
     @Named
@@ -152,46 +123,15 @@ public class OrderAction implements Serializable {
         }
     }
 
-//    public void addGoods() {
-//        try {
-//            orderService.addGoods(orderNumber, orderInfo.getName(), orderInfo.getGpsLat(), orderInfo.getGpsLong(),
-//                    orderInfo.getWeight());
-//            facesContext.addMessage(null,
-//                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Goods was added", "Goods addition successful"));
-//            orderInfo.setName(null);
-//            orderInfo.setGpsLat(null);
-//            orderInfo.setGpsLong(null);
-//            orderInfo.setWeight(null);
-//        }catch (Exception e) {
-//            String errorMessage = e.getMessage();
-//            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-//                    errorMessage, "Addition unsuccessful"));
-//        }
-//    }
 
-    public void doConfirmed() {
-        orderService.changeOrderStatus(orderNumber, OrderStatus.Status.confirmed);
-    }
 
-    public void closeOrder() {
-        try {
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Order closed", "Order close successful"));
-            orderService.closeOrder(orderNumber);
-        } catch (Exception e){
-            String errorMessage = e.getMessage();
-            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                    errorMessage, "Closing unsuccessful"));
-        }
-    }
+
 
     public void createdOrders() {
         createdOrderNumber = orderService.getCreatedOrders();
     }
 
-    public void confirmedOrders() {
-        confirmedOrderNumber = orderService.getConfirmedOrders();
-    }
+
 
     public void madeOrders() {
         madeOrderNumber = orderService.getMadeOrders();
@@ -202,11 +142,12 @@ public class OrderAction implements Serializable {
             orderService.addFuraAndDrivers(order.getId(), driversToOrder, furaToOrder);
             facesContext.addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Fura and drivers was added", "Fura and drivers addition successful"));
-        }catch (Exception e) {
+        } catch (Exception e) {
             String errorMessage = e.getMessage();
             facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
                     errorMessage, "Addition unsuccessful"));
         }
     }
+
 
 }

@@ -27,4 +27,6 @@ public interface OrderService {
     List<Integer> getConfirmedOrders();
 
     List<Integer> getMadeOrders();
+
+    List<Integer> getcreatedOrdersWitsGoods();
 }

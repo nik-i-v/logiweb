@@ -107,6 +107,13 @@ OrderDAO orderDAO = new OrderDAO();
         return getOrdersByStatus(OrderStatus.Status.made);
     }
 
+    @Override
+    public List<Integer> getcreatedOrdersWitsGoods() {
+        Query query = entityManager.createQuery("SELECT  DISTINCT oi.orderNumber FROM OrderInfo oi WHERE oi.orderStatus.status = :status");
+        query.setParameter("status", OrderStatus.Status.created);
+        return query.getResultList();
+    }
+
     private void isFuraOccupied(String furaNumber) {
         Query query = entityManager.createQuery("SELECT f.status FROM Fura f WHERE f.furaNumber = :number");
         query.setParameter("number", furaNumber);

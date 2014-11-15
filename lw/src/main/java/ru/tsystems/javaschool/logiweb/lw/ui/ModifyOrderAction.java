@@ -1,6 +1,7 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 
 import javax.annotation.PostConstruct;
@@ -13,12 +14,49 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.List;
 
 @ManagedBean(name = "modifyOrder")
 @RequestScoped
 public class ModifyOrderAction  implements Serializable{
     private OrderInfo orderInfo;
+    private List<Integer> confirmedOrderNumber;
+    private Integer orderNumber;
 
+    private List<Integer> createdOrdersWitsGoods;
+
+    @Named
+    @Produces
+    public List<Integer> getCreatedOrdersWitsGoods() {
+        createdOrdersWitsGoods();
+        return createdOrdersWitsGoods;
+    }
+
+
+    public void setCreatedOrdersWitsGoods(List<Integer> createdOrdersWitsGoods) {
+        this.createdOrdersWitsGoods = createdOrdersWitsGoods;
+    }
+
+    @Named
+    @Produces
+    public Integer getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(Integer orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    @Produces
+    @Named
+    public List<Integer> getConfirmedOrderNumber() {
+        confirmedOrders();
+        return confirmedOrderNumber;
+    }
+
+    public void setConfirmedOrderNumber(List<Integer> confirmedOrderNumber) {
+        this.confirmedOrderNumber = confirmedOrderNumber;
+    }
     @EJB
     private OrderService orderService;
 
@@ -54,6 +92,38 @@ public class ModifyOrderAction  implements Serializable{
             String errorMessage = e.getMessage();
             facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
                     errorMessage, "Addition unsuccessful"));
+        }
+    }
+
+    public void confirmedOrders() {
+        confirmedOrderNumber = orderService.getConfirmedOrders();
+    }
+
+    public void doConfirmed() {
+        try {
+            orderService.changeOrderStatus(orderNumber, OrderStatus.Status.confirmed);
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Order confirmed", "Order confirmed successful"));
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Confirmed unsuccessful"));
+        }
+    }
+
+    public void createdOrdersWitsGoods() {
+        createdOrdersWitsGoods = orderService.getcreatedOrdersWitsGoods();
+    }
+
+    public void closeOrder() {
+        try {
+            orderService.closeOrder(orderNumber);
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Order closed", "Order close successful"));
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Closing unsuccessful"));
         }
     }
 }

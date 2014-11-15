@@ -15,12 +15,13 @@
                                          action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
                         <h:commandButton id = "addG" value="Add goods" styleClass="but"
                                          action="add_goods"/>
+                        <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
+                                         action="confirm" ajax="true" rendered="true"/>
                         <h:commandButton  id = "addDF" value="Add drivers and fura" styleClass="but"
                                           action="add_drivers_and_fura"/>
                         <h:commandButton  id = "close" value="Close order" styleClass="but"
                                           action="close"/>
                     </h:panelGrid>
-
                 </h:form>
             </div>
             <div class="home_box">
