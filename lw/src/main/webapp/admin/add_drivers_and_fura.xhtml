@@ -14,8 +14,8 @@
                 <h:panelGrid columns="3" id="addDrivers" rendered="#{not empty confirmedOrderNumber}">
 
                     <h:outputLabel for="orderNumber" value="Order:"/>
-                    <h:selectOneMenu id="orderNumber" value="#{orderAction.order.id}">
-                        <f:selectItems value="#{orderAction.confirmedOrderNumber}"/>
+                    <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
+                        <f:selectItems value="#{modifyOrder.confirmedOrderNumber}"/>
                     </h:selectOneMenu>
                     <h:message for="orderNumber" errorClass="invalid"/>
 
