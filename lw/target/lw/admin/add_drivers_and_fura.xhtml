@@ -8,7 +8,10 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:panelGrid columns="3" id="addDrivers">
+                <h:panelGroup rendered="#{empty confirmedOrderNumber}">
+                    <em>No confirmed orders.</em>
+                </h:panelGroup>
+                <h:panelGrid columns="3" id="addDrivers" rendered="#{not empty confirmedOrderNumber}">
 
                     <h:outputLabel for="orderNumber" value="Order:"/>
                     <h:selectOneMenu id="orderNumber" value="#{orderAction.order.id}">
