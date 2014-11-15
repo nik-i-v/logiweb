@@ -11,6 +11,7 @@ import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.ejb.EJB;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -19,7 +20,7 @@ import java.util.List;
 
 //@Model
 @ManagedBean(name = "orderAction")
-@SessionScoped
+@ViewScoped
 public class OrderAction implements Serializable {
     private Order order;
     private List<Order> orders;
