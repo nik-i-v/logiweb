@@ -64,7 +64,7 @@ OrderDAO orderDAO = new OrderDAO();
     }
 
     @Override
-    public void addFuraAndDrivers(Integer orderNumber, List<Integer> driverId, String furaNumber, EntityManager entityManager) throws SQLException, IllegalArgumentException {
+    public void addFuraAndDrivers(Integer orderNumber, List<Integer> driverId, String furaNumber) {
         isOrderExists(orderNumber);
         isFuraExists(furaNumber);
         checkOrderStatus(getOrderStatus(orderNumber), OrderStatus.Status.confirmed.toString());

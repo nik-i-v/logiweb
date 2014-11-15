@@ -25,6 +25,28 @@ public class OrderAction implements Serializable {
     private List<Integer> createdOrderNumber;
     private List<Integer> confirmedOrderNumber;
     private List<Integer> madeOrderNumber;
+    private List<Integer> driversToOrder;
+    private String furaToOrder;
+
+    @Produces
+    @Named
+    public String getFuraToOrder() {
+        return furaToOrder;
+    }
+
+    public void setFuraToOrder(String furaToOrder) {
+        this.furaToOrder = furaToOrder;
+    }
+
+    @Named
+    @Produces
+    public List<Integer> getDriversToOrder() {
+        return driversToOrder;
+    }
+
+    public void setDriversToOrder(List<Integer> driversToOrder) {
+        this.driversToOrder = driversToOrder;
+    }
 
     @Produces
     @Named
@@ -138,4 +160,9 @@ public class OrderAction implements Serializable {
     public void madeOrders(){
         madeOrderNumber = orderService.getMadeOrders();
     }
+
+    public void addFuraAndDriversToOrder(){
+        orderService.addFuraAndDrivers(order.getId(),driversToOrder, furaToOrder);
+    }
+
 }
