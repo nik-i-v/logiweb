@@ -57,7 +57,7 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     }
 
     @Override
-    public void changeDriverStatusForDrivers(Long driverId, String status) {
+    public void changeDriverStatusForDrivers(Long driverId, DriverShift.Status status) {
         if (status.equals(DriverShift.Status.atWeel.toString())) {
             isAnybodyAtWheel(driverId);
             changeDriverStatus(DriverShift.Status.atWeel, driverId);

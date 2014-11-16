@@ -26,8 +26,12 @@
     <navigation-rule>
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>success</from-outcome>
-            <to-view-id>/admin/drivers.xhtml</to-view-id>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/admin/orders.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>driver</from-outcome>
+            <to-view-id>/driver/orders.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>fail</from-outcome>

@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 //@Model
 @Named
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class CheckUser implements Serializable {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
@@ -40,7 +40,9 @@ public class CheckUser implements Serializable {
     public String checkUser() {
         List<Users> users = userService.getUsers();
         if (isAdmin(users, user)){
-            return "success";
+            return "admin";
+        } else  if (isDriver(users, user)){
+            return "driver";
         } else {
             return "fail";
         }
@@ -57,15 +59,22 @@ public class CheckUser implements Serializable {
     }
 
     private boolean isAdmin(List<Users> users, Users user){
+       return checkUser(users, user, Users.Status.Administrator);
+    }
+
+    private boolean isDriver(List<Users> users, Users user){
+        return checkUser(users, user, Users.Status.Driver);
+    }
+
+    private boolean checkUser(List<Users> users, Users user, Users.Status status){
         for (Users u: users){
             if (u.getName().equals(user.getName()) && u.getPassword().equals(user.getPassword()) &&
-                    u.getStatus().equals(Users.Status.Administrator)){
+                    u.getStatus().equals(status)){
                 return true;
             }
         }
         return false;
     }
-
 
 
 }

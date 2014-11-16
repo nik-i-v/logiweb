@@ -16,7 +16,7 @@ public interface OrderServiceForDrivers {
 
     List<OrderInfo> currentGoodsStatusIsNo(Integer orderNumber);
 
-    void changeDriverStatusForDrivers(Long driverId, String status);
+    void changeDriverStatusForDrivers(Long driverId, DriverShift.Status status);
 
     DriverShift.Status getStatusMenuForDrivers(String currentStatus);
 
