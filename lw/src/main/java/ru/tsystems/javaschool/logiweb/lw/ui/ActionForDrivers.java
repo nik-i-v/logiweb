@@ -1,6 +1,7 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderServiceForDrivers;
@@ -21,9 +22,10 @@ import java.util.List;
 @RequestScoped
 public class ActionForDrivers implements Serializable {
     private Long driverLicense;
-    private List<Order> orders;
+    private List<Order> ordersDrivers;
     private String currentStatus;
     private String newStatus;
+    private String name;
 
 
     @EJB
@@ -53,12 +55,22 @@ public class ActionForDrivers implements Serializable {
 
     @Produces
     @Named
-    public List<Order> getOrders() {
-        return orders;
+    public List<Order> getOrdersDrivers() {
+        return ordersDrivers;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setOrdersDrivers(List<Order> orders) {
+        this.ordersDrivers = orders;
+    }
+
+    @Produces
+    @Named
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Named
@@ -84,7 +96,7 @@ public class ActionForDrivers implements Serializable {
     @Produces
     @Named
     public void getOrderForDrivers(){
-        orders = orderServiceForDrivers.getOrderForDrivers(driverLicense);
+        ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
     }
 
     public void changeStatus() {
@@ -92,6 +104,19 @@ public class ActionForDrivers implements Serializable {
             changeStatus(DriverShift.Status.atWeel);
         } else {
             changeStatus(DriverShift.Status.shift);
+        }
+    }
+
+    public void changeGoodsStatus(){
+        try {
+            orderServiceForDrivers.changeGoodsStatusForDrivers(name, driverLicense);
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Goods status has been changed", "Goods status change successful"));
+            getOrderForDrivers();
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Changing unsuccessful"));
         }
     }
 
@@ -107,5 +132,7 @@ public class ActionForDrivers implements Serializable {
                     errorMessage, "Changing unsuccessful"));
         }
     }
+
+
 
 }
