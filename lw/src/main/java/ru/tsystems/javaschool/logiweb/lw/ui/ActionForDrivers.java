@@ -1,9 +1,6 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
-import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderServiceForDrivers;
 
 import javax.annotation.PostConstruct;
@@ -26,6 +23,8 @@ public class ActionForDrivers implements Serializable {
     private String currentStatus;
     private String newStatus;
     private String name;
+    private DriverShift.Status statusMenu;
+    private List<String> goodsName;
 
 
     @EJB
@@ -43,10 +42,32 @@ public class ActionForDrivers implements Serializable {
         return driverLicense;
     }
 
+    @Named
+    @Produces
+    public List<String> getGoodsName() {
+        goodsName = orderServiceForDrivers.getGoodsList(driverLicense);
+        return goodsName;
+    }
+
+    public void setGoodsName(List<String> goodsName) {
+        this.goodsName = goodsName;
+    }
+
+    @Named
+    @Produces
+    public DriverShift.Status getStatusMenu() {
+        return statusMenu;
+    }
+
+    public void setStatusMenu(DriverShift.Status statusMenu) {
+        this.statusMenu = statusMenu;
+    }
+
     @PostConstruct
     public void init() {
         driverLicense = Long.parseLong(checkUser.getUser().getName());
         currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
+        statusMenu = orderServiceForDrivers.getStatusMenuForDrivers(currentStatus);
     }
 
     public void setDriverLicense(Long driverLicense) {
@@ -105,6 +126,12 @@ public class ActionForDrivers implements Serializable {
         } else {
             changeStatus(DriverShift.Status.shift);
         }
+    }
+
+    @Named
+    @Produces
+    public List<Drivers> getCoDrivers(){
+        return orderServiceForDrivers.getCoDrivers(driverLicense);
     }
 
     public void changeGoodsStatus(){

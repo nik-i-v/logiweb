@@ -1,9 +1,6 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
-import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -29,6 +26,15 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     public List<OrderInfo> getGoodsStatusForDrivers(Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
         Query query = entityManager.createQuery("SELECT oi FROM OrderInfo oi " +
+                "WHERE oi.orderNumber = :number ");
+        query.setParameter("number", orderNumber);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<String> getGoodsList(Long driverLicense){
+        Integer orderNumber = getOrderNumberForDrivers(driverLicense);
+        Query query = entityManager.createQuery("SELECT oi.name FROM OrderInfo oi " +
                 "WHERE oi.orderNumber = :number ");
         query.setParameter("number", orderNumber);
         return query.getResultList();
@@ -81,6 +87,16 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         Query query = entityManager.createQuery("SELECT d.driverShift.status FROM Drivers d WHERE d.license = :license");
         query.setParameter("license", driverId);
         return query.getSingleResult().toString();
+    }
+
+    @Override
+    public List<Drivers> getCoDrivers(Long driverLicense) {
+        Integer orderNumber = getOrderNumberForDrivers(driverLicense);
+        Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE  d.driverShift.orderId = :number");
+        query.setParameter("number", orderNumber);
+        List<Drivers> drivers = query.getResultList();
+        drivers.remove(driverLicense);
+        return drivers;
     }
 
     private Integer getOrderNumberForDrivers(Long driverId) {

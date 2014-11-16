@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
-</html>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/driver.xhtml">
+    <ui:define name="content">
+        <div class="all_box">
+            <div class="home_box">
+                <h:form id="orderActivity">
+
+                    <h:panelGrid id="driverAction" columns="1" rendered="#{not empty ordersDrivers}">
+                        <h:commandButton id="add" value="Change my status" styleClass="but"
+                                         action="change_status" ajax = "true" rendered="true"/>
+                        <h:commandButton id = "addG" value="Change goods status" styleClass="but"
+                                         action="change_goods_status"/>
+                    </h:panelGrid>
+                </h:form>
+            </div>
+            <div class="home_box">
+                <h:panelGroup rendered="#{empty ordersDrivers}">
+                    <em>You have no orders.</em>
+                </h:panelGroup>
+                <h:dataTable var="_order" value="#{ordersDrivers}" rendered="#{not empty ordersDrivers} "
+                             styleClass="simpletablestyle">
+                    <h:column>
+                        <f:facet name="header">Driver license</f:facet>
+                        #{action.driverLicense}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Co-drivers</f:facet>
+                        #{action.coDrivers}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Fura</f:facet>
+                        #{_order.furaId}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Order</f:facet>
+                        #{_order.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name goods</f:facet>
+                        #{_order.orderStatus.orderInfo.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Weight goods</f:facet>
+                        #{_order.orderStatus.orderInfo.weight}
+                    </h:column>
+
+                </h:dataTable>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>
