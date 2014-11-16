@@ -22,7 +22,6 @@ public class ModifyOrderAction  implements Serializable{
     private OrderInfo orderInfo;
     private List<Integer> confirmedOrderNumber;
     private Integer orderNumber;
-
     private List<Integer> createdOrdersWitsGoods;
 
     @Named
