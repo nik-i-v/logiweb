@@ -20,14 +20,13 @@
                     <h:message for="orderNumber" errorClass="invalid"/>
 
                     <h:commandButton id="closingOrder" value="Close order" styleClass="but"
-                                     action="#{orderAction.closeOrder()}" ajax = "true" rendered="true"/>
+                                     action="#{modifyOrder.closeOrder}" ajax = "true" rendered="true"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
-
-                    <div id="buttons_back">
-                        <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
-                    </div>
                 </h:panelGrid>
+                <div id="buttons_back">
+                    <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                </div>
 
             </div>
             <div class="home_box">

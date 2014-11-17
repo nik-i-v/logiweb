@@ -44,7 +44,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Drivers</f:facet>
-                        <h:dataTable var = "_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle">
+                        <h:dataTable var = "_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle" >
                             <h:column>
                                 <!--<f:facet name="header">Dri</f:facet>-->
                                 #{_drivers.drivers.license}
@@ -53,7 +53,8 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Goods</f:facet>
-                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle">
+                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                                     rendered="#{not empty _order.orderStatus.orderInfo}">
                             <h:column>
                                 <f:facet name="header">Name</f:facet>
                                 #{_goods.name}
@@ -76,7 +77,6 @@
                             </h:column>
                         </h:dataTable>
                     </h:column>
-
                 </h:dataTable>
             </div>
         </div>

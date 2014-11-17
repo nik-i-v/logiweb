@@ -29,7 +29,12 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Co-drivers</f:facet>
-                        #{action.coDrivers}
+                        <h:dataTable var = "_drivers" value="#{_order.driverShift.driver}" styleClass="simpletablestyle" >
+                            <h:column>
+                                <!--<f:facet name="header">Dri</f:facet>-->
+                                #{_drivers.license}
+                            </h:column>
+                        </h:dataTable>
                     </h:column>
                     <h:column>
                         <f:facet name="header">Fura</f:facet>
@@ -40,14 +45,31 @@
                         #{_order.id}
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Name goods</f:facet>
-                        #{_order.orderStatus.orderInfo.name}
+                        <f:facet name="header">Goods</f:facet>
+                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                                     rendered="#{not empty _order.orderStatus.orderInfo}">
+                            <h:column>
+                                <f:facet name="header">Name</f:facet>
+                                #{_goods.name}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">GPS Latitude</f:facet>
+                                #{_goods.gpsLat}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">GPS Longitude</f:facet>
+                                #{_goods.gpsLong}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Weight</f:facet>
+                                #{_goods.weight}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Status</f:facet>
+                                #{_goods.status}
+                            </h:column>
+                        </h:dataTable>
                     </h:column>
-                    <h:column>
-                        <f:facet name="header">Weight goods</f:facet>
-                        #{_order.orderStatus.orderInfo.weight}
-                    </h:column>
-
                 </h:dataTable>
             </div>
         </div>

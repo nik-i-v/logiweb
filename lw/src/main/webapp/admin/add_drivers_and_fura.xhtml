@@ -35,15 +35,15 @@
 
                     <!--..-->
                     <h:commandButton id="add" value="Add" styleClass="but"
-                                     action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
+                                     action="#{orderAction.addFuraAndDriversToOrder}" ajax = "true" rendered="true"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
 
-                    <div id="buttons_back">
-                        <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
-                    </div>
-                </h:panelGrid>
 
+                </h:panelGrid>
+                <div id="buttons_back">
+                    <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                </div>
             </div>
             <div class="home_box">
                 <h:panelGroup rendered="#{empty orders}">

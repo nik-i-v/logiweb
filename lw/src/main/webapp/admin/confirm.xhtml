@@ -14,16 +14,19 @@
                 <h:panelGrid columns="3" id="closeOrder" rendered="#{not empty createdOrdersWitsGoods}">
 
                     <h:outputLabel for="orderNumber" value="Order:"/>
-                    <h:selectOneMenu id = "orderNumber" value="#{modifyOrder.orderNumber}" >
-                        <f:selectItems value = "#{modifyOrder.createdOrdersWitsGoods}"/>
+                    <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
+                        <f:selectItems value="#{modifyOrder.createdOrdersWitsGoods}"/>
                     </h:selectOneMenu>
                     <h:message for="orderNumber" errorClass="invalid"/>
 
                     <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                     action="#{modifyOrder.doConfirmed}" ajax = "true" rendered="true"/>
+                                     action="#{modifyOrder.doConfirmed}" ajax="true" rendered="true"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
 
+                    <div>
+
+                    </div>
                     <div id="buttons_back">
                         <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
                     </div>
@@ -34,7 +37,8 @@
                 <h:panelGroup rendered="#{empty orders}">
                     <em>No registered orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="_order"  value="#{orders}" rendered="#{not empty orders}" styleClass="simpletablestyle">
+                <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
+                             styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
                         #{_order.id}
@@ -49,7 +53,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Drivers</f:facet>
-                        <h:dataTable var = "_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle" >
+                        <h:dataTable var="_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle">
                             <h:column>
                                 <!--<f:facet name="header">Dri</f:facet>-->
                                 #{_drivers.drivers.license}
@@ -58,7 +62,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Goods</f:facet>
-                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                        <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
                                      rendered="#{not empty _order.orderStatus.orderInfo}">
                             <h:column>
                                 <f:facet name="header">Name</f:facet>

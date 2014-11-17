@@ -93,9 +93,6 @@ public class OrderAction implements Serializable {
 
     }
 
-
-
-
     @Produces
     @Named
     public Order getOrder() {
@@ -128,10 +125,6 @@ public class OrderAction implements Serializable {
                     errorMessage, "Addition unsuccessful"));
         }
     }
-
-
-
-
 
     public void createdOrders() {
         createdOrderNumber = orderService.getCreatedOrders();

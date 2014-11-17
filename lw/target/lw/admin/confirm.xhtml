@@ -14,16 +14,19 @@
                 <h:panelGrid columns="3" id="closeOrder" rendered="#{not empty createdOrdersWitsGoods}">
 
                     <h:outputLabel for="orderNumber" value="Order:"/>
-                    <h:selectOneMenu id = "orderNumber" value="#{modifyOrder.orderNumber}" >
-                        <f:selectItems value = "#{modifyOrder.createdOrdersWitsGoods}"/>
+                    <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
+                        <f:selectItems value="#{modifyOrder.createdOrdersWitsGoods}"/>
                     </h:selectOneMenu>
                     <h:message for="orderNumber" errorClass="invalid"/>
 
                     <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                     action="#{modifyOrder.doConfirmed}" ajax = "true" rendered="true"/>
+                                     action="#{modifyOrder.doConfirmed}" ajax="true" rendered="true"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
 
+                    <div>
+
+                    </div>
                     <div id="buttons_back">
                         <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
                     </div>
@@ -34,43 +37,54 @@
                 <h:panelGroup rendered="#{empty orders}">
                     <em>No registered orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="_order" value="#{orderAction.orders}" rendered="#{not empty orders} "
+                <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
                              styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
-                        <h:outputText value="#{_order.id}"/>
+                        #{_order.id}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Status</f:facet>
-                        <h:outputText value="#{_order.orderStatus.status}"/>
+                        #{_order.orderStatus.status}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Fura</f:facet>
-                        <h:outputText value="#{_order.furaId}"/>
+                        #{_order.furaId}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Drivers</f:facet>
-                        <h:outputText value="#{_order.driverShift.driverId}"/>
+                        <h:dataTable var="_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle">
+                            <h:column>
+                                <!--<f:facet name="header">Dri</f:facet>-->
+                                #{_drivers.drivers.license}
+                            </h:column>
+                        </h:dataTable>
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Name goods</f:facet>
-                        <h:outputText value="#{_order.orderStatus.orderInfo.name}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">GPS: Latitude</f:facet>
-                        <h:outputText value="#{_order.orderStatus.orderInfo.gpsLat}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">GPS: Longitude</f:facet>
-                        <h:outputText value="#{_order.orderStatus.orderInfo.gpsLong}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Goods ststus</f:facet>
-                        <h:outputText value="#{_order.orderStatus.orderInfo.status}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Weight</f:facet>
-                        <h:outputText value="#{_order.orderStatus.orderInfo.weight}"/>
+                        <f:facet name="header">Goods</f:facet>
+                        <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                                     rendered="#{not empty _order.orderStatus.orderInfo}">
+                            <h:column>
+                                <f:facet name="header">Name</f:facet>
+                                #{_goods.name}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">GPS Latitude</f:facet>
+                                #{_goods.gpsLat}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">GPS Longitude</f:facet>
+                                #{_goods.gpsLong}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Weight</f:facet>
+                                #{_goods.weight}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Status</f:facet>
+                                #{_goods.status}
+                            </h:column>
+                        </h:dataTable>
                     </h:column>
                 </h:dataTable>
             </div>
