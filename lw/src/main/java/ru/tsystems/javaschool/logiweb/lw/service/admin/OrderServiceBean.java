@@ -35,8 +35,11 @@ OrderDAO orderDAO = new OrderDAO();
         Order order = new Order();
         OrderStatus orderStatus = new OrderStatus();
         orderStatus.setStatus(OrderStatus.Status.created);
-        entityManager.flush();
-        orderDAO.add(orderStatus, order);
+//        entityManager.flush();
+        entityManager.persist(order);
+        entityManager.persist(orderStatus);
+
+//        orderDAO.add(orderStatus, order);
 //        return order.getId();
     }
 

@@ -11,7 +11,7 @@ import java.util.List;
 public interface DriverService {
     List<DriverShift> getAllDrivers();
 
-    void addDriver(String surname, String name, String patronymic, Long licenseId) throws SQLException;
+    void addDriver(String surname, String name, String patronymic, Long licenseId);
 
     List<Long> getAllFreeDrivers();
 }

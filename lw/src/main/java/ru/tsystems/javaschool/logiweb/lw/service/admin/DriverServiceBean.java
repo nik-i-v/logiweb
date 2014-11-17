@@ -1,5 +1,6 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
+import ru.tsystems.javaschool.logiweb.lw.server.dao.DriverDAO;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
@@ -17,6 +18,8 @@ import java.util.logging.Logger;
 public class DriverServiceBean implements DriverService{
     private Logger logger = Logger.getLogger(DriverServiceBean.class.getName());
 
+    DriverDAO driverDAO = new DriverDAO();
+
     @Inject
     private EntityManager entityManager;
 
@@ -26,7 +29,7 @@ public class DriverServiceBean implements DriverService{
     }
 
     @Override
-    public void addDriver(String surname, String name, String patronymic, Long licenseId) throws SQLException {
+    public void addDriver(String surname, String name, String patronymic, Long licenseId) {
         logger.info("Add new driver with license: " + licenseId);
         checkIfDriverIdIsUnique(licenseId);
         Drivers driver = new Drivers();
@@ -52,7 +55,7 @@ public class DriverServiceBean implements DriverService{
         return query.getResultList();
     }
 
-    private void checkIfDriverIdIsUnique(Long licenseId) throws SQLException {
+    private void checkIfDriverIdIsUnique(Long licenseId) {
        List<Long> ids =  entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
         if (ids.contains(licenseId)) {
             throw new IllegalArgumentException("Driver with this license is already exists.");

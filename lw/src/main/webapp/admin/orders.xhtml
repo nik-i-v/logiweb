@@ -8,11 +8,12 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:form id="orderActivity">
-
-                    <h:panelGrid id="addOrder" columns="1">
+                <h:form id="addDriver">
+                    <h:panelGrid columns="1" columnClasses="titleCell">
                         <h:commandButton id="add" value="Create order" styleClass="but"
                                          action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
                         <h:commandButton id = "addG" value="Add goods" styleClass="but"
                                          action="add_goods"/>
                         <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
@@ -59,12 +60,12 @@
                         #{_order.orderStatus.orderInfo.gpsLong}
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Goods ststus</f:facet>
+                        <f:facet name="header">Goods status</f:facet>
                         #{_order.orderStatus.orderInfo.status}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Weight</f:facet>
-                       #{_order.orderStatus.orderInfo.weight}
+                        #{_order.orderStatus.orderInfo.weight}
                     </h:column>
                 </h:dataTable>
             </div>
@@ -72,3 +73,4 @@
 
     </ui:define>
 </ui:composition>
+

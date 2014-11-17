@@ -13,6 +13,8 @@ import java.io.Serializable;
 @XmlRootElement
 @Table(name = "drivers", uniqueConstraints = @UniqueConstraint(columnNames = "drivers_id"))
 public class Drivers implements Serializable {
+
+
     @Id
     @Column(name = "drivers_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,6 +45,13 @@ public class Drivers implements Serializable {
     private DriverShift driverShift;
 
     public Drivers() {
+    }
+
+    public Drivers(String surname, String name, String patronymic, Long license) {
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.license = license;
     }
 
     public DriverShift getDriverShift() {

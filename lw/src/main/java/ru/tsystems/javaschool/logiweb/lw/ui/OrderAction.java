@@ -114,8 +114,7 @@ public class OrderAction implements Serializable {
 //        order = new Order();
         try {
             orderService.addOrder();
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Order was added", "Order addition successful"));
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Order was added", "Order addition successful"));
         } catch (Exception e) {
             String errorMessage = e.getMessage();
             facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,

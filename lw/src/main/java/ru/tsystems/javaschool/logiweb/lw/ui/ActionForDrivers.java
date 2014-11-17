@@ -1,7 +1,7 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
-import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderServiceForDrivers;
+import ru.tsystems.javaschool.logiweb.lw.service.driver.OrderServiceForDrivers;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;

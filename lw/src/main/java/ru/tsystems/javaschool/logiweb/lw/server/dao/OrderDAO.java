@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class OrderDAO {
 
-    @PersistenceContext(unitName = "logiweb")
+    @Inject
     private EntityManager entityManager;
 
     public void add(OrderStatus orderStatus, Order order){
