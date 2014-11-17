@@ -1,12 +1,9 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -28,8 +25,18 @@ public class OrderAction implements Serializable {
     private List<Integer> madeOrderNumber;
     private List<Integer> driversToOrder;
     private String furaToOrder;
+    private List<Long> driversInCurrentOrder;
 
+    @Named
+    @Produces
+    public List<Long> getDriversInCurrentOrder() {
+//        driversInCurrentOrder = orderService.getDriversInCurrentOrder();
+        return driversInCurrentOrder;
+    }
 
+    public void setDriversInCurrentOrder(List<Long> driversInCurrentOrder) {
+        this.driversInCurrentOrder = driversInCurrentOrder;
+    }
 
     @Inject
     private FacesContext facesContext;

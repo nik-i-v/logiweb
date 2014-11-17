@@ -10,27 +10,26 @@
             <div class="home_box">
                 <h:form id="addDriver">
                     <h:panelGrid columns="1" columnClasses="titleCell">
-                        <h:commandButton id="add" value="Create order" styleClass="but"
-                                         action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
-                        <h:commandButton id = "addG" value="Add goods" styleClass="but"
-                                         action="add_goods"/>
-                        <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                         action="confirm" ajax="true" rendered="true"/>
-                        <h:commandButton  id = "addDF" value="Add drivers and fura" styleClass="but"
-                                          action="add_drivers_and_fura"/>
-                        <h:commandButton  id = "close" value="Close order" styleClass="but"
-                                          action="close"/>
-                    </h:panelGrid>
+                    <h:commandButton id="add" value="Create order" styleClass="but"
+                                     action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
+
+                    <h:commandButton id = "addG" value="Add goods" styleClass="but"
+                                     action="add_goods"/>
+                    <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
+                                     action="confirm" ajax="true" rendered="true"/>
+                    <h:commandButton  id = "addDF" value="Add drivers and fura" styleClass="but"
+                                      action="add_drivers_and_fura"/>
+                    <h:commandButton  id = "close" value="Close order" styleClass="but"
+                                      action="close"/>
+                </h:panelGrid>
+
                 </h:form>
             </div>
             <div class="home_box">
                 <h:panelGroup rendered="#{empty orders}">
-                    <em>No registered orders.</em>
+                    <em>No orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders} "
-                             styleClass="simpletablestyle">
+                <h:dataTable var="_order"  value="#{orders}" rendered="#{not empty orders}" styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
                         #{_order.id}
@@ -45,27 +44,38 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Drivers</f:facet>
-                        #{_order.driverShift.driverId}
+                        <h:dataTable var = "_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle" >
+                            <h:column>
+                                <!--<f:facet name="header">Dri</f:facet>-->
+                                #{_drivers.drivers.license}
+                            </h:column>
+                        </h:dataTable>
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Name goods</f:facet>
-                        #{_order.orderStatus.orderInfo.name}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">GPS: Latitude</f:facet>
-                        #{_order.orderStatus.orderInfo.gpsLat}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">GPS: Longitude</f:facet>
-                        #{_order.orderStatus.orderInfo.gpsLong}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Goods status</f:facet>
-                        #{_order.orderStatus.orderInfo.status}
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Weight</f:facet>
-                        #{_order.orderStatus.orderInfo.weight}
+                        <f:facet name="header">Goods</f:facet>
+                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                                     rendered="#{not empty _order.orderStatus.orderInfo}">
+                            <h:column>
+                                <f:facet name="header">Name</f:facet>
+                                #{_goods.name}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">GPS Latitude</f:facet>
+                                #{_goods.gpsLat}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">GPS Longitude</f:facet>
+                                #{_goods.gpsLong}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Weight</f:facet>
+                                #{_goods.weight}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Status</f:facet>
+                                #{_goods.status}
+                            </h:column>
+                        </h:dataTable>
                     </h:column>
                 </h:dataTable>
             </div>
@@ -73,4 +83,6 @@
 
     </ui:define>
 </ui:composition>
+
+
 

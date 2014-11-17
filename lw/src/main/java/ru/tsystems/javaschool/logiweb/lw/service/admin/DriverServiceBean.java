@@ -1,6 +1,5 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
-import ru.tsystems.javaschool.logiweb.lw.server.dao.DriverDAO;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
@@ -17,8 +16,6 @@ import java.util.logging.Logger;
 @Stateless
 public class DriverServiceBean implements DriverService{
     private Logger logger = Logger.getLogger(DriverServiceBean.class.getName());
-
-    DriverDAO driverDAO = new DriverDAO();
 
     @Inject
     private EntityManager entityManager;

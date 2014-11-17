@@ -1,6 +1,5 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
-import ru.tsystems.javaschool.logiweb.lw.server.dao.OrderDAO;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 
 
@@ -15,7 +14,6 @@ import java.util.logging.Logger;
 
 @Stateless
 public class OrderServiceBean implements OrderService {
-OrderDAO orderDAO = new OrderDAO();
     private static Logger logger = Logger.getLogger(OrderServiceBean.class.getName());
 
     @Inject
@@ -116,6 +114,13 @@ OrderDAO orderDAO = new OrderDAO();
         query.setParameter("status", OrderStatus.Status.created);
         return query.getResultList();
     }
+
+//    @Override
+//    public List<Long> getDriversInCurrentOrder() {
+//        Query query = entityManager.createQuery("SELECT  DISTINCT oi.orderNumber FROM OrderInfo oi WHERE oi.orderStatus.status = :status");
+//        query.setParameter("status", OrderStatus.Status.created);
+//        return query.getResultList();
+//    }
 
     private void isFuraOccupied(String furaNumber) {
         Query query = entityManager.createQuery("SELECT f.status FROM Fura f WHERE f.furaNumber = :number");

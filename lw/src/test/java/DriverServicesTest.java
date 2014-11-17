@@ -1,6 +1,5 @@
 import org.junit.Before;
 import org.junit.Test;
-import ru.tsystems.javaschool.logiweb.lw.server.dao.DriverDAO;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean;
@@ -16,16 +15,11 @@ import static org.mockito.Mockito.*;
 public class DriverServicesTest {
 
     private DriverService service;
-    private DriverDAO driverDAO;
     private String surname;
     private String name;
     private String patronymic;
     private Long license;
 
-    @Before
-    public void setup() {
-        driverDAO = mock(DriverDAO.class);
-    }
 
     @Test
     public void getAllTest() {
