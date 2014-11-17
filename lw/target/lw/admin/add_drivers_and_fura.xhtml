@@ -8,46 +8,48 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:panelGroup rendered="#{empty confirmedOrderNumber}">
-                    <em>No confirmed orders.</em>
+                <h:panelGroup rendered="#{empty createdOrderNumber}">
+                    <em>No created orders.</em>
                 </h:panelGroup>
-                <h:panelGrid columns="3" id="addDrivers" rendered="#{not empty confirmedOrderNumber}">
+                <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
+                    <h:panelGrid columns="3" id="addDrivers" rendered="#{not empty confirmedOrderNumber}">
 
-                    <h:outputLabel for="orderNumber" value="Order:"/>
-                    <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
-                        <f:selectItems value="#{modifyOrder.confirmedOrderNumber}"/>
-                    </h:selectOneMenu>
-                    <h:message for="orderNumber" errorClass="invalid"/>
-
-
-                    <h:outputLabel for="driverLicense" value="Drivers"/>
-                    <h:selectManyCheckbox id="driverLicense" value="#{orderAction.driversToOrder}" layout="pageDirection"  >
-                        <f:selectItems value="#{driverAction.freeDrivers}" />
-                    </h:selectManyCheckbox>
+                        <h:outputLabel for="orderNumber" value="Order:"/>
+                        <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
+                            <f:selectItems value="#{modifyOrder.confirmedOrderNumber}"/>
+                        </h:selectOneMenu>
+                        <h:message for="orderNumber" errorClass="invalid"/>
 
 
-                    <h:message for="driverLicense" errorClass="invalid"/>
-                    <h:outputLabel for="furaNumber" value="Wagon:"/>
-                    <h:selectOneMenu id="furaNumber" value="#{orderAction.furaToOrder}">
-                        <f:selectItems value="#{furaAction.freeFuras}"/>
-                    </h:selectOneMenu>
-                    <h:message for="furaNumber" errorClass="invalid"/>
-
-                    <!--..-->
-                    <h:commandButton id="add" value="Add" styleClass="but"
-                                     action="#{orderAction.addFuraAndDriversToOrder}" ajax = "true" rendered="true"/>
-                    <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                globalOnly="true"/>
+                        <h:outputLabel for="driverLicense" value="Drivers"/>
+                        <h:selectManyCheckbox id="driverLicense" value="#{modifyOrder.driversToOrder}" layout="pageDirection"  >
+                            <f:selectItems value="#{driverAction.freeDrivers}" />
+                        </h:selectManyCheckbox>
 
 
-                </h:panelGrid>
-                <div id="buttons_back">
-                    <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
-                </div>
+                        <h:message for="driverLicense" errorClass="invalid"/>
+                        <h:outputLabel for="furaNumber" value="Wagon:"/>
+                        <h:selectOneMenu id="furaNumber" value="#{modifyOrder.furaToOrder}">
+                            <f:selectItems value="#{furaAction.freeFuras}"/>
+                        </h:selectOneMenu>
+                        <h:message for="furaNumber" errorClass="invalid"/>
+
+                        <!--..-->
+                        <h:commandButton id="add" value="Add" styleClass="but"
+                                         action="#{modifyOrder.addFuraAndDriversToOrder}" ajax = "true" rendered="true"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
+                    </h:panelGrid>
+                    <div id="buttons_back">
+                        <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                    </div>
+                    <!--</h:panelGrid>-->
+                </h:form>
+
             </div>
             <div class="home_box">
                 <h:panelGroup rendered="#{empty orders}">
-                    <em>No orders.</em>
+                    <em>No registered orders.</em>
                 </h:panelGroup>
                 <h:dataTable var="_order"  value="#{orders}" rendered="#{not empty orders}" styleClass="simpletablestyle">
                     <h:column>
@@ -100,6 +102,5 @@
                 </h:dataTable>
             </div>
         </div>
-
     </ui:define>
 </ui:composition>

@@ -18,7 +18,7 @@ public interface OrderService {
 
     void changeOrderStatus(Integer orderNumber, OrderStatus.Status status);
 
-    void addFuraAndDrivers(Integer orderNumber, List<Integer> driverId, String furaNumber) ;
+    void addFuraAndDrivers(Integer orderNumber, List<Long> driverId, String furaNumber) ;
 
     void closeOrder(Integer number);
 

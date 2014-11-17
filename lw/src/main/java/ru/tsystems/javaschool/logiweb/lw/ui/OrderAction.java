@@ -23,8 +23,6 @@ public class OrderAction implements Serializable {
     private List<Order> orders;
     private List<Integer> createdOrderNumber;
     private List<Integer> madeOrderNumber;
-    private List<Integer> driversToOrder;
-    private String furaToOrder;
     private List<Long> driversInCurrentOrder;
 
     @Named
@@ -41,25 +39,6 @@ public class OrderAction implements Serializable {
     @Inject
     private FacesContext facesContext;
 
-    @Produces
-    @Named
-    public String getFuraToOrder() {
-        return furaToOrder;
-    }
-
-    public void setFuraToOrder(String furaToOrder) {
-        this.furaToOrder = furaToOrder;
-    }
-
-    @Named
-    @Produces
-    public List<Integer> getDriversToOrder() {
-        return driversToOrder;
-    }
-
-    public void setDriversToOrder(List<Integer> driversToOrder) {
-        this.driversToOrder = driversToOrder;
-    }
 
 
     @Produces
@@ -136,17 +115,7 @@ public class OrderAction implements Serializable {
         madeOrderNumber = orderService.getMadeOrders();
     }
 
-    public void addFuraAndDriversToOrder() {
-        try {
-            orderService.addFuraAndDrivers(order.getId(), driversToOrder, furaToOrder);
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Fura and drivers was added", "Fura and drivers addition successful"));
-        } catch (Exception e) {
-            String errorMessage = e.getMessage();
-            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                    errorMessage, "Addition unsuccessful"));
-        }
-    }
+
 
 
 }

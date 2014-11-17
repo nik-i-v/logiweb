@@ -23,6 +23,8 @@ public class ModifyOrderAction  implements Serializable{
     private List<Integer> confirmedOrderNumber;
     private Integer orderNumber;
     private List<Integer> createdOrdersWitsGoods;
+    private String furaToOrder;
+    private List<Long> driversToOrder;
 
     @Named
     @Produces
@@ -34,6 +36,26 @@ public class ModifyOrderAction  implements Serializable{
 
     public void setCreatedOrdersWitsGoods(List<Integer> createdOrdersWitsGoods) {
         this.createdOrdersWitsGoods = createdOrdersWitsGoods;
+    }
+
+    @Named
+    @Produces
+    public List<Long> getDriversToOrder() {
+        return driversToOrder;
+    }
+
+    public void setDriversToOrder(List<Long> driversToOrder) {
+        this.driversToOrder = driversToOrder;
+    }
+
+    @Produces
+    @Named
+    public String getFuraToOrder() {
+        return furaToOrder;
+    }
+
+    public void setFuraToOrder(String furaToOrder) {
+        this.furaToOrder = furaToOrder;
     }
 
     @Named
@@ -114,6 +136,17 @@ public class ModifyOrderAction  implements Serializable{
         createdOrdersWitsGoods = orderService.getcreatedOrdersWitsGoods();
     }
 
+    public void addFuraAndDriversToOrder() {
+        try {
+            orderService.addFuraAndDrivers(orderNumber, driversToOrder, furaToOrder);
+            facesContext.addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Fura and drivers was added", "Fura and drivers addition successful"));
+        } catch (Exception e) {
+            String errorMessage = e.getMessage();
+            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    errorMessage, "Addition unsuccessful"));
+        }
+    }
     public void closeOrder() {
         try {
             orderService.closeOrder(orderNumber);
