@@ -49,7 +49,7 @@ public class CheckUser implements Serializable {
     }
 
     public String logout(){
-        user = null;
+        user = new Users();
         return "logout";
     }
 

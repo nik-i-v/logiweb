@@ -28,7 +28,7 @@ public class DriverShift implements Serializable {
     private Integer orderId;
 
 
-    @OneToOne(mappedBy = "driverShift")
+    @OneToOne(mappedBy = "driverShift", fetch = FetchType.EAGER)
     private Drivers drivers;
 
     @ManyToOne(fetch = FetchType.EAGER)

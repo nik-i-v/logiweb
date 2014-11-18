@@ -15,8 +15,8 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     private EntityManager entityManager;
 
     @Override
-    public List<Order> getOrderForDrivers(Long driverId) {
-        Query query = entityManager.createQuery("SELECT o FROM Order o WHERE o.driverShift.drivers.license = :license");
+    public List<DriverShift> getOrderForDrivers(Long driverId) {
+        Query query = entityManager.createQuery("SELECT ds FROM DriverShift ds WHERE ds.drivers.license = :license");
         query.setParameter("license", driverId);
         return query.getResultList();
 

@@ -74,8 +74,8 @@ public class OrderServiceBean implements OrderService {
         isFuraSuitable(furaIntCapacity(getFuraCapacity(furaNumber)), weightGoodsInOrder(orderNumber));
         isDriverCountSuitable(getDriverCount(furaNumber), driverId.size());
 //        checkDriverStatus(driverId, DriverShift.Status.notShift);
-        changeDriverStatus(orderNumber, driverId, DriverShift.Status.shift);
         changeFuraStatus(furaNumber);
+        changeDriverStatus(orderNumber, driverId, DriverShift.Status.shift);
         addFuraToOrder(orderNumber, furaNumber);
         changeOrderStatus(orderNumber, OrderStatus.Status.shipped);
     }
@@ -224,12 +224,11 @@ public class OrderServiceBean implements OrderService {
 
 
     private void changeDriverStatus(Integer orderNumber, List<Long> driverId, DriverShift.Status status) {
-        Query addOrderNumberToDriver = entityManager.createQuery("UPDATE DriverShift ds SET ds.orderId= :number, " +
-                "ds.status= :status WHERE ds.drivers.license IN :drivers");
-        addOrderNumberToDriver.setParameter("number", orderNumber);
-        addOrderNumberToDriver.setParameter("drivers", driverId);
-        addOrderNumberToDriver.setParameter("status", status);
-        addOrderNumberToDriver.executeUpdate();
+        Query query = entityManager.createQuery("UPDATE DriverShift ds SET ds.status = :status, ds.orderId = :number WHERE ds.drivers.license IN :drivers");
+        query.setParameter("number", orderNumber);
+        query.setParameter("drivers", driverId);
+        query.setParameter("status", status);
+        query.executeUpdate();
     }
 
     private void changeFuraStatus(String furaNumber) {
@@ -244,7 +243,7 @@ public class OrderServiceBean implements OrderService {
         getFuraId.setParameter("fura", furaNumber);
         Query addDriversToOrder = entityManager.createQuery("UPDATE Order o SET  o.furaId = :fura WHERE o.id = :number");
         addDriversToOrder.setParameter("number", orderNumber);
-        addDriversToOrder.setParameter("fura", getFuraId.getSingleResult());
+        addDriversToOrder.setParameter("fura", getFuraId.getSingleResult().toString());
         addDriversToOrder.executeUpdate();
     }
 

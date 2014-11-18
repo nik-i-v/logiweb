@@ -19,9 +19,9 @@ import java.util.List;
 @RequestScoped
 public class ActionForDrivers implements Serializable {
     private Long driverLicense;
-    private List<Order> ordersDrivers;
+    private List<DriverShift> ordersDrivers;
     private String currentStatus;
-    private String newStatus;
+//    private String newStatus;
     private String name;
     private DriverShift.Status statusMenu;
     private List<String> goodsName;
@@ -67,6 +67,7 @@ public class ActionForDrivers implements Serializable {
     public void init() {
         driverLicense = Long.parseLong(checkUser.getUser().getName());
         currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
+        ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
         statusMenu = orderServiceForDrivers.getStatusMenuForDrivers(currentStatus);
     }
 
@@ -76,11 +77,11 @@ public class ActionForDrivers implements Serializable {
 
     @Produces
     @Named
-    public List<Order> getOrdersDrivers() {
+    public List<DriverShift> getOrdersDrivers() {
         return ordersDrivers;
     }
 
-    public void setOrdersDrivers(List<Order> orders) {
+    public void setOrdersDrivers(List<DriverShift> orders) {
         this.ordersDrivers = orders;
     }
 
@@ -104,15 +105,15 @@ public class ActionForDrivers implements Serializable {
         this.currentStatus = currentStatus;
     }
 
-    @Produces
-    @Named
-    public String getNewStatus() {
-        return newStatus;
-    }
-
-    public void setNewStatus(String newStatus) {
-        this.newStatus = newStatus;
-    }
+//    @Produces
+//    @Named
+//    public String getNewStatus() {
+//        return newStatus;
+//    }
+//
+//    public void setNewStatus(String newStatus) {
+//        this.newStatus = newStatus;
+//    }
 
     @Produces
     @Named
@@ -121,10 +122,10 @@ public class ActionForDrivers implements Serializable {
     }
 
     public void changeStatus() {
-        if (newStatus.equals(DriverShift.Status.atWeel)){
-            changeStatus(DriverShift.Status.atWeel);
-        } else {
+        if (currentStatus.equals(DriverShift.Status.atWeel)){
             changeStatus(DriverShift.Status.shift);
+        } else {
+            changeStatus(DriverShift.Status.atWeel);
         }
     }
 

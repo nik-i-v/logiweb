@@ -11,7 +11,7 @@
                 <h:form id="orderActivity">
                     <h:panelGrid id="driverAction" columns="1" rendered="#{not empty ordersDrivers}">
                         <h:commandButton id="add" value="Change my status" styleClass="but"
-                                         action="change_status" ajax = "true" rendered="true"/>
+                                         action="#{action.changeStatus}" ajax = "true" rendered="true"/>
                         <h:commandButton id = "addG" value="Change goods status" styleClass="but"
                                          action="change_goods_status"/>
                     </h:panelGrid>
@@ -25,11 +25,11 @@
                              styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Driver license</f:facet>
-                        #{action.driverLicense}
+                        #{_order.drivers.license}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Co-drivers</f:facet>
-                        <h:dataTable var = "_drivers" value="#{_order.driverShift.driver}" styleClass="simpletablestyle" >
+                        <h:dataTable var = "_drivers" value="#{_order.drivers}" styleClass="simpletablestyle" >
                             <h:column>
                                 <!--<f:facet name="header">Dri</f:facet>-->
                                 #{_drivers.license}
@@ -38,15 +38,15 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Fura</f:facet>
-                        #{_order.furaId}
+                        #{_order.order.furaId}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Order</f:facet>
-                        #{_order.id}
+                        #{_order.order.id}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Goods</f:facet>
-                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                        <h:dataTable var = "_goods" value="#{_order.order.orderStatus.orderInfo}" styleClass="simpletablestyle"
                                      rendered="#{not empty _order.orderStatus.orderInfo}">
                             <h:column>
                                 <f:facet name="header">Name</f:facet>
