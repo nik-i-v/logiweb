@@ -23,10 +23,8 @@ public class DriverShift implements Serializable {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-
     @Column(name = "order_id")
     private Integer orderId;
-
 
     @OneToOne(mappedBy = "driverShift", fetch = FetchType.EAGER)
     private Drivers drivers;

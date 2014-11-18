@@ -224,7 +224,7 @@ public class OrderServiceBean implements OrderService {
 
 
     private void changeDriverStatus(Integer orderNumber, List<Long> driverId, DriverShift.Status status) {
-        Query query = entityManager.createQuery("UPDATE DriverShift ds SET ds.status = :status, ds.orderId = :number WHERE ds.drivers.license IN :drivers");
+        Query query = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status, d.driverShift.orderId = :number WHERE d.license IN :drivers");
         query.setParameter("number", orderNumber);
         query.setParameter("drivers", driverId);
         query.setParameter("status", status);

@@ -12,6 +12,8 @@
                     <h:panelGrid id="driverAction" columns="1" rendered="#{not empty ordersDrivers}">
                         <h:commandButton id="add" value="Change my status" styleClass="but"
                                          action="#{action.changeStatus}" ajax = "true" rendered="true"/>
+                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                    globalOnly="true"/>
                         <h:commandButton id = "addG" value="Change goods status" styleClass="but"
                                          action="change_goods_status"/>
                     </h:panelGrid>

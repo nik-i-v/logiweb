@@ -4,10 +4,11 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
 
+import javax.ejb.Local;
 import javax.ejb.Remote;
 import java.util.List;
 
-@Remote
+@Local
 public interface OrderServiceForDrivers {
     List getOrderForDrivers(Long driverId);
 

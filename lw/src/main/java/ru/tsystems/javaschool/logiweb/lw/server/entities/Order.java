@@ -33,7 +33,6 @@ public class Order implements Serializable {
     public Order() {
     }
 
-
     public Order(Integer id) {
         this.id = id;
     }

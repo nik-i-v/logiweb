@@ -117,7 +117,7 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     }
 
     private void changeDriverStatus(DriverShift.Status status, Long driverId) {
-        Query newStatus = entityManager.createQuery("UPDATE DriverShift ds SET ds.status = :status WHERE ds.drivers.license = :id");
+        Query newStatus = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status WHERE d.license = :id");
         newStatus.setParameter("status", status);
         newStatus.setParameter("id", driverId);
         newStatus.executeUpdate();
