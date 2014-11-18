@@ -9,6 +9,7 @@
         <div class="all_box">
             <div class="home_box">
                 <h:form id="orderActivity">
+                   Welcome, #{driverLicense}.  You are "#{action.currentStatus}" now. Please choose action.
                     <h:panelGrid id="driverAction" columns="1" rendered="#{not empty ordersDrivers}">
                         <h:commandButton id="add" value="Change my status" styleClass="but"
                                          action="#{action.changeStatus}" ajax = "true" rendered="true"/>
@@ -74,6 +75,5 @@
                 </h:dataTable>
             </div>
         </div>
-
     </ui:define>
 </ui:composition>

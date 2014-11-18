@@ -35,8 +35,9 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     public List<String> getGoodsList(Long driverLicense){
         Integer orderNumber = getOrderNumberForDrivers(driverLicense);
         Query query = entityManager.createQuery("SELECT oi.name FROM OrderInfo oi " +
-                "WHERE oi.orderNumber = :number ");
+                "WHERE oi.orderNumber = :number AND oi.status = :status");
         query.setParameter("number", orderNumber);
+        query.setParameter("status", OrderInfo.Status.no);
         return query.getResultList();
     }
 
@@ -57,8 +58,9 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
 
     @Override
     public List<OrderInfo> currentGoodsStatusIsNo(Integer orderNumber) {
-        Query query = entityManager.createQuery("SELECT oi.name FROM OrderInfo oi WHERE oi.orderNumber = :number");
+        Query query = entityManager.createQuery("SELECT oi.name FROM OrderInfo oi WHERE oi.orderNumber = :number AND oi.status = :status");
         query.setParameter("number", orderNumber);
+        query.setParameter("status", OrderInfo.Status.no);
         return query.getResultList();
     }
 

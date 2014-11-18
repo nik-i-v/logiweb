@@ -138,6 +138,7 @@ public class ActionForDrivers implements Serializable {
         } else {
             changeStatus(DriverShift.Status.atWeel);
         }
+
     }
 
     @Named
@@ -152,6 +153,7 @@ public class ActionForDrivers implements Serializable {
             facesContext.addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Goods status has been changed", "Goods status change successful"));
             getOrderForDrivers();
+            getGoodsName();
         } catch (Exception e) {
             String errorMessage = e.getMessage();
             facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
