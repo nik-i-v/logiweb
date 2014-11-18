@@ -22,7 +22,7 @@
 
 
                         <h:outputLabel for="driverLicense" value="Drivers"/>
-                        <h:selectManyCheckbox id="driverLicense" value="#{modifyOrder.driversToOrder}" layout="pageDirection"  >
+                        <h:selectManyCheckbox id="driverLicense" value="#{modifyOrder.driversToOrder}" layout="pageDirection" converter="javax.faces.Long">
                             <f:selectItems value="#{driverAction.freeDrivers}" />
                         </h:selectManyCheckbox>
 
