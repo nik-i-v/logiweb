@@ -11,8 +11,9 @@
                 <h:panelGroup rendered="#{empty ordersDrivers}">
                     <em>You have no orders.</em>
                 </h:panelGroup>
+
+                You are "#{action.currentStatus}" now. Please choose action.
                 <h:panelGrid columns="3" id="closeOrder" rendered="#{not empty ordersDrivers}">
-                    You are "#{action.currentStatus}" now. Please choose action.
                     <h:outputLabel for="goodsStatus" value="Goods :"/>
                     <h:selectOneMenu id = "goodsStatus" value="#{action.name}" >
                         <f:selectItems value = "#{action.goodsName}"/>

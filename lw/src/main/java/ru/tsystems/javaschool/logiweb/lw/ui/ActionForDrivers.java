@@ -19,8 +19,9 @@ import java.util.List;
 @RequestScoped
 public class ActionForDrivers implements Serializable {
     private Long driverLicense;
-    private List<DriverShift> ordersDrivers;
+    private List<Order> ordersDrivers;
     private String currentStatus;
+//    private Integer orderNumberDrivers;
 //    private String newStatus;
     private String name;
     private DriverShift.Status statusMenu;
@@ -35,6 +36,16 @@ public class ActionForDrivers implements Serializable {
 
     @Inject
     private FacesContext facesContext;
+
+//    @Named
+//    @Produces
+//    public Integer getOrderNumberDrivers() {
+//        return orderNumberDrivers;
+//    }
+//
+//    public void setOrderNumberDrivers(Integer orderNumberDrivers) {
+//        this.orderNumberDrivers = orderNumberDrivers;
+//    }
 
     @Named
     @Produces
@@ -77,11 +88,11 @@ public class ActionForDrivers implements Serializable {
 
     @Produces
     @Named
-    public List<DriverShift> getOrdersDrivers() {
+    public List<Order> getOrdersDrivers() {
         return ordersDrivers;
     }
 
-    public void setOrdersDrivers(List<DriverShift> orders) {
+    public void setOrdersDrivers(List<Order> orders) {
         this.ordersDrivers = orders;
     }
 

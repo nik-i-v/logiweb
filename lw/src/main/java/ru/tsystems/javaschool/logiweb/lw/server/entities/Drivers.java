@@ -41,7 +41,7 @@ public class Drivers implements Serializable {
     private Long license;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "drivers_id", updatable = false, insertable = false)
+    @JoinColumn(name = "drivers_id")
     private DriverShift driverShift;
 
     public Drivers() {

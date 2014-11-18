@@ -2,6 +2,7 @@ package ru.tsystems.javaschool.logiweb.lw.service.driver;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
 
 import javax.ejb.Local;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @Local
 public interface OrderServiceForDrivers {
-    List getOrderForDrivers(Long driverId);
+    List<Order> getOrderForDrivers(Long driverId);
 
     List<OrderInfo> getGoodsStatusForDrivers(Long driverId);
 
@@ -27,4 +28,6 @@ public interface OrderServiceForDrivers {
     String getCurrentStatusForDriver(Long driverId);
 
     List<Drivers> getCoDrivers(Long driverLicense);
+
+//    Integer getOrderNumberForDrivers(Long driverLicense);
 }

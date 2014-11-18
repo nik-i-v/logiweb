@@ -15,11 +15,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     private EntityManager entityManager;
 
     @Override
-    public List<DriverShift> getOrderForDrivers(Long driverId) {
-        Query query = entityManager.createQuery("SELECT ds FROM DriverShift ds WHERE ds.drivers.license = :license");
-        query.setParameter("license", driverId);
+    public List<Order> getOrderForDrivers(Long driverId) {
+        Integer orderNumber = getOrderNumberForDrivers(driverId);
+        Query query = entityManager.createQuery("SELECT o FROM Order o WHERE o.id = :number");
+        query.setParameter("number", orderNumber);
         return query.getResultList();
-
     }
 
     @Override
@@ -99,9 +99,12 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return drivers;
     }
 
-    private Integer getOrderNumberForDrivers(Long driverId) {
+        private Integer getOrderNumberForDrivers(Long driverId) {
         Query query = entityManager.createQuery("SELECT ds.orderId FROM DriverShift ds WHERE ds.drivers.license = :license");
         query.setParameter("license", driverId);
+            if (query.getResultList().toString().equals(null)){
+                throw new IllegalArgumentException("You have no orders");
+            }
         return Integer.parseInt(query.getSingleResult().toString());
     }
 
