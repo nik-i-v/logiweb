@@ -15,11 +15,23 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     private EntityManager entityManager;
 
     @Override
-    public List<Order> getOrderForDrivers(Long driverId) {
+    public Order getOrderForDrivers(Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
-        Query query = entityManager.createQuery("SELECT o FROM Order o WHERE o.id = :number");
-        query.setParameter("number", orderNumber);
-        return query.getResultList();
+//        Query query = entityManager.createQuery("SELECT o FROM Order o WHERE o.id = :number");
+//        query.setParameter("number", orderNumber);
+//         query.getResultList();
+        Order order = entityManager.find(Order.class, orderNumber);
+        Query driverShift = entityManager.createQuery("SELECT DISTINCT ds FROM DriverShift ds WHERE ds.orderId = :number");
+        driverShift.setParameter("number", orderNumber);
+        order.setDriverShift(driverShift.getResultList());
+        Query furaId = entityManager.createQuery("SELECT o.furaId FROM Order o WHERE o.id= :number");
+        furaId.setParameter("number", orderNumber);
+        order.setFura(entityManager.find(Fura.class, Integer.parseInt(furaId.getSingleResult().toString())));
+        Query orderInfo = entityManager.createQuery("SELECT DISTINCT oi FROM OrderInfo oi WHERE oi.orderNumber = :number");
+        orderInfo.setParameter("number", orderNumber);
+        OrderStatus orderStatus = entityManager.find(OrderStatus.class, orderNumber);
+        orderStatus.setOrderInfo(orderInfo.getResultList());
+return order;
     }
 
     @Override
@@ -32,7 +44,7 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     }
 
     @Override
-    public List<String> getGoodsList(Long driverLicense){
+    public List<String> getGoodsList(Long driverLicense) {
         Integer orderNumber = getOrderNumberForDrivers(driverLicense);
         Query query = entityManager.createQuery("SELECT oi.name FROM OrderInfo oi " +
                 "WHERE oi.orderNumber = :number AND oi.status = :status");
@@ -98,12 +110,12 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return drivers;
     }
 
-        private Integer getOrderNumberForDrivers(Long driverId) {
+    private Integer getOrderNumberForDrivers(Long driverId) {
         Query query = entityManager.createQuery("SELECT ds.orderId FROM DriverShift ds WHERE ds.drivers.license = :license");
         query.setParameter("license", driverId);
-            if (query.getResultList().toString().equals(null)){
-                throw new IllegalArgumentException("You have no orders");
-            }
+        if (query.getResultList().toString().equals(null)) {
+            throw new IllegalArgumentException("You have no orders");
+        }
         return Integer.parseInt(query.getSingleResult().toString());
     }
 
@@ -119,7 +131,7 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         }
     }
 
-    private Integer getDriverIdByDriverLicense(Long license){
+    private Integer getDriverIdByDriverLicense(Long license) {
         Query query = entityManager.createQuery("SELECT d.driversId FROM Drivers d WHERE d.license = :license");
         query.setParameter("license", license);
         return Integer.parseInt(query.getSingleResult().toString());

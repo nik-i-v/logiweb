@@ -22,7 +22,7 @@ public class Order implements Serializable {
     @Column(name = "fura_id")
     private String furaId;
 
-    @OneToOne(mappedBy = "order")
+    @OneToOne(mappedBy = "order", fetch = FetchType.EAGER)
     private Fura fura;
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<DriverShift> driverShift;

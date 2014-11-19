@@ -8,7 +8,7 @@ import java.util.List;
 
 @Local
 public interface OrderServiceForDrivers {
-    List<Order> getOrderForDrivers(Long driverId);
+    Order getOrderForDrivers(Long driverId);
 
     List<OrderInfo> getGoodsStatusForDrivers(Long driverId);
 

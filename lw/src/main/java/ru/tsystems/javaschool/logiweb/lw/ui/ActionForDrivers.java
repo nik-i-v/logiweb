@@ -19,7 +19,7 @@ import java.util.List;
 @RequestScoped
 public class ActionForDrivers implements Serializable {
     private Long driverLicense;
-    private List<Order> ordersDrivers;
+    private Order ordersDrivers;
     private String currentStatus;
 //    private Integer orderNumberDrivers;
 //    private String newStatus;
@@ -88,11 +88,11 @@ public class ActionForDrivers implements Serializable {
 
     @Produces
     @Named
-    public List<Order> getOrdersDrivers() {
+    public Order getOrdersDrivers() {
         return ordersDrivers;
     }
 
-    public void setOrdersDrivers(List<Order> orders) {
+    public void setOrdersDrivers(Order orders) {
         this.ordersDrivers = orders;
     }
 

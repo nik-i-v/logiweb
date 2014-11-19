@@ -39,7 +39,7 @@ public class Fura implements Serializable {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "furas_id", insertable = false, updatable = false)
     private Order order;
 

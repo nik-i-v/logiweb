@@ -21,7 +21,27 @@ public class OrderServiceBean implements OrderService {
 
     @Override
     public List<Order> getAllOrders() {
-        return entityManager.createQuery("SELECT o FROM Order o").getResultList();
+//     return entityManager.find(Order.class);
+        List<Order> orders = entityManager.createQuery("SELECT o FROM Order o").getResultList();
+        for (Order o : orders) {
+            Integer orderNumber = o.getId();
+            Query driverShift = entityManager.createQuery("SELECT DISTINCT ds FROM DriverShift ds WHERE ds.orderId = :number");
+            driverShift.setParameter("number", orderNumber);
+            o.setDriverShift(driverShift.getResultList());
+            Order order = entityManager.find(Order.class, orderNumber);
+            Query furaIdQuery = entityManager.createQuery("SELECT o.fura.furasId FROM Order o WHERE o.id= :number");
+            furaIdQuery.setParameter("number", orderNumber);
+            Integer furaId = null;
+            if (!furaIdQuery.getSingleResult().toString().equals(null)) {
+                 furaId = Integer.parseInt(furaIdQuery.getSingleResult().toString());
+            }
+            order.setFura(entityManager.find(Fura.class, furaId));
+            Query orderInfo = entityManager.createQuery("SELECT DISTINCT oi FROM OrderInfo oi WHERE oi.orderNumber = :number");
+            orderInfo.setParameter("number", orderNumber);
+            OrderStatus orderStatus = entityManager.find(OrderStatus.class, orderNumber);
+            orderStatus.setOrderInfo(orderInfo.getResultList());
+        }
+        return orders;
     }
 
     /**
@@ -105,17 +125,17 @@ public class OrderServiceBean implements OrderService {
     }
 
     @Override
-    public List<Integer> getCreatedOrders(){
+    public List<Integer> getCreatedOrders() {
         return getOrdersByStatus(OrderStatus.Status.created);
     }
 
     @Override
-    public List<Integer> getConfirmedOrders(){
+    public List<Integer> getConfirmedOrders() {
         return getOrdersByStatus(OrderStatus.Status.confirmed);
     }
 
     @Override
-    public List<Integer> getMadeOrders(){
+    public List<Integer> getMadeOrders() {
         return getOrdersByStatus(OrderStatus.Status.made);
     }
 
@@ -130,7 +150,7 @@ public class OrderServiceBean implements OrderService {
     public void checkIfGoodsAreNotEmpty(Integer orderNumber) {
         Query query = entityManager.createQuery("SELECT COUNT (oi.name) FROM OrderInfo oi WHERE oi.orderNumber = :number");
         query.setParameter("number", orderNumber);
-        if(query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0){
+        if (query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0) {
             throw new IllegalArgumentException("Please add goods to order");
         }
     }
@@ -215,7 +235,7 @@ public class OrderServiceBean implements OrderService {
     }
 
     private void isDriverCountSuitable(Integer driverCount, Integer driversInListCount) {
-        if( driverCount != driversInListCount) {
+        if (driverCount != driversInListCount) {
             throw new IllegalArgumentException("Fura should have " + driverCount + " drivers.");
         }
     }
@@ -244,7 +264,7 @@ public class OrderServiceBean implements OrderService {
 
 
     private void changeDriverStatus(Integer orderNumber, List<Long> license, DriverStatus status) {
-        for (Long l: license) {
+        for (Long l : license) {
             Integer driverId = getDriverIdByDriverLicense(l);
             DriverShift driverShift = entityManager.find(DriverShift.class, driverId);
             driverShift.setStatus(status);
@@ -274,7 +294,7 @@ public class OrderServiceBean implements OrderService {
         addDriversToOrder.executeUpdate();
     }
 
-    private void deleteFuraFromOrder(Integer orderNumber){
+    private void deleteFuraFromOrder(Integer orderNumber) {
         Query query = entityManager.createQuery("UPDATE Order o SET o.furaId = :nulls " +
                 "WHERE o.id = :Ids");
         query.setParameter("nulls", null);
@@ -282,13 +302,13 @@ public class OrderServiceBean implements OrderService {
         query.executeUpdate();
     }
 
-    private List<Integer> getOrdersByStatus(OrderStatus.Status status){
+    private List<Integer> getOrdersByStatus(OrderStatus.Status status) {
         Query query = entityManager.createQuery("SELECT o.id FROM Order o WHERE o.orderStatus.status = :status");
         query.setParameter("status", status);
         return query.getResultList();
     }
 
-    private Integer getDriverIdByDriverLicense(Long license){
+    private Integer getDriverIdByDriverLicense(Long license) {
         Query query = entityManager.createQuery("SELECT d.driversId FROM Drivers d WHERE d.license = :license");
         query.setParameter("license", license);
         return Integer.parseInt(query.getSingleResult().toString());
