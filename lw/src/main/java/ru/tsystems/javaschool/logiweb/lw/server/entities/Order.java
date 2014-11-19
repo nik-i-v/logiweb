@@ -20,7 +20,7 @@ public class Order implements Serializable {
     @Size(min = 7, max = 7, message = "must have format: 2 letters and 5 digits")
     @Pattern(regexp = "^[A-Z]{2}\\d{5}$")
     @Column(name = "fura_id")
-    private String furaId;
+    private Integer furaId;
 
     @OneToOne(mappedBy = "order", fetch = FetchType.EAGER)
     private Fura fura;
@@ -66,7 +66,7 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public void setFuraId(String furaId) {
+    public void setFuraId(Integer furaId) {
         this.furaId = furaId;
     }
 
@@ -74,7 +74,7 @@ public class Order implements Serializable {
         return id;
     }
 
-    public String getFuraId() {
+    public Integer getFuraId() {
         return furaId;
     }
 

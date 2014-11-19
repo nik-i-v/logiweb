@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @Entity
 @XmlRootElement
-@Table(name = "fura", uniqueConstraints = @UniqueConstraint(columnNames = "furas_id"))
+@Table(name = "fura" /*uniqueConstraints = @UniqueConstraint(columnNames = "furas_id")*/)
 public class Fura implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +40,7 @@ public class Fura implements Serializable {
     private Status status;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "furas_id", insertable = false, updatable = false)
+    @JoinColumn(name = "furas_id", referencedColumnName = "fura_id", insertable = false, updatable = false)
     private Order order;
 
     public Order getOrder() {

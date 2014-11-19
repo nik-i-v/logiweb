@@ -28,14 +28,13 @@ public class OrderServiceBean implements OrderService {
             Query driverShift = entityManager.createQuery("SELECT DISTINCT ds FROM DriverShift ds WHERE ds.orderId = :number");
             driverShift.setParameter("number", orderNumber);
             o.setDriverShift(driverShift.getResultList());
-            Order order = entityManager.find(Order.class, orderNumber);
-            Query furaIdQuery = entityManager.createQuery("SELECT o.fura.furasId FROM Order o WHERE o.id= :number");
-            furaIdQuery.setParameter("number", orderNumber);
-            Integer furaId = null;
-            if (!furaIdQuery.getSingleResult().toString().equals(null)) {
-                 furaId = Integer.parseInt(furaIdQuery.getSingleResult().toString());
+//            Order order = entityManager.find(Order.class, orderNumber);
+//            Query furaIdQuery = entityManager.createQuery("SELECT o.fura.furasId FROM Order o WHERE o.id= :number");
+//            furaIdQuery.setParameter("number", orderNumber);
+            if (getOrderStatus(orderNumber).equals(OrderStatus.Status.shipped.toString()) || getOrderStatus(orderNumber).equals(OrderStatus.Status.made.toString())) {
+                Integer furaId = o.getFuraId();
+                o.setFura(entityManager.find(Fura.class, furaId));
             }
-            order.setFura(entityManager.find(Fura.class, furaId));
             Query orderInfo = entityManager.createQuery("SELECT DISTINCT oi FROM OrderInfo oi WHERE oi.orderNumber = :number");
             orderInfo.setParameter("number", orderNumber);
             OrderStatus orderStatus = entityManager.find(OrderStatus.class, orderNumber);
