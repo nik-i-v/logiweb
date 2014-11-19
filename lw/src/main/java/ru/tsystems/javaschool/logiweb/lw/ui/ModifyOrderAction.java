@@ -122,6 +122,7 @@ public class ModifyOrderAction  implements Serializable{
 
     public void doConfirmed() {
         try {
+            orderService.checkIfGoodsAreNotEmpty(orderNumber);
             orderService.changeOrderStatus(orderNumber, OrderStatus.Status.confirmed);
             facesContext.addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Order confirmed", "Order confirmed successful"));

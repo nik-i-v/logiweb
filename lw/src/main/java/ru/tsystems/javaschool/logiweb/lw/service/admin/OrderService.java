@@ -30,5 +30,7 @@ public interface OrderService {
 
     List<Integer> getcreatedOrdersWitsGoods();
 
+    void checkIfGoodsAreNotEmpty(Integer orderNumber);
+
 //    List<Long> getDriversInCurrentOrder();
 }

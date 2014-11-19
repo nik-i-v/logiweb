@@ -82,7 +82,7 @@ public class OrderServiceBean implements OrderService {
 
     @Override
     public void closeOrder(Integer orderNumber) {
-        logger.info("Close order number + " + orderNumber);
+//        logger.info("Close order number + " + orderNumber);
         isOrderExists(orderNumber);
         checkOrderStatus(getOrderStatus(orderNumber), OrderStatus.Status.made.toString());
         List<Long> driversInOrder = getDriversInOrder(orderNumber);
@@ -113,6 +113,15 @@ public class OrderServiceBean implements OrderService {
         Query query = entityManager.createQuery("SELECT  DISTINCT oi.orderNumber FROM OrderInfo oi WHERE oi.orderStatus.status = :status");
         query.setParameter("status", OrderStatus.Status.created);
         return query.getResultList();
+    }
+
+    @Override
+    public void checkIfGoodsAreNotEmpty(Integer orderNumber) {
+        Query query = entityManager.createQuery("SELECT COUNT (oi.name) FROM OrderInfo oi WHERE oi.orderNumber = :number");
+        query.setParameter("number", orderNumber);
+        if(query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0){
+            throw new IllegalArgumentException("Please add goods to order");
+        }
     }
 
 //    @Override
@@ -201,13 +210,13 @@ public class OrderServiceBean implements OrderService {
     }
 
     private List<Long> getDriversInOrder(Integer orderNumber) {
-        Query query = entityManager.createQuery("SELECT ds.driverId FROM DriverShift ds WHERE  ds.orderId = :orderNumber");
+        Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE  d.driverShift.orderId = :orderNumber");
         query.setParameter("orderNumber", orderNumber);
         return query.getResultList();
     }
 
     private void checkDriverStatus(List<Long> drivers, DriverShift.Status status) {
-        Query query = entityManager.createQuery("SELECT COUNT(ds.status)FROM DriverShift ds WHERE ds.status= :status AND ds.driverId IN :driver");
+        Query query = entityManager.createQuery("SELECT COUNT(ds.status)FROM DriverShift ds WHERE ds.status= :status AND ds.drivers.license IN :driver");
         query.setParameter("driver", drivers);
         query.setParameter("status", status);
         String driversCount = query.getSingleResult().toString();
