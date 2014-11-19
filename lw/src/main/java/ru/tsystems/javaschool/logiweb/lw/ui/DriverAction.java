@@ -88,7 +88,10 @@ public class DriverAction implements Serializable {
             facesContext.addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Driver was added", "Driver addition successful"));
             drivers = getAllDrivers();
-            driver = null;
+            driver.setLicense(null);
+            driver.setName(null);
+            driver.setSurname(null);
+            driver.setPatronymic(null);
             return true;
         } catch (Exception e) {
             String errorMessage = e.getMessage();

@@ -89,8 +89,19 @@ public class OrderServiceBean implements OrderService {
         checkDriverStatus(driversInOrder, DriverStatus.atWeel);
         changeOrderStatus(orderNumber, OrderStatus.Status.closed);
         changeDriverStatus(null, driversInOrder, DriverStatus.notShift);
+        changeFuraStatus(orderNumber, Fura.Status.no);
         deleteFuraFromOrder(orderNumber);
 
+    }
+
+    private void changeFuraStatus(Integer orderNumber, Fura.Status status) {
+        Query query = entityManager.createQuery("SELECT o.furaId FROM Order o WHERE o.id = :number");
+        query.setParameter("number", orderNumber);
+        Integer furaId = Integer.parseInt(query.getSingleResult().toString());
+        Query changeStatus = entityManager.createQuery("UPDATE Fura f SET f.status = :status WHERE f.furasId = :id");
+        changeStatus.setParameter("id", furaId);
+        changeStatus.setParameter("status", status);
+        changeStatus.executeUpdate();
     }
 
     @Override
