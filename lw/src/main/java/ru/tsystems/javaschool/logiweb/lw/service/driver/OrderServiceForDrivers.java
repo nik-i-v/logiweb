@@ -1,9 +1,6 @@
 package ru.tsystems.javaschool.logiweb.lw.service.driver;
 
-import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 
 import javax.ejb.Local;
 import javax.ejb.Remote;
@@ -21,9 +18,9 @@ public interface OrderServiceForDrivers {
 
     List<OrderInfo> currentGoodsStatusIsNo(Integer orderNumber);
 
-    void changeDriverStatusForDrivers(Long driverId, DriverShift.Status status);
+    void changeDriverStatusForDrivers(Long driverId, DriverStatus status);
 
-    DriverShift.Status getStatusMenuForDrivers(String currentStatus);
+    DriverStatus getStatusMenuForDrivers(String currentStatus);
 
     String getCurrentStatusForDriver(Long driverId);
 

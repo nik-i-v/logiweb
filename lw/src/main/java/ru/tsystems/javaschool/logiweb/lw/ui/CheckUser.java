@@ -49,7 +49,8 @@ public class CheckUser implements Serializable {
     }
 
     public String logout(){
-        user = new Users();
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+//        user = new Users();
         return "logout";
     }
 

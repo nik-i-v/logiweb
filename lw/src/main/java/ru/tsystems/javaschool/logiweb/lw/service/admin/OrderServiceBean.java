@@ -75,7 +75,7 @@ public class OrderServiceBean implements OrderService {
         isDriverCountSuitable(getDriverCount(furaNumber), driverId.size());
 //        checkDriverStatus(driverId, DriverShift.Status.notShift);
         changeFuraStatus(furaNumber);
-        changeDriverStatus(orderNumber, driverId, DriverShift.Status.shift);
+        changeDriverStatus(orderNumber, driverId, DriverStatus.shift);
         addFuraToOrder(orderNumber, furaNumber);
         changeOrderStatus(orderNumber, OrderStatus.Status.shipped);
     }
@@ -86,9 +86,9 @@ public class OrderServiceBean implements OrderService {
         isOrderExists(orderNumber);
         checkOrderStatus(getOrderStatus(orderNumber), OrderStatus.Status.made.toString());
         List<Long> driversInOrder = getDriversInOrder(orderNumber);
-        checkDriverStatus(driversInOrder, DriverShift.Status.atWeel);
+        checkDriverStatus(driversInOrder, DriverStatus.atWeel);
         changeOrderStatus(orderNumber, OrderStatus.Status.closed);
-        changeDriverStatus(null, driversInOrder, DriverShift.Status.notShift);
+        changeDriverStatus(null, driversInOrder, DriverStatus.notShift);
         deleteFuraFromOrder(orderNumber);
 
     }
@@ -215,15 +215,15 @@ public class OrderServiceBean implements OrderService {
         return query.getResultList();
     }
 
-    private void checkDriverStatus(List<Long> drivers, DriverShift.Status status) {
+    private void checkDriverStatus(List<Long> drivers, DriverStatus status) {
         Query query = entityManager.createQuery("SELECT COUNT(ds.status)FROM DriverShift ds WHERE ds.status= :status AND ds.drivers.license IN :driver");
         query.setParameter("driver", drivers);
         query.setParameter("status", status);
         String driversCount = query.getSingleResult().toString();
-        if (status.equals(DriverShift.Status.notShift)) {
+        if (status.equals(DriverStatus.notShift)) {
             if (driversCount.equals(null) || Integer.parseInt(driversCount) != drivers.size()) {
                 throw new IllegalArgumentException("Some drivers are already in shift or are not exists");
-            } else if (status.equals(DriverShift.Status.atWeel)) {
+            } else if (status.equals(DriverStatus.atWeel)) {
                 if (driversCount.equals(null)) {
                     throw new IllegalArgumentException("This order still has the driver behind the wheel");
                 }
@@ -232,7 +232,7 @@ public class OrderServiceBean implements OrderService {
     }
 
 
-    private void changeDriverStatus(Integer orderNumber, List<Long> driverId, DriverShift.Status status) {
+    private void changeDriverStatus(Integer orderNumber, List<Long> driverId, DriverStatus status) {
         Query query = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status, d.driverShift.orderId = :number WHERE d.license IN :drivers");
         query.setParameter("number", orderNumber);
         query.setParameter("drivers", driverId);

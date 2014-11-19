@@ -65,22 +65,22 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     }
 
     @Override
-    public void changeDriverStatusForDrivers(Long driverId, DriverShift.Status status) {
-        if (status.equals(DriverShift.Status.atWeel.toString())) {
+    public void changeDriverStatusForDrivers(Long driverId, DriverStatus status) {
+        if (status.equals(DriverStatus.atWeel.toString())) {
             isAnybodyAtWheel(driverId);
-            changeDriverStatus(DriverShift.Status.atWeel, driverId);
+            changeDriverStatus(DriverStatus.atWeel, driverId);
         } else {
-            changeDriverStatus(DriverShift.Status.shift, driverId);
+            changeDriverStatus(DriverStatus.shift, driverId);
 
         }
     }
 
     @Override
-    public DriverShift.Status getStatusMenuForDrivers(String currentStatus) {
-        if (currentStatus.equals(DriverShift.Status.atWeel)) {
-            return DriverShift.Status.shift;
+    public DriverStatus getStatusMenuForDrivers(String currentStatus) {
+        if (currentStatus.equals(DriverStatus.atWeel)) {
+            return DriverStatus.shift;
         } else {
-            return DriverShift.Status.atWeel;
+            return DriverStatus.atWeel;
         }
     }
 
@@ -114,14 +114,14 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
         Query query = entityManager.createQuery("SELECT COUNT (ds.driverId) FROM  DriverShift ds " +
                 "WHERE ds.status = :status AND ds.orderId = :number");
-        query.setParameter("status", DriverShift.Status.atWeel);
+        query.setParameter("status", DriverStatus.atWeel);
         query.setParameter("number", orderNumber);
         if (Integer.parseInt(query.getSingleResult().toString()) != 0) {
             throw new IllegalArgumentException("Another driver or you is already at weel");
         }
     }
 
-    private void changeDriverStatus(DriverShift.Status status, Long driverId) {
+    private void changeDriverStatus(DriverStatus status, Long driverId) {
         Query newStatus = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status WHERE d.license = :id");
         newStatus.setParameter("status", status);
         newStatus.setParameter("id", driverId);

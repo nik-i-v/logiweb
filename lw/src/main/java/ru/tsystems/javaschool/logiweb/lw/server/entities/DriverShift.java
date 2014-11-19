@@ -21,7 +21,7 @@ public class DriverShift implements Serializable {
     @Column(name = "status", nullable = false)
     @NotNull
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private DriverStatus status;
 
     @Column(name = "order_id")
     private Integer orderId;
@@ -68,16 +68,16 @@ public class DriverShift implements Serializable {
         this.driverId = id;
     }
 
-    public enum Status {
-        shift, notShift, atWeel
-    }
+//    public enum Status {
+//        shift, notShift, atWeel
+//    }
 
     public void setDriverId(Integer driverId) {
         this.driverId = driverId;
     }
 
 
-    public void setStatus(Status status) {
+    public void setStatus(DriverStatus status) {
         this.status = status;
     }
 
@@ -85,7 +85,7 @@ public class DriverShift implements Serializable {
         return driverId;
     }
 
-    public Status getStatus() {
+    public DriverStatus getStatus() {
         return status;
     }
 

@@ -24,7 +24,7 @@ public class ActionForDrivers implements Serializable {
 //    private Integer orderNumberDrivers;
 //    private String newStatus;
     private String name;
-    private DriverShift.Status statusMenu;
+    private DriverStatus statusMenu;
     private List<String> goodsName;
 
 
@@ -66,11 +66,11 @@ public class ActionForDrivers implements Serializable {
 
     @Named
     @Produces
-    public DriverShift.Status getStatusMenu() {
+    public DriverStatus getStatusMenu() {
         return statusMenu;
     }
 
-    public void setStatusMenu(DriverShift.Status statusMenu) {
+    public void setStatusMenu(DriverStatus statusMenu) {
         this.statusMenu = statusMenu;
     }
 
@@ -133,10 +133,10 @@ public class ActionForDrivers implements Serializable {
     }
 
     public void changeStatus() {
-        if (currentStatus.equals(DriverShift.Status.atWeel)){
-            changeStatus(DriverShift.Status.shift);
+        if (currentStatus.equals(DriverStatus.atWeel)){
+            changeStatus(DriverStatus.shift);
         } else {
-            changeStatus(DriverShift.Status.atWeel);
+            changeStatus(DriverStatus.atWeel);
         }
 
     }
@@ -161,7 +161,7 @@ public class ActionForDrivers implements Serializable {
         }
     }
 
-    private void changeStatus(DriverShift.Status status){
+    private void changeStatus(DriverStatus status){
         try {
             orderServiceForDrivers.changeDriverStatusForDrivers(driverLicense, status);
             facesContext.addMessage(null,

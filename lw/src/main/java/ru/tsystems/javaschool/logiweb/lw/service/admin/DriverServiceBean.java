@@ -1,6 +1,7 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverStatus;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 
@@ -36,7 +37,7 @@ public class DriverServiceBean implements DriverService{
         driver.setName(name);
         driver.setPatronymic(patronymic);
         driver.setLicense(licenseId);
-        driverShift.setStatus(DriverShift.Status.notShift);
+        driverShift.setStatus(DriverStatus.notShift);
         user.setName(licenseId.toString());
         user.setPassword("pass");
         user.setStatus(Users.Status.Driver);
@@ -48,7 +49,7 @@ public class DriverServiceBean implements DriverService{
     @Override
     public List<Long> getAllFreeDrivers() {
         Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE d.driverShift.status = :status");
-        query.setParameter("status", DriverShift.Status.notShift);
+        query.setParameter("status", DriverStatus.notShift);
         return query.getResultList();
     }
 
