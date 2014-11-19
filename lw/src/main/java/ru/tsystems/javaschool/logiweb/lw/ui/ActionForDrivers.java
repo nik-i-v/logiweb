@@ -133,9 +133,10 @@ public class ActionForDrivers implements Serializable {
     }
 
     public void changeStatus() {
-        if (currentStatus.equals(DriverStatus.atWeel)){
+        if (currentStatus.equals(DriverStatus.atWeel.toString())){
             changeStatus(DriverStatus.shift);
         } else {
+            orderServiceForDrivers.isAnybodyAtWheel(driverLicense);
             changeStatus(DriverStatus.atWeel);
         }
 

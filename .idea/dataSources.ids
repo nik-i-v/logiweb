@@ -21,6 +21,7 @@
       <primary-key name="PRIMARY" columns="driver_shift_id"/>
       <foreign-key name="driver_shift_ibfk_1" columns="driver_shift_id" ref-table="drivers" ref-schema="" ref-catalog="driver" ref-columns="drivers_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="FK_elciarl21t8ylcor2684vmb65" columns="order_id" ref-table="orders" ref-schema="" ref-catalog="driver" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_2bitudi5n5aw8j3q41xddf5tp" table="drivers" schema="" catalog="driver" columns="driverShift_driver_shift_id"/>
       <index name="FK_elciarl21t8ylcor2684vmb65" unique="false" columns="order_id"/>
     </table>
     <table name="drivers" schema="" catalog="driver" type="TABLE">
@@ -29,8 +30,11 @@
       <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="patronymic" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="license_id" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="driverShift_driver_shift_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="drivers_id"/>
+      <foreign-key name="FK_2bitudi5n5aw8j3q41xddf5tp" columns="driverShift_driver_shift_id" ref-table="driver_shift" ref-schema="" ref-catalog="driver" ref-columns="driver_shift_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="driver_shift_ibfk_1" table="driver_shift" schema="" catalog="driver" columns="driver_shift_id"/>
+      <index name="FK_2bitudi5n5aw8j3q41xddf5tp" unique="false" columns="driverShift_driver_shift_id"/>
     </table>
     <table name="fura" schema="" catalog="driver" type="TABLE">
       <column name="fura_number" sqlType="VARCHAR" precision="7" scale="0" nullable="false" jdbcType="12" def="Jyc="/>

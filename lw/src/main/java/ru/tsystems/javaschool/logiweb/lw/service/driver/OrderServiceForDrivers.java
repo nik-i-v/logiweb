@@ -26,5 +26,7 @@ public interface OrderServiceForDrivers {
 
     List<Drivers> getCoDrivers(Long driverLicense);
 
+    void isAnybodyAtWheel(Long driverId);
+
 //    Integer getOrderNumberForDrivers(Long driverLicense);
 }

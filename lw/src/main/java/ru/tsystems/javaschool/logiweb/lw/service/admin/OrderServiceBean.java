@@ -232,12 +232,19 @@ public class OrderServiceBean implements OrderService {
     }
 
 
-    private void changeDriverStatus(Integer orderNumber, List<Long> driverId, DriverStatus status) {
-        Query query = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status, d.driverShift.orderId = :number WHERE d.license IN :drivers");
-        query.setParameter("number", orderNumber);
-        query.setParameter("drivers", driverId);
-        query.setParameter("status", status);
-        query.executeUpdate();
+    private void changeDriverStatus(Integer orderNumber, List<Long> license, DriverStatus status) {
+        for (Long l: license) {
+            Integer driverId = getDriverIdByDriverLicense(l);
+            DriverShift driverShift = entityManager.find(DriverShift.class, driverId);
+            driverShift.setStatus(status);
+            driverShift.setOrderId(orderNumber);
+            entityManager.merge(driverShift);
+        }
+//        Query query = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status, d.driverShift.orderId = :number WHERE d.license IN :drivers");
+//        query.setParameter("number", orderNumber);
+//        query.setParameter("drivers", driverId);
+//        query.setParameter("status", status);
+//        query.executeUpdate();
     }
 
     private void changeFuraStatus(String furaNumber) {
@@ -268,6 +275,12 @@ public class OrderServiceBean implements OrderService {
         Query query = entityManager.createQuery("SELECT o.id FROM Order o WHERE o.orderStatus.status = :status");
         query.setParameter("status", status);
         return query.getResultList();
+    }
+
+    private Integer getDriverIdByDriverLicense(Long license){
+        Query query = entityManager.createQuery("SELECT d.driversId FROM Drivers d WHERE d.license = :license");
+        query.setParameter("license", license);
+        return Integer.parseInt(query.getSingleResult().toString());
     }
 
 }

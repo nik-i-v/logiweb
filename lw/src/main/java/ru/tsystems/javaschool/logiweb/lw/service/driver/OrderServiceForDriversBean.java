@@ -65,14 +65,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     }
 
     @Override
-    public void changeDriverStatusForDrivers(Long driverId, DriverStatus status) {
-        if (status.equals(DriverStatus.atWeel.toString())) {
-            isAnybodyAtWheel(driverId);
-            changeDriverStatus(DriverStatus.atWeel, driverId);
-        } else {
-            changeDriverStatus(DriverStatus.shift, driverId);
-
-        }
+    public void changeDriverStatusForDrivers(Long license, DriverStatus status) {
+        Integer driverId = getDriverIdByDriverLicense(license);
+        DriverShift driverShift = entityManager.find(DriverShift.class, driverId);
+        driverShift.setStatus(status);
+        entityManager.merge(driverShift);
     }
 
     @Override
@@ -110,7 +107,8 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return Integer.parseInt(query.getSingleResult().toString());
     }
 
-    private void isAnybodyAtWheel(Long driverId) {
+    @Override
+    public void isAnybodyAtWheel(Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
         Query query = entityManager.createQuery("SELECT COUNT (ds.driverId) FROM  DriverShift ds " +
                 "WHERE ds.status = :status AND ds.orderId = :number");
@@ -121,10 +119,10 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         }
     }
 
-    private void changeDriverStatus(DriverStatus status, Long driverId) {
-        Query newStatus = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status WHERE d.license = :id");
-        newStatus.setParameter("status", status);
-        newStatus.setParameter("id", driverId);
-        newStatus.executeUpdate();
+    private Integer getDriverIdByDriverLicense(Long license){
+        Query query = entityManager.createQuery("SELECT d.driversId FROM Drivers d WHERE d.license = :license");
+        query.setParameter("license", license);
+        return Integer.parseInt(query.getSingleResult().toString());
     }
+
 }
