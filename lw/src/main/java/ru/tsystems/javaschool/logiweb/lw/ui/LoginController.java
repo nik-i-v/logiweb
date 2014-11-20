@@ -42,13 +42,15 @@ public class LoginController {
     @Inject
     private FacesContext facesContext;
 
-    public void login() {
+    public boolean login() {
         AuthenticationResult result = identity.login();
         if (AuthenticationResult.FAILED.equals(result)) {
             facesContext.addMessage(
                     null,
                     new FacesMessage("Authentication was unsuccessful.  Please check your username and password "
                             + "before trying again."));
+            return false;
         }
+        return true;
     }
 }

@@ -23,12 +23,15 @@ import org.picketlink.idm.credential.Password;
 import org.picketlink.idm.model.basic.Group;
 import org.picketlink.idm.model.basic.Role;
 import org.picketlink.idm.model.basic.User;
+import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import static org.picketlink.idm.model.basic.BasicModel.*;
@@ -45,6 +48,9 @@ public class SecurityInitializer {
     @Inject
     private PartitionManager partitionManager;
 
+    @EJB
+    private DriverService driverService;
+
     @Inject
     private Logger logger;
     @PostConstruct
@@ -57,11 +63,15 @@ public class SecurityInitializer {
         identityManager.updateCredential(newUser, new Password("pass"));
         Role admin = new Role("admin");
         identityManager.add(admin);
-//        Role driver = new Role("driver");
-//                identityManager.add(driver);
-//                grantRole(relationshipManager, newUser, driver);
-//                logger.info("New role " + u.getName() + ", driver");
+        List<Long> ids = driverService.getAllDriverId();
+        Role driver = new Role("driver");
+        identityManager.add(driver);
         grantRole(relationshipManager, newUser, admin);
-        logger.info("New role  admin");
+        for (Long l: ids){
+            User driverUser = new User(l.toString());
+            identityManager.add(driverUser);
+            identityManager.updateCredential(driverUser, new Password("pass"));
+            grantRole(relationshipManager, driverUser, driver);
+        }
     }
 }

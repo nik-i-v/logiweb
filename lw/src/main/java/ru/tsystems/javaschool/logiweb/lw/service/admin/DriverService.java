@@ -11,6 +11,8 @@ import java.util.List;
 public interface DriverService {
     List<DriverShift> getAllDrivers();
 
+    List<Long> getAllDriverId();
+
     void addDriver(String surname, String name, String patronymic, Long licenseId);
 
     List<Long> getAllFreeDrivers();

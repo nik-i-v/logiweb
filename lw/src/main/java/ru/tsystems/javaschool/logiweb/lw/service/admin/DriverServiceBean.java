@@ -1,5 +1,11 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
+import org.picketlink.idm.IdentityManager;
+import org.picketlink.idm.PartitionManager;
+import org.picketlink.idm.RelationshipManager;
+import org.picketlink.idm.credential.Password;
+import org.picketlink.idm.model.basic.Role;
+import org.picketlink.idm.model.basic.User;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverStatus;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
@@ -13,6 +19,8 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
+import static org.picketlink.idm.model.basic.BasicModel.grantRole;
+
 
 @Stateless
 public class DriverServiceBean implements DriverService{
@@ -21,9 +29,17 @@ public class DriverServiceBean implements DriverService{
     @Inject
     private EntityManager entityManager;
 
+    @Inject
+    private PartitionManager partitionManager;
+
     @Override
     public List<DriverShift> getAllDrivers(){
         return entityManager.createQuery("SELECT ds FROM DriverShift ds").getResultList();
+    }
+
+    @Override
+    public List<Long> getAllDriverId(){
+        return entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
     }
 
     @Override
@@ -44,6 +60,14 @@ public class DriverServiceBean implements DriverService{
         entityManager.persist(driver);
         entityManager.persist(driverShift);
         entityManager.persist(user);
+        IdentityManager identityManager = this.partitionManager.createIdentityManager();
+        RelationshipManager relationshipManager = this.partitionManager.createRelationshipManager();
+        Role driverRole = new Role("driver");
+        identityManager.add(driverRole);
+        User driverUser = new User(driver.getLicense().toString());
+        identityManager.add(driverUser);
+        identityManager.updateCredential(driverUser, new Password("pass"));
+        grantRole(relationshipManager, driverUser, driverRole);
     }
 
     @Override
