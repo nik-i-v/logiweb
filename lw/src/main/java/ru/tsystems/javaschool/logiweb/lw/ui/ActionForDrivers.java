@@ -83,9 +83,9 @@ public class ActionForDrivers implements Serializable {
     @PostConstruct
     public void init() {
         driverLicense = Long.parseLong(checkUser.getUser().getName());
-        logger.info("Driver license is " + driverLicense);
+//        logger.info("Driver license is " + driverLicense);
         currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
-        logger.info("Current status is " + currentStatus);
+//        logger.info("Current status is " + currentStatus);
         if(!currentStatus.equals("notShift")) {
             ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
             logger.info("Orders drivers ok");

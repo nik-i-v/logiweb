@@ -69,6 +69,7 @@ public class OrderAction implements Serializable {
     private OrderService orderService;
 
     @PostConstruct
+//    @Admin
     public void initOrders() {
         orders = orderService.getAllOrders();
     }
@@ -85,6 +86,7 @@ public class OrderAction implements Serializable {
 
     @Named
     @Produces
+//    @Admin
     public List<Order> getOrders() {
 //        orders = orderService.getAllOrders();
         return orders;

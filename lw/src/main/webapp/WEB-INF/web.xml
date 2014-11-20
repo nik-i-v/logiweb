@@ -22,7 +22,7 @@
     <!-- Redirect any 500 Error Code to /error.jsf -->
     <error-page>
         <error-code>500</error-code>
-        <location>/errorLogin.jsf</location>
+        <location>/errorLogin.xhtml</location>
     </error-page>
 
 

@@ -1,6 +1,7 @@
 package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
+import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
 
 import javax.ejb.Stateless;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
+//@Admin
 @Stateless
 public class OrderServiceBean implements OrderService {
     private static Logger logger = Logger.getLogger(OrderServiceBean.class.getName());
