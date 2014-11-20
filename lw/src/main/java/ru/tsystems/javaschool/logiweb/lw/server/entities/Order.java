@@ -1,6 +1,10 @@
 package ru.tsystems.javaschool.logiweb.lw.server.entities;
 
+import com.sun.istack.internal.Nullable;
+
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -17,10 +21,11 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Size(min = 7, max = 7, message = "must have format: 2 letters and 5 digits")
+//   @Digits(integer = 5, fraction = 0)
     @Pattern(regexp = "^[A-Z]{2}\\d{5}$")
     @Column(name = "fura_id")
-    private Integer furaId;
+//    @Nullable
+    private String furaId;
 
     @OneToOne(mappedBy = "order", fetch = FetchType.EAGER)
     private Fura fura;
@@ -66,7 +71,7 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public void setFuraId(Integer furaId) {
+    public void setFuraId(String furaId) {
         this.furaId = furaId;
     }
 
@@ -74,7 +79,7 @@ public class Order implements Serializable {
         return id;
     }
 
-    public Integer getFuraId() {
+    public String getFuraId() {
         return furaId;
     }
 

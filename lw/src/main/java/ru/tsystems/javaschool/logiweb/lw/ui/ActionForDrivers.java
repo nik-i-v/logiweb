@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 
 //@Driver
 @ManagedBean(name = "action")
@@ -38,6 +39,9 @@ public class ActionForDrivers implements Serializable {
 
     @Inject
     private FacesContext facesContext;
+
+    @Inject
+    private Logger logger;
 
 //    @Named
 //    @Produces
@@ -79,9 +83,15 @@ public class ActionForDrivers implements Serializable {
     @PostConstruct
     public void init() {
         driverLicense = Long.parseLong(checkUser.getUser().getName());
+        logger.info("Driver license is " + driverLicense);
         currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
-        ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
-        statusMenu = orderServiceForDrivers.getStatusMenuForDrivers(currentStatus);
+        logger.info("Current status is " + currentStatus);
+        if(!currentStatus.equals("notShift")) {
+            ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
+            logger.info("Orders drivers ok");
+            statusMenu = orderServiceForDrivers.getStatusMenuForDrivers(currentStatus);
+        }
+
     }
 
     public void setDriverLicense(Long driverLicense) {

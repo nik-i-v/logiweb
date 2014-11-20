@@ -94,6 +94,7 @@ public class OrderAction implements Serializable {
         this.orders = orders;
     }
 
+    @Admin
     public void addOrder() {
 //        order = new Order();
         try {

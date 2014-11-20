@@ -28,8 +28,8 @@ public class OrderServiceBean implements OrderService {
             driverShift.setParameter("number", orderNumber);
             o.setDriverShift(driverShift.getResultList());
             if (getOrderStatus(orderNumber).equals(OrderStatus.Status.shipped.toString()) || getOrderStatus(orderNumber).equals(OrderStatus.Status.made.toString())) {
-                Integer furaId = o.getFuraId();
-                o.setFura(entityManager.find(Fura.class, furaId));
+                String furaId = o.getFuraId();
+                o.setFura(entityManager.find(Fura.class, Integer.parseInt(furaId)));
             } else {
                 o.setFura(null);
             }
@@ -50,6 +50,7 @@ public class OrderServiceBean implements OrderService {
         Order order = new Order();
         OrderStatus orderStatus = new OrderStatus();
         orderStatus.setStatus(OrderStatus.Status.created);
+//        order.setFuraId(null);
         entityManager.persist(order);
         entityManager.persist(orderStatus);
     }
