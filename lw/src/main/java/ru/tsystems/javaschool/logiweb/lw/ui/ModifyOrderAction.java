@@ -17,7 +17,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@Admin
+//@Admin
 @ManagedBean(name = "modifyOrder")
 @RequestScoped
 public class ModifyOrderAction  implements Serializable{

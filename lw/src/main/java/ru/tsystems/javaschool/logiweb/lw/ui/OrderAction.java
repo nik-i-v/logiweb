@@ -17,7 +17,7 @@ import java.io.Serializable;
 import java.util.List;
 
 //@Model
-@Admin
+//@Admin
 @ManagedBean(name = "orderAction")
 @ViewScoped
 public class OrderAction implements Serializable {

@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 //@Model // =@Named + @RequestScoped
 @ManagedBean(name = "driverAction")
 @ViewScoped
-@Admin
+//@Admin
 public class DriverAction implements Serializable {
 
     @Inject

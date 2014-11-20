@@ -31,8 +31,8 @@
 
 
                         <h:outputLabel for="licence" value="Licence:"/>
-                        <h:inputText id="licence" value="#{driverAction.driver.license}" validatorMessage="Invalid format">
-                            <f:validateLength minimum="11" maximum="11"  validatorMessage = "Is not number"/>
+                        <h:inputText id="licence" value="#{driverAction.driver.license}" validatorMessage="Invalid format" required="true">
+                            <f:validateLength minimum="11" maximum="11" />
                             <f:convertNumber integerOnly="true"/>
                         </h:inputText>
                         <h:message for="licence" errorClass="invalid"/>
