@@ -10,18 +10,18 @@
             <div class="home_box">
                 <h:form id="addDriver">
                     <h:panelGrid columns="1" columnClasses="titleCell">
-                    <h:commandButton id="add" value="Create order" styleClass="but"
-                                     action="#{orderAction.addOrder}" ajax = "true" rendered="true"/>
-
-                    <h:commandButton id = "addG" value="Add goods" styleClass="but"
-                                     action="add_goods"/>
-                    <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                     action="confirm" ajax="true" rendered="true"/>
-                    <h:commandButton  id = "addDF" value="Add drivers and fura" styleClass="but"
-                                      action="add_drivers_and_fura"/>
-                    <h:commandButton  id = "close" value="Close order" styleClass="but"
-                                      action="close"/>
-                </h:panelGrid>
+                        <h:commandButton id="add" value="Create order" styleClass="but"
+                                         action="#{orderAction.addOrder}" ajax="true" rendered="true"/>
+                        <h:message for="add" errorClass="invalid"/>
+                        <h:commandButton id="addG" value="Add goods" styleClass="but"
+                                         action="add_goods"/>
+                        <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
+                                         action="confirm" ajax="true" rendered="true"/>
+                        <h:commandButton id="addDF" value="Add drivers and fura" styleClass="but"
+                                         action="add_drivers_and_fura"/>
+                        <h:commandButton id="close" value="Close order" styleClass="but"
+                                         action="close"/>
+                    </h:panelGrid>
 
                 </h:form>
             </div>
@@ -29,7 +29,8 @@
                 <h:panelGroup rendered="#{empty orders}">
                     <em>No orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="_order"  value="#{orders}" rendered="#{not empty orders}" styleClass="simpletablestyle">
+                <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
+                             styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
                         #{_order.id}
@@ -44,7 +45,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Drivers</f:facet>
-                        <h:dataTable var = "_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle" >
+                        <h:dataTable var="_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle">
                             <h:column>
                                 <!--<f:facet name="header">Dri</f:facet>-->
                                 #{_drivers.drivers.license}
@@ -53,7 +54,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Goods</f:facet>
-                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                        <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
                                      rendered="#{not empty _order.orderStatus.orderInfo}">
                             <h:column>
                                 <!--<f:facet name="header">Name</f:facet>-->

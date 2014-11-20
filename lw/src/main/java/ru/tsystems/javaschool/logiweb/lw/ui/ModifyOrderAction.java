@@ -3,6 +3,7 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
+import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -16,6 +17,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
+@Admin
 @ManagedBean(name = "modifyOrder")
 @RequestScoped
 public class ModifyOrderAction  implements Serializable{

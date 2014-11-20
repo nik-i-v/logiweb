@@ -2,6 +2,7 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
+import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Produces;
@@ -16,6 +17,7 @@ import java.io.Serializable;
 import java.util.List;
 
 //@Model
+@Admin
 @ManagedBean(name = "orderAction")
 @ViewScoped
 public class OrderAction implements Serializable {

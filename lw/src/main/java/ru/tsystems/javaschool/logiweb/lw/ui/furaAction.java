@@ -1,26 +1,23 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.FuraService;
+import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
-import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 //@Model
+@Admin
 @ManagedBean(name = "furaAction")
 @ViewScoped
 public class FuraAction implements Serializable {

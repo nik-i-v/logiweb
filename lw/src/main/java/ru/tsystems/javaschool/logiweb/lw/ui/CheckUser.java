@@ -1,6 +1,8 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
 
+import org.picketlink.idm.IdentityManager;
+import org.picketlink.idm.PartitionManager;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
 
@@ -26,7 +28,7 @@ public class CheckUser implements Serializable {
     private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
     private Users user;
-
+private IdentityManager identityManager;
 
     @Produces
     @Named
@@ -37,8 +39,12 @@ public class CheckUser implements Serializable {
     @EJB
     private UserService userService;
 
+    @Inject
+    private PartitionManager partitionManager;
+
     public String checkUser() {
         List<Users> users = userService.getUsers();
+identityManager.
         if (isAdmin(users, user)){
             return "admin";
         } else  if (isDriver(users, user)){
@@ -57,6 +63,7 @@ public class CheckUser implements Serializable {
     @PostConstruct
     public void initNewUser() {
         user = new Users();
+        identityManager = this.partitionManager.createIdentityManager();
     }
 
     private boolean isAdmin(List<Users> users, Users user){

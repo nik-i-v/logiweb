@@ -11,28 +11,28 @@
                 <h:form id="addDriver">
                     <h:panelGrid columns="3" columnClasses="titleCell">
                         <h:outputLabel for="surname" value="Surname:"/>
-                        <h:inputText id="surname" value="#{driverAction.driver.surname}" required="true">
+                        <h:inputText id="surname" value="#{driverAction.driver.surname}">
                             <f:validator validatorId="nameValidator" />
                         </h:inputText>
 
                         <h:message for="surname" errorClass="invalid"/>
 
                         <h:outputLabel for="name" value="Name:"/>
-                        <h:inputText id="name" value="#{driverAction.driver.name}" required="true">
+                        <h:inputText id="name" value="#{driverAction.driver.name}">
                             <f:validator validatorId="nameValidator" />
                         </h:inputText>
                         <h:message for="name" errorClass="invalid"/>
 
                         <h:outputLabel for="patronymic" value="Patronymic:"/>
-                        <h:inputText id="patronymic" value="#{driverAction.driver.patronymic}" required="true">
+                        <h:inputText id="patronymic" value="#{driverAction.driver.patronymic}" >
                             <f:validator validatorId="nameValidator" />
                         </h:inputText>
                         <h:message for="patronymic" errorClass="invalid"/>
 
 
                         <h:outputLabel for="licence" value="Licence:"/>
-                        <h:inputText id="licence" value="#{driverAction.driver.license}" validatorMessage="Invalid format" required="true">
-                            <f:validateLength minimum="11" maximum="11" />
+                        <h:inputText id="licence" value="#{driverAction.driver.license}" validatorMessage="Invalid format">
+                            <f:validateLength minimum="11" maximum="11"  validatorMessage = "Is not number"/>
                             <f:convertNumber integerOnly="true"/>
                         </h:inputText>
                         <h:message for="licence" errorClass="invalid"/>

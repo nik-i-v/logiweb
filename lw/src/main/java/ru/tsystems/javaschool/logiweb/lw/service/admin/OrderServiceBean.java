@@ -21,19 +21,17 @@ public class OrderServiceBean implements OrderService {
 
     @Override
     public List<Order> getAllOrders() {
-//     return entityManager.find(Order.class);
         List<Order> orders = entityManager.createQuery("SELECT o FROM Order o").getResultList();
         for (Order o : orders) {
             Integer orderNumber = o.getId();
             Query driverShift = entityManager.createQuery("SELECT DISTINCT ds FROM DriverShift ds WHERE ds.orderId = :number");
             driverShift.setParameter("number", orderNumber);
             o.setDriverShift(driverShift.getResultList());
-//            Order order = entityManager.find(Order.class, orderNumber);
-//            Query furaIdQuery = entityManager.createQuery("SELECT o.fura.furasId FROM Order o WHERE o.id= :number");
-//            furaIdQuery.setParameter("number", orderNumber);
             if (getOrderStatus(orderNumber).equals(OrderStatus.Status.shipped.toString()) || getOrderStatus(orderNumber).equals(OrderStatus.Status.made.toString())) {
                 Integer furaId = o.getFuraId();
                 o.setFura(entityManager.find(Fura.class, furaId));
+            } else {
+                o.setFura(null);
             }
             Query orderInfo = entityManager.createQuery("SELECT DISTINCT oi FROM OrderInfo oi WHERE oi.orderNumber = :number");
             orderInfo.setParameter("number", orderNumber);
@@ -48,16 +46,12 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public void addOrder() {
-        logger.info("Add new order");
+//        logger.info("Add new order");
         Order order = new Order();
         OrderStatus orderStatus = new OrderStatus();
         orderStatus.setStatus(OrderStatus.Status.created);
-//        entityManager.flush();
         entityManager.persist(order);
         entityManager.persist(orderStatus);
-
-//        orderDAO.add(orderStatus, order);
-//        return order.getId();
     }
 
     @Override

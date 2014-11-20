@@ -3,29 +3,26 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
-import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
+import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
-import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
 //@Model // =@Named + @RequestScoped
 @ManagedBean(name = "driverAction")
 @ViewScoped
+@Admin
 public class DriverAction implements Serializable {
 
     @Inject
