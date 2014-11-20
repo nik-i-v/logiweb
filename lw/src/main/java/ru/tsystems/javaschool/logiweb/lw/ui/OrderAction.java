@@ -2,7 +2,7 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
-import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
+//import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Produces;
@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 
 //@Model
 //@Admin
@@ -41,7 +42,8 @@ public class OrderAction implements Serializable {
     @Inject
     private FacesContext facesContext;
 
-
+    @Inject
+    private Logger logger;
 
     @Produces
     @Named
@@ -86,9 +88,7 @@ public class OrderAction implements Serializable {
 
     @Named
     @Produces
-//    @Admin
     public List<Order> getOrders() {
-//        orders = orderService.getAllOrders();
         return orders;
     }
 
@@ -96,11 +96,11 @@ public class OrderAction implements Serializable {
         this.orders = orders;
     }
 
-    @Admin
+//    @Admin
     public void addOrder() {
-//        order = new Order();
         try {
             orderService.addOrder();
+            logger.info("New order was created");
             facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Order was added", "Order addition successful"));
         } catch (Exception e) {
             String errorMessage = e.getMessage();
@@ -114,12 +114,9 @@ public class OrderAction implements Serializable {
     }
 
 
-
     public void madeOrders() {
         madeOrderNumber = orderService.getMadeOrders();
     }
-
-
 
 
 }

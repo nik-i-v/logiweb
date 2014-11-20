@@ -16,6 +16,8 @@
  */
 package ru.tsystems.javaschool.logiweb.lw.util;
 
+import org.picketlink.annotations.PicketLink;
+
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
@@ -52,6 +54,12 @@ public class Resources {
     @RequestScoped
     public FacesContext produceFacesContext() {
         return FacesContext.getCurrentInstance();
+    }
+
+    @Produces
+    @PicketLink
+    public EntityManager getPicketLinkEntityManager() {
+        return em;
     }
 
 }

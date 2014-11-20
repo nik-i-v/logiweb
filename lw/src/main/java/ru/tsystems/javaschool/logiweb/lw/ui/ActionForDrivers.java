@@ -2,7 +2,7 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 import ru.tsystems.javaschool.logiweb.lw.service.driver.OrderServiceForDrivers;
-import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Driver;
+//import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Driver;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -88,7 +88,7 @@ public class ActionForDrivers implements Serializable {
 //        logger.info("Current status is " + currentStatus);
         if(!currentStatus.equals("notShift")) {
             ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
-            logger.info("Orders drivers ok");
+//            logger.info("Orders drivers ok");
             statusMenu = orderServiceForDrivers.getStatusMenuForDrivers(currentStatus);
         }
 

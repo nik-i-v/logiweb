@@ -8,20 +8,25 @@
     <ui:define name="content">
 
         <h:form id="reg">
+            <!--<form method="POST" action="j_security_check">-->
+                <!--<input type="text" name="j_username"/>-->
+                <!--<input type="password" name="j_password"/>-->
+                <!--<input type="submit" name="login" value="Login"/>-->
+            <!--</form>-->
             <h:panelGrid columns="3" columnClasses="titleCell">
                 <h:outputLabel for="id" value="Login:"/>
-                <h:inputText id="id" value="#{user.name}" />
+                <h:inputText id="id" value="#{loginCredentials.userId}" />
                 <h:message for="id" errorClass="invalid"/>
 
                 <h:outputLabel for="name" value="Password:"/>
-                <h:inputSecret id="name" value="#{user.password}" />
+                <h:inputSecret id="name" value="#{loginCredentials.password}" />
                 <h:message for="name" errorClass="invalid"/>
 
             </h:panelGrid>
 
             <p>
                 <h:panelGrid columns="2">
-                    <h:commandButton id="but" action="#{checkUser.checkUser}" value="Log in" styleClass="but"/>
+                    <h:commandButton id="but" action="#{loginController.login}" value="Log in" styleClass="but"/>
                     <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                                 globalOnly="true"/>
                 </h:panelGrid>

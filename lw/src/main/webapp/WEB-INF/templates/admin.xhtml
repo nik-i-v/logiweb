@@ -20,8 +20,8 @@
                                 <h:form>
                                     <p>
                                         <h:panelGrid columns="2">
-                                            <h:commandButton id="but" action="#{checkUser.logout}" value="Logout"
-                                                             styleClass="but" type="reset"/>
+                                            <h:commandButton id="but" action = "#{checkUser.logout}" value="Logout" ajax="true" rendered="true"
+                                                             styleClass="but" />
 
                                         </h:panelGrid>
                                     </p>

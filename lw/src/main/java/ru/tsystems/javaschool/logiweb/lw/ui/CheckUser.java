@@ -1,6 +1,7 @@
 package ru.tsystems.javaschool.logiweb.lw.ui;
 
 
+import org.picketlink.Identity;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.PartitionManager;
 import org.picketlink.idm.RelationshipManager;
@@ -21,6 +22,7 @@ import javax.enterprise.inject.Produces;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.ws.rs.Path;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
@@ -32,10 +34,22 @@ import static org.picketlink.idm.model.basic.BasicModel.*;
 @ManagedBean
 @ApplicationScoped
 public class CheckUser implements Serializable {
-    private static Logger logger = Logger.getLogger(CheckUser.class.getName());
+//    private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
     private Users user;
     private List<Users> users;
+
+    @Inject
+    private Identity identity;
+
+    @Inject
+    private Logger logger;
+
+    @Inject
+    private IdentityManager identityManager;
+
+    @Inject
+    private RelationshipManager relationshipManager;
 
     @Produces
     @Named
@@ -60,7 +74,7 @@ public class CheckUser implements Serializable {
     }
 
     public String checkUser() {
-         if (isAdmin(users, user)) {
+        if (isAdmin(users, user)) {
             return "admin";
         } else if (isDriver(users, user)) {
             return "driver";
@@ -78,23 +92,7 @@ public class CheckUser implements Serializable {
     @PostConstruct
     public void initNewUser() {
         user = new Users();
-        IdentityManager identityManager = this.partitionManager.createIdentityManager();
-        RelationshipManager relationshipManager = this.partitionManager.createRelationshipManager();
-        users = userService.getUsers();
-        for (Users u: users) {
-            User newUser = new User(u.getName());
-            identityManager.add(newUser);
-            identityManager.updateCredential(newUser, new Password(u.getPassword()));
-            if(u.getStatus().equals("Administrator")) {
-                Role admin = new Role("admin");
-                identityManager.add(admin);
-                grantRole(relationshipManager, newUser, admin);
-            } else if (u.getStatus().equals("Driver")) {
-                Role driver = new Role("driver");
-                identityManager.add(driver);
-                grantRole(relationshipManager, newUser, driver);
-            }
-        }
+
     }
 
     private boolean isAdmin(List<Users> users, Users user) {
@@ -115,6 +113,10 @@ public class CheckUser implements Serializable {
         return false;
     }
 
+    public boolean hasApplicationRole(String roleName) {
+        Role role = getRole(this.identityManager, roleName);
+        return hasRole(this.relationshipManager, this.identity.getAccount(), role);
+    }
 
 }
 

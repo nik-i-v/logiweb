@@ -3,7 +3,6 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService;
-import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -136,7 +135,7 @@ public class ModifyOrderAction  implements Serializable{
     }
 
     public void createdOrdersWitsGoods() {
-        createdOrdersWitsGoods = orderService.getcreatedOrdersWitsGoods();
+        createdOrdersWitsGoods = orderService.getCreatedOrdersWitsGoods();
     }
 
     public void addFuraAndDriversToOrder() {

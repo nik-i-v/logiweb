@@ -28,7 +28,7 @@ public interface OrderService {
 
     List<Integer> getMadeOrders();
 
-    List<Integer> getcreatedOrdersWitsGoods();
+    List<Integer> getCreatedOrdersWitsGoods();
 
     void checkIfGoodsAreNotEmpty(Integer orderNumber);
 

@@ -5,10 +5,10 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:h="http://java.sun.com/jsf/html"
                 template="/WEB-INF/templates/admin.xhtml">
-    <ui:define name="content">
+    <ui:define name="content" >
         <div class="all_box">
             <div class="home_box">
-                <h:form id="addDriver">
+                <h:form id="addDriver" rendered="#{checkUser.hasApplicationRole('admin')}">
                     <h:panelGrid columns="3" columnClasses="titleCell">
                         <h:outputLabel for="surname" value="Surname:"/>
                         <h:inputText id="surname" value="#{driverAction.driver.surname}">

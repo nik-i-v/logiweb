@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
-//@Admin
 @Stateless
 public class OrderServiceBean implements OrderService {
     private static Logger logger = Logger.getLogger(OrderServiceBean.class.getName());
@@ -48,11 +47,9 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public void addOrder() {
-//        logger.info("Add new order");
         Order order = new Order();
         OrderStatus orderStatus = new OrderStatus();
         orderStatus.setStatus(OrderStatus.Status.created);
-//        order.setFuraId(null);
         entityManager.persist(order);
         entityManager.persist(orderStatus);
     }
@@ -83,13 +80,9 @@ public class OrderServiceBean implements OrderService {
 
     @Override
     public void addFuraAndDrivers(Integer orderNumber, List<Long> driverId, String furaNumber) {
-//        isOrderExists(orderNumber);
-//        isFuraExists(furaNumber);
         checkOrderStatus(getOrderStatus(orderNumber), OrderStatus.Status.confirmed.toString());
-//        isFuraOccupied(furaNumber);
         isFuraSuitable(furaIntCapacity(getFuraCapacity(furaNumber)), weightGoodsInOrder(orderNumber));
         isDriverCountSuitable(getDriverCount(furaNumber), driverId.size());
-//        checkDriverStatus(driverId, DriverShift.Status.notShift);
         changeFuraStatus(furaNumber);
         changeDriverStatus(orderNumber, driverId, DriverStatus.shift);
         addFuraToOrder(orderNumber, furaNumber);
@@ -98,7 +91,6 @@ public class OrderServiceBean implements OrderService {
 
     @Override
     public void closeOrder(Integer orderNumber) {
-//        logger.info("Close order number + " + orderNumber);
         isOrderExists(orderNumber);
         checkOrderStatus(getOrderStatus(orderNumber), OrderStatus.Status.made.toString());
         List<Long> driversInOrder = getDriversInOrder(orderNumber);
@@ -136,7 +128,7 @@ public class OrderServiceBean implements OrderService {
     }
 
     @Override
-    public List<Integer> getcreatedOrdersWitsGoods() {
+    public List<Integer> getCreatedOrdersWitsGoods() {
         Query query = entityManager.createQuery("SELECT  DISTINCT oi.orderNumber FROM OrderInfo oi WHERE oi.orderStatus.status = :status");
         query.setParameter("status", OrderStatus.Status.created);
         return query.getResultList();
@@ -151,32 +143,10 @@ public class OrderServiceBean implements OrderService {
         }
     }
 
-//    @Override
-//    public List<Long> getDriversInCurrentOrder() {
-//        Query query = entityManager.createQuery("SELECT  DISTINCT oi.orderNumber FROM OrderInfo oi WHERE oi.orderStatus.status = :status");
-//        query.setParameter("status", OrderStatus.Status.created);
-//        return query.getResultList();
-//    }
-
-    private void isFuraOccupied(String furaNumber) {
-        Query query = entityManager.createQuery("SELECT f.status FROM Fura f WHERE f.furaNumber = :number");
-        query.setParameter("number", furaNumber);
-        if (query.getSingleResult().toString().equals(Fura.Status.yes)) {
-            throw new IllegalArgumentException("This fura is occupied!");
-        }
-    }
-
     private void isOrderExists(Integer orderNumber) {
         List<Integer> ordersId = entityManager.createQuery("SELECT o.id FROM Order o").getResultList();
         if (!ordersId.contains(orderNumber)) {
             throw new IllegalArgumentException("Order is not exists");
-        }
-    }
-
-    private void isFuraExists(String furaNumber) {
-        List<String> furasId = entityManager.createQuery("SELECT f.furaNumber FROM Fura f").getResultList();
-        if (!furasId.contains(furaNumber)) {
-            throw new IllegalArgumentException("Fura is not exists");
         }
     }
 
@@ -267,11 +237,6 @@ public class OrderServiceBean implements OrderService {
             driverShift.setOrderId(orderNumber);
             entityManager.merge(driverShift);
         }
-//        Query query = entityManager.createQuery("UPDATE Drivers d SET d.driverShift.status = :status, d.driverShift.orderId = :number WHERE d.license IN :drivers");
-//        query.setParameter("number", orderNumber);
-//        query.setParameter("drivers", driverId);
-//        query.setParameter("status", status);
-//        query.executeUpdate();
     }
 
     private void changeFuraStatus(String furaNumber) {
