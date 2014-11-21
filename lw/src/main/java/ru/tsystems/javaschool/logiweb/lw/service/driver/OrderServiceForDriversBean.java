@@ -101,15 +101,15 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return query.getSingleResult().toString();
     }
 
-    @Override
-    public List<Drivers> getCoDrivers(Long driverLicense) {
-        Integer orderNumber = getOrderNumberForDrivers(driverLicense);
-        Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE  d.driverShift.orderId = :number");
-        query.setParameter("number", orderNumber);
-        List<Drivers> drivers = query.getResultList();
-        drivers.remove(driverLicense);
-        return drivers;
-    }
+//    @Override
+//    public List<Drivers> getCoDrivers(Long driverLicense) {
+//        Integer orderNumber = getOrderNumberForDrivers(driverLicense);
+//        Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE  d.driverShift.orderId = :number");
+//        query.setParameter("number", orderNumber);
+//        List<Drivers> drivers = query.getResultList();
+//        drivers.remove(driverLicense);
+//        return drivers;
+//    }
 
     private Integer getOrderNumberForDrivers(Long driverId) {
         Query query = entityManager.createQuery("SELECT ds.orderId FROM DriverShift ds WHERE ds.drivers.license = :license");

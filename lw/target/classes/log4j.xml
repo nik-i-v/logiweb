@@ -13,6 +13,7 @@
         </filter>
     </appender>
 
+
     <appender name="LOG-FILE-APPENDER" class="org.apache.log4j.FileAppender">
         <param name="file" value="app.log"/>
         <layout class="org.apache.log4j.PatternLayout">
@@ -20,7 +21,9 @@
         </layout>
     </appender>
 
+
     <root>
+        <appender-ref ref="CONSOLE-DEBUG"/>
         <appender-ref ref="LOG-FILE-APPENDER"/>
     </root>
 
