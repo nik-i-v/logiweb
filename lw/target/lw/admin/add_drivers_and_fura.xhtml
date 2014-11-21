@@ -8,50 +8,56 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:panelGroup rendered="#{empty createdOrderNumber}">
-                    <em>No created orders.</em>
-                </h:panelGroup>
-                <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
-                    <h:panelGrid columns="3" id="addDrivers" rendered="#{not empty confirmedOrderNumber}">
+                <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
+                    <h:panelGroup rendered="#{empty createdOrderNumber}">
+                        <em>No created orders.</em>
+                    </h:panelGroup>
+                    <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
+                        <h:panelGrid columns="3" id="addDrivers" rendered="#{not empty confirmedOrderNumber}">
 
-                        <h:outputLabel for="orderNumber" value="Order:"/>
-                        <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
-                            <f:selectItems value="#{modifyOrder.confirmedOrderNumber}"/>
-                        </h:selectOneMenu>
-                        <h:message for="orderNumber" errorClass="invalid"/>
-
-
-                        <h:outputLabel for="driverLicense" value="Drivers"/>
-                        <h:selectManyCheckbox id="driverLicense" value="#{modifyOrder.driversToOrder}" layout="pageDirection" converter="javax.faces.Long">
-                            <f:selectItems value="#{driverAction.freeDrivers}" />
-                        </h:selectManyCheckbox>
+                            <h:outputLabel for="orderNumber" value="Order:"/>
+                            <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
+                                <f:selectItems value="#{modifyOrder.confirmedOrderNumber}"/>
+                            </h:selectOneMenu>
+                            <h:message for="orderNumber" errorClass="invalid"/>
 
 
-                        <h:message for="driverLicense" errorClass="invalid"/>
-                        <h:outputLabel for="furaNumber" value="Wagon:"/>
-                        <h:selectOneMenu id="furaNumber" value="#{modifyOrder.furaToOrder}">
-                            <f:selectItems value="#{furaAction.freeFuras}"/>
-                        </h:selectOneMenu>
-                        <h:message for="furaNumber" errorClass="invalid"/>
+                            <h:outputLabel for="driverLicense" value="Drivers"/>
+                            <h:selectManyCheckbox id="driverLicense" value="#{modifyOrder.driversToOrder}"
+                                                  layout="pageDirection" converter="javax.faces.Long">
+                                <f:selectItems value="#{driverAction.freeDrivers}"/>
+                            </h:selectManyCheckbox>
 
-                        <!--..-->
-                        <h:commandButton id="add" value="Add" styleClass="but"
-                                         action="#{modifyOrder.addFuraAndDriversToOrder}" ajax = "true" rendered="true"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
-                    </h:panelGrid>
-                    <div id="buttons_back">
-                        <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
-                    </div>
-                    <!--</h:panelGrid>-->
+
+                            <h:message for="driverLicense" errorClass="invalid"/>
+                            <h:outputLabel for="furaNumber" value="Wagon:"/>
+                            <h:selectOneMenu id="furaNumber" value="#{modifyOrder.furaToOrder}">
+                                <f:selectItems value="#{furaAction.freeFuras}"/>
+                            </h:selectOneMenu>
+                            <h:message for="furaNumber" errorClass="invalid"/>
+
+                            <!--..-->
+                            <h:commandButton id="add" value="Add" styleClass="but"
+                                             action="#{modifyOrder.addFuraAndDriversToOrder}" ajax="true"
+                                             rendered="true"/>
+                            <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                        globalOnly="true"/>
+                        </h:panelGrid>
+
+                        <div id="buttons_back">
+                            <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                        </div>
+                        <!--</h:panelGrid>-->
+                    </h:form>
                 </h:form>
-
             </div>
             <div class="home_box">
+                <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
                 <h:panelGroup rendered="#{empty orders}">
                     <em>No registered orders.</em>
                 </h:panelGroup>
-                <h:dataTable var="_order"  value="#{orders}" rendered="#{not empty orders}" styleClass="simpletablestyle">
+                <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
+                             styleClass="simpletablestyle">
                     <h:column>
                         <f:facet name="header">Number</f:facet>
                         #{_order.id}
@@ -66,7 +72,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Drivers</f:facet>
-                        <h:dataTable var = "_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle" >
+                        <h:dataTable var="_drivers" value="#{_order.driverShift}" styleClass="simpletablestyle">
                             <h:column>
                                 <!--<f:facet name="header">Dri</f:facet>-->
                                 #{_drivers.drivers.license}
@@ -75,7 +81,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">Goods</f:facet>
-                        <h:dataTable var = "_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
+                        <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}" styleClass="simpletablestyle"
                                      rendered="#{not empty _order.orderStatus.orderInfo}">
                             <h:column>
                                 <!--<f:facet name="header">Name</f:facet>-->
@@ -100,6 +106,10 @@
                         </h:dataTable>
                     </h:column>
                 </h:dataTable>
+                </h:form>
+                <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
+                    <h:graphicImage value="../resources/images/Valli1.png" width="600" height="430" />
+                </h:form>
             </div>
         </div>
     </ui:define>

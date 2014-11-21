@@ -36,6 +36,9 @@ public class ActionForDrivers implements Serializable {
 
     @Inject
     private CheckUser checkUser;
+//
+//    @Inject
+//    private LoginController loginController;
 
     @Inject
     private FacesContext facesContext;
@@ -82,7 +85,7 @@ public class ActionForDrivers implements Serializable {
 
     @PostConstruct
     public void init() {
-        driverLicense = Long.parseLong(checkUser.getUser().getName());
+        driverLicense = Long.parseLong(LoginController.driverLogin);
 //        logger.info("Driver license is " + driverLicense);
         currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
 //        logger.info("Current status is " + currentStatus);

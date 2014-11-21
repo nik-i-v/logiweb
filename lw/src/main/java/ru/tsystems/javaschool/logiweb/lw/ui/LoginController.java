@@ -20,10 +20,12 @@ import org.picketlink.Identity;
 import org.picketlink.Identity.AuthenticationResult;
 
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.logging.Logger;
 
 /**
  * We control the authentication process from this action bean, so that in the event of a failed authentication we can add an
@@ -36,21 +38,47 @@ import javax.inject.Named;
 @Named
 public class LoginController {
 
+    public static String driverLogin;
+
+    @Produces
+    @Named
+    public String getDriverLogin() {
+        return driverLogin;
+    }
+
+    public void setDriverLogin(String driverLogin) {
+        this.driverLogin = driverLogin;
+    }
+
+    @Inject
+    private Logger logger;
+
     @Inject
     private Identity identity;
 
     @Inject
+    private CheckUser checkUser;
+
+    @Inject
     private FacesContext facesContext;
 
-    public boolean login() {
+    public String login(String userId) {
         AuthenticationResult result = identity.login();
         if (AuthenticationResult.FAILED.equals(result)) {
             facesContext.addMessage(
                     null,
                     new FacesMessage("Authentication was unsuccessful.  Please check your username and password "
                             + "before trying again."));
-            return false;
+            return "fail";
         }
-        return true;
+        if(checkUser.hasApplicationRole("admin")){
+            return "admin";
+        }
+        if(checkUser.hasApplicationRole("driver")){
+            driverLogin = userId;
+//            logger.info("driver login is " + driverLogin );
+            return "driver";
+        }
+        return "fail";
     }
 }

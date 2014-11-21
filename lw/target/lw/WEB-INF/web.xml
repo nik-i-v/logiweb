@@ -21,7 +21,7 @@
 
     <!-- Redirect any 500 Error Code to /error.jsf -->
     <error-page>
-        <error-code>403</error-code>
+        <exception-type>javax.servlet.ServletException</exception-type>
         <location>/error.html</location>
     </error-page>
 

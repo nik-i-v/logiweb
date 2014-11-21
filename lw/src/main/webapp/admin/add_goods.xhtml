@@ -8,6 +8,7 @@
 <ui:define name="content">
     <div class="all_box">
         <div class="home_box">
+            <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
             <h:panelGroup rendered="#{empty createdOrderNumber}">
                 <em>No created orders.</em>
             </h:panelGroup>
@@ -58,9 +59,10 @@
                 </div>
                 <!--</h:panelGrid>-->
             </h:form>
-
+</h:form>
         </div>
         <div class="home_box">
+            <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
             <h:panelGroup rendered="#{empty orders}">
                 <em>No registered orders.</em>
             </h:panelGroup>
@@ -113,6 +115,10 @@
                     </h:dataTable>
                 </h:column>
             </h:dataTable>
+            </h:form>
+            <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
+                <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323" />
+            </h:form>
         </div>
     </div>
 

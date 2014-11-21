@@ -29,14 +29,17 @@
                             </div>
                             <div class="top">
                             </div>
-                            <div id="buttons">
-                                <!--<div class="but"></div>-->
-                                <a href="/lw/admin/drivers.jsf" class="but" title=""></a>
-                                <a href="/lw/admin/wagons.jsf" class="but" title=""></a>
-                                <a href="/lw/admin/orders.jsf" class="but" title=""></a>
-                            </div>
+                            <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
+                                <div id="buttons">
+                                    <!--<div class="but"></div>-->
+                                    <a href="/lw/admin/drivers.jsf" class="but" title=""></a>
+                                    <a href="/lw/admin/wagons.jsf" class="but" title=""></a>
+                                    <a href="/lw/admin/orders.jsf" class="but" title=""></a>
+                                </div>
+                            </h:form>
                         </div>
 
+                        <div style="height: 200px"></div>
 
                         <div id="content">
                             <ui:insert name="content">

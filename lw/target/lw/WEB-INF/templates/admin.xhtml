@@ -20,8 +20,9 @@
                                 <h:form>
                                     <p>
                                         <h:panelGrid columns="2">
-                                            <h:commandButton id="but" action = "#{checkUser.logout}" value="Logout" ajax="true" rendered="true"
-                                                             styleClass="but" />
+                                            <h:commandButton id="but" action="#{checkUser.logout}" value="Logout"
+                                                             ajax="true" rendered="true"
+                                                             styleClass="but"/>
 
                                         </h:panelGrid>
                                     </p>
@@ -29,12 +30,16 @@
                             </div>
                             <div class="top">
                             </div>
-                            <div id="buttons">
-                                <a href="/lw/admin/drivers.jsf" class="but" title="">Drivers</a>
-                                <a href="/lw/admin/wagons.jsf" class="but" title="">Wagons</a>
-                                <a href="/lw/admin/orders.jsf" class="but" title="">Orders</a>
-                            </div>
+                            <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
+                                <div id="buttons">
+                                    <a href="/lw/admin/drivers.jsf" class="but" title="">Drivers</a>
+                                    <a href="/lw/admin/wagons.jsf" class="but" title="">Wagons</a>
+                                    <a href="/lw/admin/orders.jsf" class="but" title="">Orders</a>
+                                </div>
+                            </h:form>
                         </div>
+
+                        <div style="height: 200px"></div>
 
 
                         <div id="content">
