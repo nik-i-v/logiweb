@@ -3,6 +3,7 @@ import org.junit.Test;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean;
+import ru.tsystems.javaschool.logiweb.lw.util.IncorrectDataException;
 
 import java.sql.Driver;
 import java.util.LinkedList;
@@ -32,7 +33,7 @@ public class DriverServicesTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void addDriverTest_is_not_unique() {
+    public void addDriverTest_is_not_unique() throws IncorrectDataException {
         service = mock(DriverServiceBean.class);
         service.addDriver("Petrov", "Petr", "Sergeevich", 38475647364L);
         service.addDriver("Petrov", "Petr", "Sergeevich", 38475647364L);

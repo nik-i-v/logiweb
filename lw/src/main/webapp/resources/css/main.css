@@ -2,7 +2,7 @@ html,
 *
 {
     border: 0;
-    margin: 10%;
+    margin: 50px 50px;
 }
 #main {
     padding: 10px 10px;
@@ -58,6 +58,12 @@ input[type=submit] {
 
 .but {
     margin-left: 85px;
+}
+
+a.link {
+    margin-left: 85px;
+    font-size: 25px;
+    color: #FFFFFF;
 }
 
 

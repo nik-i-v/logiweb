@@ -4,7 +4,6 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
-import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;

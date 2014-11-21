@@ -1,5 +1,6 @@
 package ru.tsystems.javaschool.logiweb.lw.service.driver;
 
+import org.picketlink.idm.IdentityManager;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.*;
 
 import javax.ejb.Stateless;
@@ -31,7 +32,7 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         orderInfo.setParameter("number", orderNumber);
         OrderStatus orderStatus = entityManager.find(OrderStatus.class, orderNumber);
         orderStatus.setOrderInfo(orderInfo.getResultList());
-return order;
+        return order;
     }
 
     @Override

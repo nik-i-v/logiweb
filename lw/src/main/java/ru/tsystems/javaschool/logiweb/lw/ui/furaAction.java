@@ -2,7 +2,6 @@ package ru.tsystems.javaschool.logiweb.lw.ui;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.FuraService;
-import ru.tsystems.javaschool.logiweb.lw.ui.annotations.Admin;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;

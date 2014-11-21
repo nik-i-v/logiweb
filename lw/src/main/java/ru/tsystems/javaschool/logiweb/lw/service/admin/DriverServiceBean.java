@@ -20,11 +20,16 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 
+import static org.picketlink.idm.model.basic.BasicModel.getRole;
 import static org.picketlink.idm.model.basic.BasicModel.grantRole;
 
 
 @Stateless
 public class DriverServiceBean implements DriverService{
+
+
+    @Inject
+    private IdentityManager identityManager;
 
     @Inject
     private Logger logger;
@@ -67,12 +72,13 @@ public class DriverServiceBean implements DriverService{
         entityManager.persist(user);
         IdentityManager identityManager = this.partitionManager.createIdentityManager();
         RelationshipManager relationshipManager = this.partitionManager.createRelationshipManager();
-        Role driverRole = new Role("driver");
-        identityManager.add(driverRole);
+//        Role driverRole = new Role("driver");
+//        identityManager.add(driverRole);
+        Role role = getRole(this.identityManager, "driver");
         User driverUser = new User(driver.getLicense().toString());
         identityManager.add(driverUser);
         identityManager.updateCredential(driverUser, new Password("pass"));
-        grantRole(relationshipManager, driverUser, driverRole);
+        grantRole(relationshipManager, driverUser, role);
         logger.info("Driver " + licenseId + " was added successful");
     }
 
