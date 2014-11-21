@@ -24,6 +24,10 @@
         <exception-type>javax.servlet.ServletException</exception-type>
         <location>/error.html</location>
     </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.html</location>
+    </error-page>
 
 
     <!--<security-constraint>-->

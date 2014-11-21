@@ -6,9 +6,115 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c91e2f2-b8ca-4e39-874b-ca46af594993" name="Default" comment="" />
+    <list default="true" id="1c91e2f2-b8ca-4e39-874b-ca46af594993" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\.idea\libraries\Maven__org_apache_deltaspike_core_deltaspike_core_api_0_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\AdminAllowed.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\CustomAuthorizer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\DriverAllowed.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\FuraValidator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\NameValidator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\annotations\Admin.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\annotations\Driver.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\webapp\WEB-INF\templates\header.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\webapp\driver\change_status.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\webapp\errorLogin.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\WEB-INF\beans.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\server\dao\DriverDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\server\dao\OrderDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\server\entities\DriverShift$Status.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\DriverService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\DriverServiceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\FuraService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\FuraSeviceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\OrderService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\OrderServiceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\UserService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\UserServiceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\admin\OrderServiceForDrivers.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\admin\OrderServiceForDriversBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDrivers.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDriversBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\AdminAllowed.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\CheckAdminAction.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\CustomAuthorizer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\Dispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\DriverAllowed.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\FuraValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\LoginFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\NameValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\annotations\Admin.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\ui\annotations\Driver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\WEB-INF\beans.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\server\dao\DriverDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\server\dao\OrderDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\server\entities\DriverShift$Status.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\DriverService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\DriverServiceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\FuraService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\FuraSeviceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\OrderService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\OrderServiceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\UserService.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\UserServiceBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\admin\OrderServiceForDrivers.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\admin\OrderServiceForDriversBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDrivers.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\service\driver\DriverServiceForDriversBean.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\AdminAllowed.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\CheckAdminAction.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\CustomAuthorizer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\Dispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\DriverAllowed.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\FuraValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\LoginFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\NameValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\annotations\Admin.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\classes\ru\tsystems\javaschool\logiweb\lw\ui\annotations\Driver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\css\screen.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\images\shapka.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\lib\deltaspike-core-api-0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\WEB-INF\templates\header.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\add_drivers_and_fura.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\add_goods.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\admin.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\close.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\driver\change_status.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\drivers.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\errorLogin.jsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\errorLogin.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\index.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\login.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\orders.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\style.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\successLogin.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\successLoginAdmin.jsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\templates\header.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\templates\main.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\ui\style.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\wagons.xhtml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverService.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraService.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logiweb.iml" afterPath="$PROJECT_DIR$/logiweb.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/lw.iml" afterPath="$PROJECT_DIR$/lw/lw.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/lw_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/lw_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/pom.xml" afterPath="$PROJECT_DIR$/lw/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="logiweb.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/lw/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,101 +134,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="drivers.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml">
+      <file leaf-file-name="FuraSeviceBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9615383" vertical-offset="1179" max-vertical-offset="1581">
-              <caret line="80" column="99" selection-start-line="80" selection-start-column="99" selection-end-line="80" selection-end-column="99" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="867">
+              <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orders.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
+      <file leaf-file-name="OrderServiceBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.846154" vertical-offset="1163" max-vertical-offset="1717">
-              <caret line="85" column="99" selection-start-line="85" selection-start-column="99" selection-end-line="85" selection-end-column="99" />
+            <state vertical-scroll-proportion="171.82143" vertical-offset="4845" max-vertical-offset="5389">
+              <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wagons.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml">
+      <file leaf-file-name="UserServiceBean.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6153846" vertical-offset="907" max-vertical-offset="1292">
-              <caret line="65" column="99" selection-start-line="65" selection-start-column="99" selection-end-line="65" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="change_goods_status.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9615383" vertical-offset="1434" max-vertical-offset="1819">
-              <caret line="95" column="99" selection-start-line="95" selection-start-column="99" selection-end-line="95" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="orders.xhtml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44011977" vertical-offset="1213" max-vertical-offset="1547">
-              <caret line="80" column="99" selection-start-line="80" selection-start-column="99" selection-end-line="80" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="confirm.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9615383" vertical-offset="1468" max-vertical-offset="1853">
-              <caret line="97" column="99" selection-start-line="97" selection-start-column="99" selection-end-line="97" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="close.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9615383" vertical-offset="1383" max-vertical-offset="1768">
-              <caret line="92" column="99" selection-start-line="92" selection-start-column="99" selection-end-line="92" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_goods.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3076925" vertical-offset="1859" max-vertical-offset="2244">
-              <caret line="119" column="95" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_drivers_and_fura.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.230769" vertical-offset="1656" max-vertical-offset="2057">
-              <caret line="110" column="99" selection-start-line="110" selection-start-column="99" selection-end-line="110" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="errorPage.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/errorPage.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="340">
-              <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="89" />
+            <state vertical-scroll-proportion="0.17094018" vertical-offset="2" max-vertical-offset="816">
+              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -135,62 +171,24 @@
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
-    <option name="changedFiles">
+    <option name="CHANGED_PATHS">
       <list>
-        <option value="dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..orders" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Drivers.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverStatus.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverStatus.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverShift.java" />
-        <option value="dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..order_status" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDrivers.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDriversBean.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Fura.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/dao/OrderDAO.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/beans.xml" />
         <option value="$PROJECT_DIR$/lw/pom.xml" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/annotations/Admin.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/DriverAction.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/FuraAction.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Order.java" />
-        <option value="dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..users" />
-        <option value="dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..drivers" />
-        <option value="dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..driver_shift" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/logout.html" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/Resources.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/IdentityManagementConfiguration.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CustomAuthorizer.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/OrderAction.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/resources/log4j.xml" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/IncorrectDataException.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/faces-config.xml" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/SecurityInitializer.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CurrentUser.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/ModifyOrderAction.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/login.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/LoginController.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/ActionForDrivers.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/admin.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/error.html" />
-        <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/errorPage.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java" />
       </list>
     </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -246,7 +244,7 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -255,7 +253,7 @@
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
     <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -274,6 +272,12 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -376,6 +380,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="driver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -431,6 +465,44 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -462,13 +534,79 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
       </pane>
     </panes>
   </component>
@@ -484,12 +622,12 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="E:/Java/Java code examples/jboss-picketlink-quickstarts-master" />
+    <property name="last_opened_file_path" value="E:/Java/Java code examples/Test_Log_Full/LogProjectSample" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="SearchEverywhereHistoryKey" value="confirmedOrderNumber&#9;null&#9;null&#10;fu&#9;FILE&#9;file://C:/Users/logiweb/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/FuraValidator.java&#10;getInt&#9;PSI&#9;JAVA://sun.security.action.GetIntegerAction&#10;changeDriverStatus&#9;PSI&#9;JAVA://ru.tsystems.javaschool.logiweb.lw.service.admin.OrderServiceBean#changeDriverStatus" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -529,7 +667,7 @@
       <recent name="C:\Users\logiweb\lw\src\main\webapp\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JBoss Server.Logiweb">
+  <component name="RunManager" selected="JBoss Server.logiweb">
     <configuration default="false" name="DriverServicesTest.getAllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="lw" />
@@ -576,6 +714,66 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -614,12 +812,157 @@
       </MavenSettings>
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 8.1.0.Final" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
@@ -629,6 +972,8 @@
       <server-settings>
         <option name="SERVER" />
         <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="" />
         <option name="USERNAME" value="Irina" />
         <option name="PASSWORD" value="Hufflepuff123E." />
       </server-settings>
@@ -692,152 +1037,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="myFilePath" />
@@ -857,48 +1056,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Logiweb" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 8.1.0.Final" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+    <configuration default="false" name="logiweb" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 8.1.0.Final" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/lw/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -909,6 +1067,8 @@
       <server-settings>
         <option name="SERVER" />
         <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" />
         <option name="USERNAME" value="Irina" />
         <option name="PASSWORD" value="Hufflepuff123E." />
       </server-settings>
@@ -966,10 +1126,15 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="lw:war" />
+        </option>
+      </method>
     </configuration>
     <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="JBoss Server.Logiweb" />
+      <item index="0" class="java.lang.String" itemvalue="JBoss Server.logiweb" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.DriverServicesTest.getAllTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.DriverServicesTest" />
     </list>
@@ -988,6 +1153,7 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="1c91e2f2-b8ca-4e39-874b-ca46af594993" name="Default" comment="" />
       <created>1414869814782</created>
+      <option name="number" value="Default" />
       <updated>1414869814782</updated>
       <workItem from="1414869818701" duration="7742000" />
       <workItem from="1414907154739" duration="3786000" />
@@ -1018,12 +1184,14 @@
       <workItem from="1416301090883" duration="3708000" />
       <workItem from="1416304854651" duration="52953000" />
       <workItem from="1416467748163" duration="11315000" />
-      <workItem from="1416492406450" duration="34261000" />
+      <workItem from="1416492406450" duration="35000000" />
+      <workItem from="1416584498503" duration="41000" />
+      <workItem from="1416585476922" duration="4780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435059000" />
+    <option name="totallyTimeSpent" value="440619000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1047,40 +1215,42 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22989377" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44371942" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27987897" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290469" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37683523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3115824" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44371942" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22989377" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27987897" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290469" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37683523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3115824" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -1114,47 +1284,13 @@
       </breakpoints>
       <option name="time" value="203" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDrivers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..orders">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverShift.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1292">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="986">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Fura.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="1343">
@@ -1162,27 +1298,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="595">
           <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1859" max-vertical-offset="2431">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1197,7 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3883249" vertical-offset="0" max-vertical-offset="1411">
           <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,7 +1323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12944162" vertical-offset="51" max-vertical-offset="1275">
           <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,9 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44162437" vertical-offset="489" max-vertical-offset="1479">
           <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1230,9 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1224">
           <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,18 +1353,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
     </entry>
     <entry file="dbDummy://dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..driver_shift">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..drivers">
@@ -1262,39 +1367,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="799">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4086" max-vertical-offset="4726">
-          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="289">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1303,7 +1380,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="1904">
           <caret line="99" column="7" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1312,18 +1389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="782">
           <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding>
-            <element signature="e#2077#2078#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="1241">
-          <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1331,7 +1396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.30750605" vertical-offset="365" max-vertical-offset="850">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,7 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1488" max-vertical-offset="2363">
           <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,29 +1410,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.086538464" vertical-offset="78" max-vertical-offset="578">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/faces-config.xml">
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.2222223" vertical-offset="359" max-vertical-offset="1020">
           <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/ModifyOrderAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2857144" vertical-offset="497" max-vertical-offset="2295">
           <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="55" selection-end-column="5" />
-          <folding>
-            <element signature="e#1574#1575#0" expanded="true" />
-            <element signature="e#1608#1609#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1377,12 +1434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1122">
           <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
-          <folding>
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#1569#1570#0" expanded="true" />
-            <element signature="e#1623#1624#0" expanded="true" />
-            <element signature="e#1669#1670#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1390,15 +1441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1092" max-vertical-offset="2142">
           <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1567#1568#0" expanded="true" />
-            <element signature="e#1594#1595#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1838#1839#0" expanded="true" />
-            <element signature="e#1872#1873#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1406,9 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="2958">
           <caret line="89" column="56" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1416,7 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.90555555" vertical-offset="660" max-vertical-offset="7803">
           <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,7 +1462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.15966387" vertical-offset="57" max-vertical-offset="544">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1432,7 +1469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.923077" vertical-offset="387" max-vertical-offset="1156">
           <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1440,7 +1476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.923077" vertical-offset="543" max-vertical-offset="1139">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,15 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="204">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="1139">
-          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1464,7 +1490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.730769" vertical-offset="353" max-vertical-offset="714">
           <caret line="28" column="83" selection-start-line="28" selection-start-column="83" selection-end-line="28" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1472,15 +1497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0" vertical-offset="133" max-vertical-offset="493">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="22" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/errorPage.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="340">
-          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1488,13 +1504,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.230769" vertical-offset="1656" max-vertical-offset="2057">
           <caret line="110" column="99" selection-start-line="110" selection-start-column="99" selection-end-line="110" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3076925" vertical-offset="1859" max-vertical-offset="2244">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1859" max-vertical-offset="2244">
           <caret line="119" column="95" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
           <folding />
         </state>
@@ -1502,23 +1517,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9615383" vertical-offset="1383" max-vertical-offset="1768">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1383" max-vertical-offset="1768">
           <caret line="92" column="99" selection-start-line="92" selection-start-column="99" selection-end-line="92" selection-end-column="99" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml">
+    <entry file="file://$PROJECT_DIR$/lw/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9615383" vertical-offset="1468" max-vertical-offset="1853">
-          <caret line="97" column="99" selection-start-line="97" selection-start-column="99" selection-end-line="97" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1757" max-vertical-offset="2533">
+          <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41196582" vertical-offset="201" max-vertical-offset="1207">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9615383" vertical-offset="1179" max-vertical-offset="1581">
+        <state vertical-scroll-proportion="0.60465115" vertical-offset="1022" max-vertical-offset="1581">
           <caret line="80" column="99" selection-start-line="80" selection-start-column="99" selection-end-line="80" selection-end-column="99" />
           <folding />
         </state>
@@ -1526,7 +1549,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.846154" vertical-offset="1163" max-vertical-offset="1717">
+        <state vertical-scroll-proportion="0.5134168" vertical-offset="1158" max-vertical-offset="1717">
           <caret line="85" column="99" selection-start-line="85" selection-start-column="99" selection-end-line="85" selection-end-column="99" />
           <folding />
         </state>
@@ -1534,7 +1557,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6153846" vertical-offset="907" max-vertical-offset="1292">
+        <state vertical-scroll-proportion="0.66547406" vertical-offset="733" max-vertical-offset="1292">
           <caret line="65" column="99" selection-start-line="65" selection-start-column="99" selection-end-line="65" selection-end-column="99" />
           <folding />
         </state>
@@ -1542,7 +1565,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9615383" vertical-offset="1434" max-vertical-offset="1819">
+        <state vertical-scroll-proportion="0.63506263" vertical-offset="1260" max-vertical-offset="1819">
           <caret line="95" column="99" selection-start-line="95" selection-start-column="99" selection-end-line="95" selection-end-column="99" />
           <folding />
         </state>
@@ -1550,8 +1573,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44011977" vertical-offset="1213" max-vertical-offset="1547">
-          <caret line="80" column="99" selection-start-line="80" selection-start-column="99" selection-end-line="80" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.8175313" vertical-offset="988" max-vertical-offset="1547">
+          <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63506263" vertical-offset="1294" max-vertical-offset="1853">
+          <caret line="97" column="99" selection-start-line="97" selection-start-column="99" selection-end-line="97" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/errorPage.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3041145" vertical-offset="0" max-vertical-offset="559">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/resources/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43589744" vertical-offset="0" max-vertical-offset="585">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="612">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.7.0_51/src.zip!/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0051282053" vertical-offset="354" max-vertical-offset="1683">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/IncorrectDataException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08717949" vertical-offset="0" max-vertical-offset="585">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="e#155#156#0" expanded="true" />
+            <element signature="e#185#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="867">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="171.82143" vertical-offset="4845" max-vertical-offset="5389">
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17094018" vertical-offset="2" max-vertical-offset="816">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1636,4 +1758,3 @@
     </states>
   </component>
 </project>
-

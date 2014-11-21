@@ -2,6 +2,7 @@ package ru.tsystems.javaschool.logiweb.lw.service.admin;
 
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus;
+import ru.tsystems.javaschool.logiweb.lw.util.IncorrectDataException;
 
 import javax.ejb.Local;
 import javax.persistence.EntityManager;
@@ -18,9 +19,9 @@ public interface OrderService {
 
     void changeOrderStatus(Integer orderNumber, OrderStatus.Status status);
 
-    void addFuraAndDrivers(Integer orderNumber, List<Long> driverId, String furaNumber) ;
+    void addFuraAndDrivers(Integer orderNumber, List<Long> driverId, String furaNumber) throws IncorrectDataException;
 
-    void closeOrder(Integer number);
+    void closeOrder(Integer number) throws IncorrectDataException;
 
     List<Integer> getCreatedOrders();
 
@@ -30,7 +31,7 @@ public interface OrderService {
 
     List<Integer> getCreatedOrdersWitsGoods();
 
-    void checkIfGoodsAreNotEmpty(Integer orderNumber);
+    void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException;
 
 //    List<Long> getDriversInCurrentOrder();
 }
