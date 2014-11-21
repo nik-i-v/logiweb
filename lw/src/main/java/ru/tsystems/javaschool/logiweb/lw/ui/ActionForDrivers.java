@@ -13,10 +13,8 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
@@ -49,14 +47,14 @@ public class ActionForDrivers implements Serializable {
     public void init() {
         driverLicense = Long.parseLong(LoginController.driverLogin);
         currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
-        if(!currentStatus.equals("notShift")) {
+        if (!currentStatus.equals("notShift")) {
             ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
             statusMenu = orderServiceForDrivers.getStatusMenuForDrivers(currentStatus);
         }
     }
 
     public void changeStatus() {
-        if (currentStatus.equals(DriverStatus.atWeel.toString())){
+        if (currentStatus.equals(DriverStatus.atWeel.toString())) {
             changeStatus(DriverStatus.shift);
         } else {
             orderServiceForDrivers.isAnybodyAtWheel(driverLicense);
@@ -64,19 +62,12 @@ public class ActionForDrivers implements Serializable {
         }
     }
 
-//    @Named
-//    @Produces
-//    @GET
-//    public List<Drivers> getCoDrivers(){
-//        return orderServiceForDrivers.getCoDrivers(driverLicense);
-//    }
-
-    public void changeGoodsStatus(){
+    public void changeGoodsStatus() {
         try {
             orderServiceForDrivers.changeGoodsStatusForDrivers(name, driverLicense);
             facesContext.addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Goods status has been changed", "Goods status change successful"));
-//            getOrderForDrivers();
+            ordersDrivers = orderServiceForDrivers.getOrderForDrivers(driverLicense);
             getGoodsName();
         } catch (Exception e) {
             String errorMessage = e.getMessage();
@@ -85,88 +76,108 @@ public class ActionForDrivers implements Serializable {
         }
     }
 
-    @Named
-//    @Produces
+    @POST
+    @Path("{name}")
+    @Consumes("application/json")
+    public void changeGoodsStatus(@PathParam("name") String name, @PathParam("driverLicense") Long driverLicense) {
+        orderServiceForDrivers.changeGoodsStatusForDrivers(name, driverLicense);
+    }
+
+    @POST
+    @Path("{driverLicense}")
+    @Consumes("application/json")
+    public void changeDriverStatus(@PathParam("driverLicense") Long driverLicense, @PathParam("status") DriverStatus status){
+        if (status.equals(DriverStatus.atWeel.toString())) {
+            changeStatus(DriverStatus.shift);
+        } else {
+            orderServiceForDrivers.isAnybodyAtWheel(driverLicense);
+            changeStatus(DriverStatus.atWeel);
+        }
+    }
+
     @GET
-    @Produces("text/plain")
+    @Path("/getDriver")
+    @javax.ws.rs.Produces("text/xml")
+    public Order getDriver(@PathParam("driverLicense") Long driverLicense) {
+        return orderServiceForDrivers.getOrderForDrivers(driverLicense);
+    }
+
+    @GET
+    @Path("{driverLicense}")
+    @javax.ws.rs.Produces("text/xml")
+    public List<String> getGoodsStatus(@PathParam("driverLicense") Long driverLicense) {
+        return orderServiceForDrivers.getGoodsList(driverLicense);
+    }
+
+    @GET
+    @Path("{driverLicense}")
+    @javax.ws.rs.Produces("text/xml")
+    public String getDriverStatus(@PathParam("driverLicense") Long driverLicense) {
+        return orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
+    }
+
+    @Named
+    @Produces
     public List<String> getGoodsName() {
         goodsName = orderServiceForDrivers.getGoodsList(driverLicense);
         return goodsName;
     }
 
     @Named
-    @Produces("text/plain")
-    @GET
+    @Produces
     public Long getDriverLicense() {
         return driverLicense;
     }
 
     @Named
-    @Produces("text/plain")
-    @GET
+    @Produces
     public DriverStatus getStatusMenu() {
         return statusMenu;
     }
 
-    @GET
-    @Produces("text/plain")
+    @Produces
     @Named
     public Order getOrdersDrivers() {
         return ordersDrivers;
     }
 
-    @GET
-    @Produces("text/plain")
+    @Produces
     @Named
     public String getName() {
         return name;
     }
 
-    @GET
     @Named
-    @Produces("text/plain")
+    @Produces
     public String getCurrentStatus() {
         return currentStatus;
     }
 
-    @PUT
-    @Consumes("text/plain")
     public void setDriverLicense(Long driverLicense) {
         this.driverLicense = driverLicense;
     }
 
-    @PUT
-    @Consumes("text/plain")
     public void setOrdersDrivers(Order orders) {
         this.ordersDrivers = orders;
     }
 
-    @PUT
-    @Consumes("text/plain")
     public void setName(String name) {
         this.name = name;
     }
 
-    @PUT
-    @Consumes("text/plain")
     public void setCurrentStatus(String currentStatus) {
         this.currentStatus = currentStatus;
     }
 
-    @PUT
-    @Consumes("text/plain")
     public void setGoodsName(List<String> goodsName) {
         this.goodsName = goodsName;
     }
 
-    @PUT
-    @Consumes("text/plain")
     public void setStatusMenu(DriverStatus statusMenu) {
         this.statusMenu = statusMenu;
     }
 
-
-    private void changeStatus(DriverStatus status){
+    private void changeStatus(DriverStatus status) {
         try {
             orderServiceForDrivers.changeDriverStatusForDrivers(driverLicense, status);
             facesContext.addMessage(null,
