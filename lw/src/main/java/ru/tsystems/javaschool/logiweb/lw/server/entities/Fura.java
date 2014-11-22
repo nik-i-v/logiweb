@@ -54,6 +54,12 @@ public class Fura implements Serializable {
     public Fura() {
     }
 
+    public Fura(String furaNumber, Byte driverCount, Capacity capacity) {
+        this.furaNumber = furaNumber;
+        this.driverCount = driverCount;
+        this.capacity = capacity;
+    }
+
     public enum Capacity {
         small, middle, large
     }

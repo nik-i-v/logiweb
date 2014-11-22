@@ -1,28 +1,20 @@
-import org.apache.log4j.Logger;
-import org.junit.Before;
+import java.util.logging.Logger;import org.junit.Before;
 import org.junit.Test;
-import org.picketlink.Identity;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.PartitionManager;
-import org.picketlink.idm.jpa.annotations.entity.IdentityManaged;
 import org.picketlink.idm.model.basic.Role;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverStatus;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
-import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
-import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean;
-import ru.tsystems.javaschool.logiweb.lw.util.IncorrectDataException;
 
 import javax.persistence.Query;
 import javax.persistence.EntityManager;
-import java.sql.Driver;
 import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 
@@ -33,7 +25,6 @@ public class DriverServicesTest {
     private Logger logger;
     private IdentityManager identityManager;
     private PartitionManager partitionManager;
-    private Role role;
 
     @Before
     public void init() {

@@ -17,7 +17,7 @@ html,
 
 body{
     font: 18px Arial, Helvetica, sans-serif;
-    color: rgba(254, 237, 35, 0.89);
+    /*color: rgba(254, 237, 35, 0.89);*/
     background-image: url(../../resources/images/bg.jpg) ;
     overflow-y:hidden;
     text-align: center;
@@ -33,7 +33,7 @@ input[type=number] {
     height: 40px;
     margin: 0 auto 10px auto;
     font-size: 14px;
-    padding-left: 0px;
+    padding-left: 15px;
     border: none;
     box-shadow: -3px 3px #e9e03e;
     -webkit-appearance: none;
@@ -45,7 +45,7 @@ input[type=submit] {
     font-size: 18px;
     height: 40px;
     border: none;
-    margin-left: 0px;
+    margin-left: 20px;
     /*margin: 10px 100px 100px 17px;*/
     padding: 0 20px 0 20px;
     -webkit-appearance: none;
