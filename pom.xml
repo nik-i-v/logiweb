@@ -126,16 +126,16 @@
                         <skip>true</skip>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.myfaces.trinidadbuild</groupId>
-                    <artifactId>maven-tagdoc-plugin</artifactId>
-                    <configuration>
-                        <taglibs>
-                            <tr>http://myfaces.apache.org/trinidad</tr>
-                            <trh>http://myfaces.apache.org/trinidad/html</trh>
-                        </taglibs>
-                    </configuration>
-                </plugin>
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.myfaces.trinidadbuild</groupId>-->
+                    <!--<artifactId>maven-tagdoc-plugin</artifactId>-->
+                    <!--<configuration>-->
+                        <!--<taglibs>-->
+                            <!--<tr>http://myfaces.apache.org/trinidad</tr>-->
+                            <!--<trh>http://myfaces.apache.org/trinidad/html</trh>-->
+                        <!--</taglibs>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
             </plugins>
         </build>
 
@@ -153,19 +153,19 @@
             <version>${mockito.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-            <version>${powermock.version}</version>
-            <scope>test</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.powermock</groupId>-->
+            <!--<artifactId>powermock-module-junit4</artifactId>-->
+            <!--<version>${powermock.version}</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
-            <version>${powermock.version}</version>
-            <scope>test</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.powermock</groupId>-->
+            <!--<artifactId>powermock-api-mockito</artifactId>-->
+            <!--<version>${powermock.version}</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
     </dependencies>
 
     </project>

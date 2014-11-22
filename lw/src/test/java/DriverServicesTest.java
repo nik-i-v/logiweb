@@ -1,43 +1,123 @@
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
+import org.picketlink.Identity;
+import org.picketlink.idm.IdentityManager;
+import org.picketlink.idm.PartitionManager;
+import org.picketlink.idm.jpa.annotations.entity.IdentityManaged;
+import org.picketlink.idm.model.basic.Role;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverStatus;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean;
 import ru.tsystems.javaschool.logiweb.lw.util.IncorrectDataException;
 
+import javax.persistence.Query;
+import javax.persistence.EntityManager;
 import java.sql.Driver;
 import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 
 public class DriverServicesTest {
 
-    private DriverService service;
-    private String surname;
-    private String name;
-    private String patronymic;
-    private Long license;
+    private EntityManager entityManager;
+    private Query query;
+    private Logger logger;
+    private IdentityManager identityManager;
+    private PartitionManager partitionManager;
+    private Role role;
 
+    @Before
+    public void init() {
+//        driver = mock(Drivers.class);
+//        driverShift = mock(DriverShift.class);
+        entityManager = mock(EntityManager.class);
+        query = mock(Query.class);
+        logger = mock(Logger.class);
+    }
 
     @Test
-    public void getAllTest() {
-        service = mock(DriverServiceBean.class);
-        List all = new LinkedList();
+    public void getAllDriversTest() {
+        String hql = "SELECT ds FROM DriverShift ds";
+        List<Drivers> all = new LinkedList();
         all.add(new Drivers("Petrov", "Petr", "Sergeevich", 38475647364L));
-        when(service.getAllDrivers()).thenReturn(all);
-        List result = service.getAllDrivers();
+        DriverServiceBean service = new DriverServiceBean();
+        service.setEntityManager(entityManager);
+        service.setLogger(logger);
+        when(entityManager.createQuery(hql)).thenReturn(query);
+        when(query.getResultList()).thenReturn(all);
+        List<DriverShift> result = service.getAllDrivers();
+        assertNotNull(result);
         assertEquals(all, result);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void addDriverTest_is_not_unique() throws IncorrectDataException {
-        service = mock(DriverServiceBean.class);
-        service.addDriver("Petrov", "Petr", "Sergeevich", 38475647364L);
-        service.addDriver("Petrov", "Petr", "Sergeevich", 38475647364L);
-//        verify(service.addDriver());
+    @Test
+    public void getAllDriversIdTest() {
+        String hql = "SELECT d.license FROM Drivers d";
+        List<Drivers> all = new LinkedList();
+        all.add(new Drivers("Petrov", "Petr", "Sergeevich", 38475647364L));
+        DriverServiceBean service = new DriverServiceBean();
+        service.setEntityManager(entityManager);
+        service.setLogger(logger);
+        when(entityManager.createQuery(hql)).thenReturn(query);
+        when(query.getResultList()).thenReturn(all);
+        List<Long> result = service.getAllDriverId();
+        assertNotNull(result);
+        assertEquals(all, result);
     }
+
+    @Test
+    public void getAllFreeDriversTest() {
+        String hql = "SELECT d.license FROM Drivers d WHERE d.driverShift.status = :status";
+        List<Drivers> all = new LinkedList();
+        all.add(new Drivers("Petrov", "Petr", "Sergeevich", 38475647364L));
+        DriverServiceBean service = new DriverServiceBean();
+        service.setEntityManager(entityManager);
+        service.setLogger(logger);
+        when(entityManager.createQuery(hql)).thenReturn(query);
+        when(query.setParameter("status", DriverStatus.notShift)).thenReturn(query);
+        when(query.getResultList()).thenReturn(all);
+        List<Long> result = service.getAllFreeDrivers();
+        assertNotNull(result);
+        assertEquals(all, result);
+    }
+
+//    @Test
+//    public void addDriverTest() throws IncorrectDataException {
+//        String hql = "SELECT d.license FROM Drivers d";
+//        List<Integer> ids = new LinkedList<>();
+//        ids.add(23);
+//        DriverServiceBean service = new DriverServiceBean();
+//        service.setEntityManager(entityManager);
+//        service.setLogger(logger);
+//        when(entityManager.createQuery(hql)).thenReturn(query);
+//        when(query.getResultList()).thenReturn(ids);
+//        Boolean result = service.checkIfDriverIdIsUnique(867L);
+//        identityManager = mock(IdentityManager.class);
+//        partitionManager = mock(PartitionManager.class);
+//        role = mock(Role.class);
+//        service.setIdentityManager(identityManager);
+//        service.setPartitionManager(partitionManager);
+////        when(getRole)
+////        when(service.checkIfDriverIdIsUnique(56476567675L)).thenReturn(true);
+////        assertTrue();
+//        Drivers driver = mock(Drivers.class);
+//        DriverShift driverShift = mock(DriverShift.class);
+//        Users user = mock(Users.class);
+//        service.addDriver("Surname", "Name", "Patronymic", 11000000000L);
+//        verify(entityManager).persist(driver);
+////        when(entityManager.persist(driver));
+////        when(en)
+//    }
+
+
 
 }

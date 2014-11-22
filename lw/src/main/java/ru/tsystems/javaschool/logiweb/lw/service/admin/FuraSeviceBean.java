@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 @Stateless
 public class FuraSeviceBean implements FuraService {

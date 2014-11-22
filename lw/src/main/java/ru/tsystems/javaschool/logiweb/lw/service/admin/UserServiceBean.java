@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 @Stateless
 public class UserServiceBean implements UserService {

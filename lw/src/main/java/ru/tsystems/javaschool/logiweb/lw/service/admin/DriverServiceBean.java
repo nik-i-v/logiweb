@@ -18,15 +18,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Logger;
+
+import org.apache.log4j.Logger;
 
 import static org.picketlink.idm.model.basic.BasicModel.getRole;
 import static org.picketlink.idm.model.basic.BasicModel.grantRole;
 
 
 @Stateless
-public class DriverServiceBean implements DriverService{
-
+public class DriverServiceBean implements DriverService {
 
     @Inject
     private IdentityManager identityManager;
@@ -41,13 +41,13 @@ public class DriverServiceBean implements DriverService{
     private PartitionManager partitionManager;
 
     @Override
-    public List<DriverShift> getAllDrivers(){
+    public List<DriverShift> getAllDrivers() {
         logger.info("Get all drivers");
         return entityManager.createQuery("SELECT ds FROM DriverShift ds").getResultList();
     }
 
     @Override
-    public List<Long> getAllDriverId(){
+    public List<Long> getAllDriverId() {
         logger.info("Get all drivers id");
         return entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
     }
@@ -59,6 +59,7 @@ public class DriverServiceBean implements DriverService{
         Drivers driver = new Drivers();
         DriverShift driverShift = new DriverShift();
         Users user = new Users();
+
         driver.setSurname(surname);
         driver.setName(name);
         driver.setPatronymic(patronymic);
@@ -70,10 +71,9 @@ public class DriverServiceBean implements DriverService{
         entityManager.persist(driver);
         entityManager.persist(driverShift);
         entityManager.persist(user);
+
         IdentityManager identityManager = this.partitionManager.createIdentityManager();
         RelationshipManager relationshipManager = this.partitionManager.createRelationshipManager();
-//        Role driverRole = new Role("driver");
-//        identityManager.add(driverRole);
         Role role = getRole(this.identityManager, "driver");
         User driverUser = new User(driver.getLicense().toString());
         identityManager.add(driverUser);
@@ -90,10 +90,26 @@ public class DriverServiceBean implements DriverService{
         return query.getResultList();
     }
 
-    private void checkIfDriverIdIsUnique(Long licenseId) throws IncorrectDataException {
-       List<Long> ids =  entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
+    public void checkIfDriverIdIsUnique(Long licenseId) throws IncorrectDataException {
+        List<Long> ids = entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
         if (ids.contains(licenseId)) {
             throw new IncorrectDataException("Driver with this license is already exists.");
         }
+    }
+
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public void setLogger(Logger logger) {
+        this.logger = logger;
+    }
+
+    public void setIdentityManager(IdentityManager identityManager) {
+        this.identityManager = identityManager;
+    }
+
+    public void setPartitionManager(PartitionManager partitionManager) {
+        this.partitionManager = partitionManager;
     }
 }
