@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
 import java.util.logging.Logger;
+
 @Stateless
 public class FuraSeviceBean implements FuraService {
 

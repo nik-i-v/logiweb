@@ -41,7 +41,7 @@ public class ActionForDrivers implements Serializable {
     private FacesContext facesContext;
 
     @Inject
-    private Logger logger;
+    private transient Logger logger;
 
     @PostConstruct
     public void init() {

@@ -43,7 +43,7 @@ public class CheckUser implements Serializable {
     private Identity identity;
 
     @Inject
-    private Logger logger;
+    private transient Logger logger;
 
     @Inject
     private IdentityManager identityManager;

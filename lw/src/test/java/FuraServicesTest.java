@@ -2,7 +2,6 @@ import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Fura;
-import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.FuraSeviceBean;
 import ru.tsystems.javaschool.logiweb.lw.util.IncorrectDataException;
 

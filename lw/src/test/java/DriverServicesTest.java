@@ -1,4 +1,5 @@
-import java.util.logging.Logger;import org.junit.Before;
+import java.util.logging.Logger;
+import org.junit.Before;
 import org.junit.Test;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.PartitionManager;
