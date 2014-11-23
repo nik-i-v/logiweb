@@ -76,45 +76,7 @@ public class ActionForDrivers implements Serializable {
         }
     }
 
-//    @POST
-//    @Path("{name}")
-//    @Consumes("application/json")
-//    public void changeGoodsStatus(@PathParam("name") String name, @PathParam("driverLicense") Long driverLicense) {
-//        orderServiceForDrivers.changeGoodsStatusForDrivers(name, driverLicense);
-//    }
-//
-//    @POST
-//    @Path("{driverLicense}")
-//    @Consumes("application/json")
-//    public void changeDriverStatus(@PathParam("driverLicense") Long driverLicense, @PathParam("status") DriverStatus status){
-//        if (status.equals(DriverStatus.atWeel.toString())) {
-//            changeStatus(DriverStatus.shift);
-//        } else {
-//            orderServiceForDrivers.isAnybodyAtWheel(driverLicense);
-//            changeStatus(DriverStatus.atWeel);
-//        }
-//    }
-//
-//    @GET
-//    @Path("/getDriver")
-//    @javax.ws.rs.Produces("text/xml")
-//    public Order getDriver(@PathParam("driverLicense") Long driverLicense) {
-//        return orderServiceForDrivers.getOrderForDrivers(driverLicense);
-//    }
-//
-//    @GET
-//    @Path("{driverLicense}")
-//    @javax.ws.rs.Produces("text/xml")
-//    public List<String> getGoodsStatus(@PathParam("driverLicense") Long driverLicense) {
-//        return orderServiceForDrivers.getGoodsList(driverLicense);
-//    }
-//
-//    @GET
-//    @Path("{driverLicense}")
-//    @javax.ws.rs.Produces("text/xml")
-//    public String getDriverStatus(@PathParam("driverLicense") Long driverLicense) {
-//        return orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
-//    }
+
 
     @Named
     @Produces
