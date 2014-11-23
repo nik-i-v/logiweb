@@ -8,7 +8,11 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * This class checks is a fura number matches to the correct format.
+ *
+ * @author Irina Nikulina
+ */
 @FacesValidator("furaValidator")
 public class FuraValidator implements Validator {
 
@@ -17,10 +21,20 @@ public class FuraValidator implements Validator {
     private Pattern pattern;
     private Matcher matcher;
 
+    /**
+     * Constructs a new object of the FuraValidator and sets a pattern to enter correct text data.
+     */
     public FuraValidator(){
         pattern = Pattern.compile(NAME_PATTERN);
     }
 
+    /**
+     * Validates an entered information.
+     * @param context
+     * @param component
+     * @param value
+     * @throws ValidatorException
+     */
     @Override
     public void validate(FacesContext context, UIComponent component,
                          Object value) throws ValidatorException {

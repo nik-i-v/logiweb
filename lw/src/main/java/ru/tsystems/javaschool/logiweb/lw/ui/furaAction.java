@@ -15,8 +15,12 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-//@Model
-//@Admin
+/**
+ * This class provides access to services of actions with fura company employee.
+ * The class is serializable.
+ *
+ * @author Irina Nikulina
+ */
 @ManagedBean(name = "furaAction")
 @ViewScoped
 public class FuraAction implements Serializable {
@@ -63,12 +67,19 @@ public class FuraAction implements Serializable {
         return fura;
     }
 
+    /**
+     * Initialized a new fura and sets a value for the list of furas.
+     */
     @PostConstruct
     public void initNewFura() {
         fura = new Fura();
         furas = furaService.getAllFura();
     }
 
+    /**
+     * Adds a new fura.
+     * @return true if the fura was added and false if it's not.
+     */
     public boolean addFura() {
         try {
             furaService.addFura(fura.getFuraNumber(), fura.getDriverCount(), fura.getCapacity());
@@ -86,10 +97,12 @@ public class FuraAction implements Serializable {
         }
     }
 
+    /**
+     * Sets a value for the list of free furas.
+     */
     public void allFreeFuras() {
         freeFuras = furaService.getFreeFuras();
     }
-
 
 }
 

@@ -30,7 +30,7 @@ public class FuraSeviceBean implements FuraService {
      */
     @Override
     public List<Fura> getAllFura(){
-        logger.info("Get all fura");
+        logger.info("Get all furas");
         return entityManager.createQuery("SELECT f FROM Fura f").getResultList();
     }
 

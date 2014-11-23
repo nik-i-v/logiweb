@@ -207,15 +207,20 @@ public class OrderServiceBean implements OrderService {
         return query.getResultList();
     }
 
-//    @Override
-//    public void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException {
-//        logger.info("Check if goods list exists");
-//        Query query = entityManager.createQuery("SELECT COUNT (oi.name) FROM OrderInfo oi WHERE oi.orderNumber = :number");
-//        query.setParameter("number", orderNumber);
-//        if (query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0) {
-//            throw new IncorrectDataException("Please add goods to order");
-//        }
-//    }
+    /**
+     * Checks is there any goods in certain order.
+     * @param orderNumber the number of an order
+     * @throws IncorrectDataException if there isn't goods in an order
+     */
+    @Override
+    public void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException {
+        logger.info("Check if goods list exists");
+        Query query = entityManager.createQuery("SELECT COUNT (oi.name) FROM OrderInfo oi WHERE oi.orderNumber = :number");
+        query.setParameter("number", orderNumber);
+        if (query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0) {
+            throw new IncorrectDataException("Please add goods to order");
+        }
+    }
 
 //    private void isOrderExists(Integer orderNumber) {
 //        List<Integer> ordersId = entityManager.createQuery("SELECT o.id FROM Order o").getResultList();

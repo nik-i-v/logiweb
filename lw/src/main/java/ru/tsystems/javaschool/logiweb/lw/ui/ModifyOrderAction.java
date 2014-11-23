@@ -16,7 +16,11 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-//@Admin
+/**
+ * This class provides operations to change orders.
+ *
+ * @author Irina Nikulina
+ */
 @ManagedBean(name = "modifyOrder")
 @RequestScoped
 public class ModifyOrderAction  implements Serializable{
@@ -27,13 +31,16 @@ public class ModifyOrderAction  implements Serializable{
     private String furaToOrder;
     private List<Long> driversToOrder;
 
+    /**
+     *
+     * @return
+     */
     @Named
     @Produces
     public List<Integer> getCreatedOrdersWitsGoods() {
         createdOrdersWitsGoods();
         return createdOrdersWitsGoods;
     }
-
 
     public void setCreatedOrdersWitsGoods(List<Integer> createdOrdersWitsGoods) {
         this.createdOrdersWitsGoods = createdOrdersWitsGoods;
@@ -100,6 +107,9 @@ public class ModifyOrderAction  implements Serializable{
         orderInfo = new OrderInfo();
     }
 
+    /**
+     * Adds goods to the order.
+     */
     public void addGoods() {
         try {
             orderService.addGoods(orderInfo.getOrderNumber(), orderInfo.getName(), orderInfo.getGpsLat(), orderInfo.getGpsLong(),
@@ -117,10 +127,16 @@ public class ModifyOrderAction  implements Serializable{
         }
     }
 
+    /**
+     * Sets values for orders with "confirmed" status.
+     */
     public void confirmedOrders() {
         confirmedOrderNumber = orderService.getConfirmedOrders();
     }
 
+    /**
+     * Changes the order's status to "confirmed".
+     */
     public void doConfirmed() {
         try {
             orderService.checkIfGoodsAreNotEmpty(orderNumber);
@@ -134,10 +150,16 @@ public class ModifyOrderAction  implements Serializable{
         }
     }
 
+    /**
+     * Show the list of non-empty orders with "created" status.
+     */
     public void createdOrdersWitsGoods() {
         createdOrdersWitsGoods = orderService.getCreatedOrdersWitsGoods();
     }
 
+    /**
+     * Adds furas and the list of drivers to the order.
+     */
     public void addFuraAndDriversToOrder() {
         try {
             orderService.addFuraAndDrivers(orderNumber, driversToOrder, furaToOrder);
@@ -149,6 +171,10 @@ public class ModifyOrderAction  implements Serializable{
                     errorMessage, "Addition unsuccessful"));
         }
     }
+
+    /**
+     * Closes the order.
+     */
     public void closeOrder() {
         try {
             orderService.closeOrder(orderNumber);

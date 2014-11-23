@@ -9,6 +9,11 @@ import javax.faces.validator.ValidatorException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * This class checks is a driver name matches to the correct format.
+ *
+ * @author Irina Nikulina
+ */
 @FacesValidator("nameValidator")
 public class NameValidator implements Validator {
 
@@ -17,10 +22,20 @@ public class NameValidator implements Validator {
     private Pattern pattern;
     private Matcher matcher;
 
+    /**
+     * Constructs a new object of the Validator and sets a pattern to enter correct text data.
+     */
     public NameValidator(){
         pattern = Pattern.compile(NAME_PATTERN);
     }
 
+    /**
+     * Validates an entered information.
+     * @param context
+     * @param component
+     * @param value
+     * @throws ValidatorException
+     */
     @Override
     public void validate(FacesContext context, UIComponent component,
                          Object value) throws ValidatorException {

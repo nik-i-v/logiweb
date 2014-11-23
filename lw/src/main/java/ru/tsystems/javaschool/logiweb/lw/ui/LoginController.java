@@ -28,10 +28,10 @@ import javax.inject.Named;
 import java.util.logging.Logger;
 
 /**
- * We control the authentication process from this action bean, so that in the event of a failed authentication we can add an
- * appropriate FacesMessage to the response.
- * 
- * @author Shane Bryzak
+ * This class controls the authentication process from this action bean, so that in the event of a failed authentication
+ * it can add an appropriate FacesMessage to the response.
+ *
+ * @author Irina Nikulina
  * 
  */
 @Stateless
@@ -62,6 +62,11 @@ public class LoginController {
     @Inject
     private FacesContext facesContext;
 
+    /**
+     * Validates user's login and password.
+     * @param userId user login
+     * @return user's role
+     */
     public String login(String userId) {
         AuthenticationResult result = identity.login();
         if (AuthenticationResult.FAILED.equals(result)) {

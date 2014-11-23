@@ -19,10 +19,14 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
 
-//@Driver
+/**
+ * This class provides access to services for drivers.
+ * The class is serializable.
+ *
+ * @author Irina Nikulina
+ */
 @ManagedBean(name = "action")
 @RequestScoped
-//@Path("/driver")
 public class ActionForDrivers implements Serializable {
     private Long driverLicense;
     private Order ordersDrivers;
@@ -43,6 +47,9 @@ public class ActionForDrivers implements Serializable {
     @Inject
     private transient Logger logger;
 
+    /**
+     * Initializes current status of a driver and driver's license number. Also initializes an order if there is any.
+     */
     @PostConstruct
     public void init() {
         driverLicense = Long.parseLong(LoginController.driverLogin);
@@ -53,6 +60,9 @@ public class ActionForDrivers implements Serializable {
         }
     }
 
+    /**
+     * Changes the status of a driver.
+     */
     public void changeStatus() {
         if (currentStatus.equals(DriverStatus.atWeel.toString())) {
             changeStatus(DriverStatus.shift);
@@ -62,6 +72,9 @@ public class ActionForDrivers implements Serializable {
         }
     }
 
+    /**
+     * Changes the status of a goods in current order.
+     */
     public void changeGoodsStatus() {
         try {
             orderServiceForDrivers.changeGoodsStatusForDrivers(name, driverLicense);
@@ -139,6 +152,10 @@ public class ActionForDrivers implements Serializable {
         this.statusMenu = statusMenu;
     }
 
+    /**
+     * Changes driver status to a new status.
+     * @param status a new status for driver
+     */
     private void changeStatus(DriverStatus status) {
         try {
             orderServiceForDrivers.changeDriverStatusForDrivers(driverLicense, status);

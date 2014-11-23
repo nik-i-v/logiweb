@@ -21,7 +21,12 @@ import java.util.logging.Logger;
 //@Model // =@Named + @RequestScoped
 @ManagedBean(name = "driverAction")
 @ViewScoped
-//@Admin
+/**
+ * This class provides access to services of actions with drivers company employee.
+ * The class is serializable.
+ *
+ * @author Irina Nikulina
+ */
 public class DriverAction implements Serializable {
 
     @Inject
@@ -65,6 +70,9 @@ public class DriverAction implements Serializable {
     @EJB
     private DriverService driverService;
 
+    /**
+     * Initialized a new driver and sets a value for the list of drivers.
+     */
     @PostConstruct
     public void initNewDriver(){
         drivers = getAllDrivers();
@@ -78,6 +86,10 @@ public class DriverAction implements Serializable {
         return driverService.getAllDrivers();
     }
 
+    /**
+     * Adds a new driver.
+     * @return true if thes driver was added and false if it's not.
+     */
     public boolean addDriver(){
         try {
             driverService.addDriver(driver.getSurname(), driver.getName(), driver.getPatronymic(), driver.getLicense());
@@ -97,6 +109,9 @@ public class DriverAction implements Serializable {
         }
     }
 
+    /**
+     * Sets a value for the list of free drivers.
+     */
     public List<Long> allFreeDrivers(){
         return driverService.getAllFreeDrivers();
     }
