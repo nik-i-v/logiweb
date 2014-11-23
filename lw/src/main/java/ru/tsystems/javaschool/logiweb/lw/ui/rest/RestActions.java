@@ -17,6 +17,11 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import java.util.List;
 
+/**
+ * This class permits to use driver services for drivers with using REST.
+ *
+ * @author Irina Nikulina
+ */
 @Path("driverRest")
 @ManagedBean
 @SessionScoped
@@ -31,21 +36,26 @@ public class RestActions {
     @Inject
     private FacesContext facesContext;
 
-    @PostConstruct
-    protected void initialize() {
-//        FacesContext fc = FacesContext.getCurrentInstance();
-//        SERVICE_BASE_URI = fc.getExternalContext().getInitParameter("metadata.serviceBaseURI");
-        client = ClientBuilder.newClient();
-    }
+//    @PostConstruct
+//    protected void initialize() {
+////        FacesContext fc = FacesContext.getCurrentInstance();
+////        SERVICE_BASE_URI = fc.getExternalContext().getInitParameter("metadata.serviceBaseURI");
+//        client = ClientBuilder.newClient();
+//    }
+//
+//    public WebTarget getWebTarget(String relativeUrl) {
+//        if (client == null) {
+//            initialize();
+//        }
+//        return client.target(relativeUrl);
+//    }
 
-    public WebTarget getWebTarget(String relativeUrl) {
-        if (client == null) {
-            initialize();
-        }
-        return client.target(relativeUrl);
-    }
 
-
+    /**
+     * Changes the status of a goods.
+     * @param name the name of a goods
+     * @param driverLicense license number of a driver
+     */
     @POST
 //    @Path("{driverLicense}/{name}")
     @Consumes("application/xml")
@@ -53,6 +63,11 @@ public class RestActions {
         orderServiceForDrivers.changeGoodsStatusForDrivers(name, driverLicense);
     }
 
+    /**
+     * Changes the status of a driver.
+     * @param driverLicense the license driver of a driver
+     * @param status a new status for a driver
+     */
     @POST
     @Path("changeStatus/{driverLicense}")
     @Consumes("application/xml")
@@ -65,13 +80,23 @@ public class RestActions {
         }
     }
 
+    /**
+     * Return order for a driver.
+     * @param driverLicense license number of a driver
+     * @return the order for a driver
+     */
     @GET
-    @Path("getDriver/{driverLicense}")
+    @Path("getOrderForDriver/{driverLicense}")
     @javax.ws.rs.Produces("text/xml")
-    public Order getDriver(@PathParam("driverLicense") Long driverLicense) {
+    public Order getOrderForDriver(@PathParam("driverLicense") Long driverLicense) {
         return orderServiceForDrivers.getOrderForDrivers(driverLicense);
     }
 
+    /**
+     * Gets goods from a order for certain driver.
+     * @param driverLicense license number
+     * @return the list of statuses for certain driver.
+     */
     @GET
     @Path("getGoods/{driverLicense}")
     @javax.ws.rs.Produces("text/xml")
@@ -79,6 +104,11 @@ public class RestActions {
         return orderServiceForDrivers.getGoodsList(driverLicense);
     }
 
+    /**
+     * Returns the status of a driver.
+     * @param driverLicense license number of the driver
+     * @return the status of a driver
+     */
     @GET
     @Path("getStatus/{driverLicense}")
     @javax.ws.rs.Produces("text/xml")
@@ -86,6 +116,11 @@ public class RestActions {
         return orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
     }
 
+    /**
+     * Changes the status of a driver.
+     * @param driverLicense license number for a driver
+     * @param status a new status for a driver
+     */
     private void changeStatus(Long driverLicense, DriverStatus status) {
         try {
             orderServiceForDrivers.changeDriverStatusForDrivers(driverLicense, status);

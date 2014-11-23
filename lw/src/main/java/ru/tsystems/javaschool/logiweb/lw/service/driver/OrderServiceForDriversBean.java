@@ -11,6 +11,10 @@ import java.util.List;
 
 /**
  *
+ * This class provides the services to work with orders for drivers.
+ * OrderServiceForDriversBean based implementation of the OrderServiceForDrivers interface.
+ *
+ * @author
  */
 @Stateless
 public class OrderServiceForDriversBean implements OrderServiceForDrivers {
@@ -18,6 +22,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     @Inject
     private EntityManager entityManager;
 
+    /**
+     * Gets the order for the certain driver.
+     * @param driverId license number of a driver
+     * @return an order
+     */
     @Override
     public Order getOrderForDrivers(Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
@@ -38,6 +47,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return order;
     }
 
+    /**
+     * Shows order details and goods of the order for certain driver.
+     * @param driverId the number of a driver
+     * @return parameters and goods of an order
+     */
     @Override
     public List<OrderInfo> getGoodsStatusForDrivers(Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
@@ -47,6 +61,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return query.getResultList();
     }
 
+    /**
+     * Gets the list of goods of an order for certain driver.
+     * @param driverLicense the license number of a driver
+     * @return the list of goods
+     */
     @Override
     public List<String> getGoodsList(Long driverLicense) {
         Integer orderNumber = getOrderNumberForDrivers(driverLicense);
@@ -57,6 +76,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return query.getResultList();
     }
 
+    /**
+     * Changes statuses for goods of certain order. Order determined with license of a driver.
+     * @param name the name of a goods
+     * @param driverId license number of a driver
+     */
     @Override
     public void changeGoodsStatusForDrivers(String name, Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
@@ -72,6 +96,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         }
     }
 
+    /**
+     * Returns the list of goods with "no" status for certain order.
+     * @param orderNumber the number of an order
+     * @return the list of goods
+     */
     @Override
     public List<OrderInfo> currentGoodsStatusIsNo(Integer orderNumber) {
         Query query = entityManager.createQuery("SELECT oi.name FROM OrderInfo oi WHERE oi.orderNumber = :number AND oi.status = :status");
@@ -80,6 +109,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return query.getResultList();
     }
 
+    /**
+     * Changes the driver status.
+     * @param license the number of license for a driver
+     * @param status a new status of the driver
+     */
     @Override
     public void changeDriverStatusForDrivers(Long license, DriverStatus status) {
         Integer driverId = getDriverIdByDriverLicense(license);
@@ -88,6 +122,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         entityManager.merge(driverShift);
     }
 
+    /**
+     * Return the value of the alternative status for driver's menu.
+     * @param currentStatus current status
+     * @return alternative status
+     */
     @Override
     public DriverStatus getStatusMenuForDrivers(String currentStatus) {
         if (currentStatus.equals(DriverStatus.atWeel)) {
@@ -97,6 +136,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         }
     }
 
+    /**
+     * Gets current status for a driver's menu.
+     * @param driverId the number license of a driver
+     * @return current status
+     */
     @Override
     public String getCurrentStatusForDriver(Long driverId) {
         Query query = entityManager.createQuery("SELECT d.driverShift.status FROM Drivers d WHERE d.license = :license");
@@ -114,6 +158,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
 //        return drivers;
 //    }
 
+    /**
+     * Gets the number of the order for certain driver
+     * @param driverId the number license of a driver
+     * @return the number of the order
+     */
     private Integer getOrderNumberForDrivers(Long driverId) {
         Query query = entityManager.createQuery("SELECT ds.orderId FROM DriverShift ds WHERE ds.drivers.license = :license");
         query.setParameter("license", driverId);
@@ -123,6 +172,10 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         return Integer.parseInt(query.getSingleResult().toString());
     }
 
+    /**
+     * Checks is there any driver with the status "atWheel"
+     * @param driverId license number of a driver
+     */
     @Override
     public void isAnybodyAtWheel(Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
@@ -135,6 +188,11 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         }
     }
 
+    /**
+     * Gets driver id using license number of a driver
+     * @param license license number of a driver
+     * @return driver id
+     */
     private Integer getDriverIdByDriverLicense(Long license) {
         Query query = entityManager.createQuery("SELECT d.driversId FROM Drivers d WHERE d.license = :license");
         query.setParameter("license", license);

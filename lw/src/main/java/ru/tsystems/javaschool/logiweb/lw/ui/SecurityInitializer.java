@@ -40,7 +40,7 @@ import static org.picketlink.idm.model.basic.BasicModel.*;
 /**
  * This startup bean creates a number of default users, groups and roles when the application is started.
  * 
- * @author Shane Bryzak
+ * @author Irina Nikulina
  */
 @Singleton
 @Startup
@@ -54,6 +54,10 @@ public class SecurityInitializer {
 
     @Inject
     private Logger logger;
+
+    /**
+     * Creates the list of roles to define what certain user can do and can't do.
+     */
     @PostConstruct
     public void create() {
 
