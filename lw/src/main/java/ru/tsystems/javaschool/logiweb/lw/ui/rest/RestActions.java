@@ -23,7 +23,7 @@ import java.util.List;
 public class RestActions {
 
     private transient Client client;
-    public String SERVICE_BASE_URI;
+//    public String SERVICE_BASE_URI;
 
     @EJB
     private OrderServiceForDrivers orderServiceForDrivers;

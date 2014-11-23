@@ -29,6 +29,7 @@ public class FuraAction implements Serializable {
     private Fura fura;
     private List<Fura> furas;
     private List<String> freeFuras;
+    private List<Fura> freeFuraTable;
 
     public void setFura(Fura fura) {
         this.fura = fura;

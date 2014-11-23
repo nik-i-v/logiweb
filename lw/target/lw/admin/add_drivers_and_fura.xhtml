@@ -44,6 +44,23 @@
                                         globalOnly="true"/>
                         </h:panelGrid>
 
+                        <div>Furas</div>
+                        <h:dataTable var="_fura" value="#{furas}" rendered="#{not empty freeFuras}"
+                                     styleClass="simpletablestyle">
+                            <h:column>
+                                <f:facet name="header">Number</f:facet>
+                                <h:outputText value="#{_fura.furaNumber}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Drivers amount</f:facet>
+                                <h:outputText value="#{_fura.driverCount}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Status</f:facet>
+                                <h:outputText value="#{_fura.status}"/>
+                            </h:column>
+                        </h:dataTable>
+
                         <div id="buttons_back">
                             <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
                         </div>
@@ -106,6 +123,7 @@
                         </h:dataTable>
                     </h:column>
                 </h:dataTable>
+
                 </h:form>
                 <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
                     <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323" />

@@ -22,7 +22,14 @@ import java.util.logging.Logger;
 import static org.picketlink.idm.model.basic.BasicModel.getRole;
 import static org.picketlink.idm.model.basic.BasicModel.grantRole;
 
-
+/**
+ * This class provides operations for company employees to manage the list of drivers.
+ * DriverServiceBean based implementation of the DriverService interface.
+ *
+ *
+ * @author Irina Nikulina
+ *
+ */
 @Stateless
 public class DriverServiceBean implements DriverService {
 
@@ -38,18 +45,34 @@ public class DriverServiceBean implements DriverService {
     @Inject
     private PartitionManager partitionManager;
 
+    /**
+     * Shows all drivers from the database.
+     * @return the list of drivers
+     */
     @Override
     public List<DriverShift> getAllDrivers() {
         logger.info("Get all drivers");
         return entityManager.createQuery("SELECT ds FROM DriverShift ds").getResultList();
     }
 
+    /**
+     * Shows all license numbers of drivers.
+     * @return the list of license numbers
+     */
     @Override
     public List<Long> getAllDriverId() {
         logger.info("Get all drivers id");
         return entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
     }
 
+    /**
+     * Adds a driver to the database. Also adds the record with this driver to the user list.
+     * @param surname surname of a driver
+     * @param name name of a driver
+     * @param patronymic patronymic of a driver
+     * @param licenseId license number of a driver
+     * @throws IncorrectDataException if there is a driver with such license number
+     */
     @Override
     public void addDriver(String surname, String name, String patronymic, Long licenseId) throws IncorrectDataException {
         logger.info("Add new driver with license: " + licenseId);
@@ -80,6 +103,10 @@ public class DriverServiceBean implements DriverService {
         logger.info("Driver " + licenseId + " was added successful");
     }
 
+    /**
+     * Shows all free drivers from the database.
+     * @return the list of drivers
+     */
     @Override
     public List<Long> getAllFreeDrivers() {
         logger.info("Get all free drivers");
@@ -88,6 +115,11 @@ public class DriverServiceBean implements DriverService {
         return query.getResultList();
     }
 
+    /**
+     * Verifies is a driver license number unique.
+     * @param licenseId license number of a driver
+     * @throws IncorrectDataException if there is a driver with such license number
+     */
     public void checkIfDriverIdIsUnique(Long licenseId) throws IncorrectDataException {
         List<Long> ids = entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
         if (ids.contains(licenseId)) {
@@ -95,18 +127,34 @@ public class DriverServiceBean implements DriverService {
         }
     }
 
+    /**
+     * Sets an EntityManager.
+     * @param entityManager
+     */
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
+    /**
+     * Sets a Logger.
+     * @param logger
+     */
     public void setLogger(Logger logger) {
         this.logger = logger;
     }
 
+    /**
+     * Sets an IdentityManager.
+     * @param identityManager
+     */
     public void setIdentityManager(IdentityManager identityManager) {
         this.identityManager = identityManager;
     }
 
+    /**
+     * Sets a PartitionManager.
+     * @param partitionManager
+     */
     public void setPartitionManager(PartitionManager partitionManager) {
         this.partitionManager = partitionManager;
     }
