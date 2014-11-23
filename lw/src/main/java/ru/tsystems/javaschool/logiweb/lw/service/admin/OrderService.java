@@ -31,7 +31,7 @@ public interface OrderService {
 
     List<Integer> getCreatedOrdersWitsGoods();
 
-    void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException;
+   // void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException;
 
 //    List<Long> getDriversInCurrentOrder();
 }

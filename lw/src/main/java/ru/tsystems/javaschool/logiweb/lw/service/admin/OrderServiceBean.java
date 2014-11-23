@@ -12,6 +12,13 @@ import javax.persistence.*;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
+
+/**
+ * This class provides the services to work with orders for company employees.
+ * OrderServiceBean based implementation of the OrderService interface.
+ *
+ * @author Irina Nikulina
+ */
 @Stateless
 public class OrderServiceBean implements OrderService {
 
@@ -21,6 +28,10 @@ public class OrderServiceBean implements OrderService {
     @Inject
     private EntityManager entityManager;
 
+    /**
+     * Show all the orders from the database.
+     * @return the list of orders
+     */
     @Override
     public List<Order> getAllOrders() {
         logger.info("Get all orders");
@@ -44,6 +55,9 @@ public class OrderServiceBean implements OrderService {
         return orders;
     }
 
+    /**
+     * Adds a new order with auto generated number.
+     */
     @Override
     public void addOrder() {
         logger.info("Add new order");
@@ -55,6 +69,14 @@ public class OrderServiceBean implements OrderService {
         logger.info("Order " + order.getId() + " was created successful");
     }
 
+    /**
+     * Adds goods to an order. The value of the status for an order has to be equal to "created".
+     * @param orderNumber order number to add goods
+     * @param name the name of a goods
+     * @param gpsLat the GPS latitude of a goods
+     * @param gpsLong the GPS longitude of a goods
+     * @param weight the weight of a goods
+     */
     @Override
     public void addGoods(Integer orderNumber, String name, Double gpsLat, Double gpsLong, Double weight) {
         logger.info("Add goods to order " + orderNumber);
@@ -71,6 +93,11 @@ public class OrderServiceBean implements OrderService {
         logger.info("Good was added successful");
     }
 
+    /**
+     * Changes an order status.
+     * @param orderNumber the number of an order
+     * @param status the status of an order
+     */
     @Override
     public void changeOrderStatus(Integer orderNumber, OrderStatus.Status status) {
         logger.info("Change status of the order " + orderNumber + " to " + status);
@@ -82,6 +109,14 @@ public class OrderServiceBean implements OrderService {
         logger.info("Status was changed successful");
     }
 
+    /**
+     * Adds a fura and drivers to an order. The value of the status for an order has to be equal to "confirmed".
+     * @param orderNumber an order number to add a fura and drivers
+     * @param driverId the list of driver license numbers
+     * @param furaNumber the number of a fura
+     * @throws IncorrectDataException if the capacity of a fura is less then the total goods weight or
+     * if the number of added drivers isn't equal to the amount required seats of the fura
+     */
     @Override
     public void addFuraAndDrivers(Integer orderNumber, List<Long> driverId, String furaNumber) throws IncorrectDataException {
         logger.info("Add fura and drivers to order " + orderNumber);
@@ -95,11 +130,14 @@ public class OrderServiceBean implements OrderService {
         logger.info("Fura and drivers was added");
     }
 
+    /**
+     * Closes an order.
+     * @param orderNumber the number of an order
+     * @throws IncorrectDataException
+     */
     @Override
     public void closeOrder(Integer orderNumber) throws IncorrectDataException {
         logger.info("Close order number " + orderNumber);
-//        isOrderExists(orderNumber);
-//        checkOrderStatus(getOrderStatus(orderNumber), OrderStatus.Status.made.toString());
         List<Long> driversInOrder = getDriversInOrder(orderNumber);
         checkDriverStatus(driversInOrder, DriverStatus.atWeel);
         changeOrderStatus(orderNumber, OrderStatus.Status.closed);
@@ -109,6 +147,11 @@ public class OrderServiceBean implements OrderService {
         logger.info("Order number " + orderNumber + " was closed");
     }
 
+    /**
+     * Set a fura status. Status value can be "yes" or "no".
+     * @param orderNumber the number of an order
+     * @param status
+     */
     private void changeFuraStatus(Integer orderNumber, Fura.Status status) {
         logger.info("Change status of the fura in order " + orderNumber + " to " + status);
         Query query = entityManager.createQuery("SELECT o.furaId FROM Order o WHERE o.id = :number");
@@ -121,24 +164,40 @@ public class OrderServiceBean implements OrderService {
         logger.info("Fura's status was changed");
     }
 
+    /**
+     * Shows all orders with "created" status.
+     * @return the list of order numbers
+     */
     @Override
     public List<Integer> getCreatedOrders() {
         logger.info("Get created orders");
         return getOrdersByStatus(OrderStatus.Status.created);
     }
 
+    /**
+     * Shows all orders with "confirmed" status.
+     * @return the list of order numbers
+     */
     @Override
     public List<Integer> getConfirmedOrders() {
         logger.info("Get confirmed orders");
         return getOrdersByStatus(OrderStatus.Status.confirmed);
     }
 
+    /**
+     * Shows all orders with "made" status.
+     * @return the list of order numbers
+     */
     @Override
     public List<Integer> getMadeOrders() {
         logger.info("Get made orders");
         return getOrdersByStatus(OrderStatus.Status.made);
     }
 
+    /**
+     * Shows all orders containing goods and having "created" status.
+     * @return the list of order numbers
+     */
     @Override
     public List<Integer> getCreatedOrdersWitsGoods() {
         logger.info("Get created orders with goods");
@@ -148,15 +207,15 @@ public class OrderServiceBean implements OrderService {
         return query.getResultList();
     }
 
-    @Override
-    public void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException {
-        logger.info("Check if goods list exists");
-        Query query = entityManager.createQuery("SELECT COUNT (oi.name) FROM OrderInfo oi WHERE oi.orderNumber = :number");
-        query.setParameter("number", orderNumber);
-        if (query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0) {
-            throw new IncorrectDataException("Please add goods to order");
-        }
-    }
+//    @Override
+//    public void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException {
+//        logger.info("Check if goods list exists");
+//        Query query = entityManager.createQuery("SELECT COUNT (oi.name) FROM OrderInfo oi WHERE oi.orderNumber = :number");
+//        query.setParameter("number", orderNumber);
+//        if (query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0) {
+//            throw new IncorrectDataException("Please add goods to order");
+//        }
+//    }
 
 //    private void isOrderExists(Integer orderNumber) {
 //        List<Integer> ordersId = entityManager.createQuery("SELECT o.id FROM Order o").getResultList();
@@ -165,6 +224,11 @@ public class OrderServiceBean implements OrderService {
 //        }
 //    }
 
+    /**
+     * Shows an order status.
+     * @param orderNumber the number of an order
+     * @return the value of status
+     */
     private String getOrderStatus(Integer orderNumber) {
         logger.info("Get status of order " + orderNumber);
         Query query = entityManager.createQuery("SELECT os.status FROM OrderStatus os WHERE os.orderId = :id");
@@ -179,6 +243,11 @@ public class OrderServiceBean implements OrderService {
 //        }
 //    }
 
+    /**
+     * Gets the total weight of goods in an order.
+     * @param orderId the number of an order
+     * @return double value of total weight
+     */
     private Double weightGoodsInOrder(Integer orderId) {
         logger.info("Check weight goods in order");
         Query query = entityManager.createQuery("SELECT SUM(oi.weight) FROM OrderInfo oi WHERE oi.orderNumber = :number");
@@ -187,6 +256,11 @@ public class OrderServiceBean implements OrderService {
 
     }
 
+    /**
+     * Gets capaicty on a fura.
+     * @param furaNumber the number of a fura
+     * @return String value of a fura capacity
+     */
     private String getFuraCapacity(String furaNumber) {
         logger.info("Get capacity of fura " + furaNumber);
         Query query = entityManager.createQuery("SELECT f.capacity FROM  Fura f WHERE f.furaNumber = :number");
@@ -195,6 +269,11 @@ public class OrderServiceBean implements OrderService {
         return capacity;
     }
 
+    /**
+     * Gets capaicty on a fura.
+     * @param capacity of a fura in String format
+     * @return int value of a fura capacity
+     */
     private Integer furaIntCapacity(String capacity) {
         logger.info("Convert fura's capacity to int");
         if (capacity.equals(Fura.Capacity.small.toString())) {
@@ -206,6 +285,12 @@ public class OrderServiceBean implements OrderService {
         }
     }
 
+    /**
+     * Checks does a fura have enough capacity for all goods.
+     * @param furaCapacity the capacity of a fura
+     * @param goodsWeight total wieght of all goods
+     * @throws IncorrectDataException
+     */
     private void isFuraSuitable(Integer furaCapacity, Double goodsWeight) throws IncorrectDataException {
         logger.info("Check if fura is suitable");
         if (furaCapacity < goodsWeight) {
@@ -213,6 +298,11 @@ public class OrderServiceBean implements OrderService {
         }
     }
 
+    /**
+     * Gets amount of required drivers
+     * @param furaNumber the number of a fura
+     * @return int value of driver amount
+     */
     private Integer getDriverCount(String furaNumber) {
         logger.info("Get count of drivers in fura " + furaNumber);
         Query query = entityManager.createQuery("SELECT f.driverCount FROM Fura f WHERE f.furaNumber = :number");
@@ -221,6 +311,12 @@ public class OrderServiceBean implements OrderService {
         return furaDriverCount;
     }
 
+    /**
+     * Checks if amount of drivers and required amount of drivers isn't equal.
+     * @param driverCount required amount of drivers
+     * @param driversInListCount amount of drivers
+     * @throws IncorrectDataException if amount of drivers and required amount of drivers isn't equal
+     */
     private void isDriverCountSuitable(Integer driverCount, Integer driversInListCount) throws IncorrectDataException {
         logger.info("Check that the number of drivers is enough");
         if (driverCount != driversInListCount) {
@@ -228,6 +324,11 @@ public class OrderServiceBean implements OrderService {
         }
     }
 
+    /**
+     * Gets the list of drivers to perform an order.
+     * @param orderNumber the number of an order
+     * @return the list of drivers
+     */
     private List<Long> getDriversInOrder(Integer orderNumber) {
         logger.info("Get drivers in order " + orderNumber);
         Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE  d.driverShift.orderId = :orderNumber");
@@ -252,9 +353,14 @@ public class OrderServiceBean implements OrderService {
         }
     }
 
-
+    /**
+     * Changes statuses of all drivers when an order created or order closed.
+     * @param orderNumber the number of an order
+     * @param license the list of drivers licenses
+     * @param status a new status for drivers
+     */
     private void changeDriverStatus(Integer orderNumber, List<Long> license, DriverStatus status) {
-        logger.info("Change drivers statur to '" + status + "'");
+        logger.info("Change drivers status to '" + status + "'");
         for (Long l : license) {
             Integer driverId = getDriverIdByDriverLicense(l);
             DriverShift driverShift = entityManager.find(DriverShift.class, driverId);
@@ -264,6 +370,10 @@ public class OrderServiceBean implements OrderService {
         }
     }
 
+    /**
+     * Changes the status of a fura.
+     * @param furaNumber the number of a fura
+     */
     private void changeFuraStatus(String furaNumber) {
         logger.info("Change status of fura " + furaNumber);
         Query updateFuraStatus = entityManager.createQuery("UPDATE Fura f SET f.status = :status WHERE f.furaNumber = :furaId");
@@ -273,6 +383,11 @@ public class OrderServiceBean implements OrderService {
         logger.info("Fura's status was changed");
     }
 
+    /**
+     * Adds a fura to an order.
+     * @param orderNumber the number of a order
+     * @param furaNumber the number of a fura
+     */
     private void addFuraToOrder(Integer orderNumber, String furaNumber) {
         logger.info("Add fura " + furaNumber + " to order " + orderNumber);
         Query getFuraId = entityManager.createQuery("SELECT f.furasId FROM Fura f WHERE f.furaNumber = :fura");
@@ -284,6 +399,10 @@ public class OrderServiceBean implements OrderService {
         logger.info("Fura " + furaNumber + "was added");
     }
 
+    /**
+     * Deletes a fura from an order.
+     * @param orderNumber the number of an order
+     */
     private void deleteFuraFromOrder(Integer orderNumber) {
         logger.info("Delete fura from order " + orderNumber);
         Query query = entityManager.createQuery("UPDATE Order o SET o.furaId = :nulls " +
@@ -294,12 +413,22 @@ public class OrderServiceBean implements OrderService {
         logger.info("Fura was deleted from " + orderNumber);
     }
 
+    /**
+     * Shows orders with certain status.
+     * @param status the status for a sample
+     * @return the list of orders
+     */
     private List<Integer> getOrdersByStatus(OrderStatus.Status status) {
         Query query = entityManager.createQuery("SELECT o.id FROM Order o WHERE o.orderStatus.status = :status");
         query.setParameter("status", status);
         return query.getResultList();
     }
 
+    /**
+     * Gets driver id with driver license.
+     * @param license the number of a license
+     * @return driver id
+     */
     private Integer getDriverIdByDriverLicense(Long license) {
         logger.info("Get drivers id by driver license");
         Query query = entityManager.createQuery("SELECT d.driversId FROM Drivers d WHERE d.license = :license");
