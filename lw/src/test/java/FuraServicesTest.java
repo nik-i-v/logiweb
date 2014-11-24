@@ -60,7 +60,7 @@ public class FuraServicesTest {
     }
 
     @Test
-    public  void addFuraTest_success(){
+    public  void addFuraTest_success() throws IncorrectDataException {
         String hql = "SELECT f.furaNumber FROM Fura f";
         List<String> ids = new LinkedList<>();
         ids.add("XC12345");
@@ -69,6 +69,7 @@ public class FuraServicesTest {
         service.setLogger(logger);
         when(entityManager.createQuery(hql)).thenReturn(query);
         when(query.getResultList()).thenReturn(ids);
+        service.addFura("GH12345", new Byte("2"), Fura.Capacity.middle);
     }
 
     @Test(expected = IncorrectDataException.class)

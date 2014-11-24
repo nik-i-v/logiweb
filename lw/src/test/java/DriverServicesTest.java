@@ -8,6 +8,7 @@ import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverStatus;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean;
+import ru.tsystems.javaschool.logiweb.lw.util.IncorrectDataException;
 
 import javax.persistence.Query;
 import javax.persistence.EntityManager;
@@ -82,34 +83,33 @@ public class DriverServicesTest {
         assertEquals(all, result);
     }
 
-//    @Test
-//    public void addDriverTest() throws IncorrectDataException {
+    @Test
+    public void addDriverTest_success() throws IncorrectDataException, IncorrectDataException {
 //        String hql = "SELECT d.license FROM Drivers d";
-//        List<Integer> ids = new LinkedList<>();
-//        ids.add(23);
+//        List<Long> ids = new LinkedList<>();
+//        ids.add(26374873625L);
 //        DriverServiceBean service = new DriverServiceBean();
 //        service.setEntityManager(entityManager);
 //        service.setLogger(logger);
 //        when(entityManager.createQuery(hql)).thenReturn(query);
 //        when(query.getResultList()).thenReturn(ids);
-//        Boolean result = service.checkIfDriverIdIsUnique(867L);
 //        identityManager = mock(IdentityManager.class);
 //        partitionManager = mock(PartitionManager.class);
-//        role = mock(Role.class);
 //        service.setIdentityManager(identityManager);
 //        service.setPartitionManager(partitionManager);
-////        when(getRole)
-////        when(service.checkIfDriverIdIsUnique(56476567675L)).thenReturn(true);
-////        assertTrue();
-//        Drivers driver = mock(Drivers.class);
-//        DriverShift driverShift = mock(DriverShift.class);
-//        Users user = mock(Users.class);
-//        service.addDriver("Surname", "Name", "Patronymic", 11000000000L);
-//        verify(entityManager).persist(driver);
-////        when(entityManager.persist(driver));
-////        when(en)
-//    }
+//        service.addDriver("surname", "name", "patronymic", 1L);
+    }
 
-
-
+    @Test(expected = IncorrectDataException.class)
+    public void addDriverTest_duplicateDriver() throws IncorrectDataException {
+        String hql = "SELECT d.license FROM Drivers d";
+        List<Long> ids = new LinkedList<>();
+        ids.add(26374873625L);
+        DriverServiceBean service = new DriverServiceBean();
+        service.setEntityManager(entityManager);
+        service.setLogger(logger);
+        when(entityManager.createQuery(hql)).thenReturn(query);
+        when(query.getResultList()).thenReturn(ids);
+        service.addDriver("surname", "name", "patronymic", 26374873625L);
+    }
 }
