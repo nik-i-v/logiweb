@@ -22,9 +22,7 @@ import java.util.List;
  *
  * @author Irina Nikulina
  */
-@Path("driverRest")
-@ManagedBean
-@SessionScoped
+@Path("restActions")
 public class RestActions {
 
     private transient Client client;
@@ -33,8 +31,7 @@ public class RestActions {
     @EJB
     private OrderServiceForDrivers orderServiceForDrivers;
 
-    @Inject
-    private FacesContext facesContext;
+
 
 //    @PostConstruct
 //    protected void initialize() {
@@ -73,10 +70,10 @@ public class RestActions {
     @Consumes("application/xml")
     public void changeDriverStatus(@PathParam("driverLicense") Long driverLicense, @PathParam("status") DriverStatus status){
         if (status.equals(DriverStatus.atWeel.toString())) {
-            changeStatus(driverLicense,DriverStatus.shift);
+//            changeStatus(driverLicense,DriverStatus.shift);
         } else {
             orderServiceForDrivers.isAnybodyAtWheel(driverLicense);
-            changeStatus(driverLicense, DriverStatus.atWeel);
+//            changeStatus(driverLicense, DriverStatus.atWeel);
         }
     }
 
@@ -116,21 +113,18 @@ public class RestActions {
         return orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
     }
 
-    /**
-     * Changes the status of a driver.
-     * @param driverLicense license number for a driver
-     * @param status a new status for a driver
-     */
-    private void changeStatus(Long driverLicense, DriverStatus status) {
-        try {
-            orderServiceForDrivers.changeDriverStatusForDrivers(driverLicense, status);
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Driver status has been changed", "Driver status change successful"));
-//            currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
-        } catch (Exception e) {
-            String errorMessage = e.getMessage();
-            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                    errorMessage, "Changing unsuccessful"));
-        }
-    }
+
+//
+//    private void changeStatus(Long driverLicense, DriverStatus status) {
+//        try {
+//            orderServiceForDrivers.changeDriverStatusForDrivers(driverLicense, status);
+//            facesContext.addMessage(null,
+//                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Driver status has been changed", "Driver status change successful"));
+////            currentStatus = orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
+//        } catch (Exception e) {
+//            String errorMessage = e.getMessage();
+//            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+//                    errorMessage, "Changing unsuccessful"));
+//        }
+//    }
 }

@@ -133,13 +133,12 @@ public class OrderServiceBean implements OrderService {
     /**
      * Closes an order.
      * @param orderNumber the number of an order
-     * @throws IncorrectDataException
      */
     @Override
-    public void closeOrder(Integer orderNumber) throws IncorrectDataException {
+    public void closeOrder(Integer orderNumber)  {
         logger.info("Close order number " + orderNumber);
         List<Long> driversInOrder = getDriversInOrder(orderNumber);
-        checkDriverStatus(driversInOrder, DriverStatus.atWeel);
+//        checkDriverStatus(driversInOrder, DriverStatus.atWeel);
         changeOrderStatus(orderNumber, OrderStatus.Status.closed);
         changeDriverStatus(null, driversInOrder, DriverStatus.notShift);
         changeFuraStatus(orderNumber, Fura.Status.no);
@@ -341,22 +340,23 @@ public class OrderServiceBean implements OrderService {
         return query.getResultList();
     }
 
-    private void checkDriverStatus(List<Long> drivers, DriverStatus status) throws IncorrectDataException {
-        logger.info("Check driver status");
-        Query query = entityManager.createQuery("SELECT COUNT(ds.status)FROM DriverShift ds WHERE ds.status= :status AND ds.drivers.license IN :driver");
-        query.setParameter("driver", drivers);
-        query.setParameter("status", status);
-        String driversCount = query.getSingleResult().toString();
-        if (status.equals(DriverStatus.notShift)) {
-            if (driversCount.equals(null) || Integer.parseInt(driversCount) != drivers.size()) {
-                throw new IncorrectDataException("Some drivers are already in shift or are not exists");
-            } else if (status.equals(DriverStatus.atWeel)) {
-                if (driversCount.equals(null)) {
-                    throw new IncorrectDataException("This order still has the driver behind the wheel");
-                }
-            }
-        }
-    }
+
+//    private void checkDriverStatus(List<Long> drivers, DriverStatus status) throws IncorrectDataException {
+//        logger.info("Check driver status");
+//        Query query = entityManager.createQuery("SELECT COUNT(ds.status)FROM DriverShift ds WHERE ds.status= :status AND ds.drivers.license IN :driver");
+//        query.setParameter("driver", drivers);
+//        query.setParameter("status", status);
+//        String driversCount = query.getSingleResult().toString();
+//        if (status.equals(DriverStatus.notShift)) {
+//            if (driversCount.equals(null) || Integer.parseInt(driversCount) != drivers.size()) {
+//                throw new IncorrectDataException("Some drivers are already in shift or are not exists");
+//            } else if (status.equals(DriverStatus.atWeel)) {
+//                if (driversCount.equals(null)) {
+//                    throw new IncorrectDataException("This order still has the driver behind the wheel");
+//                }
+//            }
+//        }
+//    }
 
     /**
      * Changes statuses of all drivers when an order created or order closed.

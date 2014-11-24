@@ -47,8 +47,6 @@
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.1.19" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-impl:2.1.19" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.deltaspike.modules:deltaspike-security-module-api:0.6" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.deltaspike.core:deltaspike-core-api:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:jaxrs-api:3.0.6.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jaxrs:3.0.8.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.Final" level="project" />

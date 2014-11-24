@@ -32,7 +32,7 @@
 
                         <h:outputLabel for="licence" value="Licence:"/>
                         <h:inputText id="licence" value="#{driverAction.driver.license}"
-                                     validatorMessage="Invalid format" required="true">
+                                     validatorMessage="(length = 11)" required="true">
                             <f:validateLength minimum="11" maximum="11"/>
                             <f:convertNumber integerOnly="true"/>
                         </h:inputText>

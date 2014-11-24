@@ -22,7 +22,10 @@ import org.picketlink.idm.RelationshipManager;
 import org.picketlink.idm.credential.Password;
 import org.picketlink.idm.model.basic.Role;
 import org.picketlink.idm.model.basic.User;
+import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
+import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
+import ru.tsystems.javaschool.logiweb.lw.service.admin.UserServiceBean;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -50,7 +53,11 @@ public class SecurityInitializer {
     private PartitionManager partitionManager;
 
     @EJB
+    private  UserService userService;
+
+    @EJB
     private DriverService driverService;
+
 
     @Inject
     private Logger logger;
@@ -63,20 +70,33 @@ public class SecurityInitializer {
 
        IdentityManager identityManager = this.partitionManager.createIdentityManager();
         RelationshipManager relationshipManager = this.partitionManager.createRelationshipManager();
-        User newUser = new User("admin");
-        identityManager.add(newUser);
-        identityManager.updateCredential(newUser, new Password("pass"));
+        List<Users> users = userService.getUsers();
         Role admin = new Role("admin");
         identityManager.add(admin);
-        List<Long> ids = driverService.getAllDriverId();
         Role driver = new Role("driver");
         identityManager.add(driver);
-        grantRole(relationshipManager, newUser, admin);
-        for (Long l: ids){
-            User driverUser = new User(l.toString());
-            identityManager.add(driverUser);
-            identityManager.updateCredential(driverUser, new Password("pass"));
-            grantRole(relationshipManager, driverUser, driver);
+        for (Users u: users){
+            String userStatus = convertToCorrectFormat(u.getStatus().toString());
+            Role role = getRole(identityManager, userStatus);
+            User newUser = new User(u.getName());
+            identityManager.add(newUser);
+            identityManager.updateCredential(newUser, new Password(u.getPassword()));
+            grantRole(relationshipManager, newUser, role);
+        }
+        }
+
+    /**
+     * Converts an user's status to a role
+     * @param string input status
+     * @return user's role
+     */
+    private String convertToCorrectFormat(String string){
+        if (string.equals("Administrator")){
+            return "admin";
+        } else {
+            return "driver";
         }
     }
-}
+
+    }
+

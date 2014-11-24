@@ -43,7 +43,7 @@ public class FuraValidator implements Validator {
         if(!matcher.matches()){
 
             FacesMessage msg =
-                    new FacesMessage(" Invalid format.");
+                    new FacesMessage(" Fura number has to be in 2 letters and 5 digits format.");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(msg);
 
