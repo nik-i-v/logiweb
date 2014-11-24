@@ -10,7 +10,7 @@ img
 }
 
 body{
-    font: 12px Arial, Helvetica, sans-serif;
+    font: 16px Arial, Helvetica, sans-serif;
     background: url(../../resources/images/bg.png);
     line-height: 18px;
 }
@@ -454,6 +454,39 @@ a.but {
     color: #FFFFFF;
 }
 
+.simpletablestyle{
+    border-collapse:collapse;
+    border:#000000;
+    text-align: center;
+    /*background: #666666;*/
+    width: 60px ;
+}
+
+.headerTable{
+    text-align:center;
+    background:none repeat scroll 0 0 #B5B5B5;
+    border-bottom:1px solid #000000;
+    border-left: 1px;
+    padding:2px;
+}
+
+.rowTable{
+    border-bottom:1px solid #000000;
+    border-left: 1px;
+    text-align: center;
+    /*width: 30px;*/
+    /*border: 2px #000000;*/
+
+}
+
+.columnClass{
+    border:2px;
+}
+
+.columns1{
+    border: 2px;
+    width: 60px;
+}
 
 
 

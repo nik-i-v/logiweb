@@ -26,7 +26,8 @@
                         <em>You have no orders.</em>
                     </h:panelGroup>
                     <h:dataTable var="_order" value="#{ordersDrivers}" rendered="#{not empty ordersDrivers}"
-                                 styleClass="simpletablestyle">
+                                 styleClass="simpletablestyle" headerClass="headerTable" rowClasses="rowTable"
+                                 border="1" columnClasses="columns1">
                         <h:column>
                             <f:facet name="header">Number</f:facet>
                             #{_order.id}

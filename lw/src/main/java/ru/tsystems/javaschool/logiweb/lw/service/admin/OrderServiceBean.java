@@ -29,7 +29,7 @@ public class OrderServiceBean implements OrderService {
     private EntityManager entityManager;
 
     /**
-     * Show all the orders from the database.
+     * Returns all the orders from the database.
      * @return the list of orders
      */
     @Override
@@ -165,7 +165,7 @@ public class OrderServiceBean implements OrderService {
     }
 
     /**
-     * Shows all orders with "created" status.
+     * Returns all orders with "created" status.
      * @return the list of order numbers
      */
     @Override
@@ -175,7 +175,7 @@ public class OrderServiceBean implements OrderService {
     }
 
     /**
-     * Shows all orders with "confirmed" status.
+     * Returns all orders with "confirmed" status.
      * @return the list of order numbers
      */
     @Override
@@ -185,7 +185,7 @@ public class OrderServiceBean implements OrderService {
     }
 
     /**
-     * Shows all orders with "made" status.
+     * Returns all orders with "made" status.
      * @return the list of order numbers
      */
     @Override
@@ -195,7 +195,7 @@ public class OrderServiceBean implements OrderService {
     }
 
     /**
-     * Shows all orders containing goods and having "created" status.
+     * Returns all orders containing goods and having "created" status.
      * @return the list of order numbers
      */
     @Override
@@ -230,7 +230,7 @@ public class OrderServiceBean implements OrderService {
 //    }
 
     /**
-     * Shows an order status.
+     * Returns an order status.
      * @param orderNumber the number of an order
      * @return the value of status
      */
@@ -419,7 +419,7 @@ public class OrderServiceBean implements OrderService {
     }
 
     /**
-     * Shows orders with certain status.
+     * Returns orders with certain status.
      * @param status the status for a sample
      * @return the list of orders
      */

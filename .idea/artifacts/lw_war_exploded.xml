@@ -15,7 +15,6 @@
           <element id="library" level="project" name="Maven: org.apache.deltaspike.modules:deltaspike-security-module-api:0.6" />
           <element id="library" level="project" name="Maven: org.apache.deltaspike.core:deltaspike-core-api:1.0.0" />
           <element id="library" level="project" name="Maven: org.jboss.resteasy:jaxrs-api:3.0.6.Final" />
-          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-jaxrs:3.0.8.Final" />
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.1.Final" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />

@@ -46,7 +46,7 @@ public class DriverServiceBean implements DriverService {
     private PartitionManager partitionManager;
 
     /**
-     * Shows all drivers from the database.
+     * Returns all drivers from the database.
      * @return the list of drivers
      */
     @Override
@@ -56,7 +56,7 @@ public class DriverServiceBean implements DriverService {
     }
 
     /**
-     * Shows all license numbers of drivers.
+     * Returns all license numbers of drivers.
      * @return the list of license numbers
      */
     @Override
@@ -104,7 +104,7 @@ public class DriverServiceBean implements DriverService {
     }
 
     /**
-     * Shows all free drivers from the database.
+     * Returns all free drivers from the database.
      * @return the list of drivers
      */
     @Override

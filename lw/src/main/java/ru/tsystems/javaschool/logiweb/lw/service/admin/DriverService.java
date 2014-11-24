@@ -19,13 +19,13 @@ import java.util.List;
 public interface DriverService {
 
     /**
-     * Shows all drivers from the database.
+     * Returns all drivers from the database.
      * @return the list of drivers
      */
     List<DriverShift> getAllDrivers();
 
     /**
-     * Shows all license numbers of drivers.
+     * Returns all license numbers of drivers.
      * @return the list of license numbers
      */
     List<Long> getAllDriverId();
@@ -41,7 +41,7 @@ public interface DriverService {
     void addDriver(String surname, String name, String patronymic, Long licenseId) throws IncorrectDataException;
 
     /**
-     * Shows all free drivers from the database.
+     * Returns all free drivers from the database.
      * @return the list of drivers
      */
     List<Long> getAllFreeDrivers();
