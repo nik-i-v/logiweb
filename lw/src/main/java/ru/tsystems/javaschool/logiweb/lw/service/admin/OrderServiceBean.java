@@ -441,4 +441,21 @@ public class OrderServiceBean implements OrderService {
         return Integer.parseInt(query.getSingleResult().toString());
     }
 
+    /**
+     * Sets an EntityManager.
+     * @param entityManager
+     */
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    /**
+     * Sets an Logger.
+     * @param logger
+     */
+    public void setLogger(Logger logger) {
+        this.logger = logger;
+    }
+
+
 }
