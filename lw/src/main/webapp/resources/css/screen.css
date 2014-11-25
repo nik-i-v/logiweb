@@ -11,6 +11,7 @@ img
 
 body{
     font: 16px Arial, Helvetica, sans-serif;
+    color: #fcff71;
     background: url(../../resources/images/bg.png);
     line-height: 18px;
 }
@@ -117,6 +118,7 @@ body{
 .home_box {
     float: left;
     width: 288px;
+    margin: auto -20px;
     padding: 13px 15px 13px 15px;
 }
 
@@ -216,24 +218,6 @@ h1{
     /*background: url(images/but_more_hov.gif) left top no-repeat;}*/
 }
 
-
-/*#bottom {*/
-    /*background: url(images/bottom.png) 43px 30px no-repeat;*/
-    /*color: #FFFFFF;*/
-/*}*/
-
-/*#bottom_bot {*/
-    /*background: url(images/bottom_bot.png) 43px bottom no-repeat;*/
-    /*color: #FFFFFF;*/
-/*}*/
-
-/*#bottom h1 {*/
-    /*color: #ffffff;*/
-    /*font-size: 14px;*/
-    /*font-weight: 100;*/
-    /*text-align: center;*/
-    /*padding: 5px 0px 5px 0px;*/
-/*}*/
 
 #b_col1 {
     width: 253px;
@@ -336,85 +320,6 @@ h1{
 }
 
 
-/*=================================*/
-/* Nivo Slider Demo
-/* November 2010
-/* By: Gilbert Pellegrom
-/* http://dev7studios.com
-/*=================================*/
-
-
-
-/*#slider {*/
-    /*position:relative;*/
-    /*width: 954px;*/
-    /*height: 378px;*/
-    /*background:url(images/loading.gif) no-repeat 50% 50%;*/
-/*}*/
-/*#slider img {*/
-    /*position:absolute;*/
-    /*top:0px;*/
-    /*left:0px;*/
-    /*display:none;*/
-/*}*/
-/*#slider a {*/
-    /*border:0;*/
-    /*display:block;*/
-/*}*/
-
-/*.nivo-controlNav {*/
-    /*position:absolute;*/
-    /*left: 400px;*/
-    /*bottom:-52px;*/
-
-/*}*/
-/*.nivo-controlNav a {*/
-    /*display:block;*/
-    /*width:22px;*/
-    /*height:22px;*/
-    /*background:url(images/circl.jpg) no-repeat;*/
-    /*text-indent:-9999px;*/
-    /*border:0;*/
-    /*margin-right:3px;*/
-    /*float:left;*/
-/*}*/
-/*.nivo-controlNav a.active {*/
-    /*background-position:0 -22px;*/
-    /*background:url(images/circl_hover.png) no-repeat;*/
-/*}*/
-
-/*.nivo-directionNav a {*/
-    /*display:block;*/
-    /*width:30px;*/
-    /*height:30px;*/
-    /*background:url(images/arrows.png) no-repeat;*/
-    /*text-indent:-9999px;*/
-    /*border:0;*/
-/*}*/
-/*a.nivo-nextNav {*/
-    /*background-position:-30px 0;*/
-    /*right:15px;*/
-/*}*/
-/*a.nivo-prevNav {*/
-    /*left:15px;*/
-/*}*/
-
-/*.nivo-caption {*/
-    /*text-shadow:none;*/
-    /*font-family: Helvetica, Arial, sans-serif;*/
-/*}*/
-/*.nivo-caption a {*/
-    /*color:#efe9d1;*/
-    /*text-decoration:underline;*/
-/*}*/
-
-/*#nav ul li:hover > ul{*/
-    /*display: block;*/
-/*}*/
-
-/*#nav ul li {*/
-    /*display: none;*/
-/*}*/
 
 .sub-menu
 {
@@ -468,6 +373,7 @@ a.but {
 .headerTable{
     text-align:center;
     color: #DDDDDD;
+    border-collapse:collapse;
     background:none repeat scroll 0 0 #555555;
     border-bottom:1px solid #000000;
     border-left: 1px solid #000000;
@@ -477,6 +383,7 @@ a.but {
 .rowTable{
     /*border-bottom:1px #FFFFFF solid;*/
     border: 1px #FFFFFF solid;
+    border-collapse:collapse;
     text-align: center;
     width: 50px;
     /*border: 2px #000000;*/
@@ -490,12 +397,43 @@ a.but {
     padding: 3px 10px;
 }
 
-.firstColumnTable, .secondColumnTable, .thirdColumnTable{
+.firstColumnTable, .secondColumnTable, .thirdColumnTable, .lastColumnTable{
+    border-collapse:collapse;
     border:1px solid #FFFFFF;
     width: 70px;
 }
 
+.firstColumnTable1 {
+    /**/
+    /*border-left:1px solid #FFFFFF;*/
+    width: 70px;
+    border-collapse:collapse;
+}
+.lastColumnTable1,  .secondColumnTable1, .thirdColumnTable1,{
+    width: 60px;
+    border-collapse:collapse;
+}
+.col1{
+    border-top: 1px solid #000000;
+    border-collapse:collapse;
+    /*border: solid;*/
+    /*border-left: 1px solid #000000;*/
+    /*width: 30px;*/
+    /*border-bottom: 1px solid #ffffff;*/
 
+}
+
+.special_width{
+    width: 90px;
+}
+
+.special_width_head{
+    width: 90px;
+}
+
+.order_buttons{
+    margin: auto -80px;
+}
 
 
 

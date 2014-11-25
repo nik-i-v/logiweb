@@ -58,6 +58,7 @@
                     </h:panelGroup>
                     <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
                                  styleClass="simpletablestyle" headerClass="headerTable" rowClasses="rowTable"
+                                 columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable"
                                  border="1">
                         <h:column>
                             <f:facet name="header">Number</f:facet>
@@ -82,13 +83,18 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">Goods(Name, Weight, Status)
-                                <!--<div class = "col1">Name</div>-->
-                                <!--<div class = "col1">GPS Latitude</div>-->
-                                <!--<div class = "col1">GPS Longitude</div>-->
-                                <!--<div class = "col1">Weight</div>-->
+                                <table class = "nested_header">
+                                    <tr><td class = "col1"><div class="special_width">Name</div></td>
+                                        <td class = "col1"><div class="special_width">GPS Latitude</div></td>
+                                        <td class = "col1"><div class="special_width">GPS Longitude</div></td>
+                                        <td class = "col1"><div class="special_width">Weight</div></td>
+                                        <td class = "col1"><div class="special_width">Status</div></td>
+                                    </tr>
+                                </table>
                             </f:facet>
                             <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}"
                                          styleClass="nestedTable"
+                                         columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable, lastColumnTable"
                                          rendered="#{not empty _order.orderStatus.orderInfo}">
                                 <h:column>
                                     <!--<f:facet name="header">Name</f:facet>-->

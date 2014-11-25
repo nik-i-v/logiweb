@@ -99,6 +99,7 @@
                         </f:facet>
                         <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}"
                                      styleClass="nestedTable"
+                                     columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable"
                                      rendered="#{not empty _order.orderStatus.orderInfo}">
                             <h:column>
                                 <!--<f:facet name="header">Name</f:facet>-->
