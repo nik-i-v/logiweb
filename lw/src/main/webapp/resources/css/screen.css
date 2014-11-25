@@ -456,37 +456,46 @@ a.but {
 
 .simpletablestyle{
     border-collapse:collapse;
-    border:#000000;
+    border: #000000 1px solid;
     text-align: center;
     /*background: #666666;*/
-    width: 60px ;
+    width: 100% ;
+    /*border-collapse: collapse;*/
+    /*text-align: left;*/
+    /*width: 100%;*/
 }
 
 .headerTable{
     text-align:center;
-    background:none repeat scroll 0 0 #B5B5B5;
+    color: #DDDDDD;
+    background:none repeat scroll 0 0 #555555;
     border-bottom:1px solid #000000;
-    border-left: 1px;
+    border-left: 1px solid #000000;
     padding:2px;
 }
 
 .rowTable{
-    border-bottom:1px solid #000000;
-    border-left: 1px;
+    /*border-bottom:1px #FFFFFF solid;*/
+    border: 1px #FFFFFF solid;
     text-align: center;
-    /*width: 30px;*/
+    width: 50px;
     /*border: 2px #000000;*/
-
+    /*padding: 3px 10px;*/
 }
 
-.columnClass{
-    border:2px;
+.columnTable{
+    border:1px solid #FFFFFF;
+    width: 70px;
+    /*border-right: 1px #FFFFFF solid;*/
+    padding: 3px 10px;
 }
 
-.columns1{
-    border: 2px;
-    width: 60px;
+.firstColumnTable, .secondColumnTable, .thirdColumnTable{
+    border:1px solid #FFFFFF;
+    width: 70px;
 }
+
+
 
 
 

@@ -32,6 +32,7 @@
                     </h:panelGroup>
                     <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
                                  styleClass="simpletablestyle" headerClass="headerTable" rowClasses="rowTable"
+                                 columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable"
                                  border="1">
                         <h:column>
                             <f:facet name="header">Number</f:facet>
@@ -54,7 +55,7 @@
                                 </h:column>
                             </h:dataTable>
                         </h:column>
-                        <h:column width = "60">
+                        <h:column width="60">
                             <f:facet name="header">Goods(Name, Weight, Status)
                                 <!--<div class = "col1">Name</div>-->
                                 <!--<div class = "col1">GPS Latitude</div>-->

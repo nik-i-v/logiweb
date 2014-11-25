@@ -6,13 +6,7 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 template="/WEB-INF/templates/main.xhtml">
     <ui:define name="content">
-
         <h:form id="reg">
-            <!--<form method="POST" action="j_security_check">-->
-                <!--<input type="text" name="j_username"/>-->
-                <!--<input type="password" name="j_password"/>-->
-                <!--<input type="submit" name="login" value="Login"/>-->
-            <!--</form>-->
             <h:panelGrid columns="3" columnClasses="titleCell">
                 <h:outputLabel for="id" value="Login:"/>
                 <h:inputText id="id" value="#{loginCredentials.userId}" />
@@ -22,15 +16,18 @@
                 <h:inputSecret id="name" value="#{loginCredentials.password}" />
                 <h:message for="name" errorClass="invalid"/>
 
+                <h:outputLabel for="but"/>
+                <h:commandButton id="but" action="#{loginController.login(loginCredentials.userId)}" value="Log in" styleClass="but"/>
+                <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                            globalOnly="true"/>
             </h:panelGrid>
-
-            <p>
-                <h:panelGrid columns="2">
-                    <h:commandButton id="but" action="#{loginController.login(loginCredentials.userId)}" value="Log in" styleClass="but"/>
-                    <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                globalOnly="true"/>
-                </h:panelGrid>
-            </p>
+            <!--<p>-->
+                <!--<h:panelGrid columns="2">-->
+                    <!--<h:commandButton id="but" action="#{loginController.login(loginCredentials.userId)}" value="Log in" styleClass="but"/>-->
+                    <!--<h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"-->
+                                <!--globalOnly="true"/>-->
+                <!--</h:panelGrid>-->
+            <!--</p>-->
         </h:form>
     </ui:define>
 </ui:composition>

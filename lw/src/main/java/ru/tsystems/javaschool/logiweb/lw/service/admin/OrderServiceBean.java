@@ -34,7 +34,7 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public List<Order> getAllOrders() {
-        logger.info("Get all orders");
+//        logger.info("Get all orders");
         List<Order> orders = entityManager.createQuery("SELECT o FROM Order o").getResultList();
         for (Order o : orders) {
             Integer orderNumber = o.getId();
@@ -169,7 +169,7 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public List<Integer> getCreatedOrders() {
-        logger.info("Get created orders");
+//        logger.info("Get created orders");
         return getOrdersByStatus(OrderStatus.Status.created);
     }
 
@@ -179,7 +179,7 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public List<Integer> getConfirmedOrders() {
-        logger.info("Get confirmed orders");
+//        logger.info("Get confirmed orders");
         return getOrdersByStatus(OrderStatus.Status.confirmed);
     }
 
@@ -189,7 +189,7 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public List<Integer> getMadeOrders() {
-        logger.info("Get made orders");
+//        logger.info("Get made orders");
         return getOrdersByStatus(OrderStatus.Status.made);
     }
 
@@ -199,7 +199,7 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public List<Integer> getCreatedOrdersWitsGoods() {
-        logger.info("Get created orders with goods");
+//        logger.info("Get created orders with goods");
         Query query = entityManager.createQuery("SELECT  DISTINCT oi.orderNumber FROM OrderInfo oi " +
                 "WHERE oi.orderStatus.status = :status");
         query.setParameter("status", OrderStatus.Status.created);
@@ -213,7 +213,7 @@ public class OrderServiceBean implements OrderService {
      */
     @Override
     public void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException {
-        logger.info("Check if goods list exists");
+//        logger.info("Check if goods list exists");
         Query query = entityManager.createQuery("SELECT COUNT (oi.name) FROM OrderInfo oi WHERE oi.orderNumber = :number");
         query.setParameter("number", orderNumber);
         if (query.getSingleResult().equals(null) || Integer.parseInt(query.getSingleResult().toString()) == 0) {
@@ -234,7 +234,6 @@ public class OrderServiceBean implements OrderService {
      * @return the value of status
      */
     private String getOrderStatus(Integer orderNumber) {
-        logger.info("Get status of order " + orderNumber);
         Query query = entityManager.createQuery("SELECT os.status FROM OrderStatus os WHERE os.orderId = :id");
         query.setParameter("id", orderNumber);
         String status = query.getSingleResult().toString();
@@ -253,7 +252,7 @@ public class OrderServiceBean implements OrderService {
      * @return double value of total weight
      */
     private Double weightGoodsInOrder(Integer orderId) {
-        logger.info("Check weight goods in order");
+//        logger.info("Check weight goods in order");
         Query query = entityManager.createQuery("SELECT SUM(oi.weight) FROM OrderInfo oi WHERE oi.orderNumber = :number");
         query.setParameter("number", orderId);
         return Double.parseDouble(query.getSingleResult().toString());
@@ -266,7 +265,7 @@ public class OrderServiceBean implements OrderService {
      * @return String value of a fura capacity
      */
     private String getFuraCapacity(String furaNumber) {
-        logger.info("Get capacity of fura " + furaNumber);
+//        logger.info("Get capacity of fura " + furaNumber);
         Query query = entityManager.createQuery("SELECT f.capacity FROM  Fura f WHERE f.furaNumber = :number");
         query.setParameter("number", furaNumber);
         String capacity = query.getSingleResult().toString();
@@ -279,7 +278,7 @@ public class OrderServiceBean implements OrderService {
      * @return int value of a fura capacity
      */
     private Integer furaIntCapacity(String capacity) {
-        logger.info("Convert fura's capacity to int");
+//        logger.info("Convert fura's capacity to int");
         if (capacity.equals(Fura.Capacity.small.toString())) {
             return 1000;
         } else if (capacity.equals(Fura.Capacity.middle.toString())) {
@@ -296,7 +295,7 @@ public class OrderServiceBean implements OrderService {
      * @throws IncorrectDataException
      */
     private void isFuraSuitable(Integer furaCapacity, Double goodsWeight) throws IncorrectDataException {
-        logger.info("Check if fura is suitable");
+//        logger.info("Check if fura is suitable");
         if (furaCapacity < goodsWeight) {
             throw new IncorrectDataException("Fura is too small for this order");
         }
@@ -308,7 +307,7 @@ public class OrderServiceBean implements OrderService {
      * @return int value of driver amount
      */
     private Integer getDriverCount(String furaNumber) {
-        logger.info("Get count of drivers in fura " + furaNumber);
+//        logger.info("Get count of drivers in fura " + furaNumber);
         Query query = entityManager.createQuery("SELECT f.driverCount FROM Fura f WHERE f.furaNumber = :number");
         query.setParameter("number", furaNumber);
         Integer furaDriverCount = Integer.parseInt(query.getSingleResult().toString());
@@ -322,7 +321,7 @@ public class OrderServiceBean implements OrderService {
      * @throws IncorrectDataException if amount of drivers and required amount of drivers isn't equal
      */
     private void isDriverCountSuitable(Integer driverCount, Integer driversInListCount) throws IncorrectDataException {
-        logger.info("Check that the number of drivers is enough");
+//        logger.info("Check that the number of drivers is enough");
         if (driverCount != driversInListCount) {
             throw new IncorrectDataException("Fura should have " + driverCount + " drivers.");
         }
@@ -334,7 +333,7 @@ public class OrderServiceBean implements OrderService {
      * @return the list of drivers
      */
     private List<Long> getDriversInOrder(Integer orderNumber) {
-        logger.info("Get drivers in order " + orderNumber);
+//        logger.info("Get drivers in order " + orderNumber);
         Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE  d.driverShift.orderId = :orderNumber");
         query.setParameter("orderNumber", orderNumber);
         return query.getResultList();

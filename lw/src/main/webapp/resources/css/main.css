@@ -2,18 +2,8 @@ html,
 *
 {
     border: 0;
-    margin: 65px 65px;
+    margin: 55px 55px;
 }
-/*#main {*/
-    /*padding: 10px 10px;*/
-/*}*/
-
-/*#container {*/
-    /*margin: 0px auto 0px auto;*/
-    /*background-image: url("../../resources/images/bg_bot.png");*/
-        /*position: fixed;*/
-
-/*}*/
 
 body{
     font: 18px Arial, Helvetica, sans-serif;
@@ -31,7 +21,7 @@ input[type=number] {
     color: #000000;
     width: 250px;
     height: 40px;
-    margin: 0 auto 10px auto;
+    margin: 0px auto 10px auto;
     font-size: 14px;
     padding-left: 15px;
     border: none;
@@ -46,7 +36,7 @@ input[type=submit] {
     height: 40px;
     border: none;
     margin-left: 20px;
-    /*margin: 10px 100px 100px 17px;*/
+    margin: 10px 100px 100px 17px;
     padding: 0 20px 0 20px;
     -webkit-appearance: none;
     border-radius: 0;
@@ -58,10 +48,5 @@ input[type=submit] {
     margin-left: 105px;
 }
 
-a.link {
-    margin-left: 85px;
-    font-size: 25px;
-    color: #FFFFFF;
-}
 
 
