@@ -10,7 +10,7 @@ img
 }
 
 body{
-    font: 16px Arial, Helvetica, sans-serif;
+    font: 16px Arial, Helvetica, sans-serif, #FFFFFF;
     color: #fcff71;
     background: url(../../resources/images/bg.png);
     line-height: 18px;
@@ -29,6 +29,7 @@ body{
 #main {
     width: 988px;
     margin: 0px auto;
+    color: #FFFFFF;
     /*background:url(images/main.jpg) right top no-repeat;}*/
 }
 
@@ -107,32 +108,23 @@ body{
     margin: 0px 102px 0px 0px;
     float: left;
     display:block; }
-/*.circl:hover {*/
-    /*background: url(images/circl_hover.png) left top no-repeat; }*/
 
 
 
 #content{
-    /*background: url(images/content.png);*/
     padding: 0px 0px 0px 0px;
     color: #000000;
 }
 
 .razd_h { height: 30px;}
-    /*background: url(images/razd_h.gif) 15px repeat-x;}*/
 
 .home_box {
     float: left;
     width: 288px;
     margin: auto -20px;
     padding: 13px 15px 13px 15px;
+    color: #FFFFFF;
 }
-
-/*.all_box {background: url(images/all_box.gif) left repeat-y; }*/
-
-/*.razd_lr_h { background: url(images/razd_lr.gif) 620px repeat-y;}*/
-
-/*.razd_lr { background: url(images/razd_lr.gif) 657px repeat-y;}*/
 
 
 #left{
@@ -369,6 +361,7 @@ a.but {
     border-collapse:collapse;
     border: #000000 1px solid;
     text-align: center;
+    color: #ffffff;
     /*background: #666666;*/
     width: 100% ;
     /*border-collapse: collapse;*/
@@ -442,7 +435,7 @@ a.but {
 }
 
 .add_goods_form{
-    margin: auto -35px;
+    width: 20px;
 }
 
 .drivers_format{
@@ -459,6 +452,14 @@ a.but {
 
 .name_format{
     width: 150px;
+}
+
+.column1{
+    width: 20px;
+}
+
+.column2{
+    width: 40px;
 }
 
 

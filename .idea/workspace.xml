@@ -97,17 +97,9 @@
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\templates\main.xhtml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\ui\style.css" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\wagons.xhtml" afterPath="" />
-      <change type="MODIFICATION" beforePath="C:\Users\logiweb\lw\target\lw.war" afterPath="C:\Users\logiweb\lw\target\lw.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/target/lw/admin/orders.xhtml" afterPath="$PROJECT_DIR$/lw/target/lw/admin/orders.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css" afterPath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/target/lw/resources/css/screen.css" afterPath="$PROJECT_DIR$/lw/target/lw/resources/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="logiweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -201,81 +193,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="orders.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.076923" vertical-offset="1664" max-vertical-offset="2210">
-              <caret line="124" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="close.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.230769" vertical-offset="331" max-vertical-offset="2295">
-              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_drivers_and_fura.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.0" vertical-offset="633" max-vertical-offset="2499">
-              <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_goods.xhtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_goods.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15178572" vertical-offset="153" max-vertical-offset="2805">
-              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-              <folding />
+            <state vertical-scroll-proportion="-34.0" vertical-offset="204" max-vertical-offset="2958">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding>
+                <marker date="1416951580795" expanded="true" signature="2206:2286" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirm.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml">
+      <file leaf-file-name="driver.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0384614" vertical-offset="457" max-vertical-offset="2193">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="13.730769" vertical-offset="357" max-vertical-offset="1139">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="change_goods_status.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml">
+      <file leaf-file-name="orders.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="2159">
-              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+            <state vertical-scroll-proportion="-4.923077" vertical-offset="59" max-vertical-offset="1870">
+              <caret line="11" column="92" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drivers.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.346154" vertical-offset="335" max-vertical-offset="1615">
-              <caret line="34" column="69" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="screen.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="screen.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.107143" vertical-offset="7365" max-vertical-offset="7990">
-              <caret line="440" column="10" selection-start-line="440" selection-start-column="8" selection-end-line="440" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.2651297" vertical-offset="1761" max-vertical-offset="8007">
+              <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -284,7 +238,7 @@
       <file leaf-file-name="wagons.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-33.692307" vertical-offset="297" max-vertical-offset="1326">
+            <state vertical-scroll-proportion="-41.53846" vertical-offset="93" max-vertical-offset="1326">
               <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
               <folding />
             </state>
@@ -348,7 +302,6 @@
         <option value="$PROJECT_DIR$/lw/src/main/webapp/login.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/main.css" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/RootRestService.java" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" />
@@ -357,12 +310,13 @@
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css" />
       </list>
     </option>
   </component>
@@ -1650,12 +1604,12 @@
       <workItem from="1416634758340" duration="23886000" />
       <workItem from="1416683882212" duration="50325000" />
       <workItem from="1416821999620" duration="501000" />
-      <workItem from="1416832000358" duration="45111000" />
+      <workItem from="1416832000358" duration="48874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="575858000" />
+    <option name="totallyTimeSpent" value="579621000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1749,13 +1703,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05811966" vertical-offset="0" max-vertical-offset="585">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/IncorrectDataException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5521368" vertical-offset="0" max-vertical-offset="585">
@@ -2021,14 +1968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85597825" vertical-offset="110" max-vertical-offset="1870">
-          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="860" max-vertical-offset="2278">
@@ -2093,46 +2032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.692307" vertical-offset="297" max-vertical-offset="1326">
-          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.107143" vertical-offset="7365" max-vertical-offset="7990">
-          <caret line="440" column="10" selection-start-line="440" selection-start-column="8" selection-end-line="440" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.076923" vertical-offset="1664" max-vertical-offset="2210">
-          <caret line="124" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.0" vertical-offset="633" max-vertical-offset="2499">
-          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.230769" vertical-offset="331" max-vertical-offset="2295">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0384614" vertical-offset="457" max-vertical-offset="2193">
@@ -2149,10 +2048,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3214285" vertical-offset="1664" max-vertical-offset="2210">
+          <caret line="124" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48214287" vertical-offset="331" max-vertical-offset="2295">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6964286" vertical-offset="633" max-vertical-offset="2499">
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-41.53846" vertical-offset="93" max-vertical-offset="1326">
+          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.730769" vertical-offset="357" max-vertical-offset="1139">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.923077" vertical-offset="59" max-vertical-offset="1870">
+          <caret line="11" column="92" selection-start-line="11" selection-start-column="92" selection-end-line="11" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15178572" vertical-offset="153" max-vertical-offset="2805">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+        <state vertical-scroll-proportion="-34.0" vertical-offset="204" max-vertical-offset="2958">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding>
+            <marker date="1416951580795" expanded="true" signature="2206:2286" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2651297" vertical-offset="1761" max-vertical-offset="8007">
+          <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
           <folding />
         </state>
       </provider>

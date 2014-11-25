@@ -9,7 +9,7 @@
         <div class="all_box">
             <div class="home_box">
                 <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
-                    Welcome, #{driverLicense}. You are "#{action.currentStatus}" now.
+                    Welcome, #{driverLicense}. <p>You are "#{action.currentStatus}" now.</p>
                     <h:panelGrid id="driverAction" columns="1" rendered="#{not empty ordersDrivers}">
                         <h:commandButton id="add" value="Change my status" styleClass="but"
                                          action="#{action.changeStatus}" ajax="true" rendered="true"/>
