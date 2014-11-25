@@ -13,6 +13,7 @@
                 <em>No created orders.</em>
             </h:panelGroup>
             <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
+                <div class="order_buttons">
                 <h:panelGrid id="addGoods" columns="3" columnClasses="titleCell">
                     <h:outputLabel for="orderNumber" value="Order:"/>
                     <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderInfo.orderNumber}">
@@ -27,14 +28,14 @@
                     </h:inputText>
                     <h:message for="name" errorClass="invalid"/>
 
-                    <h:outputLabel for="gpsLat" value="GPS Latitude:"/>
+                    <h:outputLabel for="gpsLat" value="Latitude:"/>
                     <h:inputText id="gpsLat" value="#{modifyOrder.orderInfo.gpsLat}"
                                  validatorMessage="Invalid format" required="true">
                         <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
                     </h:inputText>
                     <h:message for="gpsLat" errorClass="invalid"/>
 
-                    <h:outputLabel for="gpsLong" value="GPS Longitude:"/>
+                    <h:outputLabel for="gpsLong" value="Longitude:"/>
                     <h:inputText id="gpsLong" value="#{modifyOrder.orderInfo.gpsLong}"
                                  validatorMessage="Invalid format" required="true">
                         <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
@@ -56,6 +57,7 @@
 
                 <div id="buttons_back">
                     <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                </div>
                 </div>
                 <!--</h:panelGrid>-->
             </h:form>

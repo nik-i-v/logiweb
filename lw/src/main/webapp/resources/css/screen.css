@@ -432,8 +432,11 @@ a.but {
 }
 
 .order_buttons{
-    margin: auto -80px;
+    margin: auto -55px;
 }
 
+.add_goods_form{
+    margin: auto -35px;
+}
 
 

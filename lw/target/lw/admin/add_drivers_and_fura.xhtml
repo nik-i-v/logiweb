@@ -82,31 +82,50 @@
                             </h:dataTable>
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Goods(Name, Weight, Status)
-                                <table class = "nested_header">
-                                    <tr><td class = "col1"><div class="special_width">Name</div></td>
-                                        <td class = "col1"><div class="special_width">GPS Latitude</div></td>
-                                        <td class = "col1"><div class="special_width">GPS Longitude</div></td>
-                                        <td class = "col1"><div class="special_width">Weight</div></td>
-                                        <td class = "col1"><div class="special_width">Status</div></td>
+                            <f:facet name="header">Goods
+                                <table class="nested_header">
+                                    <tr>
+                                        <td class="col1">
+                                            <div class="special_width_head">Name</div>
+                                        </td>
+                                        <td class="col1">
+                                            <div class="special_width_head">GPS Latitude</div>
+                                        </td>
+                                        <td class="col1">
+                                            <div class="special_width_head">GPS Longitude</div>
+                                        </td>
+                                        <td class="col1">
+                                            <div class="special_width_head">Weight</div>
+                                        </td>
+                                        <td class="col1">
+                                            <div class="special_width_head">Status</div>
+                                        </td>
                                     </tr>
                                 </table>
                             </f:facet>
                             <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}"
                                          styleClass="nestedTable"
-                                         columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable, lastColumnTable"
+                                         columnClasses="columnTable1, firstColumnTable1, secondColumnTable1, thirdColumnTable1, lastColumnTable1"
                                          rendered="#{not empty _order.orderStatus.orderInfo}">
                                 <h:column>
                                     <!--<f:facet name="header">Name</f:facet>-->
-                                    #{_goods.name}
+                                    <div class="special_width">#{_goods.name}</div>
+                                </h:column>
+                                <h:column>
+                                    <!--<f:facet name="header">Name</f:facet>-->
+                                    <div class="special_width">#{_goods.gpsLat}</div>
+                                </h:column>
+                                <h:column>
+                                    <!--<f:facet name="header">Name</f:facet>-->
+                                    <div class="special_width">#{_goods.gpsLong}</div>
                                 </h:column>
                                 <h:column>
                                     <!--<f:facet name="header">Weight</f:facet>-->
-                                    #{_goods.weight}
+                                    <div class="special_width">#{_goods.weight}</div>
                                 </h:column>
                                 <h:column>
                                     <!--<f:facet name="header">Status</f:facet>-->
-                                    #{_goods.status}
+                                    <div class="special_width">#{_goods.status}</div>
                                 </h:column>
                             </h:dataTable>
                         </h:column>

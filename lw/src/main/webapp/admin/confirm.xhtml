@@ -9,10 +9,11 @@
         <div class="all_box">
             <div class="home_box">
                 <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
-                <h:panelGroup rendered="#{empty createdOrderNumber}">
-                    <em>No created orders.</em>
-                </h:panelGroup>
+
                 <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
+                    <h:panelGroup rendered="#{empty createdOrderNumber}">
+                        <em>No created orders.</em>
+                    </h:panelGroup>
                     <h:panelGrid columns="3" id="closeOrder" rendered="#{not empty createdOrdersWitsGoods}">
 
                         <h:outputLabel for="orderNumber" value="Order:"/>
