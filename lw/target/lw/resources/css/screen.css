@@ -65,7 +65,7 @@ body{
     height: 30px;
     padding-left: 40px;
     /*background: url(images/buttons.png) left top no-repeat;*/
-    padding: 0px 0px 0px 893px;
+    padding: 0px 0px 0px 895px;
 }
 
 .but {
@@ -416,7 +416,7 @@ a.but {
     border-collapse:collapse;
 }
 .lastColumnTable1,  .secondColumnTable1, .thirdColumnTable1,{
-    width: 60px;
+    width: 50px;
     border-collapse:collapse;
 }
 .col1{

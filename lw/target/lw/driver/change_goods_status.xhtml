@@ -10,7 +10,7 @@
             <div class="home_box">
                 <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
                     <h:panelGroup rendered="#{empty goodsName}">
-                        <em>You have no "no" goods.</em>
+                        <em>You have no goods with status "no".</em>
                     </h:panelGroup>
                     <h:form id="orderActivity" rendered="#{not empty goodsName}">
 
@@ -28,11 +28,12 @@
 
                         </h:panelGrid>
 
-                        <div id="buttons_back">
-                            <a href="/lw/driver/orders.jsf" class="but" title="">Back</a>
-                        </div>
+
                         <!--</h:panelGrid>-->
                     </h:form>
+                    <div id="buttons_back">
+                        <a href="/lw/driver/orders.jsf" class="but" title="">Back</a>
+                    </div>
                 </h:form>
             </div>
             <div class="home_box">

@@ -44,96 +44,98 @@
                                         globalOnly="true"/>
                         </h:panelGrid>
 
-                        <div id="buttons_back">
-                            <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
-                        </div>
+
                         <!--</h:panelGrid>-->
                     </h:form>
+                    <div id="buttons_back">
+                        <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                    </div>
                 </h:form>
             </div>
             <div class="home_box">
-                <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
-                    <h:panelGroup rendered="#{empty orders}">
-                        <em>No orders.</em>
-                    </h:panelGroup>
-                    <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
-                                 styleClass="simpletablestyle" headerClass="headerTable" rowClasses="rowTable"
-                                 columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable"
-                                 border="1">
-                        <h:column>
-                            <f:facet name="header">Number</f:facet>
-                            #{_order.id}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Status</f:facet>
-                            #{_order.orderStatus.status}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Fura</f:facet>
-                            #{_order.fura.furaNumber}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Drivers</f:facet>
-                            <h:dataTable var="_drivers" value="#{_order.driverShift}" styleClass="nestedTable">
-                                <h:column>
-                                    <!--<f:facet name="header">Dri</f:facet>-->
-                                    #{_drivers.drivers.license}
-                                </h:column>
-                            </h:dataTable>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Goods
-                                <table class="nested_header">
-                                    <tr>
-                                        <td class="col1">
-                                            <div class="special_width_head">Name</div>
-                                        </td>
-                                        <td class="col1">
-                                            <div class="special_width_head">GPS Latitude</div>
-                                        </td>
-                                        <td class="col1">
-                                            <div class="special_width_head">GPS Longitude</div>
-                                        </td>
-                                        <td class="col1">
-                                            <div class="special_width_head">Weight</div>
-                                        </td>
-                                        <td class="col1">
-                                            <div class="special_width_head">Status</div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </f:facet>
-                            <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}"
-                                         styleClass="nestedTable"
-                                         columnClasses="columnTable1, firstColumnTable1, secondColumnTable1, thirdColumnTable1, lastColumnTable1"
-                                         rendered="#{not empty _order.orderStatus.orderInfo}">
-                                <h:column>
-                                    <!--<f:facet name="header">Name</f:facet>-->
-                                    <div class="special_width">#{_goods.name}</div>
-                                </h:column>
-                                <h:column>
-                                    <!--<f:facet name="header">Name</f:facet>-->
-                                    <div class="special_width">#{_goods.gpsLat}</div>
-                                </h:column>
-                                <h:column>
-                                    <!--<f:facet name="header">Name</f:facet>-->
-                                    <div class="special_width">#{_goods.gpsLong}</div>
-                                </h:column>
-                                <h:column>
-                                    <!--<f:facet name="header">Weight</f:facet>-->
-                                    <div class="special_width">#{_goods.weight}</div>
-                                </h:column>
-                                <h:column>
-                                    <!--<f:facet name="header">Status</f:facet>-->
-                                    <div class="special_width">#{_goods.status}</div>
-                                </h:column>
-                            </h:dataTable>
-                        </h:column>
-                    </h:dataTable>
-                </h:form>
-                <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
-                    <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323" />
-                </h:form>
+                <div class="order_buttons">
+                    <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
+                        <h:panelGroup rendered="#{empty orders}">
+                            <em>No orders.</em>
+                        </h:panelGroup>
+                        <h:dataTable var="_order" value="#{orders}" rendered="#{not empty orders}"
+                                     styleClass="simpletablestyle" headerClass="headerTable" rowClasses="rowTable"
+                                     columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable"
+                                     border="1">
+                            <h:column>
+                                <f:facet name="header">Number</f:facet>
+                                #{_order.id}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Status</f:facet>
+                                <div class = "order_status_format"> #{_order.orderStatus.status}</div>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Fura</f:facet>
+                                <div class = "fura_format"> #{_order.fura.furaNumber}</div>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><div class="drivers_format">Drivers</div></f:facet>
+                                <h:dataTable var="_drivers" value="#{_order.driverShift}" styleClass="nestedTable">
+                                    <h:column>
+                                        <div class="drivers_format">#{_drivers.drivers.license}</div>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Goods
+                                    <table class="nested_header">
+                                        <tr>
+                                            <td class="col1">
+                                                <div class="special_width_head">Name</div>
+                                            </td>
+                                            <td class="col1">
+                                                <div class="special_width_head">GPS Latitude</div>
+                                            </td>
+                                            <td class="col1">
+                                                <div class="special_width_head">GPS Longitude</div>
+                                            </td>
+                                            <td class="col1">
+                                                <div class="special_width_head">Weight</div>
+                                            </td>
+                                            <td class="col1">
+                                                <div class="special_width_head">Status</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </f:facet>
+                                <h:dataTable var="_goods" value="#{_order.orderStatus.orderInfo}"
+                                             styleClass="nestedTable"
+                                             columnClasses="columnTable1, firstColumnTable1, secondColumnTable1, thirdColumnTable1, lastColumnTable1"
+                                             rendered="#{not empty _order.orderStatus.orderInfo}">
+                                    <h:column>
+                                        <!--<f:facet name="header">Name</f:facet>-->
+                                        <div class="special_width">#{_goods.name}</div>
+                                    </h:column>
+                                    <h:column>
+                                        <!--<f:facet name="header">Name</f:facet>-->
+                                        <div class="special_width">#{_goods.gpsLat}</div>
+                                    </h:column>
+                                    <h:column>
+                                        <!--<f:facet name="header">Name</f:facet>-->
+                                        <div class="special_width">#{_goods.gpsLong}</div>
+                                    </h:column>
+                                    <h:column>
+                                        <!--<f:facet name="header">Weight</f:facet>-->
+                                        <div class="special_width">#{_goods.weight}</div>
+                                    </h:column>
+                                    <h:column>
+                                        <!--<f:facet name="header">Status</f:facet>-->
+                                        <div class="special_width">#{_goods.status}</div>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                    <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
+                        <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323"/>
+                    </h:form>
+                </div>
             </div>
         </div>
     </ui:define>
