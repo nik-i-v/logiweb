@@ -52,15 +52,15 @@
                                  border="1">
                         <h:column>
                             <f:facet name="header">Number</f:facet>
-                            <h:outputText value="#{_fura.furaNumber}"/>
+                            <div class = "fura_format">#{_fura.furaNumber}</div>
                         </h:column>
                         <h:column>
                             <f:facet name="header">Drivers amount</f:facet>
-                            <h:outputText value="#{_fura.driverCount}"/>
+                            #{_fura.driverCount}
                         </h:column>
                         <h:column>
                             <f:facet name="header">Capacity</f:facet>
-                            <h:outputText value="#{_fura.capacity}"/>
+                            #{_fura.capacity}
                         </h:column>
                     </h:dataTable>
                 </h:form>

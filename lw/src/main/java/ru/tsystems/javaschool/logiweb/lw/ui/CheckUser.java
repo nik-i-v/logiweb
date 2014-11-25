@@ -23,6 +23,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.ws.rs.Path;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
@@ -96,10 +97,10 @@ public class CheckUser implements Serializable {
      * Performs logout operation.
      * @return logout parameter
      */
-    public String logout() {
+    public void logout() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-//        user = new Users();
-        return "logout";
+        FacesContext.getCurrentInstance().getExternalContext().redirect("../login.jsf");
+//        return "logout";
     }
 
     /**

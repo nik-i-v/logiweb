@@ -3,6 +3,7 @@ package ru.tsystems.javaschool.logiweb.lw.ui.rest;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.DriverStatus;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Order;
 import ru.tsystems.javaschool.logiweb.lw.service.driver.OrderServiceForDrivers;
+import sun.net.www.http.HttpClient;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -22,30 +23,12 @@ import java.util.List;
  *
  * @author Irina Nikulina
  */
-@Path("restActions")
+@Path("driverActions")
 public class RestActions {
-
-    private transient Client client;
-//    public String SERVICE_BASE_URI;
 
     @EJB
     private OrderServiceForDrivers orderServiceForDrivers;
 
-
-
-//    @PostConstruct
-//    protected void initialize() {
-////        FacesContext fc = FacesContext.getCurrentInstance();
-////        SERVICE_BASE_URI = fc.getExternalContext().getInitParameter("metadata.serviceBaseURI");
-//        client = ClientBuilder.newClient();
-//    }
-//
-//    public WebTarget getWebTarget(String relativeUrl) {
-//        if (client == null) {
-//            initialize();
-//        }
-//        return client.target(relativeUrl);
-//    }
 
 
     /**
@@ -112,6 +95,14 @@ public class RestActions {
     public String getDriverStatus(@PathParam("driverLicense") Long driverLicense) {
         return orderServiceForDrivers.getCurrentStatusForDriver(driverLicense);
     }
+
+    @GET
+    @javax.ws.rs.Produces("text/xml")
+    public String getString() {
+        return "Hello";
+    }
+
+
 
 
 //

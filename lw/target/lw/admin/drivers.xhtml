@@ -59,23 +59,23 @@
                              border="1">
                     <h:column>
                         <f:facet name="header">Surname</f:facet>
-                        #{_driver.drivers.surname}
+                        <div class = "name_format">#{_driver.drivers.surname}</div>
                     </h:column>
                     <h:column>
                         <f:facet name="header">Name</f:facet>
-                        #{_driver.drivers.name}
+                        <div class = "name_format">#{_driver.drivers.name}</div>
                     </h:column>
                     <h:column>
                         <f:facet name="header">Patronymic</f:facet>
-                        #{_driver.drivers.patronymic}
+                        <div class = "name_format"> #{_driver.drivers.patronymic}</div>
                     </h:column>
                     <h:column>
                         <f:facet name="header">License</f:facet>
-                        #{_driver.drivers.license}
+                        <div class="drivers_format">#{_driver.drivers.license}</div>
                     </h:column>
                     <h:column>
                         <f:facet name="header">Status</f:facet>
-                        #{_driver.status}
+                        <div class = "order_status_format">#{_driver.status}</div>
                     </h:column>
                 </h:dataTable>
 </h:form>

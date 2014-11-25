@@ -39,10 +39,11 @@ body{
 
 #buttons{
     text-align:center;
-    height: 82px;
+    height: 44px;
     padding-left: 40px;
-    /*background: url(images/buttons.png) left top no-repeat;*/
-    padding: 0px 0px 0px 500px;
+    /*background: #555555;*/
+    /*background: url(../../resources/images/box_more.png) right top no-repeat;*/
+    padding: 0px 0px 0px 550px;
 }
 
 #buttons a {
@@ -64,7 +65,7 @@ body{
     height: 30px;
     padding-left: 40px;
     /*background: url(images/buttons.png) left top no-repeat;*/
-    padding: 0px 0px 0px 900px;
+    padding: 0px 0px 0px 893px;
 }
 
 .but {
@@ -76,13 +77,18 @@ body{
     color:#000000;
 }
 
+#buttons .but {
+    background: url(../../resources/images/but_hover.png) center center no-repeat;
+    color: #f0f902;
+}
+
 .but_t {background: url(../../resources/images/but_hover.png) center bottom no-repeat;}
 
 
 
 .top {
     height:190px;
-    width: 984px;
+    width: 1037px;
     background-image: url("../../resources/images/shapka.png");
     /*background: url(images/top.jpg) 15px no-repeat #000000;*/
     /*margin-top: 16px;*/
@@ -437,6 +443,22 @@ a.but {
 
 .add_goods_form{
     margin: auto -35px;
+}
+
+.drivers_format{
+    width: 110px;
+}
+
+.order_status_format{
+    width: 75px;
+}
+
+.fura_format{
+    width: 75px;
+}
+
+.name_format{
+    width: 150px;
 }
 
 
