@@ -8,79 +8,86 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:form id="addDriver" rendered="#{checkUser.hasApplicationRole('admin')}">
-                    <h:panelGrid columns="3" columnClasses="titleCell">
-                        <h:outputLabel for="surname" value="Surname:"/>
-                        <h:inputText id="surname" value="#{driverAction.driver.surname}">
-                            <f:validator validatorId="nameValidator"/>
-                        </h:inputText>
+                <div class="align_left">
+                    <h:form id="addDriver" rendered="#{checkUser.hasApplicationRole('admin')}">
+                        <h:panelGrid columns="3" columnClasses="titleCell">
+                            <h:outputLabel for="surname" value="Surname:"/>
+                            <h:inputText id="surname" value="#{driverAction.driver.surname}">
+                                <f:validator validatorId="nameValidator"/>
+                            </h:inputText>
 
-                        <h:message for="surname" errorClass="invalid"/>
+                            <h:message for="surname" errorClass="invalid"/>
 
-                        <h:outputLabel for="name" value="Name:"/>
-                        <h:inputText id="name" value="#{driverAction.driver.name}">
-                            <f:validator validatorId="nameValidator"/>
-                        </h:inputText>
-                        <h:message for="name" errorClass="invalid"/>
+                            <h:outputLabel for="name" value="Name:"/>
+                            <h:inputText id="name" value="#{driverAction.driver.name}">
+                                <f:validator validatorId="nameValidator"/>
+                            </h:inputText>
+                            <h:message for="name" errorClass="invalid"/>
 
-                        <h:outputLabel for="patronymic" value="Patronymic:"/>
-                        <h:inputText id="patronymic" value="#{driverAction.driver.patronymic}">
-                            <f:validator validatorId="nameValidator"/>
-                        </h:inputText>
-                        <h:message for="patronymic" errorClass="invalid"/>
+                            <h:outputLabel for="patronymic" value="Patronymic:"/>
+                            <h:inputText id="patronymic" value="#{driverAction.driver.patronymic}">
+                                <f:validator validatorId="nameValidator"/>
+                            </h:inputText>
+                            <h:message for="patronymic" errorClass="invalid"/>
 
 
-                        <h:outputLabel for="licence" value="Licence:"/>
-                        <h:inputText id="licence" value="#{driverAction.driver.license}"
-                                     validatorMessage="(length = 11)" required="true">
-                            <f:validateLength minimum="11" maximum="11"/>
-                            <f:convertNumber integerOnly="true"/>
-                        </h:inputText>
-                        <h:message for="licence" errorClass="invalid"/>
-                    </h:panelGrid>
+                            <h:outputLabel for="licence" value="Licence:"/>
+                            <h:inputText id="licence" value="#{driverAction.driver.license}"
+                                         validatorMessage="(length = 11)" required="true">
+                                <f:validateLength minimum="11" maximum="11"/>
+                                <f:convertNumber integerOnly="true"/>
+                            </h:inputText>
+                            <h:message for="licence" errorClass="invalid"/>
+                        </h:panelGrid>
 
-                    <h:panelGrid columns="2">
-                        <h:commandButton id="but" action="#{driverAction.addDriver}" value="Add" styleClass="but"
-                                         ajax="true" rendered="true"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
-                    </h:panelGrid>
+                        <h:panelGrid columns="2">
+                            <h:commandButton id="but" action="#{driverAction.addDriver}" value="Add" styleClass="but"
+                                             ajax="true" rendered="true"/>
+                            <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                        globalOnly="true"/>
+                        </h:panelGrid>
 
-                </h:form>
+                    </h:form>
+                </div>
             </div>
             <div class="home_box">
                 <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
-                <h:panelGroup rendered="#{empty drivers}">
-                    <em>No registered drivers.</em>
-                </h:panelGroup>
-                <h:dataTable var="_driver" value="#{drivers}" rendered="#{not empty drivers}"
-                             styleClass="simpletablestyle" headerClass="headerTable" rowClasses="rowTable"
-                             columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable"
-                             border="1">
-                    <h:column>
-                        <f:facet name="header">Surname</f:facet>
-                        <div class = "name_format">#{_driver.drivers.surname}</div>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Name</f:facet>
-                        <div class = "name_format">#{_driver.drivers.name}</div>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Patronymic</f:facet>
-                        <div class = "name_format"> #{_driver.drivers.patronymic}</div>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">License</f:facet>
-                        <div class="drivers_format">#{_driver.drivers.license}</div>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Status</f:facet>
-                        <div class = "order_status_format">#{_driver.status}</div>
-                    </h:column>
-                </h:dataTable>
-</h:form>
+                    <h:panelGroup rendered="#{empty drivers}">
+                        <em>No registered drivers.</em>
+                    </h:panelGroup>
+                    <h:dataTable var="_driver" value="#{drivers}" rendered="#{not empty drivers}"
+                                 styleClass="simpletablestyle" headerClass="headerTable" rowClasses="rowTable"
+                                 columnClasses="columnTable, firstColumnTable, secondColumnTable, thirdColumnTable"
+                                 border="1">
+                        <h:column>
+                            <f:facet name="header">Surname</f:facet>
+
+                            <div class="name_format">#{_driver.drivers.surname}</div>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Name</f:facet>
+
+                            <div class="name_format">#{_driver.drivers.name}</div>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Patronymic</f:facet>
+
+                            <div class="name_format"> #{_driver.drivers.patronymic}</div>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">License</f:facet>
+
+                            <div class="drivers_format">#{_driver.drivers.license}</div>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Status</f:facet>
+
+                            <div class="order_status_format">#{_driver.status}</div>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
                 <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
-                    <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323" />
+                    <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323"/>
                 </h:form>
             </div>
         </div>

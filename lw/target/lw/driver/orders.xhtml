@@ -8,17 +8,20 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
-                    Welcome, #{driverLicense}. <p>You are "#{action.currentStatus}" now.</p>
-                    <h:panelGrid id="driverAction" columns="1" rendered="#{not empty ordersDrivers}">
-                        <h:commandButton id="add" value="Change my status" styleClass="but"
-                                         action="#{action.changeStatus}" ajax="true" rendered="true"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
-                        <h:commandButton id="addG" value="Change goods status" styleClass="but"
-                                         action="change_goods_status"/>
-                    </h:panelGrid>
-                </h:form>
+                <div class="align_left">
+
+                    <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
+                        Welcome, #{driverLicense}. <p>You are "#{action.currentStatus}" now.</p>
+                        <h:panelGrid id="driverAction" columns="1" rendered="#{not empty ordersDrivers}">
+                            <h:commandButton id="add" value="Change my status" styleClass="but"
+                                             action="#{action.changeStatus}" ajax="true" rendered="true"/>
+                            <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                        globalOnly="true"/>
+                            <h:commandButton id="addG" value="Change goods status" styleClass="but"
+                                             action="change_goods_status"/>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
             </div>
             <div class="home_box">
                 <h:form rendered="#{checkUser.hasApplicationRole('driver')}">

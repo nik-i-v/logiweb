@@ -8,33 +8,38 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
-                    <h:panelGroup rendered="#{empty goodsName}">
-                        <em>You have no goods with status "no".</em>
-                    </h:panelGroup>
-                    <h:form id="orderActivity" rendered="#{not empty goodsName}">
+                <div class="align_left">
 
-                        <h:panelGrid id="addGoods" columns="3" columnClasses="titleCell">
-                            <h:outputLabel for="goodsStatus" value="Goods :"/>
-                            <h:selectOneMenu id="goodsStatus" value="#{action.name}">
-                                <f:selectItems value="#{action.goodsName}"/>
-                            </h:selectOneMenu>
-                            <h:message for="goodsStatus" errorClass="invalid"/>
+                    <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
+                        <h:panelGroup rendered="#{empty goodsName}">
+                            <em>You have no goods with status "no".</em>
+                        </h:panelGroup>
+                        <h:form id="orderActivity" rendered="#{not empty goodsName}">
 
-                            <h:commandButton id="change" value="Change status" styleClass="but"
-                                             action="#{action.changeGoodsStatus}" ajax="true" rendered="true"/>
-                            <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                        globalOnly="true"/>
+                            <h:panelGrid id="addGoods" columns="3" columnClasses="titleCell">
+                                <h:outputLabel for="goodsStatus" value="Goods :"/>
+                                <h:selectOneMenu id="goodsStatus" value="#{action.name}">
+                                    <f:selectItems value="#{action.goodsName}"/>
+                                </h:selectOneMenu>
+                                <h:message for="goodsStatus" errorClass="invalid"/>
 
-                        </h:panelGrid>
+                                <h:commandButton id="change" value="Change status" styleClass="but"
+                                                 action="#{action.changeGoodsStatus}" ajax="true" rendered="true"/>
+                                <h:messages styleClass="messages" errorClass="invalid" infoClass="valid"
+                                            warnClass="warning"
+                                            globalOnly="true"/>
+
+                            </h:panelGrid>
 
 
-                        <!--</h:panelGrid>-->
+                            <!--</h:panelGrid>-->
+                        </h:form>
+
+                        <div id="buttons_back">
+                            <a href="/lw/driver/orders.jsf" class="but" title="">Back</a>
+                        </div>
                     </h:form>
-                    <div id="buttons_back">
-                        <a href="/lw/driver/orders.jsf" class="but" title="">Back</a>
-                    </div>
-                </h:form>
+                </div>
             </div>
             <div class="home_box">
                 <h:form rendered="#{checkUser.hasApplicationRole('driver')}">
@@ -113,7 +118,7 @@
                     </h:dataTable>
                 </h:form>
                 <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
-                    <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323" />
+                    <h:graphicImage value="../resources/images/Valli1.png" width="450" height="323"/>
                 </h:form>
             </div>
         </div>

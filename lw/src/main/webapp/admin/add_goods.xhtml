@@ -8,70 +8,77 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
-                    <h:panelGroup rendered="#{empty createdOrderNumber}">
-                        <em>No created orders.</em>
-                    </h:panelGroup>
-                    <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
-                        <!--<div class="order_buttons">-->
-                        <!--<h:panelGrid  columns="3" columnClasses="titleCell" width="20 px">-->
-                        <table>
-                            <tr>
-                                <td><h:outputLabel for="orderNumber" value="Order:"/></td>
-                                <td><h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderInfo.orderNumber}">
-                                    <f:selectItems value="#{orderAction.createdOrderNumber}"/></h:selectOneMenu></td>
-                            </tr>
-                            <tr>
-                                <td><h:outputLabel for="name" value="Name:"/></td>
-                                <td><h:inputText id="name" value="#{modifyOrder.orderInfo.name}"
-                                                 validatorMessage="Invalid format"
-                                                 required="true" style="width: 100px">
-                                    <f:validator validatorId="nameValidator"/>
-                                </h:inputText></td>
-                            </tr>
-                            <tr>
-                                <td><h:outputLabel for="gpsLat" value="Latitude:"/></td>
-                                <td><h:inputText id="gpsLat" value="#{modifyOrder.orderInfo.gpsLat}"
-                                                 validatorMessage="Invalid format" required="true" style="width: 100px">
-                                    <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
-                                </h:inputText></td>
-                            </tr>
-                            <tr>
-                                <td><h:outputLabel for="gpsLong" value="Longitude:"/></td>
-                                <td><h:inputText id="gpsLong" value="#{modifyOrder.orderInfo.gpsLong}"
-                                                 validatorMessage="Invalid format" required="true" style="width: 100px">
-                                    <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
-                                </h:inputText></td>
-                            </tr>
-                            <tr>
-                                <td><h:outputLabel for="weight" value="Weight:"/></td>
-                                <td><h:inputText id="weight" value="#{modifyOrder.orderInfo.weight}"
-                                                 validatorMessage="Invalid format" required="true" style="width: 100px">
-                                    <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
-                                </h:inputText></td>
-                            </tr>
-                        </table>
-                        <h:commandButton id="addG" value="Add goods" styleClass="but"
-                                         action="#{modifyOrder.addGoods}"
-                                         ajax="true" rendered="true"/>
-                        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                    globalOnly="true"/>
+                <div class="align_left">
+
+                    <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
+                        <h:panelGroup rendered="#{empty createdOrderNumber}">
+                            <em>No created orders.</em>
+                        </h:panelGroup>
+                        <h:form id="orderActivity" rendered="#{not empty createdOrderNumber}">
+                            <!--<div class="order_buttons">-->
+                            <!--<h:panelGrid  columns="3" columnClasses="titleCell" width="20 px">-->
+                            <table>
+                                <tr>
+                                    <td><h:outputLabel for="orderNumber" value="Order:"/></td>
+                                    <td><h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderInfo.orderNumber}">
+                                        <f:selectItems value="#{orderAction.createdOrderNumber}"/></h:selectOneMenu>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><h:outputLabel for="name" value="Name:"/></td>
+                                    <td><h:inputText id="name" value="#{modifyOrder.orderInfo.name}"
+                                                     validatorMessage="Invalid format"
+                                                     required="true" style="width: 100px">
+                                        <f:validator validatorId="nameValidator"/>
+                                    </h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td><h:outputLabel for="gpsLat" value="Latitude:"/></td>
+                                    <td><h:inputText id="gpsLat" value="#{modifyOrder.orderInfo.gpsLat}"
+                                                     validatorMessage="Invalid format" required="true"
+                                                     style="width: 100px">
+                                        <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
+                                    </h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td><h:outputLabel for="gpsLong" value="Longitude:"/></td>
+                                    <td><h:inputText id="gpsLong" value="#{modifyOrder.orderInfo.gpsLong}"
+                                                     validatorMessage="Invalid format" required="true"
+                                                     style="width: 100px">
+                                        <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="3"/>
+                                    </h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td><h:outputLabel for="weight" value="Weight:"/></td>
+                                    <td><h:inputText id="weight" value="#{modifyOrder.orderInfo.weight}"
+                                                     validatorMessage="Invalid format" required="true"
+                                                     style="width: 100px">
+                                        <f:convertNumber integerOnly="true" maxFractionDigits="2" maxIntegerDigits="5"/>
+                                    </h:inputText></td>
+                                </tr>
+                            </table>
+                            <h:commandButton id="addG" value="Add goods" styleClass="but"
+                                             action="#{modifyOrder.addGoods}"
+                                             ajax="true" rendered="true"/>
+                            <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+                                        globalOnly="true"/>
 
 
-                        <tr><h:message for="name" errorClass="invalid"/></tr>
-                        <tr><h:message for="gpsLat" errorClass="invalid"/></tr>
-                        <tr><h:message for="gpsLong" errorClass="invalid"/></tr>
-                        <tr><h:message for="weight" errorClass="invalid"/></tr>
+                            <tr><h:message for="name" errorClass="invalid"/></tr>
+                            <tr><h:message for="gpsLat" errorClass="invalid"/></tr>
+                            <tr><h:message for="gpsLong" errorClass="invalid"/></tr>
+                            <tr><h:message for="weight" errorClass="invalid"/></tr>
 
 
-                        <!--</h:panelGrid>-->
+                            <!--</h:panelGrid>-->
 
+                        </h:form>
+
+                        <div id="buttons_back">
+                            <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                        </div>
                     </h:form>
-
-                    <div id="buttons_back">
-                        <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
-                    </div>
-                </h:form>
+                </div>
             </div>
             <div class="home_box">
                 <div class="order_buttons">

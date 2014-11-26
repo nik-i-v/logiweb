@@ -18,10 +18,6 @@ body{
 
 #bg { background: url(../../resources/images/bg.jpg) ;}
 
-#bg_top_bg {
-    /*background: url(../../resources/images/bg_top_bg.png) top repeat-x;*/
-}
-
 #bg_top { background: url(../../resources/images/bg_top.png) center top no-repeat;}
 
 #bg_bot { background: url(../../resources/images/bg_bot.png) center bottom no-repeat ;}
@@ -30,11 +26,10 @@ body{
     width: 988px;
     margin: 0px auto;
     color: #FFFFFF;
-    /*background:url(images/main.jpg) right top no-repeat;}*/
 }
 
 #header {
-    width:1000px;
+    width:1010px;
     height: 80px;
 }
 
@@ -66,7 +61,7 @@ body{
     height: 30px;
     padding-left: 40px;
     /*background: url(images/buttons.png) left top no-repeat;*/
-    padding: 0px 0px 0px 895px;
+    padding: 0px 0px 0px 893px;
 }
 
 .but {
@@ -108,19 +103,15 @@ body{
     margin: 0px 102px 0px 0px;
     float: left;
     display:block; }
-/*.circl:hover {*/
-    /*background: url(images/circl_hover.png) left top no-repeat; }*/
 
 
 
 #content{
-    /*background: url(images/content.png);*/
     padding: 0px 0px 0px 0px;
     color: #000000;
 }
 
 .razd_h { height: 30px;}
-    /*background: url(images/razd_h.gif) 15px repeat-x;}*/
 
 .home_box {
     float: left;
@@ -129,12 +120,6 @@ body{
     padding: 13px 15px 13px 15px;
     color: #FFFFFF;
 }
-
-/*.all_box {background: url(images/all_box.gif) left repeat-y; }*/
-
-/*.razd_lr_h { background: url(images/razd_lr.gif) 620px repeat-y;}*/
-
-/*.razd_lr { background: url(images/razd_lr.gif) 657px repeat-y;}*/
 
 
 #left{
@@ -472,4 +457,7 @@ a.but {
     width: 40px;
 }
 
+.align_left{
+    margin: 3px;
+}
 

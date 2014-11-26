@@ -8,31 +8,35 @@
     <ui:define name="content">
         <div class="all_box">
             <div class="home_box">
-                <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
-                    <h:panelGroup rendered="#{empty createdOrdersWitsGoods}">
-                        <em>No created orders with goods.</em>
-                    </h:panelGroup>
-                    <h:form id="orderActivity" rendered="#{not empty createdOrdersWitsGoods}">
+                <div class="align_left">
+                    <h:form rendered="#{checkUser.hasApplicationRole('admin')}">
+                        <h:panelGroup rendered="#{empty createdOrdersWitsGoods}">
+                            <em>No created orders with goods.</em>
+                        </h:panelGroup>
+                        <h:form id="orderActivity" rendered="#{not empty createdOrdersWitsGoods}">
 
-                        <h:panelGrid columns="3" id="closeOrder">
+                            <h:panelGrid columns="3" id="closeOrder">
 
-                            <h:outputLabel for="orderNumber" value="Order:"/>
-                            <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
-                                <f:selectItems value="#{modifyOrder.createdOrdersWitsGoods}"/>
-                            </h:selectOneMenu>
-                            <h:message for="orderNumber" errorClass="invalid"/>
+                                <h:outputLabel for="orderNumber" value="Order:"/>
+                                <h:selectOneMenu id="orderNumber" value="#{modifyOrder.orderNumber}">
+                                    <f:selectItems value="#{modifyOrder.createdOrdersWitsGoods}"/>
+                                </h:selectOneMenu>
+                                <h:message for="orderNumber" errorClass="invalid"/>
 
-                            <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
-                                             action="#{modifyOrder.doConfirmed}" ajax="true" rendered="true"/>
-                            <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
-                                        globalOnly="true"/>
+                                <h:commandButton id="confirmOrder" value="Confirm order" styleClass="but"
+                                                 action="#{modifyOrder.doConfirmed}" ajax="true" rendered="true"/>
+                                <h:messages styleClass="messages" errorClass="invalid" infoClass="valid"
+                                            warnClass="warning"
+                                            globalOnly="true"/>
 
-                        </h:panelGrid>
+                            </h:panelGrid>
+                        </h:form>
+
+                        <div id="buttons_back">
+                            <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
+                        </div>
                     </h:form>
-                    <div id="buttons_back">
-                        <a href="/lw/admin/orders.jsf" class="but" title="">Back</a>
-                    </div>
-                </h:form>
+                </div>
             </div>
             <div class="home_box">
                 <div class="order_buttons">
@@ -50,14 +54,18 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Status</f:facet>
-                                <div class = "order_status_format"> #{_order.orderStatus.status}</div>
+
+                                <div class="order_status_format"> #{_order.orderStatus.status}</div>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Fura</f:facet>
-                                <div class = "fura_format"> #{_order.fura.furaNumber}</div>
+
+                                <div class="fura_format"> #{_order.fura.furaNumber}</div>
                             </h:column>
                             <h:column>
-                                <f:facet name="header"><div class="drivers_format">Drivers</div></f:facet>
+                                <f:facet name="header">
+                                    <div class="drivers_format">Drivers</div>
+                                </f:facet>
                                 <h:dataTable var="_drivers" value="#{_order.driverShift}" styleClass="nestedTable">
                                     <h:column>
                                         <div class="drivers_format">#{_drivers.drivers.license}</div>
