@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c91e2f2-b8ca-4e39-874b-ca46af594993" name="Default" comment="javadoc for employees">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/FuraAction.java" />
       <change type="DELETED" beforePath="C:\Users\logiweb\.idea\libraries\Maven__org_apache_deltaspike_core_deltaspike_core_api_0_6.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\AdminAllowed.java" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\CustomAuthorizer.java" afterPath="" />
@@ -20,6 +19,7 @@
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\webapp\WEB-INF\templates\header.xhtml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\webapp\driver\change_status.xhtml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\webapp\errorLogin.xhtml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\logiweb\lw\src\main\webapp\resources\js\menu.js" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\WEB-INF\beans.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\log4j.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\classes\ru\tsystems\javaschool\logiweb\lw\server\dao\DriverDAO.class" afterPath="" />
@@ -109,23 +109,42 @@
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\templates\main.xhtml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\ui\style.css" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\logiweb\lw\target\lw\wagons.xhtml" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\ActionForDrivers.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/driver/ActionForDrivers.java" />
-      <change type="MOVED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\DriverAction.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/DriverAction.java" />
-      <change type="MOVED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\ModifyOrderAction.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/ModifyOrderAction.java" />
-      <change type="MOVED" beforePath="C:\Users\logiweb\lw\src\main\java\ru\tsystems\javaschool\logiweb\lw\ui\OrderAction.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/OrderAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/target/lw.war" afterPath="$PROJECT_DIR$/lw/target/lw.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/DriverAction.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/DriverAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/test/java/DriverServicesTest.java" afterPath="$PROJECT_DIR$/lw/src/test/java/DriverServicesTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverShift.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverShift.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Drivers.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Drivers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Fura.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Fura.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/FuraAction.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/FuraAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/LoginController.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/ModifyOrderAction.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/ModifyOrderAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Order.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Order.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/OrderAction.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/OrderAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderInfo.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDrivers.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDrivers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDriversBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDriversBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/test/java/OrderServiceTest.java" afterPath="$PROJECT_DIR$/lw/src/test/java/OrderServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderStatus.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderStatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/SecurityInitializer.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/SecurityInitializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserService.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java" afterPath="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/admin.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/admin.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/error.css" afterPath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/error.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/login.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/login.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/main.css" afterPath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/target/lw/admin/orders.xhtml" afterPath="$PROJECT_DIR$/lw/target/lw/admin/orders.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css" afterPath="$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/target/lw/resources/css/screen.css" afterPath="$PROJECT_DIR$/lw/target/lw/resources/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="logiweb.iws" />
@@ -261,41 +280,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="add_goods.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml">
+      <file leaf-file-name="beans.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/beans.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.230769" vertical-offset="990" max-vertical-offset="3077">
-              <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orders.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
+      <file leaf-file-name="faces-config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/faces-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769" vertical-offset="51" max-vertical-offset="2329">
-              <caret line="11" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.1" vertical-offset="465" max-vertical-offset="1020">
+              <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="816">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_drivers_and_fura.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml">
+      <file leaf-file-name="error.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.0" vertical-offset="718" max-vertical-offset="2635">
-              <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css">
+      <file leaf-file-name="errorPage.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/errorPage.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57636887" vertical-offset="871" max-vertical-offset="7973">
-              <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="493">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/login.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="544">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DriverServicesTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/test/java/DriverServicesTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1115" max-vertical-offset="1700">
+              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FuraServicesTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lw/src/test/java/FuraServicesTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="775" max-vertical-offset="1360">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderServiceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lw/src/test/java/OrderServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.046153847" vertical-offset="112" max-vertical-offset="697">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -314,55 +396,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/main.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/error.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/error.css" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/errorPage.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/resources/log4j.xml" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDrivers.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Fura.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/rest/Client.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDriversBean.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/IncorrectDataException.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/Resources.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/validators/NameValidator.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/ModifyOrderAction.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/LoginController.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/OrderAction.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/FuraAction.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/DriverAction.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/ActionForDrivers.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverService.java" />
         <option value="$PROJECT_DIR$/lw/src/test/java/FuraServicesTest.java" />
-        <option value="$PROJECT_DIR$/lw/src/test/java/OrderServiceTest.java" />
-        <option value="$PROJECT_DIR$/lw/src/test/java/DriverServicesTest.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverShift.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/validators/FuraValidator.java" />
         <option value="$PROJECT_DIR$/lw/pom.xml" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/SecurityInitializer.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/login.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/main.css" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/RootRestService.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/rest/RestActions.java" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/admin.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Drivers.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverShift.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Fura.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Order.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderInfo.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderStatus.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserService.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDrivers.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDriversBean.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/DriverAction.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/FuraAction.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/ModifyOrderAction.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/OrderAction.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/LoginController.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/SecurityInitializer.java" />
+        <option value="$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/Resources.java" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml" />
-        <option value="$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/error.css" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/main.css" />
         <option value="$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/admin.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/faces-config.xml" />
+        <option value="$PROJECT_DIR$/lw/src/main/webapp/login.xhtml" />
+        <option value="$PROJECT_DIR$/lw/src/test/java/DriverServicesTest.java" />
+        <option value="$PROJECT_DIR$/lw/src/test/java/OrderServiceTest.java" />
       </list>
     </option>
   </component>
@@ -498,6 +582,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -766,6 +858,10 @@
               <option name="myItemId" value="lw" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -798,6 +894,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -910,6 +1044,10 @@
               <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="driver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -946,6 +1084,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logiweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1601,12 +1773,12 @@
       <workItem from="1416683882212" duration="50325000" />
       <workItem from="1416821999620" duration="501000" />
       <workItem from="1416832000358" duration="48941000" />
-      <workItem from="1416983905550" duration="9951000" />
+      <workItem from="1416983905550" duration="13873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="589639000" />
+    <option name="totallyTimeSpent" value="593561000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1629,7 +1801,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1652,7 +1824,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3425775" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3425775" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1691,7 +1863,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="204" />
+      <option name="time" value="206" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1700,244 +1872,183 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/DriverAction.java">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.027227722" vertical-offset="1082" max-vertical-offset="1666">
-          <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/ModifyOrderAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.928571" vertical-offset="1936" max-vertical-offset="2941">
-          <caret line="142" column="40" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/c1e6d6d6/e6ace218-0595-443b-a5e9-6178327c28c8/driver..fura">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/picketlink/picketlink/2.7.0.CR2/picketlink-2.7.0.CR2.jar!/org/picketlink/common/DefaultPicketLinkLogger.class">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.353562" vertical-offset="529" max-vertical-offset="15844">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1104" max-vertical-offset="1479">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/test/java/FuraServicesTest.java">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/OrderStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="1615">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="969">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/test/java/OrderServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="969">
-          <caret line="46" column="84" selection-start-line="46" selection-start-column="84" selection-end-line="46" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/test/java/DriverServicesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30455637" vertical-offset="1352" max-vertical-offset="2057">
-          <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="99" selection-end-column="65" />
+        <state vertical-scroll-proportion="-0.696" vertical-offset="397" max-vertical-offset="816">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/DriverShift.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1241">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Drivers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1360">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="398" max-vertical-offset="816">
+        <state vertical-scroll-proportion="0.50133336" vertical-offset="441" max-vertical-offset="816">
           <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="375">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/FuraSeviceBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1530">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.90933335" vertical-offset="1087" max-vertical-offset="1530">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63733333" vertical-offset="220" max-vertical-offset="595">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDriversBean.java">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2951" max-vertical-offset="3400">
-          <caret line="193" column="24" selection-start-line="193" selection-start-column="24" selection-end-line="193" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.9060773" vertical-offset="6438" max-vertical-offset="6868">
+          <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+          <folding>
+            <element signature="e#7039#7040#0" expanded="true" />
+            <element signature="e#7107#7108#0" expanded="true" />
+            <element signature="e#7278#7279#0" expanded="true" />
+            <element signature="e#7348#7349#0" expanded="true" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7574#7575#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.0346665" vertical-offset="0" max-vertical-offset="2312">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/driver/ActionForDrivers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="293" max-vertical-offset="2329">
-          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/FuraAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1513">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/picketlink/picketlink/2.7.0.CR2/picketlink-2.7.0.CR2.jar!/org/picketlink/Identity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35368958" vertical-offset="48" max-vertical-offset="561">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="1139">
-          <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/picketlink/picketlink/2.7.0.CR2/picketlink-2.7.0.CR2.jar!/org/picketlink/idm/model/basic/User.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.302799" vertical-offset="0" max-vertical-offset="714">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61538464" vertical-offset="101" max-vertical-offset="493">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16410257" vertical-offset="40" max-vertical-offset="816">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/validators/FuraValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7564403" vertical-offset="289" max-vertical-offset="850">
-          <caret line="45" column="93" selection-start-line="45" selection-start-column="93" selection-end-line="45" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserServiceBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33247423" vertical-offset="160" max-vertical-offset="867">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.904" vertical-offset="1" max-vertical-offset="476">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26288658" vertical-offset="0" max-vertical-offset="388">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.31733334" vertical-offset="0" max-vertical-offset="375">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/DriverServiceBean.java">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDrivers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1019" max-vertical-offset="2363">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.63733333" vertical-offset="135" max-vertical-offset="510">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/SecurityInitializer.java">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/driver/OrderServiceForDriversBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1207">
-          <caret line="74" column="35" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.859116" vertical-offset="2749" max-vertical-offset="3179">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/DriverAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2426667" vertical-offset="129" max-vertical-offset="1649">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/FuraAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2986667" vertical-offset="21" max-vertical-offset="1496">
+          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+          <folding>
+            <element signature="method#getFreeFuras#0;class#FuraAction#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/ModifyOrderAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1298" max-vertical-offset="2635">
+          <caret line="183" column="5" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/admin/OrderAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.464286" vertical-offset="1451" max-vertical-offset="2567">
-          <caret line="115" column="20" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1961" max-vertical-offset="2533">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#2465#2466#0" expanded="true" />
+            <element signature="e#2509#2510#0" expanded="true" />
+            <element signature="e#3112#3113#0" expanded="true" />
+            <element signature="e#3140#3141#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/login.xhtml">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/driver/ActionForDrivers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55135137" vertical-offset="102" max-vertical-offset="663">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/service/admin/OrderServiceBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7273" max-vertical-offset="7667">
-          <caret line="336" column="38" selection-start-line="336" selection-start-column="38" selection-end-line="336" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3009">
-          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="860" max-vertical-offset="2278">
-          <caret line="101" column="76" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1797" max-vertical-offset="2635">
-          <caret line="109" column="33" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4285715" vertical-offset="91" max-vertical-offset="867">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1757" max-vertical-offset="2329">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1946,205 +2057,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1107" max-vertical-offset="1887">
           <caret line="101" column="23" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+          <folding>
+            <element signature="e#3341#3342#0" expanded="true" />
+            <element signature="e#3371#3372#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/main.css">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/CheckUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1778" max-vertical-offset="2380">
+          <caret line="160" column="5" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+          <folding>
+            <element signature="e#4180#4181#0" expanded="true" />
+            <element signature="e#4207#4208#0" expanded="true" />
+            <element signature="e#4269#4270#0" expanded="true" />
+            <element signature="e#4297#4298#0" expanded="true" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4378#4379#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/images/but_hover.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1139">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="1139">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/ru.tsystems.javaschool.logiweb.lw.server.entities">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>ru.tsystems.javaschool.logiweb.lw.server.entities</OriginalElement>
-          <nodes>
-            <node x="-116.0" y="78.0">ru.tsystems.javaschool.logiweb.lw.server.entities.Drivers</node>
-            <node x="121.0" y="93.0">ru.tsystems.javaschool.logiweb.lw.server.entities.Order</node>
-            <node x="-142.0" y="21.0">ru.tsystems.javaschool.logiweb.lw.server.entities.DriverShift</node>
-            <node x="-84.0" y="144.0">ru.tsystems.javaschool.logiweb.lw.server.entities.Users</node>
-            <node x="112.0" y="29.0">ru.tsystems.javaschool.logiweb.lw.server.entities.OrderInfo</node>
-            <node x="-143.0" y="-34.0">ru.tsystems.javaschool.logiweb.lw.server.entities.DriverStatus</node>
-            <node x="128.0" y="148.0">ru.tsystems.javaschool.logiweb.lw.server.entities.Fura</node>
-            <node x="97.0" y="-29.0">ru.tsystems.javaschool.logiweb.lw.server.entities.OrderStatus</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-136.5" y="88.5" />
-          <SelectedNodes>
-            <node>ru.tsystems.javaschool.logiweb.lw.server.entities.Users</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/e6ace218-0595-443b-a5e9-6178327c28c8.schema:driver">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>e6ace218-0595-443b-a5e9-6178327c28c8.schema:driver</OriginalElement>
-          <nodes>
-            <node x="" y="">e6ace218-0595-443b-a5e9-6178327c28c8.table:driver.order_info</node>
-            <node x="" y="">e6ace218-0595-443b-a5e9-6178327c28c8.table:driver.orders</node>
-            <node x="" y="">e6ace218-0595-443b-a5e9-6178327c28c8.table:driver.drivers</node>
-            <node x="" y="">e6ace218-0595-443b-a5e9-6178327c28c8.table:driver.order_status</node>
-            <node x="" y="">e6ace218-0595-443b-a5e9-6178327c28c8.table:driver.users</node>
-            <node x="" y="">e6ace218-0595-443b-a5e9-6178327c28c8.table:driver.fura</node>
-            <node x="" y="">e6ace218-0595-443b-a5e9-6178327c28c8.table:driver.driver_shift</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.4000000000000004" x="385.3225806451613" y="233.14285714285714" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/ru.tsystems.javaschool.logiweb.lw.service.admin">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>ru.tsystems.javaschool.logiweb.lw.service.admin</OriginalElement>
-          <nodes>
-            <node x="13.0" y="155.0">ru.tsystems.javaschool.logiweb.lw.service.admin.UserService</node>
-            <node x="165.0" y="235.0">ru.tsystems.javaschool.logiweb.lw.service.admin.FuraSeviceBean</node>
-            <node x="176.0" y="155.0">ru.tsystems.javaschool.logiweb.lw.service.admin.FuraService</node>
-            <node x="13.0" y="0.0">ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService</node>
-            <node x="186.0" y="0.0">ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService</node>
-            <node x="173.0" y="80.0">ru.tsystems.javaschool.logiweb.lw.service.admin.OrderServiceBean</node>
-            <node x="0.0" y="235.0">ru.tsystems.javaschool.logiweb.lw.service.admin.UserServiceBean</node>
-            <node x="0.0" y="80.0">ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="ru.tsystems.javaschool.logiweb.lw.service.admin.OrderServiceBean" target="ru.tsystems.javaschool.logiweb.lw.service.admin.OrderService">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ru.tsystems.javaschool.logiweb.lw.service.admin.DriverServiceBean" target="ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ru.tsystems.javaschool.logiweb.lw.service.admin.UserServiceBean" target="ru.tsystems.javaschool.logiweb.lw.service.admin.UserService">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ru.tsystems.javaschool.logiweb.lw.service.admin.FuraSeviceBean" target="ru.tsystems.javaschool.logiweb.lw.service.admin.FuraService">
-              <point x="0.0" y="-15.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-105.5" y="93.5" />
-          <SelectedNodes>
-            <node>ru.tsystems.javaschool.logiweb.lw.service.admin.UserServiceBean</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/ru.tsystems.javaschool.logiweb.lw.ui.admin">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>ru.tsystems.javaschool.logiweb.lw.ui.admin</OriginalElement>
-          <nodes>
-            <node x="" y="">ru.tsystems.javaschool.logiweb.lw.ui.admin.OrderAction</node>
-            <node x="" y="">ru.tsystems.javaschool.logiweb.lw.ui.admin.DriverAction</node>
-            <node x="" y="">ru.tsystems.javaschool.logiweb.lw.ui.admin.ModifyOrderAction</node>
-            <node x="" y="">ru.tsystems.javaschool.logiweb.lw.ui.admin.FuraAction</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="118.0" y="90.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/admin.xhtml">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/ui/SecurityInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1296296" vertical-offset="162" max-vertical-offset="1156">
-          <caret line="29" column="34" selection-start-line="18" selection-start-column="28" selection-end-line="29" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="1513">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/server/entities/Order.java">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/java/ru/tsystems/javaschool/logiweb/lw/util/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="15" column="3" selection-start-line="14" selection-start-column="2" selection-end-line="15" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_drivers_and_fura.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.0" vertical-offset="718" max-vertical-offset="2635">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+        <state vertical-scroll-proportion="-8.576923" vertical-offset="1919" max-vertical-offset="2465">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/add_goods.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.230769" vertical-offset="990" max-vertical-offset="3077">
-          <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+        <state vertical-scroll-proportion="-7.269231" vertical-offset="2327" max-vertical-offset="2873">
+          <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/close.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="2346">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="-16.423077" vertical-offset="1647" max-vertical-offset="2193">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/confirm.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.576923" vertical-offset="388" max-vertical-offset="2329">
-          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        <state vertical-scroll-proportion="-8.576923" vertical-offset="1681" max-vertical-offset="2227">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/drivers.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.692307" vertical-offset="641" max-vertical-offset="1734">
+        <state vertical-scroll-proportion="11.846154" vertical-offset="1175" max-vertical-offset="1734">
           <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3076925" vertical-offset="1681" max-vertical-offset="2227">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/wagons.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846" vertical-offset="527" max-vertical-offset="1411">
+        <state vertical-scroll-proportion="-29.423077" vertical-offset="0" max-vertical-offset="1411">
           <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
           <folding />
         </state>
@@ -2152,32 +2161,155 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/change_goods_status.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.615385" vertical-offset="412" max-vertical-offset="2244">
-          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        <state vertical-scroll-proportion="-8.576923" vertical-offset="1528" max-vertical-offset="2074">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/driver/orders.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="255" max-vertical-offset="1921">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        <state vertical-scroll-proportion="-9.230769" vertical-offset="1273" max-vertical-offset="1819">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/admin/orders.xhtml">
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/error.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="51" max-vertical-offset="2329">
-          <caret line="11" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="969">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/resources/css/screen.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57636887" vertical-offset="871" max-vertical-offset="7973">
-          <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6453" max-vertical-offset="7038">
+          <caret line="361" column="29" selection-start-line="361" selection-start-column="29" selection-end-line="361" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/admin.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="561" max-vertical-offset="1122">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/driver.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153" vertical-offset="510" max-vertical-offset="1088">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/error.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/templates/main.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/faces-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.1" vertical-offset="465" max-vertical-offset="1020">
+          <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/errorPage.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/main/webapp/login.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="544">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/test/java/DriverServicesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1115" max-vertical-offset="1700">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/test/java/FuraServicesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="775" max-vertical-offset="1360">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lw/src/test/java/OrderServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.046153847" vertical-offset="112" max-vertical-offset="697">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>

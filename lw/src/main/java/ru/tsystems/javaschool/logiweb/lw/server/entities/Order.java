@@ -1,19 +1,15 @@
 package ru.tsystems.javaschool.logiweb.lw.server.entities;
 
-import com.sun.istack.internal.Nullable;
+
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Null;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.List;
 
 
 @Entity
-@XmlRootElement
 @Table(name = "orders", uniqueConstraints = @UniqueConstraint(columnNames = "id"))
 public class Order implements Serializable {
     @Id
@@ -21,10 +17,8 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-//   @Digits(integer = 5, fraction = 0)
     @Pattern(regexp = "^[A-Z]{2}\\d{5}$")
     @Column(name = "fura_id")
-//    @Nullable
     private String furaId;
 
     @OneToOne(mappedBy = "order", fetch = FetchType.EAGER)
@@ -33,7 +27,6 @@ public class Order implements Serializable {
     private List<DriverShift> driverShift;
     @OneToOne(mappedBy = "order")
     private OrderStatus orderStatus;
-
 
     public Order() {
     }
@@ -59,7 +52,6 @@ public class Order implements Serializable {
     }
 
     public Fura getFura() {
-
         return fura;
     }
 

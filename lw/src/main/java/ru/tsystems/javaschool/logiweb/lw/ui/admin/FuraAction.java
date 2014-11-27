@@ -25,47 +25,16 @@ import java.util.List;
 @ViewScoped
 public class FuraAction implements Serializable {
 
-    @Inject
-    private FacesContext facesContext;
-
-    @EJB
-    private FuraService furaService;
     private Fura fura;
     private List<Fura> furas;
     private List<String> freeFuras;
     private List<Fura> freeFuraTable;
 
-    public void setFura(Fura fura) {
-        this.fura = fura;
-    }
+    @Inject
+    private FacesContext facesContext;
 
-    @Named
-    @Produces
-    public List<String> getFreeFuras() {
-        allFreeFuras();
-        return freeFuras;
-    }
-
-    public void setFreeFuras(List<String> freeFuras) {
-        this.freeFuras = freeFuras;
-    }
-
-    @Produces
-    @Named
-    public List<Fura> getFuras() {
-        return furas;
-    }
-
-    @Named
-    public void setFuras(List<Fura> furas) {
-        this.furas = furas;
-    }
-
-    @Produces
-    @Named
-    public Fura getFura() {
-        return fura;
-    }
+    @EJB
+    private FuraService furaService;
 
     /**
      * Initialized a new fura and sets a value for the list of furas.
@@ -103,6 +72,39 @@ public class FuraAction implements Serializable {
     public void allFreeFuras() {
         freeFuras = furaService.getFreeFuras();
     }
+
+    @Named
+    @Produces
+    public List<String> getFreeFuras() {
+        allFreeFuras();
+        return freeFuras;
+    }
+
+    @Produces
+    @Named
+    public List<Fura> getFuras() {
+        return furas;
+    }
+
+    @Produces
+    @Named
+    public Fura getFura() {
+        return fura;
+    }
+
+    @Named
+    public void setFuras(List<Fura> furas) {
+        this.furas = furas;
+    }
+
+    public void setFreeFuras(List<String> freeFuras) {
+        this.freeFuras = freeFuras;
+    }
+
+    public void setFura(Fura fura) {
+        this.fura = fura;
+    }
+
 
 }
 

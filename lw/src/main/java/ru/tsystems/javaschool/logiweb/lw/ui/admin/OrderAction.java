@@ -32,68 +32,11 @@ public class OrderAction implements Serializable {
     private List<Integer> madeOrderNumber;
     private List<Long> driversInCurrentOrder;
 
-    /**
-     * Returns the list of drivers in current order.
-     * @return the list of driver's licenses
-     */
-    @Named
-    @Produces
-    public List<Long> getDriversInCurrentOrder() {
-//        driversInCurrentOrder = orderService.getDriversInCurrentOrder();
-        return driversInCurrentOrder;
-    }
-
-    /**
-     * Sets drivers for certain order.
-     * @param driversInCurrentOrder the list of drivers
-     */
-    public void setDriversInCurrentOrder(List<Long> driversInCurrentOrder) {
-        this.driversInCurrentOrder = driversInCurrentOrder;
-    }
-
     @Inject
     private FacesContext facesContext;
 
     @Inject
     private Logger logger;
-
-    /**
-     * Gets numbers of orders with "made" status.
-     * @return the list of order numbers
-     */
-    @Produces
-    @Named
-    public List<Integer> getMadeOrderNumber() {
-        madeOrders();
-        return madeOrderNumber;
-    }
-
-    /**
-     * Sets numbers of orders with "made" status.
-     * @param madeOrderNumber the list of order numbers
-     */
-    public void setMadeOrderNumber(List<Integer> madeOrderNumber) {
-        this.madeOrderNumber = madeOrderNumber;
-    }
-
-    /**
-     * Gets numbers of orders with "created" status.
-     * @return the list of order numbers
-     */
-    @Produces
-    @Named
-    public List<Integer> getCreatedOrderNumber() {
-        createdOrders();
-        return createdOrderNumber;
-    }
-
-    /**
-     * Sets numbers of orders with "created" status.
-     * @param createdOrderNumber the list of order numbers
-     */
-    public void setCreatedOrderNumber(List<Integer> createdOrderNumber) {
-        this.createdOrderNumber = createdOrderNumber;
-    }
 
     @EJB
     private OrderService orderService;
@@ -102,46 +45,8 @@ public class OrderAction implements Serializable {
      * Initializes orders.
      */
     @PostConstruct
-//    @Admin
     public void initOrders() {
         orders = orderService.getAllOrders();
-    }
-
-    /**
-     * Gets an order.
-     * @return
-     */
-    @Produces
-    @Named
-    public Order getOrder() {
-        return order;
-    }
-
-    /**
-     * Sets an order.
-     * @param order
-     */
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    /**
-     * Gets the list of orders.
-     * @return the list of orders.
-     */
-    @Named
-    @Produces
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-
-    /**
-     * Sets the list of orders.
-     * @param orders the list of orders.
-     */
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
     }
 
     /**
@@ -171,6 +76,97 @@ public class OrderAction implements Serializable {
      */
     public void madeOrders() {
         madeOrderNumber = orderService.getMadeOrders();
+    }
+
+    /**
+     * Returns the list of drivers in current order.
+     * @return the list of driver's licenses
+     */
+    @Named
+    @Produces
+    public List<Long> getDriversInCurrentOrder() {
+        return driversInCurrentOrder;
+    }
+
+    /**
+     * Gets numbers of orders with "made" status.
+     * @return the list of order numbers
+     */
+    @Produces
+    @Named
+    public List<Integer> getMadeOrderNumber() {
+        madeOrders();
+        return madeOrderNumber;
+    }
+
+    /**
+     * Gets numbers of orders with "created" status.
+     * @return the list of order numbers
+     */
+    @Produces
+    @Named
+    public List<Integer> getCreatedOrderNumber() {
+        createdOrders();
+        return createdOrderNumber;
+    }
+
+    /**
+     * Gets an order.
+     * @return
+     */
+    @Produces
+    @Named
+    public Order getOrder() {
+        return order;
+    }
+
+    /**
+     * Gets the list of orders.
+     * @return the list of orders.
+     */
+    @Named
+    @Produces
+    public List<Order> getOrders() {
+        return orders;
+    }
+    /**
+     * Sets drivers for certain order.
+     * @param driversInCurrentOrder the list of drivers
+     */
+    public void setDriversInCurrentOrder(List<Long> driversInCurrentOrder) {
+        this.driversInCurrentOrder = driversInCurrentOrder;
+    }
+
+    /**
+     * Sets numbers of orders with "made" status.
+     * @param madeOrderNumber the list of order numbers
+     */
+    public void setMadeOrderNumber(List<Integer> madeOrderNumber) {
+        this.madeOrderNumber = madeOrderNumber;
+    }
+
+    /**
+     * Sets numbers of orders with "created" status.
+     * @param createdOrderNumber the list of order numbers
+     */
+    public void setCreatedOrderNumber(List<Integer> createdOrderNumber) {
+        this.createdOrderNumber = createdOrderNumber;
+    }
+
+    /**
+     * Sets an order.
+     * @param order
+     */
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    /**
+     * Sets the list of orders.
+     * @param orders the list of orders.
+     */
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
 }

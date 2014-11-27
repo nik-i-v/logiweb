@@ -7,7 +7,6 @@ html,
 
 body{
     font: 18px Arial, Helvetica, sans-serif;
-    /*color: rgba(254, 237, 35, 0.89);*/
     background-image: url(../../resources/images/bg.jpg) ;
     overflow-y:hidden;
     text-align: center;

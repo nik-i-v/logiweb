@@ -31,76 +31,11 @@ public class ModifyOrderAction  implements Serializable{
     private String furaToOrder;
     private List<Long> driversToOrder;
 
-    /**
-     *
-     * @return
-     */
-    @Named
-    @Produces
-    public List<Integer> getCreatedOrdersWitsGoods() {
-        createdOrdersWitsGoods();
-        return createdOrdersWitsGoods;
-    }
-
-    public void setCreatedOrdersWitsGoods(List<Integer> createdOrdersWitsGoods) {
-        this.createdOrdersWitsGoods = createdOrdersWitsGoods;
-    }
-
-    @Named
-    @Produces
-    public List<Long> getDriversToOrder() {
-        return driversToOrder;
-    }
-
-    public void setDriversToOrder(List<Long> driversToOrder) {
-        this.driversToOrder = driversToOrder;
-    }
-
-    @Produces
-    @Named
-    public String getFuraToOrder() {
-        return furaToOrder;
-    }
-
-    public void setFuraToOrder(String furaToOrder) {
-        this.furaToOrder = furaToOrder;
-    }
-
-    @Named
-    @Produces
-    public Integer getOrderNumber() {
-        return orderNumber;
-    }
-
-    public void setOrderNumber(Integer orderNumber) {
-        this.orderNumber = orderNumber;
-    }
-
-    @Produces
-    @Named
-    public List<Integer> getConfirmedOrderNumber() {
-        confirmedOrders();
-        return confirmedOrderNumber;
-    }
-
-    public void setConfirmedOrderNumber(List<Integer> confirmedOrderNumber) {
-        this.confirmedOrderNumber = confirmedOrderNumber;
-    }
     @EJB
     private OrderService orderService;
 
     @Inject
     private FacesContext facesContext;
-
-    @Produces
-    @Named
-    public OrderInfo getOrderInfo() {
-        return orderInfo;
-    }
-
-    public void setOrderInfo(OrderInfo orderInfo) {
-        this.orderInfo = orderInfo;
-    }
 
     @PostConstruct
     public void init(){
@@ -185,5 +120,66 @@ public class ModifyOrderAction  implements Serializable{
             facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
                     errorMessage, "Closing unsuccessful"));
         }
+    }
+
+    @Named
+    @Produces
+    public List<Integer> getCreatedOrdersWitsGoods() {
+        createdOrdersWitsGoods();
+        return createdOrdersWitsGoods;
+    }
+
+    @Named
+    @Produces
+    public List<Long> getDriversToOrder() {
+        return driversToOrder;
+    }
+
+    @Named
+    @Produces
+    public String getFuraToOrder() {
+        return furaToOrder;
+    }
+
+    @Named
+    @Produces
+    public Integer getOrderNumber() {
+        return orderNumber;
+    }
+
+    @Named
+    @Produces
+    public List<Integer> getConfirmedOrderNumber() {
+        confirmedOrders();
+        return confirmedOrderNumber;
+    }
+
+    @Produces
+    @Named
+    public OrderInfo getOrderInfo() {
+        return orderInfo;
+    }
+
+    public void setCreatedOrdersWitsGoods(List<Integer> createdOrdersWitsGoods) {
+        this.createdOrdersWitsGoods = createdOrdersWitsGoods;
+    }
+
+    public void setDriversToOrder(List<Long> driversToOrder) {
+        this.driversToOrder = driversToOrder;
+    }
+
+    public void setFuraToOrder(String furaToOrder) {
+        this.furaToOrder = furaToOrder;
+    }
+
+    public void setOrderNumber(Integer orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public void setConfirmedOrderNumber(List<Integer> confirmedOrderNumber) {
+        this.confirmedOrderNumber = confirmedOrderNumber;
+    }
+    public void setOrderInfo(OrderInfo orderInfo) {
+        this.orderInfo = orderInfo;
     }
 }

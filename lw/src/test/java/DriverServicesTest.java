@@ -30,8 +30,6 @@ public class DriverServicesTest {
 
     @Before
     public void init() {
-//        driver = mock(Drivers.class);
-//        driverShift = mock(DriverShift.class);
         entityManager = mock(EntityManager.class);
         query = mock(Query.class);
         logger = mock(Logger.class);

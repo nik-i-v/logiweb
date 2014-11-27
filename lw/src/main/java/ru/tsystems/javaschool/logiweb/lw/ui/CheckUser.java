@@ -40,10 +40,13 @@ import static org.picketlink.idm.model.basic.BasicModel.*;
 @ManagedBean
 @ApplicationScoped
 public class CheckUser implements Serializable {
-//    private static Logger logger = Logger.getLogger(CheckUser.class.getName());
 
     private Users user;
     private List<Users> users;
+
+
+    @EJB
+    private UserService userService;
 
     @Inject
     private Identity identity;
@@ -57,26 +60,16 @@ public class CheckUser implements Serializable {
     @Inject
     private RelationshipManager relationshipManager;
 
-    @Produces
-    @Named
-    public Users getUser() {
-        return user;
-    }
-
-    @EJB
-    private UserService userService;
-
     @Inject
     private PartitionManager partitionManager;
 
-    @Named
-    @Produces
-    public List<Users> getUsers() {
-        return users;
-    }
+    /**
+     * Initializes a new user.
+     */
+    @PostConstruct
+    public void initNewUser() {
+        user = new Users();
 
-    public void setUsers(List<Users> users) {
-        this.users = users;
     }
 
     /**
@@ -100,17 +93,9 @@ public class CheckUser implements Serializable {
     public void logout() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         FacesContext.getCurrentInstance().getExternalContext().redirect("../login.jsf");
-//        return "logout";
     }
 
-    /**
-     * Initializes a new user.
-     */
-    @PostConstruct
-    public void initNewUser() {
-        user = new Users();
 
-    }
 
     /**
      * Checks is a user an admin.
@@ -159,5 +144,20 @@ public class CheckUser implements Serializable {
         return hasRole(this.relationshipManager, this.identity.getAccount(), role);
     }
 
+    @Named
+    @Produces
+    public Users getUser() {
+        return user;
+    }
+
+    @Named
+    @Produces
+    public List<Users> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<Users> users) {
+        this.users = users;
+    }
 }
 

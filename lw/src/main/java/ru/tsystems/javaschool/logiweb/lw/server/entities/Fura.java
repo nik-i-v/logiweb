@@ -1,6 +1,5 @@
 package ru.tsystems.javaschool.logiweb.lw.server.entities;
 
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -11,8 +10,7 @@ import java.io.Serializable;
 
 
 @Entity
-@XmlRootElement
-@Table(name = "fura" /*uniqueConstraints = @UniqueConstraint(columnNames = "furas_id")*/)
+@Table(name = "fura")
 public class Fura implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,14 +41,6 @@ public class Fura implements Serializable {
     @JoinColumn(name = "furas_id", referencedColumnName = "fura_id", insertable = false, updatable = false)
     private Order order;
 
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
     public Fura() {
     }
 
@@ -60,8 +50,19 @@ public class Fura implements Serializable {
         this.capacity = capacity;
     }
 
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
     public enum Capacity {
         small, middle, large
+    }
+    public enum Status {
+        yes, no
     }
 
     public Integer getFurasId() {
@@ -70,10 +71,6 @@ public class Fura implements Serializable {
 
     public void setFurasId(Integer furasId) {
         this.furasId = furasId;
-    }
-
-    public enum Status {
-        yes, no
     }
 
     public void setFuraNumber(String id) {

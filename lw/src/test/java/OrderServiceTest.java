@@ -18,7 +18,6 @@ import static org.mockito.Mockito.*;
 public class OrderServiceTest {
     private EntityManager entityManager;
     private Query query;
-    private Query query1;
     private Logger logger;
 
     @Before

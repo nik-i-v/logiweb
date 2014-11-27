@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity
-@XmlRootElement
 @Table(name = "driver_shift", uniqueConstraints = @UniqueConstraint(columnNames = "driver_shift_id"))
 public class DriverShift implements Serializable {
 
@@ -29,6 +28,10 @@ public class DriverShift implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "order_id", insertable = false, updatable = false)
     private Order order;
+
+
+    public DriverShift() {
+    }
 
     public Integer getOrderId() {
         return orderId;
@@ -54,25 +57,9 @@ public class DriverShift implements Serializable {
         this.order = order;
     }
 
-
-
-    public DriverShift() {
-
-    }
-
-
-    public DriverShift(Integer id) {
-        this.driverId = id;
-    }
-
-//    public enum Status {
-//        shift, notShift, atWeel
-//    }
-
     public void setDriverId(Integer driverId) {
         this.driverId = driverId;
     }
-
 
     public void setStatus(DriverStatus status) {
         this.status = status;

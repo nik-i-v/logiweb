@@ -18,57 +18,27 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
 
-//@Model // =@Named + @RequestScoped
-@ManagedBean(name = "driverAction")
-@ViewScoped
+
 /**
  * This class provides access to services of actions with drivers company employee.
  * The class is serializable.
  *
  * @author Irina Nikulina
  */
+@ManagedBean(name = "driverAction")
+@ViewScoped
 public class DriverAction implements Serializable {
+
+    @EJB
+    private DriverService driverService;
 
     @Inject
     private FacesContext facesContext;
-    private static Logger logger = Logger.getLogger(DriverAction.class.getName());
 
     private Drivers driver;
     private List<DriverShift> drivers ;
     private List<Long> freeDrivers;
 
-    @Produces
-    @Named
-    public List<Long> getFreeDrivers() {
-        freeDrivers = allFreeDrivers();
-        return freeDrivers;
-    }
-
-    public void setFreeDrivers(List<Long> freeDrivers) {
-        this.freeDrivers = freeDrivers;
-    }
-
-    @Produces
-    @Named
-    public Drivers getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Drivers driver) {
-        this.driver = driver;
-    }
-
-    public void setDrivers(List<DriverShift> drivers) {
-        this.drivers = drivers;
-    }
-
-    @Produces
-    @Named
-    public List<DriverShift> getDrivers(){
-        return drivers;
-    }
-    @EJB
-    private DriverService driverService;
 
     /**
      * Initialized a new driver and sets a value for the list of drivers.
@@ -77,18 +47,18 @@ public class DriverAction implements Serializable {
     public void initNewDriver(){
         drivers = getAllDrivers();
         driver = new Drivers();
-//        getAllDrivers();
     }
 
-
-//
-    public List<DriverShift> getAllDrivers() {
-        return driverService.getAllDrivers();
+    /**
+     * Sets a value for the list of free drivers.
+     */
+    public List<Long> allFreeDrivers(){
+        return driverService.getAllFreeDrivers();
     }
 
     /**
      * Adds a new driver.
-     * @return true if thes driver was added and false if it's not.
+     * @return true if this driver was added and false if it's not.
      */
     public boolean addDriver(){
         try {
@@ -109,13 +79,40 @@ public class DriverAction implements Serializable {
         }
     }
 
-    /**
-     * Sets a value for the list of free drivers.
-     */
-    public List<Long> allFreeDrivers(){
-        return driverService.getAllFreeDrivers();
+    @Produces
+    @Named
+    public List<Long> getFreeDrivers() {
+        freeDrivers = allFreeDrivers();
+        return freeDrivers;
     }
 
+    @Produces
+    @Named
+    public Drivers getDriver() {
+        return driver;
+    }
+
+    @Produces
+    @Named
+    public List<DriverShift> getDrivers(){
+        return drivers;
+    }
+
+    public List<DriverShift> getAllDrivers() {
+        return driverService.getAllDrivers();
+    }
+
+    public void setDriver(Drivers driver) {
+        this.driver = driver;
+    }
+
+    public void setDrivers(List<DriverShift> drivers) {
+        this.drivers = drivers;
+    }
+
+    public void setFreeDrivers(List<Long> freeDrivers) {
+        this.freeDrivers = freeDrivers;
+    }
 
 
 }

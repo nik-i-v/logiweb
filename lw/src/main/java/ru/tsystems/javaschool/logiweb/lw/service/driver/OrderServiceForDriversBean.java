@@ -30,9 +30,6 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
     @Override
     public Order getOrderForDrivers(Long driverId) {
         Integer orderNumber = getOrderNumberForDrivers(driverId);
-//        Query query = entityManager.createQuery("SELECT o FROM Order o WHERE o.id = :number");
-//        query.setParameter("number", orderNumber);
-//         query.getResultList();
         Order order = entityManager.find(Order.class, orderNumber);
         Query driverShift = entityManager.createQuery("SELECT DISTINCT ds FROM DriverShift ds WHERE ds.orderId = :number");
         driverShift.setParameter("number", orderNumber);
@@ -147,16 +144,6 @@ public class OrderServiceForDriversBean implements OrderServiceForDrivers {
         query.setParameter("license", driverId);
         return query.getSingleResult().toString();
     }
-
-//    @Override
-//    public List<Drivers> getCoDrivers(Long driverLicense) {
-//        Integer orderNumber = getOrderNumberForDrivers(driverLicense);
-//        Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE  d.driverShift.orderId = :number");
-//        query.setParameter("number", orderNumber);
-//        List<Drivers> drivers = query.getResultList();
-//        drivers.remove(driverLicense);
-//        return drivers;
-//    }
 
     /**
      * Gets the number of the order for certain driver

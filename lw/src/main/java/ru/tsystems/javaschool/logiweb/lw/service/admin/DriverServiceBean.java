@@ -51,7 +51,6 @@ public class DriverServiceBean implements DriverService {
      */
     @Override
     public List<DriverShift> getAllDrivers() {
-        logger.info("Get all drivers");
         return entityManager.createQuery("SELECT ds FROM DriverShift ds").getResultList();
     }
 
@@ -61,7 +60,6 @@ public class DriverServiceBean implements DriverService {
      */
     @Override
     public List<Long> getAllDriverId() {
-        logger.info("Get all drivers id");
         return entityManager.createQuery("SELECT d.license FROM Drivers d").getResultList();
     }
 
@@ -109,7 +107,6 @@ public class DriverServiceBean implements DriverService {
      */
     @Override
     public List<Long> getAllFreeDrivers() {
-        logger.info("Get all free drivers");
         Query query = entityManager.createQuery("SELECT d.license FROM Drivers d WHERE d.driverShift.status = :status");
         query.setParameter("status", DriverStatus.notShift);
         return query.getResultList();

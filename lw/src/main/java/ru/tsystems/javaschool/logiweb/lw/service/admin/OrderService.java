@@ -33,5 +33,4 @@ public interface OrderService {
 
     void checkIfGoodsAreNotEmpty(Integer orderNumber) throws IncorrectDataException;
 
-//    List<Long> getDriversInCurrentOrder();
 }

@@ -11,7 +11,6 @@ import javax.persistence.*;
  import java.io.Serializable;
 
 @Entity
-@XmlRootElement
 @Table(name = "order_info")
 public class OrderInfo implements Serializable {
     @Id
@@ -48,9 +47,11 @@ public class OrderInfo implements Serializable {
     @JoinColumn(name = "order_number", insertable = false, updatable = false)
     private OrderStatus orderStatus;
 
-
     public enum Status {
         yes, no
+    }
+
+    public OrderInfo() {
     }
 
     public Integer getOrderNumber() {
@@ -68,10 +69,6 @@ public class OrderInfo implements Serializable {
     public void setOrderStatus(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
     }
-
-    public OrderInfo() {
-    }
-
 
     public void setName(String name) {
         this.name = name;

@@ -40,17 +40,7 @@ public class LoginController {
 
     public static String driverLogin;
 
-    @Produces
-    @Named
-    public String getDriverLogin() {
-        return driverLogin;
-    }
-
-    public void setDriverLogin(String driverLogin) {
-        this.driverLogin = driverLogin;
-    }
-
-    @Inject
+     @Inject
     private Logger logger;
 
     @Inject
@@ -81,9 +71,19 @@ public class LoginController {
         }
         if(checkUser.hasApplicationRole("driver")){
             driverLogin = userId;
-//            logger.info("driver login is " + driverLogin );
             return "driver";
         }
         return "fail";
     }
+
+    @Produces
+    @Named
+    public String getDriverLogin() {
+        return driverLogin;
+    }
+
+    public void setDriverLogin(String driverLogin) {
+        this.driverLogin = driverLogin;
+    }
+
 }

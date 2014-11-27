@@ -7,7 +7,6 @@ import java.util.List;
 
 
 @Entity
-@XmlRootElement
 @Table(name = "order_status")
 public class OrderStatus implements Serializable {
 
@@ -24,6 +23,16 @@ public class OrderStatus implements Serializable {
     @JoinColumn(name = "order_status_id", insertable = false, updatable = false)
     private Order order;
 
+    @OneToMany(mappedBy = "orderStatus", fetch = FetchType.EAGER)
+    private List<OrderInfo> orderInfo;
+
+    public enum Status {
+        created, confirmed, shipped, made, closed
+    }
+
+    public OrderStatus() {
+    }
+
     public List<OrderInfo> getOrderInfo() {
         return orderInfo;
     }
@@ -32,22 +41,12 @@ public class OrderStatus implements Serializable {
         this.orderInfo = orderInfo;
     }
 
-    @OneToMany(mappedBy = "orderStatus", fetch = FetchType.EAGER)
-    private List<OrderInfo> orderInfo;
-
-    public enum Status {
-        created, confirmed, shipped, made, closed
-    }
-
     public Order getOrder() {
         return order;
     }
 
     public void setOrder(Order order) {
         this.order = order;
-    }
-
-    public OrderStatus() {
     }
 
     public OrderStatus(Integer id) {

@@ -24,9 +24,5 @@ public interface OrderServiceForDrivers {
 
     String getCurrentStatusForDriver(Long driverId);
 
-//    List<Drivers> getCoDrivers(Long driverLicense);
-
     void isAnybodyAtWheel(Long driverId);
-
-//    Integer getOrderNumberForDrivers(Long driverLicense);
 }

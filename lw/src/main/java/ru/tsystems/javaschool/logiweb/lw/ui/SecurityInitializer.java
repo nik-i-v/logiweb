@@ -25,15 +25,12 @@ import org.picketlink.idm.model.basic.User;
 import ru.tsystems.javaschool.logiweb.lw.server.entities.Users;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.DriverService;
 import ru.tsystems.javaschool.logiweb.lw.service.admin.UserService;
-import ru.tsystems.javaschool.logiweb.lw.service.admin.UserServiceBean;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -57,7 +54,6 @@ public class SecurityInitializer {
 
     @EJB
     private DriverService driverService;
-
 
     @Inject
     private Logger logger;

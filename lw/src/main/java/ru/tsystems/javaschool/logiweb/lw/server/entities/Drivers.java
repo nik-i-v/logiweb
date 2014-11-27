@@ -3,14 +3,12 @@ package ru.tsystems.javaschool.logiweb.lw.server.entities;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity
-@XmlRootElement
 @Table(name = "drivers", uniqueConstraints = @UniqueConstraint(columnNames = "drivers_id"))
 public class Drivers implements Serializable {
 
@@ -36,7 +34,6 @@ public class Drivers implements Serializable {
     private String patronymic;
 
     @Digits(integer = 11, fraction = 0)
-//    @Size(min = 11, max = 11, message = "must have 11 digits")
     @Column(name = "license_id")
     private Long license;
 
@@ -60,10 +57,6 @@ public class Drivers implements Serializable {
 
     public void setDriverShift(DriverShift driverShift) {
         this.driverShift = driverShift;
-    }
-
-    public void setDriversId(Integer id) {
-        this.driversId = id;
     }
 
     public void setSurname(String surname) {
